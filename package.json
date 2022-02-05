@@ -18,8 +18,8 @@
     "prepack:cjs": "tsc -p tsconfig-cjs.json",
     "prepack:mjs": "tsc -p tsconfig-mjs.json",
     "prepare": "rimraf ./dist",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "storybook": "start-storybook -p 6006 --docs",
+    "build-storybook": "build-storybook --docs"
   },
   "files": [
     "dist"
@@ -34,6 +34,7 @@
     "@storybook/react": "^6.4.18",
     "babel-loader": "^8.2.3",
     "concurrently": "^7.0.0",
+    "eslint-plugin-mdx": "^1.16.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
