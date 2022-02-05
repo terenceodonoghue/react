@@ -1,0 +1,32 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import { useLocalStorage } from '../src';
+
+<Meta title="Web Storage API" />
+
+# Web Storage API
+
+The [Web Storage API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API)
+provides mechanisms by which browsers can store key/value pairs, in a much more intuitive fashion than using cookies.
+
+## useLocalStorage
+
+A drop-in replacement for [useState](https://reactjs.org/docs/hooks-state.html), with changes automatically synced to [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage).
+
+```javascript
+import { useLocalStorage } from '@terenceodonoghue/react-hooks';
+```
+
+<Canvas>
+  <Story name="useLocalStorage1">
+    {() => {
+      const [value, setValue] = useLocalStorage('value', '');
+      return (
+        <input
+          type="text"
+          value={value}
+          onChange={(e) => setValue(e.currentTarget.value)}
+        />
+      );
+    }}
+  </Story>
+</Canvas>
