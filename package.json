@@ -17,13 +17,25 @@
     "prepack": "yarn concurrently \"yarn:prepack:*\"",
     "prepack:cjs": "tsc -p tsconfig-cjs.json",
     "prepack:mjs": "tsc -p tsconfig-mjs.json",
-    "prepare": "rimraf ./dist"
+    "prepare": "rimraf ./dist",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "files": [
     "dist"
   ],
   "devDependencies": {
-    "concurrently": "^7.0.0"
+    "@babel/core": "^7.17.0",
+    "@mdx-js/react": "^1.6.22",
+    "@storybook/addon-actions": "^6.4.18",
+    "@storybook/addon-docs": "^6.4.18",
+    "@storybook/addon-essentials": "^6.4.18",
+    "@storybook/addon-links": "^6.4.18",
+    "@storybook/react": "^6.4.18",
+    "babel-loader": "^8.2.3",
+    "concurrently": "^7.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "peerDependencies": {
     "react": "*",
