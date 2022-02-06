@@ -1,5 +1,7 @@
 import { create } from '@storybook/theming';
 
+const isProd = process.env.NODE_ENV === 'production';
+
 const base = {
   base: 'light',
   colorSecondary: '#5D65F6',
@@ -11,7 +13,7 @@ const base = {
 const themes = {
   manager: create({
     ...base,
-    brandImage: '/logo.svg',
+    brandImage: isProd ? '/react-hooks/logo.svg' : '/logo.svg',
     brandTitle: 'React Hooks',
     brandUrl: 'https://github.com/terenceodonoghue/react-hooks',
   }),
