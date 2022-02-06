@@ -1,7 +1,7 @@
-import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
 import { usePermission } from '../src';
 
-<Meta title="Permissions API" />
+<Meta title="Web APIs/Permissions API" />
 
 # Permissions API
 
@@ -14,7 +14,7 @@ import { usePermission } from '@terenceodonoghue/react-hooks';
 ```
 
 <Canvas>
-  <Story name="usePermission1">
+  <Story name="usePermissionHook">
     {() => {
       const canUseGeolocation = usePermission('geolocation');
       return (

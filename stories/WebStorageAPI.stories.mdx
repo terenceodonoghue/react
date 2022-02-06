@@ -1,7 +1,7 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
 import { useLocalStorage } from '../src';
 
-<Meta title="Web Storage API" />
+<Meta title="Web APIs/Web Storage API" />
 
 # Web Storage API
 
@@ -17,7 +17,7 @@ import { useLocalStorage } from '@terenceodonoghue/react-hooks';
 ```
 
 <Canvas>
-  <Story name="useLocalStorage1">
+  <Story name="useLocalStorageHook">
     {() => {
       const [value, setValue] = useLocalStorage('value', '');
       return (
