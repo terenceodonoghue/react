@@ -10,13 +10,13 @@ const useOrientation = function useOrientation() {
   }, [orientation]);
 
   useEffect(() => {
-    const setOrientationType = () => {
+    const getOrientation = () => {
       const [orientationType] = window.screen.orientation.type.split('-');
       setOrientation(orientationType);
     };
 
-    setOrientationType();
-    window.screen.orientation.onchange = setOrientationType;
+    getOrientation();
+    window.screen.orientation.onchange = getOrientation;
   }, []);
 
   return {

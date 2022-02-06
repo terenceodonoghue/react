@@ -1,0 +1,33 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import { usePermission } from '../src';
+
+<Meta title="Permissions API" />
+
+# Permissions API
+
+The [Permissions API](https://developer.mozilla.org/en-US/docs/Web/API/Permissions_API) provides a consistent programmatic way to query the status of API permissions attributed to the current context. For example, the Permissions API can be used to determine if permission to access a particular API has been granted or denied.
+
+## usePermission
+
+```javascript
+import { usePermission } from '@terenceodonoghue/react-hooks';
+```
+
+<Canvas>
+  <Story name="usePermission1">
+    {() => {
+      const canUseGeolocation = usePermission('geolocation');
+      return (
+        <>
+          <p>Can use geolocation? {canUseGeolocation.toString()}</p>
+          <button
+            type="button"
+            onClick={() => navigator.geolocation.getCurrentPosition(() => null)}
+          >
+            Request permission
+          </button>
+        </>
+      );
+    }}
+  </Story>
+</Canvas>
