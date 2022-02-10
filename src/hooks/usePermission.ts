@@ -8,13 +8,14 @@ const usePermission = function usePermission(name: PermissionName) {
       const permissionStatus = await navigator.permissions.query({ name });
 
       setPermission(permissionStatus.state === 'granted');
-      permissionStatus.onchange = function () {
+
+      permissionStatus.addEventListener('change', function onChange() {
         setPermission(this.state === 'granted');
-      };
+      });
     };
 
     getPermission();
-  }, []);
+  }, [name]);
 
   return permission;
 };

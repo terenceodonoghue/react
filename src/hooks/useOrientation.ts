@@ -16,6 +16,7 @@ const useOrientation = function useOrientation() {
     };
 
     getOrientation();
+
     window.screen.orientation.onchange = getOrientation;
   }, []);
 
