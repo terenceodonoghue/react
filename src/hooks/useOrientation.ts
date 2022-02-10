@@ -17,7 +17,10 @@ const useOrientation = function useOrientation() {
 
     getOrientation();
 
-    window.screen.orientation.onchange = getOrientation;
+    window.screen.orientation.addEventListener('change', getOrientation);
+
+    return () =>
+      window.screen.orientation.removeEventListener('change', getOrientation);
   }, []);
 
   return {
