@@ -33,8 +33,10 @@ const useImageCapture = function useImageCapture({
   }, [imageCapture]);
 
   useEffect(() => {
+    let preview: MediaStream;
+
     const getPreview = async () => {
-      const preview = await navigator.mediaDevices.getUserMedia({
+      preview = await navigator.mediaDevices.getUserMedia({
         video: true,
       });
 
@@ -48,6 +50,8 @@ const useImageCapture = function useImageCapture({
     };
 
     getPreview();
+
+    return () => preview.getTracks().forEach((track) => track.stop());
   }, []);
 
   return takePhoto;
