@@ -12,14 +12,10 @@ const useImageCapture = function useImageCapture({
   const onPhotoTakenRef = useRef(onPhotoTaken);
   const onPreviewAvailableRef = useRef(onPreviewAvailable);
   const [imageCapture, setImageCapture] = useState<ImageCapture>();
+  const [preview, setPreview] = useState<MediaStream>();
 
-  useEffect(() => {
-    onPhotoTakenRef.current = onPhotoTaken;
-  }, [onPhotoTaken]);
-
-  useEffect(() => {
-    onPreviewAvailableRef.current = onPreviewAvailable;
-  }, [onPreviewAvailable]);
+  const cancelPreview = (mediaStream: MediaStream) =>
+    mediaStream.getTracks().forEach((track) => track.stop());
 
   const takePhoto = useCallback(async () => {
     if (imageCapture) {
@@ -33,26 +29,49 @@ const useImageCapture = function useImageCapture({
   }, [imageCapture]);
 
   useEffect(() => {
-    let preview: MediaStream;
+    onPhotoTakenRef.current = onPhotoTaken;
+  }, [onPhotoTaken]);
+
+  useEffect(() => {
+    onPreviewAvailableRef.current = onPreviewAvailable;
+  }, [onPreviewAvailable]);
+
+  useEffect(() => {
+    const controller = new AbortController();
 
     const getPreview = async () => {
-      preview = await navigator.mediaDevices.getUserMedia({
+      const stream = await navigator.mediaDevices.getUserMedia({
         video: true,
       });
 
+      if (controller.signal.aborted) {
+        cancelPreview(stream);
+      } else {
+        setPreview(stream);
+      }
+    };
+
+    getPreview();
+
+    return () => controller.abort();
+  }, []);
+
+  useEffect(() => {
+    if (preview) {
       if (onPreviewAvailableRef.current) {
         onPreviewAvailableRef.current(preview);
       }
 
       const [track] = preview.getVideoTracks();
-
       setImageCapture(new ImageCapture(track));
+    }
+
+    return () => {
+      if (preview) {
+        cancelPreview(preview);
+      }
     };
-
-    getPreview();
-
-    return () => preview.getTracks().forEach((track) => track.stop());
-  }, []);
+  }, [preview]);
 
   return takePhoto;
 };
