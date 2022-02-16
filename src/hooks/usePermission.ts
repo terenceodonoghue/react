@@ -1,26 +1,26 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const usePermission = function usePermission(name: PermissionName) {
-  const permissionStatus = useRef<PermissionStatus>();
-  const [isGranted, setGranted] = useState(false);
+  const [permissionStatus, setPermissionStatus] = useState<PermissionStatus>();
+  const [isGranted, setIsGranted] = useState(false);
 
   useEffect(() => {
-    const onChange = () =>
-      setGranted(permissionStatus.current?.state === 'granted');
-
     const getPermission = async () => {
-      permissionStatus.current = await navigator.permissions.query({ name });
-
-      setGranted(permissionStatus.current.state === 'granted');
-
-      permissionStatus.current.addEventListener('change', onChange);
+      setPermissionStatus(await navigator.permissions.query({ name }));
     };
 
     getPermission();
-
-    return () =>
-      permissionStatus.current?.removeEventListener('change', onChange);
   }, [name]);
+
+  useEffect(() => {
+    const onChange = () => setIsGranted(permissionStatus?.state === 'granted');
+
+    setIsGranted(permissionStatus?.state === 'granted');
+
+    permissionStatus?.addEventListener('change', onChange);
+
+    return () => permissionStatus?.removeEventListener('change', onChange);
+  }, [permissionStatus]);
 
   return isGranted;
 };
