@@ -22,24 +22,11 @@ import { useDirectory } from '@terenceodonoghue/react-hooks';
         <div style={{ display: 'flex', alignItems: 'flex-start', gap: 16 }}>
           <button onClick={getDirectory}>Open directory</button>
           <ul style={{ margin: 0 }}>
-            {entries
-              .sort((a, b) => a.name.localeCompare(b.name))
-              .sort((a, b) => {
-                if (a.kind === b.kind) {
-                  return 0;
-                }
-                if (a.kind === 'directory' && b.kind === 'file') {
-                  return -1;
-                }
-                if (a.kind === 'file' && b.kind === 'directory') {
-                  return 1;
-                }
-              })
-              .map((entry) => (
-                <li key={entry.name}>
-                  {entry.name} - {entry.kind}
-                </li>
-              ))}
+            {entries.map((entry) => (
+              <li key={entry.name}>
+                {entry.name} - {entry.kind}
+              </li>
+            ))}
           </ul>
         </div>
       );
