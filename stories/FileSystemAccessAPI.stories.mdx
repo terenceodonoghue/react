@@ -1,28 +1,28 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
 import { useState } from 'react';
-import { useDirectory } from '../src';
+import { useFileSystem } from '../src';
 
 <Meta title="Web APIs/File System Access API" />
 
-# EyeDropper API
+# File System Access API
 
 The [File System Access API](https://developer.mozilla.org/en-US/docs/Web/API/File_System_Access_API) allows read, write and file management capabilities.
 
-## useDirectory
+## useFileSystem
 
 ```javascript
-import { useDirectory } from '@terenceodonoghue/react-hooks';
+import { useFileSystem } from '@terenceodonoghue/react-hooks';
 ```
 
 <Canvas>
-  <Story name="useDirectoryHook">
+  <Story name="useFileSystemHook">
     {() => {
-      const [getDirectory, entries] = useDirectory();
+      const [directory, getDirectory] = useFileSystem();
       return (
         <div style={{ display: 'flex', alignItems: 'flex-start', gap: 16 }}>
           <button onClick={getDirectory}>Open directory</button>
           <ul style={{ margin: 0 }}>
-            {entries.map((entry) => (
+            {directory.map((entry) => (
               <li key={entry.name}>
                 {entry.name} - {entry.kind}
               </li>

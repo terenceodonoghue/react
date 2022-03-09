@@ -1,20 +1,20 @@
 import { useState } from 'react';
 
-const useDirectory = function useDirectory() {
-  const [entries, setEntries] = useState<
+const useFileSystem = function useFileSystem() {
+  const [directory, setDirectory] = useState<
     (FileSystemDirectoryHandle | FileSystemFileHandle)[]
   >([]);
 
   const getDirectory = async () => {
-    const directory = await window.showDirectoryPicker();
+    const handle = await window.showDirectoryPicker();
 
     const contents = [];
 
     /* eslint-disable no-restricted-syntax */
-    for await (const value of directory.values()) contents.push(value);
+    for await (const value of handle.values()) contents.push(value);
     /* eslint-enable no-restricted-syntax */
 
-    setEntries(
+    setDirectory(
       contents
         .sort((a, b) => a.name.localeCompare(b.name))
         .sort((a, b) => {
@@ -30,7 +30,7 @@ const useDirectory = function useDirectory() {
     );
   };
 
-  return [getDirectory, entries] as const;
+  return [directory, getDirectory] as const;
 };
 
-export default useDirectory;
+export default useFileSystem;
