@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const useEyeDropper = function useEyeDropper() {
+const useColour = function useColour() {
   const [colour, setColour] = useState<string>();
 
   const getColour = async () => {
@@ -13,4 +13,4 @@ const useEyeDropper = function useEyeDropper() {
   return [colour, getColour];
 };
 
-export default useEyeDropper;
+export default useColour;

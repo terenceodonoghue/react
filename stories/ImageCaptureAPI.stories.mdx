@@ -1,6 +1,6 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
 import { useRef, useState } from 'react';
-import { useImageCapture } from '../src';
+import { usePhoto } from '../src';
 
 <Meta title="Web APIs/Image Capture API" />
 
@@ -8,34 +8,28 @@ import { useImageCapture } from '../src';
 
 The MediaStream [Image Capture API](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream_Image_Capture_API) is an API for capturing images or videos from a photographic device. In addition to capturing data, it also allows you to retrieve information about device capabilities such as image size, red-eye reduction and whether or not there is a flash and what they are currently set to. Conversely, the API allows the capabilities to be configured within the constraints what the device allows.
 
-## useImageCapture
+## usePhoto
 
 ```javascript
-import { useImageCapture } from '@terenceodonoghue/react-hooks';
+import { usePhoto } from '@terenceodonoghue/react-hooks';
 ```
 
 <Canvas>
-  <Story name="useImageCaptureHook">
+  <Story name="usePhotoHook">
     {() => {
       const previewRef = useRef();
-      const [thumbnails, setThumbnails] = useState([]);
-      const takePhoto = useImageCapture({
+      const [photo, getPhoto] = usePhoto({
         onPreviewAvailable: (preview) => {
           if (previewRef.current) {
             previewRef.current.srcObject = preview;
           }
         },
-        onPhotoTaken: (url) => {
-          setThumbnails([...thumbnails, url]);
-        },
       });
       return (
         <div style={{ display: 'flex', gap: 16 }}>
-          <button onClick={takePhoto}>Take photo</button>
+          <button onClick={getPhoto}>Take photo</button>
           <video autoPlay height={200} width={300} ref={previewRef} />
-          {thumbnails.map((thumbnail) => (
-            <img key={thumbnail} src={thumbnail} height={100} width={150} />
-          ))}
+          {photo ? <img src={photo} height={100} width={150} /> : undefined}
         </div>
       );
     }}

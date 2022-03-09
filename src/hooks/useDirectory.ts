@@ -1,13 +1,12 @@
 import { useState } from 'react';
 
-const useFileSystem = function useFileSystem() {
+const useDirectory = function useDirectory() {
   const [directory, setDirectory] = useState<
     (FileSystemDirectoryHandle | FileSystemFileHandle)[]
   >([]);
 
   const getDirectory = async () => {
     const handle = await window.showDirectoryPicker();
-
     const contents = [];
 
     /* eslint-disable no-restricted-syntax */
@@ -21,6 +20,7 @@ const useFileSystem = function useFileSystem() {
           if (a.kind === 'directory' && b.kind === 'file') {
             return -1;
           }
+
           if (a.kind === 'file' && b.kind === 'directory') {
             return 1;
           }
@@ -33,4 +33,4 @@ const useFileSystem = function useFileSystem() {
   return [directory, getDirectory] as const;
 };
 
-export default useFileSystem;
+export default useDirectory;

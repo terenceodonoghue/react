@@ -1,6 +1,6 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
 import { useState } from 'react';
-import { useFileSystem } from '../src';
+import { useDirectory } from '../src';
 
 <Meta title="Web APIs/File System Access API" />
 
@@ -8,16 +8,16 @@ import { useFileSystem } from '../src';
 
 The [File System Access API](https://developer.mozilla.org/en-US/docs/Web/API/File_System_Access_API) allows read, write and file management capabilities.
 
-## useFileSystem
+## useDirectory
 
 ```javascript
-import { useFileSystem } from '@terenceodonoghue/react-hooks';
+import { useDirectory } from '@terenceodonoghue/react-hooks';
 ```
 
 <Canvas>
-  <Story name="useFileSystemHook">
+  <Story name="useDirectoryHook">
     {() => {
-      const [directory, getDirectory] = useFileSystem();
+      const [directory, getDirectory] = useDirectory();
       return (
         <div style={{ display: 'flex', alignItems: 'flex-start', gap: 16 }}>
           <button onClick={getDirectory}>Open directory</button>

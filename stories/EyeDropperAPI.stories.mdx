@@ -1,6 +1,6 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
 import { useState } from 'react';
-import { useEyeDropper } from '../src';
+import { useColour } from '../src';
 
 <Meta title="Web APIs/EyeDropper API" />
 
@@ -8,16 +8,16 @@ import { useEyeDropper } from '../src';
 
 The [EyeDropper API](https://developer.mozilla.org/en-US/docs/Web/API/EyeDropper_API) provides a mechanism for creating an eyedropper tool. Using this tool, users can sample colors from their screens, including outside of the browser window.
 
-## useEyeDropper
+## useColour
 
 ```javascript
-import { useEyeDropper } from '@terenceodonoghue/react-hooks';
+import { useColour } from '@terenceodonoghue/react-hooks';
 ```
 
 <Canvas>
-  <Story name="useEyeDropperHook">
+  <Story name="useColourHook">
     {() => {
-      const [colour, getColour] = useEyeDropper();
+      const [colour, getColour] = useColour();
       return (
         <div style={{ display: 'flex', gap: 16 }}>
           <button onClick={getColour}>Get a colour!</button>

@@ -1,36 +1,28 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
-interface useImageCaptureConfiguration {
-  onPhotoTaken?: (objectUrl: string) => void;
+interface usePhotoConfiguration {
   onPreviewAvailable?: (preview: MediaStream) => void;
 }
 
-const useImageCapture = function useImageCapture({
+const usePhoto = function usePhoto({
   onPreviewAvailable,
-  onPhotoTaken,
-}: useImageCaptureConfiguration = {}) {
-  const onPhotoTakenRef = useRef(onPhotoTaken);
+}: usePhotoConfiguration = {}) {
   const onPreviewAvailableRef = useRef(onPreviewAvailable);
+  const [photo, setPhoto] = useState<string>();
   const [imageCapture, setImageCapture] = useState<ImageCapture>();
   const [preview, setPreview] = useState<MediaStream>();
 
   const cancelPreview = (mediaStream: MediaStream) =>
     mediaStream.getTracks().forEach((track) => track.stop());
 
-  const takePhoto = useCallback(async () => {
+  const getPhoto = useCallback(async () => {
     if (imageCapture) {
       const blob = await imageCapture.takePhoto();
       const url = URL.createObjectURL(blob);
 
-      if (onPhotoTakenRef.current) {
-        onPhotoTakenRef.current(url);
-      }
+      setPhoto(url);
     }
   }, [imageCapture]);
-
-  useEffect(() => {
-    onPhotoTakenRef.current = onPhotoTaken;
-  }, [onPhotoTaken]);
 
   useEffect(() => {
     onPreviewAvailableRef.current = onPreviewAvailable;
@@ -73,7 +65,15 @@ const useImageCapture = function useImageCapture({
     };
   }, [preview]);
 
-  return takePhoto;
+  useEffect(() => {
+    return () => {
+      if (photo) {
+        URL.revokeObjectURL(photo);
+      }
+    };
+  }, [photo]);
+
+  return [photo, getPhoto];
 };
 
-export default useImageCapture;
+export default usePhoto;
