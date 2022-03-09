@@ -1,3 +1,4 @@
+export { default as useBroadcast } from './hooks/useBroadcast';
 export { default as useColour } from './hooks/useColour';
 export { default as useDirectory } from './hooks/useDirectory';
 export { default as useInterval } from './hooks/useInterval';

@@ -1,0 +1,72 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import { useState } from 'react';
+import { useBroadcast } from '../src';
+
+<Meta title="Web APIs/Broadcast Channel API" />
+
+# Broadcast Channel API
+
+The [Broadcast Channel API](https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API) allows basic communication between browsing contexts (that is, windows, tabs, frames, or iframes) and workers on the same origin.
+
+## useBroadcast
+
+```javascript
+import { useBroadcast } from '@terenceodonoghue/react-hooks';
+```
+
+<Canvas>
+  <Story name="useBroadcastHook">
+    {() => {
+      const [value, setValue] = useState('');
+      const [messages, setMessages] = useState([]);
+      const postMessage = useBroadcast({
+        channel: 'test_channel',
+        onMessageReceived: (event) => {
+          {
+            setMessages((prev) => {
+              return [...prev, event.data];
+            });
+          }
+        },
+      });
+      return (
+        <>
+          <a href="." target="_blank">
+            Open another window...
+          </a>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'flex-start',
+              gap: 16,
+              marginTop: 16,
+              marginBottom: 16,
+            }}
+          >
+            <input
+              placeholder="Message..."
+              type="text"
+              value={value}
+              onChange={(e) => setValue(e.currentTarget.value)}
+            />
+            <button
+              onClick={() => {
+                if (value) {
+                  postMessage(value);
+                  setValue('');
+                }
+              }}
+            >
+              Send
+            </button>
+            <ul style={{ margin: 0 }}>
+              {messages.map((message) => (
+                <li>{message}</li>
+              ))}
+            </ul>
+          </div>
+        </>
+      );
+    }}
+  </Story>
+</Canvas>
