@@ -10,7 +10,7 @@ const useColour = function useColour() {
     setColour(sRGBHex);
   };
 
-  return [colour, getColour];
+  return [colour, getColour] as const;
 };
 
 export default useColour;

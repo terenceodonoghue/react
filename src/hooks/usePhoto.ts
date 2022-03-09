@@ -73,7 +73,7 @@ const usePhoto = function usePhoto({
     };
   }, [photo]);
 
-  return [photo, getPhoto];
+  return [photo, getPhoto] as const;
 };
 
 export default usePhoto;
