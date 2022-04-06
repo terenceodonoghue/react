@@ -14,11 +14,11 @@
     "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
   },
   "scripts": {
+    "build": "yarn concurrently \"yarn:build:*\"",
+    "build:cjs": "tsc -p tsconfig-cjs.json",
+    "build:mjs": "tsc -p tsconfig-mjs.json",
+    "clean": "rimraf ./dist",
     "lint": "eslint ./src --ext .js,.ts",
-    "prepack": "yarn concurrently \"yarn:prepack:*\"",
-    "prepack:cjs": "tsc -p tsconfig-cjs.json",
-    "prepack:mjs": "tsc -p tsconfig-mjs.json",
-    "prepare": "rimraf ./dist",
     "storybook": "start-storybook -p 6006 --docs",
     "build-storybook": "build-storybook --docs"
   },
