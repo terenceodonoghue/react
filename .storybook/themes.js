@@ -14,9 +14,9 @@ const themes = {
   manager: create({
     ...base,
     appBg: 'white',
-    brandImage: isProd ? '/react-hooks/logo.svg' : '/logo.svg',
-    brandTitle: 'React Hooks',
-    brandUrl: 'https://github.com/terenceodonoghue/react-hooks',
+    brandImage: isProd ? '/react/logo.svg' : '/logo.svg',
+    brandTitle: 'React',
+    brandUrl: 'https://github.com/terenceodonoghue/react',
   }),
   preview: create({
     ...base,
