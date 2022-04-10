@@ -5,8 +5,8 @@
     "packages/*"
   ],
   "scripts": {
-    "build-storybook": "build-storybook",
-    "storybook": "start-storybook -p 6006"
+    "build-storybook": "build-storybook --docs",
+    "storybook": "start-storybook -p 6006 --docs"
   },
   "devDependencies": {
     "@babel/core": "^7.17.9",
