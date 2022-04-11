@@ -1,9 +1,10 @@
 {
   "name": "@terenceodonoghue/storybook",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "build-storybook --docs -o ./dist",
-    "dev": "start-storybook -p 6006 --docs"
+    "dev": "start-storybook -p 6006 --docs --quiet"
   },
   "devDependencies": {
     "@babel/core": "^7.17.9",
