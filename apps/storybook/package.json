@@ -2,8 +2,8 @@
   "name": "@terenceodonoghue/storybook",
   "private": true,
   "scripts": {
-    "dev": "start-storybook -p 6006 --docs",
-    "export": "build-storybook --docs -o ./dist"
+    "build": "build-storybook --docs -o ./dist",
+    "dev": "start-storybook -p 6006 --docs"
   },
   "devDependencies": {
     "@babel/core": "^7.17.9",
