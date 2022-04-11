@@ -1,5 +1,5 @@
 {
-  "name": "storybook",
+  "name": "@terenceodonoghue/storybook",
   "private": true,
   "scripts": {
     "dev": "start-storybook -p 6006 --docs",
