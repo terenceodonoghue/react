@@ -4110,7 +4110,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@terenceodonoghue/react-hooks@workspace:packages/react-hooks":
+"@terenceodonoghue/react-hooks@workspace:^, @terenceodonoghue/react-hooks@workspace:packages/react-hooks":
   version: 0.0.0-use.local
   resolution: "@terenceodonoghue/react-hooks@workspace:packages/react-hooks"
   dependencies:
@@ -4120,6 +4120,29 @@ __metadata:
   peerDependencies:
     react: "*"
     react-dom: "*"
+  languageName: unknown
+  linkType: soft
+
+"@terenceodonoghue/react@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@terenceodonoghue/react@workspace:."
+  dependencies:
+    "@changesets/cli": ^2.22.0
+    "@nrwl/cli": latest
+    "@nrwl/workspace": latest
+    "@terenceodonoghue/prettier-plugin-packagejson": ^1.0.1
+    "@typescript-eslint/eslint-plugin": ^5.11.0
+    "@typescript-eslint/parser": ^5.11.0
+    eslint: ^8.8.0
+    eslint-config-airbnb: ^19.0.4
+    eslint-config-prettier: ^8.3.0
+    eslint-plugin-import: ^2.25.4
+    eslint-plugin-jsx-a11y: ^6.5.1
+    eslint-plugin-mdx: ^1.16.0
+    eslint-plugin-prettier: ^4.0.0
+    eslint-plugin-react: ^7.28.0
+    eslint-plugin-react-hooks: ^4.3.0
+    nx: latest
   languageName: unknown
   linkType: soft
 
@@ -14078,42 +14101,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "react@workspace:."
-  dependencies:
-    "@babel/core": ^7.17.9
-    "@changesets/cli": ^2.22.0
-    "@mdx-js/react": ^1.6.22
-    "@nrwl/cli": latest
-    "@nrwl/workspace": latest
-    "@storybook/addon-actions": ^6.4.21
-    "@storybook/addon-docs": ^6.4.21
-    "@storybook/addon-essentials": ^6.4.21
-    "@storybook/addon-interactions": ^6.4.21
-    "@storybook/addon-links": ^6.4.21
-    "@storybook/react": ^6.4.21
-    "@storybook/testing-library": ^0.0.9
-    "@terenceodonoghue/prettier-plugin-packagejson": ^1.0.1
-    "@typescript-eslint/eslint-plugin": ^5.11.0
-    "@typescript-eslint/parser": ^5.11.0
-    babel-loader: ^8.2.4
-    eslint: ^8.8.0
-    eslint-config-airbnb: ^19.0.4
-    eslint-config-prettier: ^8.3.0
-    eslint-plugin-import: ^2.25.4
-    eslint-plugin-jsx-a11y: ^6.5.1
-    eslint-plugin-mdx: ^1.16.0
-    eslint-plugin-prettier: ^4.0.0
-    eslint-plugin-react: ^7.28.0
-    eslint-plugin-react-hooks: ^4.3.0
-    nx: latest
-    react: ^18.0.0
-    react-dom: ^18.0.0
-    typescript: 4.2.4
-  languageName: unknown
-  linkType: soft
-
 "read-pkg-up@npm:^7.0.1":
   version: 7.0.1
   resolution: "read-pkg-up@npm:7.0.1"
@@ -15322,6 +15309,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"storybook@workspace:apps/storybook":
+  version: 0.0.0-use.local
+  resolution: "storybook@workspace:apps/storybook"
+  dependencies:
+    "@babel/core": ^7.17.9
+    "@mdx-js/react": ^1.6.22
+    "@storybook/addon-actions": ^6.4.21
+    "@storybook/addon-docs": ^6.4.21
+    "@storybook/addon-essentials": ^6.4.21
+    "@storybook/addon-interactions": ^6.4.21
+    "@storybook/addon-links": ^6.4.21
+    "@storybook/react": ^6.4.21
+    "@storybook/testing-library": ^0.0.9
+    "@terenceodonoghue/react-hooks": "workspace:^"
+    babel-loader: ^8.2.4
+    react: ^18.0.0
+    react-dom: ^18.0.0
+  languageName: unknown
+  linkType: soft
+
 "stream-browserify@npm:^2.0.1":
   version: 2.0.2
   resolution: "stream-browserify@npm:2.0.2"
@@ -16145,16 +16152,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:4.2.4":
-  version: 4.2.4
-  resolution: "typescript@npm:4.2.4"
-  bin:
-    tsc: bin/tsc
-    tsserver: bin/tsserver
-  checksum: 89c397df192f239359ad798b96d8e8d552e12c0c189ac5676cec4c20c410d6eec636b8e59a88f2aef0a56d961a9678d99c400099be9b7cae2f7b062eb4b7b171
-  languageName: node
-  linkType: hard
-
 "typescript@npm:^4.5.3, typescript@npm:^4.5.5":
   version: 4.6.3
   resolution: "typescript@npm:4.6.3"
@@ -16162,16 +16159,6 @@ __metadata:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: 255bb26c8cb846ca689dd1c3a56587af4f69055907aa2c154796ea28ee0dea871535b1c78f85a6212c77f2657843a269c3a742d09d81495b97b914bf7920415b
-  languageName: node
-  linkType: hard
-
-"typescript@patch:typescript@4.2.4#~builtin<compat/typescript>":
-  version: 4.2.4
-  resolution: "typescript@patch:typescript@npm%3A4.2.4#~builtin<compat/typescript>::version=4.2.4&hash=bda367"
-  bin:
-    tsc: bin/tsc
-    tsserver: bin/tsserver
-  checksum: eb86e0e8022e5297f7a7b871b6edfbf33b57049416ada8bf97c358760125c7c79f074fbebd1b8e8230f858ae05eb22ad0e805e8f6acd5eae1fa886681624c15e
   languageName: node
   linkType: hard
 

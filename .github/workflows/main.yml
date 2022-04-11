@@ -25,8 +25,7 @@ jobs:
       - name: Build
         if: success()
         run: |
-          yarn build
-          yarn build-storybook
+          yarn nx run-many --target=export --all
       - name: Deploy
         if: success()
         run: |
