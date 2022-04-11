@@ -17,13 +17,3 @@ npm login --scope=@terenceodonoghue --registry=https://npm.pkg.github.com
 > Password: TOKEN               # Personal access token
 > Email: PUBLIC-EMAIL-ADDRESS   # Email address (this will be public)
 ```
-
-### Install
-
-```bash
-npm install @terenceodonoghue/react-hooks
-
-# or...
-
-yarn add @terenceodonoghue/react-hooks
-```
