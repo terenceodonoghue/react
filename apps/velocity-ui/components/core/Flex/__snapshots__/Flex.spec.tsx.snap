@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Flex renders content 1`] = `
+.emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+<div>
+  <div
+    class="emotion-0"
+    data-testid="flex"
+  >
+    The SMS program is down, synthesize the redundant feed so we can synthesize the SQL hard drive!
+  </div>
+</div>
+`;

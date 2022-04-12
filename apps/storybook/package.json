@@ -17,9 +17,11 @@
     "@storybook/react": "^6.4.21",
     "@storybook/testing-library": "^0.0.9",
     "@terenceodonoghue/react-hooks": "workspace:^",
-    "babel-loader": "^8.2.4",
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0"
+    "babel-loader": "^8.2.4"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-dom": "*"
   },
   "packageManager": "yarn@3.2.0"
 }
