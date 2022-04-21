@@ -1,15 +1,18 @@
-import React, { FunctionComponent, ReactElement } from 'react';
+/* eslint-disable import/no-extraneous-dependencies */
+import React, { FunctionComponent, ReactElement, ReactNode } from 'react';
 import { render, RenderOptions, RenderResult } from '@testing-library/react';
-import ThemeProvider from '~/components/core/ThemeProvider';
+import ThemeProvider, {
+  ThemeProviderProps,
+} from '~/components/core/ThemeProvider';
 
-const Providers: FunctionComponent = ({ children }) => (
+const Provider: FunctionComponent<ThemeProviderProps> = ({ children }) => (
   <ThemeProvider>{children}</ThemeProvider>
 );
 
 const customRender = (
   ui: ReactElement,
   options?: Omit<RenderOptions, 'queries'>,
-): RenderResult => render(ui, { wrapper: Providers, ...options });
+): RenderResult => render(ui, { wrapper: Provider, ...options });
 
 export * from '@testing-library/react';
 export { default as userEvent } from '@testing-library/user-event';

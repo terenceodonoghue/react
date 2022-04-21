@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, ReactNode } from 'react';
 import { ThemeProvider as EmotionProvider, Theme } from '@emotion/react';
 import merge from 'lodash/merge';
 import { rgba } from 'polished';
@@ -64,11 +64,15 @@ export const defaultTheme: Theme = {
   },
 };
 
-interface ThemeProps {
+export interface ThemeProviderProps {
+  children: ReactNode;
   theme?: Theme;
 }
 
-const ThemeProvider: FunctionComponent<ThemeProps> = ({ theme, ...props }) => (
+const ThemeProvider: FunctionComponent<ThemeProviderProps> = ({
+  theme,
+  ...props
+}) => (
   <EmotionProvider
     theme={theme ? merge(defaultTheme, theme) : defaultTheme}
     {...props}

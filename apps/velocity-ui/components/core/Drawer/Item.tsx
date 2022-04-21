@@ -1,15 +1,15 @@
 import { useTheme } from '@emotion/react';
 import { rgba } from 'polished';
 import React, {
-  ComponentType,
   forwardRef,
+  JSXElementConstructor,
   LiHTMLAttributes,
   SVGProps,
 } from 'react';
 
 export interface ItemProps extends LiHTMLAttributes<HTMLLIElement> {
   compact?: boolean;
-  icon?: ComponentType<SVGProps<SVGSVGElement>>;
+  icon?: JSXElementConstructor<SVGProps<SVGSVGElement>>;
   selected?: boolean;
 }
 
