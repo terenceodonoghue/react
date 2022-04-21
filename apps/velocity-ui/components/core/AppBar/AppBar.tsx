@@ -1,6 +1,10 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, ReactNode } from 'react';
 
-const AppBar: FunctionComponent = (props) => (
+interface AppBarProps {
+  children: ReactNode;
+}
+
+const AppBar: FunctionComponent<AppBarProps> = (props) => (
   <div
     css={({ palette, zIndex }) => ({
       alignItems: 'center',

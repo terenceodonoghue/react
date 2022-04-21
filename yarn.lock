@@ -4742,6 +4742,7 @@ __metadata:
     "@nrwl/cli": latest
     "@nrwl/workspace": latest
     "@terenceodonoghue/prettier-plugin-packagejson": ^1.0.1
+    "@types/node": ^17.0.25
     "@types/react": ^18.0.5
     "@typescript-eslint/eslint-plugin": ^5.11.0
     "@typescript-eslint/parser": ^5.11.0
@@ -4799,7 +4800,6 @@ __metadata:
     "@types/faker": ^5.5.8
     "@types/jest": ^27.0.2
     "@types/lodash": ^4.14.175
-    "@types/node": 16.10.1
     "@types/numeral": ^2.0.2
     "@types/react-beautiful-dnd": ^13.1.2
     "@types/react-test-renderer": ^17.0.1
@@ -5224,13 +5224,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:16.10.1":
-  version: 16.10.1
-  resolution: "@types/node@npm:16.10.1"
-  checksum: 84d7f082e9421fdf1f08dbe00b66848897b2675eacc94a4fa445c4d34cef57c901ecd3276d03ebe110607a848d3df0ab33816aeff51a234e036111dd8ef1422f
-  languageName: node
-  linkType: hard
-
 "@types/node@npm:^12.7.1":
   version: 12.20.47
   resolution: "@types/node@npm:12.20.47"
@@ -5242,6 +5235,13 @@ __metadata:
   version: 14.18.12
   resolution: "@types/node@npm:14.18.12"
   checksum: 8a0273caa0584020adb8802784fc7d4f18f05e6c205335b7f3818a91d6b0c22736b9f51da3428d5bc54076ad47f1a4d6d57990a3ce8489a520ac66b2b3ff24bc
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^17.0.25":
+  version: 17.0.25
+  resolution: "@types/node@npm:17.0.25"
+  checksum: 6a820bd624e69ea772f52a6cdb326484eff5829443dc981939373929ade109f58c21698b9f0a831bd6ceea799e722a75dc49c5fa7a6bc32a81e1cbdfc6507b64
   languageName: node
   linkType: hard
 
