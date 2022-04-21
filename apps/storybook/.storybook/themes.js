@@ -1,7 +1,5 @@
 import { create } from '@storybook/theming';
 
-const isProd = process.env.NODE_ENV === 'production';
-
 const base = {
   base: 'light',
   colorSecondary: '#5D65F6',
@@ -14,7 +12,7 @@ const themes = {
   manager: create({
     ...base,
     appBg: 'white',
-    brandImage: isProd ? '/react/logo.svg' : '/logo.svg',
+    brandImage: '/logo.svg',
     brandTitle: 'React',
     brandUrl: 'https://github.com/terenceodonoghue/react',
   }),
