@@ -85,7 +85,7 @@ const App: FunctionComponent<AppProps> = ({ Component, pageProps }) => {
         })}
       >
         <a
-          href="https://github.com/terenceodonoghue/velocity-ui"
+          href="https://github.com/terenceodonoghue/react/tree/master/apps/velocity-ui"
           className="github-corner"
           aria-label="View source on GitHub"
         >
