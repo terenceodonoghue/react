@@ -31,9 +31,12 @@ module.exports = {
         tsx: 'never',
       },
     ],
-    'react/function-component-definition': {
-      'named-components': 'arrow-function',
-    },
+    'react/function-component-definition': [
+      'warn',
+      {
+        namedComponents: 'arrow-function',
+      },
+    ],
     'react/jsx-filename-extension': ['error', { extensions: ['.jsx', '.tsx'] }],
     'react/jsx-props-no-spreading': 'off',
     'react/prop-types': 'off',
@@ -43,6 +46,9 @@ module.exports = {
     'import/resolver': {
       node: {
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+      typescript: {
+        alwaysTryTypes: true,
       },
     },
     'mdx/code-blocks': true,

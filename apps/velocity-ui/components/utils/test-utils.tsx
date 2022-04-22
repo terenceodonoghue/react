@@ -1,5 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import React, { FunctionComponent, ReactElement, ReactNode } from 'react';
+import React, { FunctionComponent, ReactElement } from 'react';
 import { render, RenderOptions, RenderResult } from '@testing-library/react';
 import ThemeProvider, {
   ThemeProviderProps,
