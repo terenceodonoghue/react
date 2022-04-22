@@ -1,5 +1,5 @@
 {
-  "name": "@terenceodonoghue/velocity-ui",
+  "name": "@terenceodonoghue/velocity",
   "private": true,
   "scripts": {
     "build": "next build",

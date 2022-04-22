@@ -10,9 +10,9 @@
 
 ## Sample Apps
 
-| Name        | URL                                                                                  | Status                                                                                                                                                                 |
-| :---------- | :----------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Velocity UI | [https://velocity-ui.terenceodonoghue.dev](https://velocity-ui.terenceodonoghue.dev) | [![Netlify Status](https://api.netlify.com/api/v1/badges/06593104-e358-466c-8619-0bf4a06d0af2/deploy-status)](https://app.netlify.com/sites/chic-naiad-4fc050/deploys) |
+| Name     | URL                                                                            | Status                                                                                                                                                                 |
+| :------- | :----------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Velocity | [https://velocity.terenceodonoghue.dev](https://velocity.terenceodonoghue.dev) | [![Netlify Status](https://api.netlify.com/api/v1/badges/06593104-e358-466c-8619-0bf4a06d0af2/deploy-status)](https://app.netlify.com/sites/chic-naiad-4fc050/deploys) |
 
 ## Setup
 

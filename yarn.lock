@@ -4783,9 +4783,9 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@terenceodonoghue/velocity-ui@workspace:apps/velocity-ui":
+"@terenceodonoghue/velocity@workspace:apps/velocity":
   version: 0.0.0-use.local
-  resolution: "@terenceodonoghue/velocity-ui@workspace:apps/velocity-ui"
+  resolution: "@terenceodonoghue/velocity@workspace:apps/velocity"
   dependencies:
     "@babel/preset-env": ^7.16.11
     "@babel/preset-react": ^7.16.7
