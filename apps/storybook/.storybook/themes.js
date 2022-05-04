@@ -13,8 +13,8 @@ const themes = {
     ...base,
     appBg: 'white',
     brandImage: '/logo.svg',
-    brandTitle: 'React',
-    brandUrl: 'https://github.com/terenceodonoghue/react',
+    brandTitle: 'Follow my code on GitHub.',
+    brandUrl: 'https://github.com/terenceodonoghue',
   }),
   preview: create({
     ...base,
