@@ -1,15 +1,17 @@
-# @terenceodonoghue/velocity [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier) ![GitHub](https://img.shields.io/github/license/terenceodonoghue/react)
+# @terenceodonoghue/velocity
 
-🚙 InVision's [Velocity UI kit](https://www.invisionapp.com/inside-design/design-resources/design-system-dashboard-ui-kit/) kit built with React
+🚙 InVision's [Velocity UI kit](https://www.invisionapp.com/inside-design/design-resources/design-system-dashboard-ui-kit/) built with React.
 
 ## Live Demo
 
 [https://velocity.terenceodonoghue.dev/](https://velocity.terenceodonoghue.dev/)
 
-## Quick Start
+## Local Development
 
 ```bash
 git clone git@github.com:terenceodonoghue/react.git
+
+yarn install
 
 yarn nx dev @terenceodonoghue/velocity
 ```
