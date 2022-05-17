@@ -13,5 +13,5 @@ git clone git@github.com:terenceodonoghue/react.git
 
 yarn install
 
-yarn nx dev @terenceodonoghue/velocity
+yarn nx dev velocity
 ```
