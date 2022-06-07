@@ -4734,6 +4734,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@terenceodonoghue/react-icons@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "@terenceodonoghue/react-icons@npm:1.1.0::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40terenceodonoghue%2Freact-icons%2F1.1.0%2Fd24e6e1c3c0ccfb6d4cfc45dad8bc1d11fe8ff1b95fa0f8477ba3d6b0a4f2c43"
+  peerDependencies:
+    react: "*"
+    react-dom: "*"
+  checksum: 52ce15b5bf977e015957f0fe872bfd73abc19dd481fb4e83ee281ec0620d4fba137e5b240a9a32a68f3972578a36b23e593862848b1fade5031fe6c1d374269d
+  languageName: node
+  linkType: hard
+
 "@terenceodonoghue/react@workspace:.":
   version: 0.0.0-use.local
   resolution: "@terenceodonoghue/react@workspace:."
@@ -4794,6 +4804,7 @@ __metadata:
     "@emotion/react": ^11.9.0
     "@svgr/cli": ^5.5.0
     "@svgr/webpack": ^5.5.0
+    "@terenceodonoghue/react-icons": ^1.1.0
     "@testing-library/jest-dom": ^5.14.1
     "@testing-library/react": ^12.1.1
     "@testing-library/user-event": ^13.2.1

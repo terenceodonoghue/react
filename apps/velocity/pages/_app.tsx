@@ -1,3 +1,12 @@
+import {
+  Analytics,
+  Chat,
+  Dashboard,
+  Map,
+  Service,
+  Settings,
+  Vehicles,
+} from '@terenceodonoghue/react-icons/velocity';
 import faker from 'faker';
 import { AppProps } from 'next/app';
 import Link from 'next/link';
@@ -10,17 +19,7 @@ import Drawer from '~/components/core/Drawer';
 import Flex from '~/components/core/Flex';
 import Global from '~/components/core/Global';
 import ThemeProvider from '~/components/core/ThemeProvider';
-import {
-  AnalyticsIcon,
-  DashboardIcon,
-  ChatIcon,
-  MapIcon,
-  MenuIcon,
-  ServiceIcon,
-  SettingsIcon,
-  VehiclesIcon,
-  VelocityIcon,
-} from '~/components/icons';
+import { MenuIcon, VelocityIcon } from '~/components/icons';
 import mq from '~/components/utils/mq';
 
 const fixtures = {
@@ -173,7 +172,7 @@ const App: FunctionComponent<AppProps> = ({ Component, pageProps }) => {
         <Link href="/">
           <Drawer.Item
             compact={!drawerOpen}
-            icon={DashboardIcon}
+            icon={Dashboard}
             selected={router.pathname === '/'}
           >
             Overview
@@ -182,7 +181,7 @@ const App: FunctionComponent<AppProps> = ({ Component, pageProps }) => {
         <Link href="/analytics">
           <Drawer.Item
             compact={!drawerOpen}
-            icon={AnalyticsIcon}
+            icon={Analytics}
             selected={router.pathname === '/analytics'}
           >
             Analytics
@@ -191,7 +190,7 @@ const App: FunctionComponent<AppProps> = ({ Component, pageProps }) => {
         <Link href="/vehicles">
           <Drawer.Item
             compact={!drawerOpen}
-            icon={VehiclesIcon}
+            icon={Vehicles}
             selected={router.pathname === '/vehicles'}
           >
             Vehicles
@@ -200,7 +199,7 @@ const App: FunctionComponent<AppProps> = ({ Component, pageProps }) => {
         <Link href="/reminders">
           <Drawer.Item
             compact={!drawerOpen}
-            icon={ServiceIcon}
+            icon={Service}
             selected={router.pathname === '/reminders'}
           >
             Service
@@ -209,7 +208,7 @@ const App: FunctionComponent<AppProps> = ({ Component, pageProps }) => {
         <Link href="/map">
           <Drawer.Item
             compact={!drawerOpen}
-            icon={MapIcon}
+            icon={Map}
             selected={router.pathname === '/map'}
           >
             Map
@@ -218,7 +217,7 @@ const App: FunctionComponent<AppProps> = ({ Component, pageProps }) => {
         <Link href="/chat">
           <Drawer.Item
             compact={!drawerOpen}
-            icon={ChatIcon}
+            icon={Chat}
             selected={router.pathname === '/chat'}
           >
             Chat
@@ -227,7 +226,7 @@ const App: FunctionComponent<AppProps> = ({ Component, pageProps }) => {
         <Link href="/settings">
           <Drawer.Item
             compact={!drawerOpen}
-            icon={SettingsIcon}
+            icon={Settings}
             selected={router.pathname === '/settings'}
           >
             Settings
