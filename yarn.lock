@@ -4734,13 +4734,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@terenceodonoghue/react-icons@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "@terenceodonoghue/react-icons@npm:1.1.0::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40terenceodonoghue%2Freact-icons%2F1.1.0%2Fd24e6e1c3c0ccfb6d4cfc45dad8bc1d11fe8ff1b95fa0f8477ba3d6b0a4f2c43"
+"@terenceodonoghue/react-icons@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "@terenceodonoghue/react-icons@npm:1.1.1::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40terenceodonoghue%2Freact-icons%2F1.1.1%2F320f7e20425f505a389c7604d205d543b800ff965c7c06ec186bca12e93b151b"
   peerDependencies:
     react: "*"
     react-dom: "*"
-  checksum: 52ce15b5bf977e015957f0fe872bfd73abc19dd481fb4e83ee281ec0620d4fba137e5b240a9a32a68f3972578a36b23e593862848b1fade5031fe6c1d374269d
+  checksum: df14383c6d7acb8133f9072565ffd79400fa356fbfa471220d75fe84c9a28452f2b927a8108ed4c1072deb4e47ef678ce23022a2310a48820caf6735426959c1
   languageName: node
   linkType: hard
 
@@ -4804,7 +4804,7 @@ __metadata:
     "@emotion/react": ^11.9.0
     "@svgr/cli": ^5.5.0
     "@svgr/webpack": ^5.5.0
-    "@terenceodonoghue/react-icons": ^1.1.0
+    "@terenceodonoghue/react-icons": ^1.1.1
     "@testing-library/jest-dom": ^5.14.1
     "@testing-library/react": ^12.1.1
     "@testing-library/user-event": ^13.2.1

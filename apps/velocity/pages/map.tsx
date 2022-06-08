@@ -1,4 +1,5 @@
 import { Interpolation, Theme, useTheme } from '@emotion/react';
+import { Check, Marker } from '@terenceodonoghue/react-icons/velocity';
 import faker from 'faker';
 import { NextPage } from 'next';
 import Head from 'next/head';
@@ -10,8 +11,6 @@ import Container from '~/components/core/Container';
 import Flex from '~/components/core/Flex';
 import {
   ApplePayIcon,
-  CheckIcon,
-  MarkerIcon,
   MastercardIcon,
   PayPalIcon,
   VisaIcon,
@@ -195,9 +194,9 @@ const MapPage: NextPage = () => {
                   ]}
                   role="presentation"
                 >
-                  <CheckIcon
-                    color={theme.palette.ui.blue}
+                  <Check
                     css={{ height: 16, width: 16 }}
+                    fill={theme.palette.ui.blue}
                   />
                 </Flex>
                 <span
@@ -219,7 +218,7 @@ const MapPage: NextPage = () => {
                   ]}
                   role="presentation"
                 >
-                  <MarkerIcon
+                  <Marker
                     color={theme.palette.ui.green}
                     css={{ height: 16, width: 16 }}
                   />

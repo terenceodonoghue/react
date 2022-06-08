@@ -1,4 +1,10 @@
 import { useTheme } from '@emotion/react';
+import {
+  Check,
+  Dynamic,
+  Energy,
+  Marker,
+} from '@terenceodonoghue/react-icons/velocity';
 import { NextPage } from 'next';
 import Head from 'next/head';
 import numeral from 'numeral';
@@ -19,12 +25,6 @@ import React from 'react';
 import Card from '~/components/core/Card';
 import Container from '~/components/core/Container';
 import Flex from '~/components/core/Flex';
-import {
-  CheckIcon,
-  DynamicIcon,
-  EnergyIcon,
-  MarkerIcon,
-} from '~/components/icons';
 import mq from '~/components/utils/mq';
 
 const AnalyticsPage: NextPage = () => {
@@ -33,19 +33,19 @@ const AnalyticsPage: NextPage = () => {
   const iconMap = {
     'vehicles-on-track': {
       color: theme.palette.ui.purple,
-      component: CheckIcon,
+      component: Check,
     },
     'distance-driven': {
       color: theme.palette.ui.blue,
-      component: MarkerIcon,
+      component: Marker,
     },
     'energy-consumed': {
       color: theme.palette.ui.blue,
-      component: EnergyIcon,
+      component: Energy,
     },
     'total-drive-time': {
       color: theme.palette.ui.blue,
-      component: DynamicIcon,
+      component: Dynamic,
     },
   };
 

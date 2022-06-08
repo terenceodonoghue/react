@@ -1,7 +1,7 @@
 import {
   Analytics,
-  Chat,
   Dashboard,
+  Mail,
   Map,
   Service,
   Settings,
@@ -217,7 +217,7 @@ const App: FunctionComponent<AppProps> = ({ Component, pageProps }) => {
         <Link href="/chat">
           <Drawer.Item
             compact={!drawerOpen}
-            icon={Chat}
+            icon={Mail}
             selected={router.pathname === '/chat'}
           >
             Chat
