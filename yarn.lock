@@ -4723,6 +4723,40 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@terenceodonoghue/eslint-config-react@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@terenceodonoghue/eslint-config-react@npm:1.0.0::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40terenceodonoghue%2Feslint-config-react%2F1.0.0%2F8d883c5f722813267feaf708a8ca8189a3673ce13197d0a559015132e186d908"
+  dependencies:
+    "@terenceodonoghue/eslint-config": ^1.0.0
+    eslint-config-airbnb: ^19.0.4
+  peerDependencies:
+    "@typescript-eslint/eslint-plugin": "*"
+    "@typescript-eslint/parser": "*"
+    eslint: ">= 8"
+    eslint-plugin-import: "*"
+    eslint-plugin-jsx-a11y: "*"
+    eslint-plugin-prettier: "*"
+    eslint-plugin-react: "*"
+    eslint-plugin-react-hooks: "*"
+  checksum: 435f0c28704b9458f9460ae2848c03a1136d18d6480790287706fd0b701ce3b7eb687cef0b4cc90ebb834a9cb11d9cdd3f1b672478d67b2ffebc81d34d8617b2
+  languageName: node
+  linkType: hard
+
+"@terenceodonoghue/eslint-config@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@terenceodonoghue/eslint-config@npm:1.0.0::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40terenceodonoghue%2Feslint-config%2F1.0.0%2Fff1b3ad774230cd754f3fe12d13300369c191ea8ce59afaa8bcc44041d81fff2"
+  dependencies:
+    eslint-config-prettier: ^8.5.0
+  peerDependencies:
+    "@typescript-eslint/eslint-plugin": "*"
+    "@typescript-eslint/parser": "*"
+    eslint: ">= 8"
+    eslint-plugin-import: "*"
+    eslint-plugin-prettier: "*"
+  checksum: ca537355f854709b34c4aa369df563379f43a93e9bb0c920cd319f62cec1b37699bb3d32cf6a3405f4fa23a7a3cfd5cacfe9b2bf60d7a90f404797bdaadf87c9
+  languageName: node
+  linkType: hard
+
 "@terenceodonoghue/prettier-plugin-packagejson@npm:^1.0.1":
   version: 1.0.1
   resolution: "@terenceodonoghue/prettier-plugin-packagejson@npm:1.0.1::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40terenceodonoghue%2Fprettier-plugin-packagejson%2F1.0.1%2F29d5ab32d4dd53d3b454b41b71c99c4863b435d745f547961b21ee367ba29f2b"
@@ -4764,14 +4798,13 @@ __metadata:
     "@changesets/cli": ^2.22.0
     "@nrwl/cli": latest
     "@nrwl/workspace": latest
+    "@terenceodonoghue/eslint-config-react": ^1.0.0
     "@terenceodonoghue/prettier-plugin-packagejson": ^1.0.1
     "@types/node": ^17.0.25
     "@types/react": ^18.0.5
     "@typescript-eslint/eslint-plugin": ^5.11.0
     "@typescript-eslint/parser": ^5.11.0
     eslint: ^8.8.0
-    eslint-config-airbnb: ^19.0.4
-    eslint-config-prettier: ^8.3.0
     eslint-import-resolver-typescript: ^2.7.1
     eslint-plugin-import: ^2.25.4
     eslint-plugin-jsx-a11y: ^6.5.1
@@ -4780,6 +4813,7 @@ __metadata:
     eslint-plugin-react: ^7.28.0
     eslint-plugin-react-hooks: ^4.3.0
     nx: latest
+    prettier: ^2.6.2
     react: ^18.0.0
     react-dom: ^18.0.0
   languageName: unknown
@@ -9627,7 +9661,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-prettier@npm:^8.3.0":
+"eslint-config-prettier@npm:^8.5.0":
   version: 8.5.0
   resolution: "eslint-config-prettier@npm:8.5.0"
   peerDependencies:
@@ -15936,7 +15970,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^2.1.2":
+"prettier@npm:^2.1.2, prettier@npm:^2.6.2":
   version: 2.6.2
   resolution: "prettier@npm:2.6.2"
   bin:
