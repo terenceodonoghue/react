@@ -4723,13 +4723,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@terenceodonoghue/eslint-config-react@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "@terenceodonoghue/eslint-config-react@npm:1.0.0::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40terenceodonoghue%2Feslint-config-react%2F1.0.0%2F8d883c5f722813267feaf708a8ca8189a3673ce13197d0a559015132e186d908"
+"@terenceodonoghue/eslint-config-react@npm:^1.0.4":
+  version: 1.0.4
+  resolution: "@terenceodonoghue/eslint-config-react@npm:1.0.4::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40terenceodonoghue%2Feslint-config-react%2F1.0.4%2F0b09c9de77b9aa697d44fe4270128ef563ebf6108bf49e2b22ecd002e4c4a745"
   dependencies:
-    "@terenceodonoghue/eslint-config": ^1.0.0
+    "@terenceodonoghue/eslint-config": ^1.0.3
     eslint-config-airbnb: ^19.0.4
   peerDependencies:
+    "@terenceodonoghue/eslint-import-resolver-exports": ^1.0.3
     "@typescript-eslint/eslint-plugin": "*"
     "@typescript-eslint/parser": "*"
     eslint: ">= 8"
@@ -4738,33 +4739,55 @@ __metadata:
     eslint-plugin-prettier: "*"
     eslint-plugin-react: "*"
     eslint-plugin-react-hooks: "*"
-  checksum: 435f0c28704b9458f9460ae2848c03a1136d18d6480790287706fd0b701ce3b7eb687cef0b4cc90ebb834a9cb11d9cdd3f1b672478d67b2ffebc81d34d8617b2
+  checksum: c72436d042367ce9648a170d6bdcf4f4b33eb87855c4c89ed0be756f926c12d225f74cb627df1670eeb24dcf744bfcb6cb95dada975153845a5cea336b0f4821
   languageName: node
   linkType: hard
 
-"@terenceodonoghue/eslint-config@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "@terenceodonoghue/eslint-config@npm:1.0.0::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40terenceodonoghue%2Feslint-config%2F1.0.0%2Fff1b3ad774230cd754f3fe12d13300369c191ea8ce59afaa8bcc44041d81fff2"
+"@terenceodonoghue/eslint-config@npm:^1.0.3":
+  version: 1.0.3
+  resolution: "@terenceodonoghue/eslint-config@npm:1.0.3::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40terenceodonoghue%2Feslint-config%2F1.0.3%2F38c174c92120ffe48b1f8618b0f80197a3a363376c235df77fb918b7ca944dab"
   dependencies:
     eslint-config-prettier: ^8.5.0
   peerDependencies:
+    "@terenceodonoghue/eslint-import-resolver-exports": ^1.0.3
     "@typescript-eslint/eslint-plugin": "*"
     "@typescript-eslint/parser": "*"
     eslint: ">= 8"
     eslint-plugin-import: "*"
     eslint-plugin-prettier: "*"
-  checksum: ca537355f854709b34c4aa369df563379f43a93e9bb0c920cd319f62cec1b37699bb3d32cf6a3405f4fa23a7a3cfd5cacfe9b2bf60d7a90f404797bdaadf87c9
+  checksum: 007e05f2eb399bc8d923b99570f21c717351f2ba033a757ec174525517165652bbb3cca5a52fba49811ed530985b2991fe1c05e20dbb007f39054e05151f52a5
   languageName: node
   linkType: hard
 
-"@terenceodonoghue/prettier-plugin-packagejson@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "@terenceodonoghue/prettier-plugin-packagejson@npm:1.0.1::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40terenceodonoghue%2Fprettier-plugin-packagejson%2F1.0.1%2F29d5ab32d4dd53d3b454b41b71c99c4863b435d745f547961b21ee367ba29f2b"
+"@terenceodonoghue/eslint-import-resolver-exports@npm:^1.0.3":
+  version: 1.0.3
+  resolution: "@terenceodonoghue/eslint-import-resolver-exports@npm:1.0.3::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40terenceodonoghue%2Feslint-import-resolver-exports%2F1.0.3%2Fbbe30f898e07c3d33ec33a73c251c9b1d8785ad2c7efa2ec0abbd4da5a8dbba7"
+  dependencies:
+    resolve: ^1.22.1
+  checksum: 194f0b3eb314f1ecb650a871ce95d182546b7d8b82b124260f84614b13449a18ba2f9c0a0b48c049941e03a1c0160a2e7539d0799b3f6867ebd3fc1b3af60cc1
+  languageName: node
+  linkType: hard
+
+"@terenceodonoghue/prettier-plugin-packagejson@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "@terenceodonoghue/prettier-plugin-packagejson@npm:1.0.2::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40terenceodonoghue%2Fprettier-plugin-packagejson%2F1.0.2%2F3a522841bc3a4b0865308afa4ea6a14ee098920ea369a202e3925e8151913ffc"
   dependencies:
     sort-package-json: ^1.55.0
   peerDependencies:
     prettier: "*"
-  checksum: b6cc8fab482778820a9532821d91246fa45fa81ccc1a5f1e87a29f7bd3746a2807b9a965897174c6cc5de192c2b7c577196ddc40c78bf7ec8872e5c032f2c363
+  checksum: 50336fefb4edf08fac67d774a6be4a0e64d12ab6ba6c6cc3242a8a78875fbae8e1e85c7e40a7ce17a604c951d4617730648d685140ee076a52351e4621af403d
+  languageName: node
+  linkType: hard
+
+"@terenceodonoghue/react-components@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@terenceodonoghue/react-components@npm:1.0.0::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40terenceodonoghue%2Freact-components%2F1.0.0%2F537162d01cfcab7fa6b2bd21dcf2266fd18d7e330f65c33121708ea8fa518908"
+  dependencies:
+    "@terenceodonoghue/web-components": ^1.0.0
+  peerDependencies:
+    react: "*"
+    react-dom: "*"
+  checksum: 8bd43304bd27b10d830577b6fdf819d3ba1d09da070b881aed994b64041e1683ce69c041a1a15facf5525f0635a2e5df1cb30ca2596df26dd6a31d7e51a15add
   languageName: node
   linkType: hard
 
@@ -4798,8 +4821,9 @@ __metadata:
     "@changesets/cli": ^2.22.0
     "@nrwl/cli": latest
     "@nrwl/workspace": latest
-    "@terenceodonoghue/eslint-config-react": ^1.0.0
-    "@terenceodonoghue/prettier-plugin-packagejson": ^1.0.1
+    "@terenceodonoghue/eslint-config-react": ^1.0.4
+    "@terenceodonoghue/eslint-import-resolver-exports": ^1.0.3
+    "@terenceodonoghue/prettier-plugin-packagejson": ^1.0.2
     "@types/node": ^17.0.25
     "@types/react": ^18.0.5
     "@typescript-eslint/eslint-plugin": ^5.11.0
@@ -4851,6 +4875,7 @@ __metadata:
     "@emotion/react": ^11.9.0
     "@svgr/cli": ^5.5.0
     "@svgr/webpack": ^5.5.0
+    "@terenceodonoghue/react-components": ^1.0.0
     "@terenceodonoghue/react-icons": ^1.1.1
     "@testing-library/jest-dom": ^5.14.1
     "@testing-library/react": ^12.1.1
@@ -4890,6 +4915,15 @@ __metadata:
     react-dom: "*"
   languageName: unknown
   linkType: soft
+
+"@terenceodonoghue/web-components@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@terenceodonoghue/web-components@npm:1.0.0::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40terenceodonoghue%2Fweb-components%2F1.0.0%2Feeb5f96550c3f9e9f3fc018698e2e6587dd5faf26a348bbc2c283d33c2a7835d"
+  dependencies:
+    polished: ^4.2.2
+  checksum: 3b23bb96d6760765220997bb535c196161e805302d004dfcf5e817f0d4e58f4cddd313a9b4de3d02fbf8a76b7fb4fc2cbcef3419db77a18b6570081502812c19
+  languageName: node
+  linkType: hard
 
 "@testing-library/dom@npm:^8.0.0, @testing-library/dom@npm:^8.3.0":
   version: 8.13.0
@@ -12113,6 +12147,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"is-core-module@npm:^2.9.0":
+  version: 2.9.0
+  resolution: "is-core-module@npm:2.9.0"
+  dependencies:
+    has: ^1.0.3
+  checksum: b27034318b4b462f1c8f1dfb1b32baecd651d891a4e2d1922135daeff4141dfced2b82b07aef83ef54275c4a3526aa38da859223664d0868ca24182badb784ce
+  languageName: node
+  linkType: hard
+
 "is-data-descriptor@npm:^0.1.4":
   version: 0.1.4
   resolution: "is-data-descriptor@npm:0.1.4"
@@ -17098,6 +17141,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"resolve@npm:^1.22.1":
+  version: 1.22.1
+  resolution: "resolve@npm:1.22.1"
+  dependencies:
+    is-core-module: ^2.9.0
+    path-parse: ^1.0.7
+    supports-preserve-symlinks-flag: ^1.0.0
+  bin:
+    resolve: bin/resolve
+  checksum: 07af5fc1e81aa1d866cbc9e9460fbb67318a10fa3c4deadc35c3ad8a898ee9a71a86a65e4755ac3195e0ea0cfbe201eb323ebe655ce90526fd61917313a34e4e
+  languageName: node
+  linkType: hard
+
 "resolve@npm:^2.0.0-next.3":
   version: 2.0.0-next.3
   resolution: "resolve@npm:2.0.0-next.3"
@@ -17118,6 +17174,19 @@ __metadata:
   bin:
     resolve: bin/resolve
   checksum: c79ecaea36c872ee4a79e3db0d3d4160b593f2ca16e031d8283735acd01715a203607e9ded3f91f68899c2937fa0d49390cddbe0fb2852629212f3cda283f4a7
+  languageName: node
+  linkType: hard
+
+"resolve@patch:resolve@^1.22.1#~builtin<compat/resolve>":
+  version: 1.22.1
+  resolution: "resolve@patch:resolve@npm%3A1.22.1#~builtin<compat/resolve>::version=1.22.1&hash=07638b"
+  dependencies:
+    is-core-module: ^2.9.0
+    path-parse: ^1.0.7
+    supports-preserve-symlinks-flag: ^1.0.0
+  bin:
+    resolve: bin/resolve
+  checksum: 5656f4d0bedcf8eb52685c1abdf8fbe73a1603bb1160a24d716e27a57f6cecbe2432ff9c89c2bd57542c3a7b9d14b1882b73bfe2e9d7849c9a4c0b8b39f02b8b
   languageName: node
   linkType: hard
 
