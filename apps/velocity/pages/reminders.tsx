@@ -10,9 +10,9 @@ import {
   Droppable,
   DropResult,
 } from 'react-beautiful-dnd';
-import Card from '~/components/core/Card';
-import Container from '~/components/core/Container';
-import Flex from '~/components/core/Flex';
+import Card from '../components/core/Card';
+import Container from '../components/core/Container';
+import Flex from '../components/core/Flex';
 
 const COLUMNS = ['Service needed', 'Waiting', 'In service', 'Fully serviced'];
 

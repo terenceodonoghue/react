@@ -3,11 +3,11 @@ import { NextPage } from 'next';
 import Head from 'next/head';
 import { em } from 'polished';
 import React from 'react';
-import Card from '~/components/core/Card';
-import Container from '~/components/core/Container';
-import Flex from '~/components/core/Flex';
-import Slider from '~/components/core/Slider';
-import TextField from '~/components/core/TextField';
+import Card from '../components/core/Card';
+import Container from '../components/core/Container';
+import Flex from '../components/core/Flex';
+import Slider from '../components/core/Slider';
+import TextField from '../components/core/TextField';
 
 const VehiclesPage: NextPage = () => {
   const slider: Interpolation<Theme> = {

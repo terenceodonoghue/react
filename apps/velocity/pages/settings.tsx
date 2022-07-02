@@ -1,14 +1,15 @@
+import { Button } from '@terenceodonoghue/react-components/velocity';
 import { NextPage } from 'next';
 import Head from 'next/head';
 import { linearGradient, rgba } from 'polished';
 import React, { ComponentType, FunctionComponent, SVGProps } from 'react';
-import Button from '~/components/core/Button';
-import Card from '~/components/core/Card';
-import Container from '~/components/core/Container';
-import Flex from '~/components/core/Flex';
-import Radio from '~/components/core/Radio';
-import Switch from '~/components/core/Switch';
-import TextField from '~/components/core/TextField';
+import OldButton from '../components/core/Button';
+import Card from '../components/core/Card';
+import Container from '../components/core/Container';
+import Flex from '../components/core/Flex';
+import Radio from '../components/core/Radio';
+import Switch from '../components/core/Switch';
+import TextField from '../components/core/TextField';
 import {
   GitHubIcon,
   InVisionIcon,
@@ -16,7 +17,7 @@ import {
   MediumIcon,
   SlackIcon,
   TwitterIcon,
-} from '~/components/icons';
+} from '../components/icons';
 
 interface IntegrationProps {
   description: string;
@@ -149,9 +150,10 @@ const SettingsPage: NextPage = () => (
             </TextField>
             <TextField inputProps={{ type: 'password' }}>Confirm</TextField>
           </Flex>
-          <Button css={{ margin: '12px 0' }} variant="contained">
+          <OldButton css={{ margin: '12px 0' }} variant="contained">
             Save Changes
-          </Button>
+          </OldButton>
+          <Button css={{ margin: '12px 0' }}>Save Changes</Button>
         </Card>
       </Flex>
       <Flex>

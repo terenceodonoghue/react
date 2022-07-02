@@ -1,6 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { render } from '@testing-library/react';
-import faker from 'faker';
+import { faker } from '@faker-js/faker';
 import { em } from 'polished';
 import React from 'react';
 import ThemeProvider, { defaultTheme } from '~/components/core/ThemeProvider';

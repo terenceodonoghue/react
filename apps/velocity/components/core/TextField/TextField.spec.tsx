@@ -1,5 +1,5 @@
 import React from 'react';
-import faker from 'faker';
+import { faker } from '@faker-js/faker';
 import { render, userEvent } from 'test-utils';
 import TextField from './TextField';
 

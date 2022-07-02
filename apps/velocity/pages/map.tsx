@@ -1,6 +1,6 @@
 import { Interpolation, Theme, useTheme } from '@emotion/react';
 import { Check, Marker } from '@terenceodonoghue/react-icons/velocity';
-import faker from 'faker';
+import { faker } from '@faker-js/faker';
 import { NextPage } from 'next';
 import Head from 'next/head';
 import { em, rgba } from 'polished';

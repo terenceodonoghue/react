@@ -1,4 +1,4 @@
-import faker from 'faker';
+import { faker } from '@faker-js/faker';
 import moment from 'moment';
 import { NextPage } from 'next';
 import Head from 'next/head';

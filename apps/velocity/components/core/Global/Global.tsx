@@ -2,7 +2,7 @@ import normalize from 'normalize.css';
 import { em, stripUnit } from 'polished';
 import React, { FunctionComponent } from 'react';
 import { Global } from '@emotion/react';
-import mq from '~/components/utils/mq';
+import mq from '../../utils/mq';
 
 const GlobalStyles: FunctionComponent = () => (
   <Global
@@ -27,9 +27,6 @@ const GlobalStyles: FunctionComponent = () => (
             fontStyle: 'normal',
             fontWeight: typography.fontWeight.light,
             lineHeight: em(32, typography.fontSize),
-          },
-          html: {
-            fontSize: em(typography.fontSize),
           },
           main: {
             marginLeft: [0, 0, 80],

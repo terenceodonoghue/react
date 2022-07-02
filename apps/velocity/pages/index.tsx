@@ -1,5 +1,5 @@
 import { useTheme } from '@emotion/react';
-import faker from 'faker';
+import { faker } from '@faker-js/faker';
 import { NextPage } from 'next';
 import Head from 'next/head';
 import numeral from 'numeral';
@@ -7,12 +7,12 @@ import { em, rgba } from 'polished';
 import React, { ReactNode } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { Pie, PieChart, PieLabelRenderProps } from 'recharts';
-import Avatar from '~/components/core/Avatar';
-import Card from '~/components/core/Card';
-import Container from '~/components/core/Container';
-import Flex from '~/components/core/Flex';
-import { TABLET } from '~/components/utils/breakpoints';
-import mq from '~/components/utils/mq';
+import Avatar from '../components/core/Avatar';
+import Card from '../components/core/Card';
+import Container from '../components/core/Container';
+import Flex from '../components/core/Flex';
+import { TABLET } from '../components/utils/breakpoints';
+import mq from '../components/utils/mq';
 
 const fixtures = {
   drivers: Array.from(Array(6)).map(() => faker.image.avatar()),

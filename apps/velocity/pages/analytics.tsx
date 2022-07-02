@@ -22,10 +22,10 @@ import {
   YAxis,
 } from 'recharts';
 import React from 'react';
-import Card from '~/components/core/Card';
-import Container from '~/components/core/Container';
-import Flex from '~/components/core/Flex';
-import mq from '~/components/utils/mq';
+import Card from '../components/core/Card';
+import Container from '../components/core/Container';
+import Flex from '../components/core/Flex';
+import mq from '../components/utils/mq';
 
 const AnalyticsPage: NextPage = () => {
   const theme = useTheme();

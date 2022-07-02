@@ -7,20 +7,20 @@ import {
   Settings,
   Vehicles,
 } from '@terenceodonoghue/react-icons/velocity';
-import faker from 'faker';
+import { faker } from '@faker-js/faker';
 import { AppProps } from 'next/app';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { FunctionComponent, useEffect, useState } from 'react';
-import AppBar from '~/components/core/AppBar';
-import Avatar from '~/components/core/Avatar';
-import Button from '~/components/core/Button';
-import Drawer from '~/components/core/Drawer';
-import Flex from '~/components/core/Flex';
-import Global from '~/components/core/Global';
-import ThemeProvider from '~/components/core/ThemeProvider';
-import { MenuIcon, VelocityIcon } from '~/components/icons';
-import mq from '~/components/utils/mq';
+import AppBar from '../components/core/AppBar/AppBar';
+import Avatar from '../components/core/Avatar';
+import Button from '../components/core/Button';
+import Drawer from '../components/core/Drawer';
+import Flex from '../components/core/Flex';
+import Global from '../components/core/Global';
+import ThemeProvider from '../components/core/ThemeProvider';
+import { MenuIcon, VelocityIcon } from '../components/icons';
+import mq from '../components/utils/mq';
 
 const fixtures = {
   avatar: faker.image.avatar(),
