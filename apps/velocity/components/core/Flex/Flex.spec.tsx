@@ -1,6 +1,6 @@
 import React from 'react';
 import { faker } from '@faker-js/faker';
-import { render } from 'test-utils';
+import { render } from '../../utils/test-utils';
 import Flex from './Flex';
 
 describe('Flex', () => {

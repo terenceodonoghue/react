@@ -1,6 +1,6 @@
 import { em, rgba } from 'polished';
 import React, { forwardRef, HTMLAttributes } from 'react';
-import mq from '~/components/utils/mq';
+import mq from '../../utils/mq';
 
 interface CardProps extends HTMLAttributes<HTMLDivElement> {
   heading?: string;

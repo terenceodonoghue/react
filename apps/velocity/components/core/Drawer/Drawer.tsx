@@ -2,8 +2,8 @@ import React, { FunctionComponent, HTMLAttributes } from 'react';
 import { transitions as transition } from 'polished';
 import { useMediaQuery } from 'react-responsive';
 import { animated, config, useSpring } from 'react-spring';
-import Avatar from '~/components/core/Avatar';
-import { DESKTOP } from '~/components/utils/breakpoints';
+import Avatar from '../Avatar';
+import { DESKTOP } from '../../utils/breakpoints';
 import Item, { ItemProps } from './Item';
 
 interface DrawerProps extends HTMLAttributes<HTMLDivElement> {

@@ -1,8 +1,8 @@
 import React from 'react';
 import { faker } from '@faker-js/faker';
 import { rgba } from 'polished';
-import { render } from 'test-utils';
-import { defaultTheme } from '~/components/core/ThemeProvider';
+import { render } from '../../utils/test-utils';
+import { defaultTheme } from '../ThemeProvider';
 import Item from './Item';
 
 describe('Item', () => {

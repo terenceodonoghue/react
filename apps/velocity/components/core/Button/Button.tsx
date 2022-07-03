@@ -50,8 +50,11 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'contained' | 'icon' | 'outlined' | 'text';
 }
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ variant = 'contained', ...props }, ref) => (
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(function Button(
+  { variant = 'contained', ...props },
+  ref,
+) {
+  return (
     <button
       css={[
         ({ transitions, typography }) => ({
@@ -63,7 +66,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           fontWeight: typography.fontWeight.medium,
           justifyContent: 'center',
           transition: `background-color ${transitions.duration.standard}ms
-          ${transitions.easing.easeInOut}`,
+            ${transitions.easing.easeInOut}`,
           '&:disabled': {
             opacity: 0.3,
             pointerEvents: 'none',
@@ -79,7 +82,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       type="button"
       {...props}
     />
-  ),
-);
+  );
+});
 
 export default Button;

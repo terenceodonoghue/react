@@ -1,6 +1,6 @@
 import React from 'react';
-import { render } from 'test-utils';
-import { defaultTheme } from '~/components/core/ThemeProvider';
+import { render } from '../../utils/test-utils';
+import { defaultTheme } from '../ThemeProvider';
 import Button from './Button';
 
 describe('Button', () => {

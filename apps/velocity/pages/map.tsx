@@ -5,16 +5,16 @@ import { NextPage } from 'next';
 import Head from 'next/head';
 import { em, rgba } from 'polished';
 import React from 'react';
-import Avatar from '~/components/core/Avatar';
-import Card from '~/components/core/Card';
-import Container from '~/components/core/Container';
-import Flex from '~/components/core/Flex';
+import Avatar from '../components/core/Avatar';
+import Card from '../components/core/Card';
+import Container from '../components/core/Container';
+import Flex from '../components/core/Flex';
 import {
   ApplePayIcon,
   MastercardIcon,
   PayPalIcon,
   VisaIcon,
-} from '~/components/icons';
+} from '../components/icons';
 
 const fixtures = {
   avatar: faker.image.avatar(),

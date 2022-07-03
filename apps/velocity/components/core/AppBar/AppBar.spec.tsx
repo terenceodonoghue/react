@@ -1,6 +1,6 @@
 import React from 'react';
 import { faker } from '@faker-js/faker';
-import { render } from 'test-utils';
+import { render } from '../../utils/test-utils';
 import AppBar from './AppBar';
 
 describe('AppBar', () => {

@@ -1,5 +1,5 @@
 import React, { FunctionComponent, HTMLAttributes } from 'react';
-import mq from '~/components/utils/mq';
+import mq from '../../utils/mq';
 
 interface ContainerProps extends HTMLAttributes<HTMLDivElement> {
   heading?: string;

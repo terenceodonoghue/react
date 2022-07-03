@@ -1,29 +1,67 @@
-import { useTheme } from '@emotion/react';
 import { faker } from '@faker-js/faker';
 import { NextPage } from 'next';
+import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import numeral from 'numeral';
 import { em, rgba } from 'polished';
-import React, { ReactNode } from 'react';
-import { useMediaQuery } from 'react-responsive';
-import { Pie, PieChart, PieLabelRenderProps } from 'recharts';
+import React, { useMemo } from 'react';
 import Avatar from '../components/core/Avatar';
 import Card from '../components/core/Card';
 import Container from '../components/core/Container';
 import Flex from '../components/core/Flex';
-import { TABLET } from '../components/utils/breakpoints';
 import mq from '../components/utils/mq';
 
-const fixtures = {
-  drivers: Array.from(Array(6)).map(() => faker.image.avatar()),
-};
+const OperatingScore = dynamic(() => import('../components'), {
+  ssr: false,
+});
 
 const IndexPage: NextPage = () => {
-  const isMobile = useMediaQuery({
-    maxWidth: TABLET - 1,
-  });
-
-  const theme = useTheme();
+  const fixtures = useMemo(() => {
+    return [
+      {
+        avatar: faker.image.avatar(),
+        name: 'Bebop',
+        vehicle: 'Volvo Intellisafe',
+        earnings: 6432,
+        distance: 1232,
+      },
+      {
+        avatar: faker.image.avatar(),
+        name: 'Gran Tesoro',
+        vehicle: 'Chevrolet Bolt',
+        earnings: 5342,
+        distance: 945,
+      },
+      {
+        avatar: faker.image.avatar(),
+        name: 'Belafonte',
+        vehicle: 'Infiniti Q50S',
+        earnings: 5133,
+        distance: 834,
+      },
+      {
+        avatar: faker.image.avatar(),
+        name: 'Chester',
+        vehicle: 'Audi RS 7',
+        earnings: 4755,
+        distance: 812,
+      },
+      {
+        avatar: faker.image.avatar(),
+        name: 'Expedia',
+        vehicle: 'Tesla Model X',
+        earnings: 4140,
+        distance: 724,
+      },
+      {
+        avatar: faker.image.avatar(),
+        name: 'Aeolus',
+        vehicle: 'Tesla Model S',
+        earnings: 3323,
+        distance: 466,
+      },
+    ];
+  }, []);
 
   return (
     <>
@@ -45,91 +83,15 @@ const IndexPage: NextPage = () => {
                     marginRight: -4,
                   })}
                 >
-                  <PieChart
-                    height={isMobile ? 120 : 156}
-                    width={isMobile ? 160 : 225}
+                  <div
+                    css={mq({
+                      flexShrink: 0,
+                      height: [120, 156],
+                      width: [180, 255],
+                    })}
                   >
-                    <Pie
-                      cy={isMobile ? 80 : 100}
-                      data={Array(isMobile ? 27 : 41)
-                        .fill(isMobile ? 27 : 41)
-                        .map(() => ({
-                          name: 'score',
-                          value: 1,
-                          fill: theme.palette.secondary,
-                        }))}
-                      dataKey="value"
-                      innerRadius={isMobile ? 46 : 66}
-                      outerRadius={isMobile ? 49 : 69}
-                      startAngle={190}
-                      paddingAngle={isMobile ? 5 : 3}
-                      endAngle={-10}
-                    />
-                    <Pie
-                      cy={isMobile ? 80 : 100}
-                      data={Array(isMobile ? 27 : 41)
-                        .fill(isMobile ? 27 : 41)
-                        .map((_, i) => ({
-                          name: 'score',
-                          value: 1,
-                          fill: (() => {
-                            const value = i + 1;
-                            if (value + (1 % 2)) {
-                              if (value <= (isMobile ? 22 : 33)) {
-                                return theme.palette.accent;
-                              }
-
-                              return '#e0e7ff';
-                            }
-
-                            return theme.palette.neutral[50];
-                          })(),
-                        }))}
-                      dataKey="value"
-                      paddingAngle={isMobile ? 5 : 3}
-                      innerRadius={isMobile ? 55 : 75}
-                      outerRadius={isMobile ? 81 : 101}
-                      startAngle={190}
-                      endAngle={-10}
-                      label={({
-                        cx,
-                        cy,
-                        index,
-                      }: PieLabelRenderProps): ReactNode =>
-                        index === 0 ? (
-                          <>
-                            <text
-                              fill="#2e384d"
-                              fontFamily="Rubik-Light, Rubik"
-                              fontSize={isMobile ? 36 : 48}
-                              fontWeight="300"
-                              letterSpacing="-0.600000024"
-                              x={cx}
-                              y={(cy as number) - 5}
-                            >
-                              <tspan textAnchor="middle">86</tspan>
-                            </text>
-                            <text
-                              dominantBaseline="central"
-                              fill="#8798ad"
-                              fontFamily="Rubik-Regular, Rubik"
-                              fontSize="13"
-                              fontWeight="normal"
-                              letterSpacing="1.213333"
-                            >
-                              <tspan dy={15} textAnchor="middle" x={cx} y={cy}>
-                                OPERATING
-                              </tspan>
-                              <tspan dy={30} textAnchor="middle" x={cx} y={cy}>
-                                SCORE
-                              </tspan>
-                            </text>
-                          </>
-                        ) : null
-                      }
-                      labelLine={false}
-                    />
-                  </PieChart>
+                    <OperatingScore />
+                  </div>
                   <div
                     css={mq({ marginTop: [0, 12, 0], marginLeft: [20, 0, 60] })}
                   >
@@ -183,111 +145,70 @@ const IndexPage: NextPage = () => {
         >
           <Card css={{ flex: 1 }} heading="Top Drivers">
             <div css={{ marginBottom: -12 }}>
-              {[
-                {
-                  src: fixtures.drivers[0],
-                  name: 'Bebop',
-                  vehicle: 'Volvo Intellisafe',
-                  earnings: 6432,
-                  distance: 1232,
-                },
-                {
-                  src: fixtures.drivers[1],
-                  name: 'Gran Tesoro',
-                  vehicle: 'Chevrolet Bolt',
-                  earnings: 5342,
-                  distance: 945,
-                },
-                {
-                  src: fixtures.drivers[2],
-                  name: 'Belafonte',
-                  vehicle: 'Infiniti Q50S',
-                  earnings: 5133,
-                  distance: 834,
-                },
-                {
-                  src: fixtures.drivers[3],
-                  name: 'Chester',
-                  vehicle: 'Audi RS 7',
-                  earnings: 4755,
-                  distance: 812,
-                },
-                {
-                  src: fixtures.drivers[4],
-                  name: 'Expedia',
-                  vehicle: 'Tesla Model X',
-                  earnings: 4140,
-                  distance: 724,
-                },
-                {
-                  src: fixtures.drivers[5],
-                  name: 'Aeolus',
-                  vehicle: 'Tesla Model S',
-                  earnings: 3323,
-                  distance: 466,
-                },
-              ].map(({ distance, earnings, name, src, vehicle }, i) => (
-                <Flex
-                  css={{
-                    lineHeight: '1.47em',
-                    margin: '12px 0',
-                    position: 'relative',
-                  }}
-                  key={`${earnings}-${distance}`}
-                >
-                  <div
-                    css={({ palette, typography }) => ({
-                      margin: '0 16px 0 0',
-                      '&::after': {
-                        alignItems: 'center',
-                        background: palette.neutral[50],
-                        borderRadius: '50%',
-                        boxShadow: `0 3px 10px ${rgba(palette.accent, 0.3)}`,
-                        color: palette.neutral[700],
-                        content: `'${i + 1}'`,
-                        display: 'flex',
-                        fontSize: em(10, typography.fontSize),
-                        fontWeight: typography.fontWeight.medium,
-                        height: 16,
-                        justifyContent: 'center',
-                        left: 32,
-                        position: 'absolute',
-                        top: 0,
-                        width: 16,
-                      },
-                    })}
+              {fixtures.map(
+                ({ avatar, distance, earnings, name, vehicle }, i) => (
+                  <Flex
+                    css={{
+                      lineHeight: '1.47em',
+                      margin: '12px 0',
+                      position: 'relative',
+                    }}
+                    key={`${earnings}-${distance}`}
                   >
-                    <Avatar
-                      alt={faker.name.findName()}
-                      css={{ height: 48, verticalAlign: 'middle', width: 48 }}
-                      src={src}
-                      variant="rounded"
-                    />
-                  </div>
-                  <div css={{ flex: 1 }}>
-                    <Flex css={{ flex: 1, justifyContent: 'space-between' }}>
-                      <span
-                        css={({ typography }) => ({
+                    <div
+                      css={({ palette, typography }) => ({
+                        margin: '0 16px 0 0',
+                        '&::after': {
+                          alignItems: 'center',
+                          background: palette.neutral[50],
+                          borderRadius: '50%',
+                          boxShadow: `0 3px 10px ${rgba(palette.accent, 0.3)}`,
+                          color: palette.neutral[700],
+                          content: `'${i + 1}'`,
+                          display: 'flex',
+                          fontSize: em(10, typography.fontSize),
                           fontWeight: typography.fontWeight.medium,
-                        })}
-                      >
-                        {name}
-                      </span>
-                      <span>{numeral(earnings).format('$0')}</span>
-                    </Flex>
-                    <Flex
-                      css={({ palette }) => ({
-                        color: palette.neutral[600],
-                        flex: 1,
-                        justifyContent: 'space-between',
+                          height: 16,
+                          justifyContent: 'center',
+                          left: 32,
+                          position: 'absolute',
+                          top: 0,
+                          width: 16,
+                        },
                       })}
                     >
-                      <span>{vehicle}</span>
-                      <span>{numeral(distance).format('0,0')} miles</span>
-                    </Flex>
-                  </div>
-                </Flex>
-              ))}
+                      <Avatar
+                        alt={name}
+                        css={{ height: 48, verticalAlign: 'middle', width: 48 }}
+                        src={avatar}
+                        variant="rounded"
+                      />
+                    </div>
+                    <div css={{ flex: 1 }}>
+                      <Flex css={{ flex: 1, justifyContent: 'space-between' }}>
+                        <span
+                          css={({ typography }) => ({
+                            fontWeight: typography.fontWeight.medium,
+                          })}
+                        >
+                          {name}
+                        </span>
+                        <span>{numeral(earnings).format('$0')}</span>
+                      </Flex>
+                      <Flex
+                        css={({ palette }) => ({
+                          color: palette.neutral[600],
+                          flex: 1,
+                          justifyContent: 'space-between',
+                        })}
+                      >
+                        <span>{vehicle}</span>
+                        <span>{numeral(distance).format('0,0')} miles</span>
+                      </Flex>
+                    </div>
+                  </Flex>
+                ),
+              )}
             </div>
           </Card>
           <Card css={{ flex: 1 }} heading="Trips by type" />

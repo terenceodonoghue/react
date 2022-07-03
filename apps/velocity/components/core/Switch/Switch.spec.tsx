@@ -1,6 +1,6 @@
 import React from 'react';
 import { faker } from '@faker-js/faker';
-import { render, userEvent } from 'test-utils';
+import { render, userEvent } from '../../utils/test-utils';
 import Switch from './Switch';
 
 describe('Switch', () => {

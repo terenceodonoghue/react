@@ -3,7 +3,7 @@ import { render } from '@testing-library/react';
 import { faker } from '@faker-js/faker';
 import { em } from 'polished';
 import React from 'react';
-import ThemeProvider, { defaultTheme } from '~/components/core/ThemeProvider';
+import ThemeProvider, { defaultTheme } from '../ThemeProvider';
 import Global from './Global';
 
 jest.mock('normalize.css');

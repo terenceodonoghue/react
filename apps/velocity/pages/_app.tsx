@@ -9,33 +9,36 @@ import {
 } from '@terenceodonoghue/react-icons/velocity';
 import { faker } from '@faker-js/faker';
 import { AppProps } from 'next/app';
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React, { FunctionComponent, useEffect, useState } from 'react';
+import React, { FunctionComponent, useEffect, useMemo, useState } from 'react';
 import AppBar from '../components/core/AppBar/AppBar';
 import Avatar from '../components/core/Avatar';
 import Button from '../components/core/Button';
-import Drawer from '../components/core/Drawer';
+import { DrawerItem } from '../components/core/Drawer';
 import Flex from '../components/core/Flex';
 import Global from '../components/core/Global';
 import ThemeProvider from '../components/core/ThemeProvider';
 import { MenuIcon, VelocityIcon } from '../components/icons';
 import mq from '../components/utils/mq';
 
-const fixtures = {
-  avatar: faker.image.avatar(),
-  city: faker.address.city(),
-  email: faker.internet.exampleEmail(),
-  name: faker.name.findName(),
-  phone: faker.phone.phoneNumberFormat(),
-  jobTitle: faker.name.jobTitle(),
-  sentences: faker.lorem.sentences(),
-  state: faker.address.stateAbbr(),
-};
+const Drawer = dynamic(() => import('../components/core/Drawer'), {
+  ssr: false,
+});
 
 const App: FunctionComponent<AppProps> = ({ Component, pageProps }) => {
   const router = useRouter();
   const [drawerOpen, toggleDrawer] = useState(false);
+
+  const fixtures = useMemo(() => {
+    faker.seed(123);
+
+    return {
+      avatar: faker.image.avatar(),
+      name: faker.name.findName(),
+    };
+  }, []);
 
   useEffect(() => {
     const handleRouteChange = () => {
@@ -170,67 +173,67 @@ const App: FunctionComponent<AppProps> = ({ Component, pageProps }) => {
       </AppBar>
       <Drawer avatar={fixtures.avatar} name={fixtures.name} open={drawerOpen}>
         <Link href="/">
-          <Drawer.Item
+          <DrawerItem
             compact={!drawerOpen}
             icon={Dashboard}
             selected={router.pathname === '/'}
           >
             Overview
-          </Drawer.Item>
+          </DrawerItem>
         </Link>
         <Link href="/analytics">
-          <Drawer.Item
+          <DrawerItem
             compact={!drawerOpen}
             icon={Analytics}
             selected={router.pathname === '/analytics'}
           >
             Analytics
-          </Drawer.Item>
+          </DrawerItem>
         </Link>
         <Link href="/vehicles">
-          <Drawer.Item
+          <DrawerItem
             compact={!drawerOpen}
             icon={Vehicles}
             selected={router.pathname === '/vehicles'}
           >
             Vehicles
-          </Drawer.Item>
+          </DrawerItem>
         </Link>
         <Link href="/reminders">
-          <Drawer.Item
+          <DrawerItem
             compact={!drawerOpen}
             icon={Service}
             selected={router.pathname === '/reminders'}
           >
             Service
-          </Drawer.Item>
+          </DrawerItem>
         </Link>
         <Link href="/map">
-          <Drawer.Item
+          <DrawerItem
             compact={!drawerOpen}
             icon={Map}
             selected={router.pathname === '/map'}
           >
             Map
-          </Drawer.Item>
+          </DrawerItem>
         </Link>
         <Link href="/chat">
-          <Drawer.Item
+          <DrawerItem
             compact={!drawerOpen}
             icon={Mail}
             selected={router.pathname === '/chat'}
           >
             Chat
-          </Drawer.Item>
+          </DrawerItem>
         </Link>
         <Link href="/settings">
-          <Drawer.Item
+          <DrawerItem
             compact={!drawerOpen}
             icon={Settings}
             selected={router.pathname === '/settings'}
           >
             Settings
-          </Drawer.Item>
+          </DrawerItem>
         </Link>
       </Drawer>
       <main>
