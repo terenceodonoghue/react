@@ -15,10 +15,10 @@ import { useRouter } from 'next/router';
 import React, { FunctionComponent, useEffect, useMemo, useState } from 'react';
 import AppBar from '../components/core/AppBar/AppBar';
 import Avatar from '../components/core/Avatar';
-import Button from '../components/core/Button';
 import { DrawerItem } from '../components/core/Drawer';
 import Flex from '../components/core/Flex';
 import Global from '../components/core/Global';
+import IconButton from '../components/core/IconButton';
 import ThemeProvider from '../components/core/ThemeProvider';
 import { MenuIcon, VelocityIcon } from '../components/icons';
 import mq from '../components/utils/mq';
@@ -124,7 +124,7 @@ const App: FunctionComponent<AppProps> = ({ Component, pageProps }) => {
       </div>
       <AppBar>
         <Flex css={{ alignItems: 'center', flex: 1 }}>
-          <Button
+          <IconButton
             aria-label="menu"
             css={({ palette, zIndex }) => ({
               color: palette.neutral[400],
@@ -133,10 +133,9 @@ const App: FunctionComponent<AppProps> = ({ Component, pageProps }) => {
               zIndex: zIndex.menuButton,
             })}
             onClick={() => toggleDrawer(!drawerOpen)}
-            variant="icon"
           >
             <MenuIcon color="currentColor" css={{ height: 16, width: 18 }} />
-          </Button>
+          </IconButton>
           <Flex
             css={mq({
               alignItems: 'inherit',
@@ -156,10 +155,9 @@ const App: FunctionComponent<AppProps> = ({ Component, pageProps }) => {
             >
               <VelocityIcon css={{ height: 28, width: 102 }} />
             </Flex>
-            <Button
+            <IconButton
               aria-label="user"
               css={{ borderRadius: '50%', flexGrow: 0 }}
-              variant="icon"
             >
               <Avatar
                 alt={fixtures.name}
@@ -167,7 +165,7 @@ const App: FunctionComponent<AppProps> = ({ Component, pageProps }) => {
                 src={fixtures.avatar}
                 variant="rounded"
               />
-            </Button>
+            </IconButton>
           </Flex>
         </Flex>
       </AppBar>
