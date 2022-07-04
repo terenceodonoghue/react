@@ -1,10 +1,5 @@
 import React, { ButtonHTMLAttributes, forwardRef } from 'react';
-import { Interpolation, Theme } from '@emotion/react';
-import { darken, rgba } from 'polished';
-
-interface Styles {
-  [name: string]: Interpolation<Theme>;
-}
+import { rgba } from 'polished';
 
 const Button = forwardRef<
   HTMLButtonElement,
