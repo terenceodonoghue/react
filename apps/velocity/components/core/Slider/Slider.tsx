@@ -14,8 +14,8 @@ interface SliderProps extends LabelHTMLAttributes<HTMLLabelElement> {
 }
 
 const Slider = forwardRef<HTMLLabelElement, SliderProps>(
-  ({ inputProps, inputRef, primary, secondary, ...props }, ref) => (
-    <label data-testid="slider" ref={ref} {...props}>
+  ({ id, inputProps, inputRef, primary, secondary, ...props }, ref) => (
+    <label data-testid="slider" htmlFor={id} ref={ref} {...props}>
       {(primary || secondary) && (
         <div
           css={{
@@ -77,6 +77,7 @@ const Slider = forwardRef<HTMLLabelElement, SliderProps>(
           },
         })}
         data-testid="slider-input"
+        id={id}
         ref={inputRef}
         type="range"
         {...inputProps}

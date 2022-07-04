@@ -3,7 +3,6 @@ import { NextPage } from 'next';
 import Head from 'next/head';
 import { linearGradient, rgba } from 'polished';
 import React, { ComponentType, FunctionComponent, SVGProps } from 'react';
-import OldButton from '../components/core/Button';
 import Card from '../components/core/Card';
 import Container from '../components/core/Container';
 import Flex from '../components/core/Flex';
@@ -47,6 +46,7 @@ const Integration: FunctionComponent<IntegrationProps> = ({
   >
     <Flex
       css={({ palette }) => ({
+        flexShrink: 0,
         alignItems: 'center',
         backgroundColor: rgba(palette.neutral[700], 0.1),
         borderRadius: '50%',
@@ -150,10 +150,7 @@ const SettingsPage: NextPage = () => (
             </TextField>
             <TextField inputProps={{ type: 'password' }}>Confirm</TextField>
           </Flex>
-          <OldButton css={{ margin: '12px 0' }} variant="contained">
-            Save Changes
-          </OldButton>
-          <Button css={{ margin: '12px 0' }}>Save Changes</Button>
+          <Button css={{ margin: '12px 0', width: 200 }}>Save Changes</Button>
         </Card>
       </Flex>
       <Flex>

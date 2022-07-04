@@ -14,7 +14,7 @@ interface SwitchProps extends LabelHTMLAttributes<HTMLLabelElement> {
 }
 
 const Switch = forwardRef<HTMLLabelElement, SwitchProps>(
-  ({ inputProps, inputRef, primary, secondary, ...props }, ref) => (
+  ({ id, inputProps, inputRef, primary, secondary, ...props }, ref) => (
     <label
       css={{
         alignItems: 'center',
@@ -23,6 +23,7 @@ const Switch = forwardRef<HTMLLabelElement, SwitchProps>(
         userSelect: 'none',
       }}
       data-testid="switch"
+      htmlFor={id}
       ref={ref}
       {...props}
     >
@@ -55,6 +56,7 @@ const Switch = forwardRef<HTMLLabelElement, SwitchProps>(
       <input
         css={{ height: 0, margin: 0, width: 0, opacity: 0 }}
         data-testid="switch-input"
+        id={id}
         ref={inputRef}
         type="checkbox"
         {...inputProps}

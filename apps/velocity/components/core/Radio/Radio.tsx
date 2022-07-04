@@ -12,7 +12,7 @@ interface RadioProps extends LabelHTMLAttributes<HTMLLabelElement> {
 }
 
 const Radio = forwardRef<HTMLLabelElement, RadioProps>(
-  ({ children, inputProps, inputRef, ...props }, ref) => (
+  ({ children, id, inputProps, inputRef, ...props }, ref) => (
     <label
       css={({ typography }) => ({
         alignItems: 'center',
@@ -21,6 +21,7 @@ const Radio = forwardRef<HTMLLabelElement, RadioProps>(
         fontWeight: typography.fontWeight.medium,
       })}
       data-testid="radio"
+      htmlFor={id}
       ref={ref}
       {...props}
     >
@@ -32,6 +33,7 @@ const Radio = forwardRef<HTMLLabelElement, RadioProps>(
           width: 0,
         }}
         data-testid="radio-input"
+        id={id}
         ref={inputRef}
         type="radio"
         {...inputProps}

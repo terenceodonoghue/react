@@ -11,7 +11,7 @@ import Container from '../components/core/Container';
 import Flex from '../components/core/Flex';
 import mq from '../components/utils/mq';
 
-const OperatingScore = dynamic(() => import('../components'), {
+const OperatingScore = dynamic(() => import('../components/OperatingScore'), {
   ssr: false,
 });
 

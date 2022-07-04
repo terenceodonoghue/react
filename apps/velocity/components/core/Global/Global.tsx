@@ -1,5 +1,5 @@
 import normalize from 'normalize.css';
-import { em, stripUnit } from 'polished';
+import { em } from 'polished';
 import React, { FunctionComponent } from 'react';
 import { Global } from '@emotion/react';
 import mq from '../../utils/mq';
@@ -20,7 +20,6 @@ const GlobalStyles: FunctionComponent = () => (
             backgroundColor: palette.neutral[100],
             color: palette.neutral[900],
             fontFamily: typography.fontFamily,
-            lineHeight: stripUnit(em(22, typography.fontSize)),
           },
           h1: {
             fontSize: em(28, typography.fontSize),

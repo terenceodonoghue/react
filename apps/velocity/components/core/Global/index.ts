@@ -1,1 +1,3 @@
-export { default } from './Global';
+import Global from './Global';
+
+export default Global;

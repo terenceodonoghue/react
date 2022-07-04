@@ -12,7 +12,7 @@ interface TextFieldProps extends LabelHTMLAttributes<HTMLLabelElement> {
 }
 
 const TextField = forwardRef<HTMLLabelElement, TextFieldProps>(
-  ({ children, inputProps, inputRef, ...props }, ref) => (
+  ({ children, id, inputProps, inputRef, ...props }, ref) => (
     <label
       css={[
         ({ palette, typography }) => ({
@@ -26,6 +26,7 @@ const TextField = forwardRef<HTMLLabelElement, TextFieldProps>(
         }),
       ]}
       data-testid="textfield"
+      htmlFor={id}
       ref={ref}
       {...props}
     >
@@ -59,6 +60,7 @@ const TextField = forwardRef<HTMLLabelElement, TextFieldProps>(
           },
         })}
         data-testid="textfield-input"
+        id={id}
         ref={inputRef}
         {...inputProps}
       />
