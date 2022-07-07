@@ -18,16 +18,38 @@ A UI kit for an imaginary self-driving car company, provided by [InVision](https
 
 ## Button
 
+Buttons allow users to trigger an action or event with a single click.
+
 ```javascript
 import { Button } from '@terenceodonoghue/react-components/velocity';
 ```
 
-The `Button` comes with three variants: contained (default), outlined, and text.
+### Variants
+
+There are three kinds available: contained (default), outlined, and text.
 
 <Canvas>
   <Story name="Button">
     <Button variant="contained">Contained</Button>
     <Button variant="outlined">Outlined</Button>
     <Button variant="text">Text</Button>
+  </Story>
+</Canvas>
+
+### States
+
+The `disabled` attribute prevents user interaction.
+
+<Canvas>
+  <Story name="Disabled">
+    <Button variant="contained" disabled>
+      Contained
+    </Button>
+    <Button variant="outlined" disabled>
+      Outlined
+    </Button>
+    <Button variant="text" disabled>
+      Text
+    </Button>
   </Story>
 </Canvas>
