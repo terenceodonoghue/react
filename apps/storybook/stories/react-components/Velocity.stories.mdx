@@ -1,7 +1,16 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
 import { Button } from '@terenceodonoghue/react-components/velocity';
 
-<Meta title="Components/Velocity" />
+<Meta
+  title="Components/Velocity"
+  decorators={[
+    (Story) => (
+      <div style={{ display: 'flex', gap: 32, justifyContent: 'center' }}>
+        <Story />
+      </div>
+    ),
+  ]}
+/>
 
 # Velocity
 
@@ -13,8 +22,12 @@ A UI kit for an imaginary self-driving car company, provided by [InVision](https
 import { Button } from '@terenceodonoghue/react-components/velocity';
 ```
 
+The `Button` comes with three variants: contained (default), outlined, and text.
+
 <Canvas>
   <Story name="Button">
-    <Button>Button Text</Button>
+    <Button variant="contained">Contained</Button>
+    <Button variant="outlined">Outlined</Button>
+    <Button variant="text">Text</Button>
   </Story>
 </Canvas>
