@@ -1,0 +1,20 @@
+import { Meta, Title, IconGallery, IconItem } from '@storybook/addon-docs';
+import * as Velocity from '@terenceodonoghue/react-icons/velocity';
+
+<Meta title="Icons/Velocity" />
+
+# Velocity
+
+Icons for the Velocity UI kit, provided by [InVision](https://www.invisionapp.com/inside-design/design-resources/design-system-dashboard-ui-kit/).
+
+```javascript
+import /* { IconName } */  from '@terenceodonoghue/react-icons/velocity';
+```
+
+<IconGallery>
+  {Object.entries(Velocity).map(([name, Icon]) => (
+    <IconItem name={name}>
+      <Icon />
+    </IconItem>
+  ))}
+</IconGallery>
