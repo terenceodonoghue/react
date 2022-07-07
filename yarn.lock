@@ -5288,15 +5288,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@terenceodonoghue/react-components@npm:^1.0.2":
-  version: 1.0.2
-  resolution: "@terenceodonoghue/react-components@npm:1.0.2::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40terenceodonoghue%2Freact-components%2F1.0.2%2F727e38ab13cc829bcb33e0df82727c9ffb04fbaadff615d2610e539c9627b757"
+"@terenceodonoghue/react-components@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "@terenceodonoghue/react-components@npm:1.1.0::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40terenceodonoghue%2Freact-components%2F1.1.0%2Fedbad6648c376a9adaa217a319a13b88ccb04d6a8a1464ea252fa1ffd91500b1"
   dependencies:
-    "@terenceodonoghue/web-components": "npm:^1.0.2"
+    "@terenceodonoghue/web-components": "npm:^1.1.0"
   peerDependencies:
     react: "*"
     react-dom: "*"
-  checksum: 470b1c1786f18516cb39623327768b9afb406ccf2361897f19dd9c6ac116c3eff66c8cadafaa051a776e7c237fade9e1f1b0024375aea0e4d305f2c5fa013a30
+  checksum: f64ca591796a0b59dcd9d54113370ea9e9de58cf2c004b218e727edcb491eb95da532675fc97f4895a1947189c1361637322488173b90c293407f143486fe630
   languageName: node
   linkType: hard
 
@@ -5304,6 +5304,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@terenceodonoghue/react-hooks@workspace:packages/react-hooks"
   dependencies:
+    "@terenceodonoghue/react-components": "npm:^1.1.0"
     eslint: "npm:^8.13.0"
     rimraf: "npm:^3.0.2"
     typescript: "npm:^4.5.5"
@@ -5366,7 +5367,7 @@ __metadata:
     "@storybook/manager-webpack5": "npm:next"
     "@storybook/react": "npm:^6.5.7"
     "@storybook/testing-library": "npm:^0.0.11"
-    "@terenceodonoghue/react-components": "npm:^1.0.2"
+    "@terenceodonoghue/react-components": "npm:^1.1.0"
     "@terenceodonoghue/react-hooks": "workspace:^"
     "@terenceodonoghue/react-icons": "npm:^1.1.1"
     babel-loader: "npm:^8.2.4"
@@ -5389,7 +5390,7 @@ __metadata:
     "@faker-js/faker": "npm:^7.3.0"
     "@svgr/cli": "npm:^5.5.0"
     "@svgr/webpack": "npm:^5.5.0"
-    "@terenceodonoghue/react-components": "npm:^1.0.2"
+    "@terenceodonoghue/react-components": "npm:^1.1.0"
     "@terenceodonoghue/react-icons": "npm:^1.1.1"
     "@testing-library/jest-dom": "npm:^5.14.1"
     "@testing-library/react": "npm:^12.1.1"
@@ -5429,12 +5430,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@terenceodonoghue/web-components@npm:^1.0.2":
-  version: 1.0.2
-  resolution: "@terenceodonoghue/web-components@npm:1.0.2::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40terenceodonoghue%2Fweb-components%2F1.0.2%2F7b2d044aa175162a230bfd6db62db2efde5a8a52e1546613ca2e6d847b22f411"
+"@terenceodonoghue/web-components@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "@terenceodonoghue/web-components@npm:1.1.0::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40terenceodonoghue%2Fweb-components%2F1.1.0%2F82a858539f3b381b07b1fa3786b79bb6420b17c6252a5ede6b9f0cd7518181f0"
   dependencies:
     polished: "npm:^4.2.2"
-  checksum: 7fb9f63b0bd1ff1e0faf75ce96954bec6280f1a97af9bd5070716145b7143838ba5a62e10197ed46305764986169148334213b211793b0d0ab0f71b210a1b9ce
+  checksum: 44a620386beb3e0a821d9c26591fa66e3dc0d73dfe0829e1b47e865058900eae8f8ee17ab220055b1c30b44d92e1d86209c4dfbea5254b3739722c48a424a376
   languageName: node
   linkType: hard
 

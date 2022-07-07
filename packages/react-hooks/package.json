@@ -28,5 +28,8 @@
     "react": "*",
     "react-dom": "*"
   },
-  "packageManager": "yarn@3.1.1"
+  "packageManager": "yarn@3.1.1",
+  "dependencies": {
+    "@terenceodonoghue/react-components": "^1.1.0"
+  }
 }
