@@ -1,5 +1,5 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
-import { Button } from '@terenceodonoghue/react-components/velocity';
+import { Button, TextField } from '@terenceodonoghue/react-components/velocity';
 
 <Meta
   title="Components/Velocity"
@@ -24,24 +24,24 @@ Buttons allow users to trigger an action or event with a single click.
 import { Button } from '@terenceodonoghue/react-components/velocity';
 ```
 
-### Variants
+### Props
 
-There are three kinds available: contained (default), outlined, and text.
+The `variant` prop defines one of three styles: contained (default), outlined, or text.
 
 <Canvas>
-  <Story name="Button">
+  <Story name="ButtonVariants">
     <Button variant="contained">Contained</Button>
     <Button variant="outlined">Outlined</Button>
     <Button variant="text">Text</Button>
   </Story>
 </Canvas>
 
-### States
+### Attributes
 
-The `disabled` attribute prevents user interaction.
+Standard [button](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button) attributes are supported, e.g. `disabled`.
 
 <Canvas>
-  <Story name="Disabled">
+  <Story name="ButtonAttributes">
     <Button variant="contained" disabled>
       Contained
     </Button>
@@ -51,5 +51,35 @@ The `disabled` attribute prevents user interaction.
     <Button variant="text" disabled>
       Text
     </Button>
+  </Story>
+</Canvas>
+
+## TextField
+
+Text fields let users enter and edit text.
+
+```javascript
+import { TextField } from '@terenceodonoghue/react-components/velocity';
+```
+
+### Props
+
+Text can be placed above the input using the `label` prop.
+
+<Canvas>
+  <Story name="TextFieldLabel">
+    <TextField label="Label" />
+  </Story>
+</Canvas>
+
+### Attributes
+
+Standard [input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input) attributes are supported, e.g. `placeholder`, `type` or `disabled`.
+
+<Canvas>
+  <Story name="TextFieldAttributes">
+    <TextField label="Email Address" placeholder="samplemail@mail.com" />
+    <TextField label="Password" type="password" />
+    <TextField label="Disabled" disabled />
   </Story>
 </Canvas>
