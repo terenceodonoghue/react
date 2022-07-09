@@ -5300,6 +5300,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@terenceodonoghue/react-components@npm:^1.2.1":
+  version: 1.2.1
+  resolution: "@terenceodonoghue/react-components@npm:1.2.1::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40terenceodonoghue%2Freact-components%2F1.2.1%2F043ac31522b0f4139a618454e20a1ba91eb4ab42925fd76bc512741dbebfd4d2"
+  dependencies:
+    "@terenceodonoghue/web-components": "npm:^1.2.1"
+  peerDependencies:
+    react: "*"
+    react-dom: "*"
+  checksum: a67d06a36f6a6c5fc7de227247a243844a9fd1868da8929d51f551bcf2334e7b2e76b532ab9c1dab6111c025cfafd0aa4a76fa253fd7d1bdefedf96cfd10a2df
+  languageName: node
+  linkType: hard
+
 "@terenceodonoghue/react-hooks@workspace:^, @terenceodonoghue/react-hooks@workspace:packages/react-hooks":
   version: 0.0.0-use.local
   resolution: "@terenceodonoghue/react-hooks@workspace:packages/react-hooks"
@@ -5367,7 +5379,7 @@ __metadata:
     "@storybook/manager-webpack5": "npm:next"
     "@storybook/react": "npm:^6.5.7"
     "@storybook/testing-library": "npm:^0.0.11"
-    "@terenceodonoghue/react-components": "npm:^1.1.0"
+    "@terenceodonoghue/react-components": "npm:^1.2.1"
     "@terenceodonoghue/react-hooks": "workspace:^"
     "@terenceodonoghue/react-icons": "npm:^1.1.1"
     babel-loader: "npm:^8.2.4"
@@ -5390,7 +5402,7 @@ __metadata:
     "@faker-js/faker": "npm:^7.3.0"
     "@svgr/cli": "npm:^5.5.0"
     "@svgr/webpack": "npm:^5.5.0"
-    "@terenceodonoghue/react-components": "npm:^1.1.0"
+    "@terenceodonoghue/react-components": "npm:^1.2.1"
     "@terenceodonoghue/react-icons": "npm:^1.1.1"
     "@testing-library/jest-dom": "npm:^5.14.1"
     "@testing-library/react": "npm:^12.1.1"
@@ -5436,6 +5448,15 @@ __metadata:
   dependencies:
     polished: "npm:^4.2.2"
   checksum: 44a620386beb3e0a821d9c26591fa66e3dc0d73dfe0829e1b47e865058900eae8f8ee17ab220055b1c30b44d92e1d86209c4dfbea5254b3739722c48a424a376
+  languageName: node
+  linkType: hard
+
+"@terenceodonoghue/web-components@npm:^1.2.1":
+  version: 1.2.1
+  resolution: "@terenceodonoghue/web-components@npm:1.2.1::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40terenceodonoghue%2Fweb-components%2F1.2.1%2F91892c5b7167e0f0b06eddd4217c0aaf38d9796afd45cdfb6763fd1763d5a6fa"
+  dependencies:
+    polished: "npm:^4.2.2"
+  checksum: 0e2c6ab31dd1a7b0b955a4e3b7d0b992742c8993f8299abdeb8c8873ed1c8e1faeab36b3c4684c3158ef13b6479dfb2f48502059456ff6db924a4230e3af5e0e
   languageName: node
   linkType: hard
 
