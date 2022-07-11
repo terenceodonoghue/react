@@ -1,8 +1,9 @@
 import { useTheme } from '@emotion/react';
+import { Card } from '@terenceodonoghue/react-components/velocity';
 import { NextPage } from 'next';
 import Head from 'next/head';
 import { em, linearGradient, rgba, transitions as transition } from 'polished';
-import React, { Dispatch, ReactElement, SetStateAction, useState } from 'react';
+import { Dispatch, ReactElement, SetStateAction, useState } from 'react';
 import {
   DragDropContext,
   Draggable,
@@ -10,7 +11,6 @@ import {
   Droppable,
   DropResult,
 } from 'react-beautiful-dnd';
-import Card from '../components/core/Card';
 import Container from '../components/core/Container';
 import Flex from '../components/core/Flex';
 

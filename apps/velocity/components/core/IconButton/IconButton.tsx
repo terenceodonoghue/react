@@ -1,4 +1,4 @@
-import React, { ButtonHTMLAttributes, forwardRef } from 'react';
+import { ButtonHTMLAttributes, forwardRef } from 'react';
 import { rgba } from 'polished';
 
 const Button = forwardRef<

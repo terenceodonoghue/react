@@ -1,5 +1,5 @@
 import { em, rgba, transitions as transition } from 'polished';
-import React, {
+import {
   forwardRef,
   InputHTMLAttributes,
   LabelHTMLAttributes,

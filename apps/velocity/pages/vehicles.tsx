@@ -1,9 +1,8 @@
 import { Interpolation, Theme } from '@emotion/react';
+import { Card } from '@terenceodonoghue/react-components/velocity';
 import { NextPage } from 'next';
 import Head from 'next/head';
 import { em } from 'polished';
-import React from 'react';
-import Card from '../components/core/Card';
 import Container from '../components/core/Container';
 import Flex from '../components/core/Flex';
 import Slider from '../components/core/Slider';

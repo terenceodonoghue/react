@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ImgHTMLAttributes } from 'react';
+import { FunctionComponent, ImgHTMLAttributes } from 'react';
 
 interface AvatarProps extends ImgHTMLAttributes<HTMLImageElement> {
   alt: string;

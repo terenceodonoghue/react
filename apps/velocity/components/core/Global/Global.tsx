@@ -1,6 +1,6 @@
 import normalize from 'normalize.css';
 import { em } from 'polished';
-import React, { FunctionComponent } from 'react';
+import { FunctionComponent } from 'react';
 import { Global } from '@emotion/react';
 import mq from '../../utils/mq';
 

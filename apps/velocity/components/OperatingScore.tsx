@@ -1,5 +1,5 @@
 import { useTheme } from '@emotion/react';
-import React, { ReactNode, useCallback } from 'react';
+import { ReactNode, useCallback } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { Pie, PieChart, PieLabelRenderProps } from 'recharts';
 import { TABLET } from './utils/breakpoints';

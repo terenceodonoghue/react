@@ -1,12 +1,11 @@
 import { Interpolation, Theme, useTheme } from '@emotion/react';
+import { Card } from '@terenceodonoghue/react-components/velocity';
 import { Check, Marker } from '@terenceodonoghue/react-icons/velocity';
 import { faker } from '@faker-js/faker';
 import { NextPage } from 'next';
 import Head from 'next/head';
 import { em, rgba } from 'polished';
-import React from 'react';
 import Avatar from '../components/core/Avatar';
-import Card from '../components/core/Card';
 import Container from '../components/core/Container';
 import Flex from '../components/core/Flex';
 import {

@@ -1,9 +1,8 @@
-import { Button } from '@terenceodonoghue/react-components/velocity';
+import { Button, Card } from '@terenceodonoghue/react-components/velocity';
 import { NextPage } from 'next';
 import Head from 'next/head';
 import { linearGradient, rgba } from 'polished';
-import React, { ComponentType, FunctionComponent, SVGProps } from 'react';
-import Card from '../components/core/Card';
+import { ComponentType, FunctionComponent, SVGProps } from 'react';
 import Container from '../components/core/Container';
 import Flex from '../components/core/Flex';
 import Radio from '../components/core/Radio';

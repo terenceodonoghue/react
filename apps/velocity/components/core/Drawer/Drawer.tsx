@@ -1,4 +1,4 @@
-import React, { FunctionComponent, HTMLAttributes } from 'react';
+import { FunctionComponent, HTMLAttributes } from 'react';
 import { transitions as transition } from 'polished';
 import { useMediaQuery } from 'react-responsive';
 import { animated, config, useSpring } from 'react-spring';

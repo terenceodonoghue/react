@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ReactNode } from 'react';
+import { FunctionComponent, ReactNode } from 'react';
 import { ThemeProvider as EmotionProvider, Theme } from '@emotion/react';
 import merge from 'lodash/merge';
 import { rgba } from 'polished';

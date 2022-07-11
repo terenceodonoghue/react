@@ -1,5 +1,5 @@
 import { rgba } from 'polished';
-import React, {
+import {
   forwardRef,
   InputHTMLAttributes,
   LabelHTMLAttributes,

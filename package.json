@@ -12,7 +12,7 @@
     "@changesets/cli": "^2.22.0",
     "@nrwl/cli": "latest",
     "@nrwl/workspace": "latest",
-    "@terenceodonoghue/eslint-config-react": "^1.0.5",
+    "@terenceodonoghue/eslint-config-react": "^1.0.6",
     "@terenceodonoghue/eslint-import-resolver-exports": "^1.0.4",
     "@terenceodonoghue/prettier-plugin-packagejson": "^1.0.2",
     "@types/node": "^17.0.25",

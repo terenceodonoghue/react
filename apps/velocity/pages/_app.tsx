@@ -12,7 +12,7 @@ import { AppProps } from 'next/app';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React, { FunctionComponent, useEffect, useMemo, useState } from 'react';
+import { FunctionComponent, useEffect, useMemo, useState } from 'react';
 import AppBar from '../components/core/AppBar/AppBar';
 import Avatar from '../components/core/Avatar';
 import { DrawerItem } from '../components/core/Drawer';

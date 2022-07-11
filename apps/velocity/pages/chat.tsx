@@ -3,7 +3,6 @@ import moment from 'moment';
 import { NextPage } from 'next';
 import Head from 'next/head';
 import { rgba, transitions as transition } from 'polished';
-import React from 'react';
 import Avatar from '../components/core/Avatar';
 import Flex from '../components/core/Flex';
 

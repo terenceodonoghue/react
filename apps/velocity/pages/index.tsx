@@ -1,12 +1,12 @@
 import { faker } from '@faker-js/faker';
+import { Card } from '@terenceodonoghue/react-components/velocity';
 import { NextPage } from 'next';
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import numeral from 'numeral';
 import { em, rgba } from 'polished';
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import Avatar from '../components/core/Avatar';
-import Card from '../components/core/Card';
 import Container from '../components/core/Container';
 import Flex from '../components/core/Flex';
 import mq from '../components/utils/mq';

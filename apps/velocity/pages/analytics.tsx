@@ -1,4 +1,5 @@
 import { useTheme } from '@emotion/react';
+import { Card } from '@terenceodonoghue/react-components/velocity';
 import {
   Check,
   Dynamic,
@@ -21,8 +22,6 @@ import {
   XAxis,
   YAxis,
 } from 'recharts';
-import React from 'react';
-import Card from '../components/core/Card';
 import Container from '../components/core/Container';
 import Flex from '../components/core/Flex';
 import mq from '../components/utils/mq';

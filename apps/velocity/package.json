@@ -16,7 +16,7 @@
   "dependencies": {
     "@emotion/react": "^11.9.3",
     "@faker-js/faker": "^7.3.0",
-    "@terenceodonoghue/react-components": "^1.2.1",
+    "@terenceodonoghue/react-components": "^1.2.3",
     "@terenceodonoghue/react-icons": "^1.1.1",
     "facepaint": "^1.2.1",
     "hex-rgb": "^5.0.0",
@@ -51,6 +51,7 @@
     "@types/react-beautiful-dnd": "^13.1.2",
     "@types/react-test-renderer": "^17.0.1",
     "babel-jest": "^27.2.3",
+    "eslint": "^8.19.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.2.3",
     "jest-sonar-reporter": "^2.0.0",

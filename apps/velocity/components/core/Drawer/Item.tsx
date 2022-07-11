@@ -1,6 +1,6 @@
 import { useTheme } from '@emotion/react';
 import { rgba } from 'polished';
-import React, {
+import {
   forwardRef,
   JSXElementConstructor,
   LiHTMLAttributes,
