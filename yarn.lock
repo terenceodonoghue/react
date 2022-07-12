@@ -5305,19 +5305,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@terenceodonoghue/react-components@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "@terenceodonoghue/react-components@npm:1.1.0::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40terenceodonoghue%2Freact-components%2F1.1.0%2Fedbad6648c376a9adaa217a319a13b88ccb04d6a8a1464ea252fa1ffd91500b1"
-  dependencies:
-    "@terenceodonoghue/web-components": "npm:^1.1.0"
-  peerDependencies:
-    react: "*"
-    react-dom: "*"
-  checksum: f64ca591796a0b59dcd9d54113370ea9e9de58cf2c004b218e727edcb491eb95da532675fc97f4895a1947189c1361637322488173b90c293407f143486fe630
-  languageName: node
-  linkType: hard
-
-"@terenceodonoghue/react-components@npm:^1.2.3":
+"@terenceodonoghue/react-components@npm:^1.1.0, @terenceodonoghue/react-components@npm:^1.2.3":
   version: 1.2.3
   resolution: "@terenceodonoghue/react-components@npm:1.2.3::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40terenceodonoghue%2Freact-components%2F1.2.3%2F5e37676c56edf3a36be68981cc9a68b3d500fc73fa9fb0c01b48266408c27638"
   dependencies:
@@ -5459,15 +5447,6 @@ __metadata:
     react-dom: "*"
   languageName: unknown
   linkType: soft
-
-"@terenceodonoghue/web-components@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "@terenceodonoghue/web-components@npm:1.1.0::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40terenceodonoghue%2Fweb-components%2F1.1.0%2F82a858539f3b381b07b1fa3786b79bb6420b17c6252a5ede6b9f0cd7518181f0"
-  dependencies:
-    polished: "npm:^4.2.2"
-  checksum: 44a620386beb3e0a821d9c26591fa66e3dc0d73dfe0829e1b47e865058900eae8f8ee17ab220055b1c30b44d92e1d86209c4dfbea5254b3739722c48a424a376
-  languageName: node
-  linkType: hard
 
 "@terenceodonoghue/web-components@npm:^1.2.2":
   version: 1.2.2

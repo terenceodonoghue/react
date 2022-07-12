@@ -1,12 +1,30 @@
-import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import {
+  Canvas,
+  Meta,
+  Story,
+  IconGallery,
+  IconItem,
+} from '@storybook/addon-docs';
 import {
   Button,
   Card,
+  Switch,
   TextField,
 } from '@terenceodonoghue/react-components/velocity';
+import * as Velocity from '@terenceodonoghue/react-icons/velocity';
+import {
+  Analytics,
+  Dashboard,
+  Mail,
+  Map,
+  Service,
+  Settings,
+  Vehicles,
+} from '@terenceodonoghue/react-icons/velocity';
+import { useState } from 'react';
 
 <Meta
-  title="Components/Velocity"
+  title="UI Kits/Velocity"
   decorators={[
     (Story) => (
       <div style={{ display: 'flex', gap: 32, justifyContent: 'center' }}>
@@ -104,5 +122,37 @@ An optional `heading` prop renders text above the content block.
   <Story name="CardHeading">
     <Card heading="Heading">Content</Card>
     <Card>Content</Card>
+  </Story>
+</Canvas>
+
+## Icons
+
+...
+
+```javascript
+import /* { IconName } */  from '@terenceodonoghue/react-icons/velocity';
+```
+
+<IconGallery>
+  {Object.entries(Velocity).map(([name, Icon]) => (
+    <IconItem name={name}>
+      <Icon />
+    </IconItem>
+  ))}
+</IconGallery>
+
+### Props
+
+The `fill` prop sets the icon colour, or defaults to `currentColor` if left blank. Other properties such as the icon's size can be defined through React's styling API, using either [className](https://reactjs.org/docs/faq-styling.html) (recommended) or [style](https://reactjs.org/docs/dom-elements.html#style).
+
+<Canvas>
+  <Story name="IconFill">
+    <Dashboard style={{ height: 24, width: 24 }} />
+    <Analytics fill="#2E5BFF" style={{ height: 24, width: 24 }} />
+    <Vehicles fill="#33AC2E" style={{ height: 24, width: 24 }} />
+    <Service fill="#8C54FF" style={{ height: 24, width: 24 }} />
+    <Map fill="#D63649" style={{ height: 24, width: 24 }} />
+    <Mail fill="#00C1D4" style={{ height: 24, width: 24 }} />
+    <Settings fill="#F7C137" style={{ height: 24, width: 24 }} />
   </Story>
 </Canvas>
