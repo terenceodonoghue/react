@@ -1,12 +1,11 @@
 import { faker } from '@faker-js/faker';
-import { Card } from '@terenceodonoghue/react-components/velocity';
+import { Avatar, Card } from '@terenceodonoghue/react-components/velocity';
 import { NextPage } from 'next';
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import numeral from 'numeral';
 import { em, rgba } from 'polished';
 import { useMemo } from 'react';
-import Avatar from '../components/core/Avatar';
 import Container from '../components/core/Container';
 import Flex from '../components/core/Flex';
 import mq from '../components/utils/mq';
@@ -179,7 +178,7 @@ const IndexPage: NextPage = () => {
                     >
                       <Avatar
                         alt={name}
-                        css={{ height: 48, verticalAlign: 'middle', width: 48 }}
+                        size={48}
                         src={avatar}
                         variant="rounded"
                       />

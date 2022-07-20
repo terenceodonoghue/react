@@ -1,9 +1,9 @@
 import { faker } from '@faker-js/faker';
+import { Avatar } from '@terenceodonoghue/react-components/velocity';
 import moment from 'moment';
 import { NextPage } from 'next';
 import Head from 'next/head';
 import { rgba, transitions as transition } from 'polished';
-import Avatar from '../components/core/Avatar';
 import Flex from '../components/core/Flex';
 
 const fixtures = Array.from(Array(7)).map(() => ({
