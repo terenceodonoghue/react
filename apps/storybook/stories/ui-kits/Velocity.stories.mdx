@@ -1,3 +1,4 @@
+import { faker } from '@faker-js/faker';
 import {
   Canvas,
   Meta,
@@ -6,9 +7,9 @@ import {
   IconItem,
 } from '@storybook/addon-docs';
 import {
+  Avatar,
   Button,
   Card,
-  Switch,
   TextField,
 } from '@terenceodonoghue/react-components/velocity';
 import * as Velocity from '@terenceodonoghue/react-icons/velocity';
@@ -27,7 +28,14 @@ import { useState } from 'react';
   title="UI Kits/Velocity"
   decorators={[
     (Story) => (
-      <div style={{ display: 'flex', gap: 32, justifyContent: 'center' }}>
+      <div
+        style={{
+          display: 'flex',
+          gap: 32,
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
         <Story />
       </div>
     ),
@@ -105,6 +113,40 @@ Standard [input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input
     <TextField label="Disabled" disabled />
   </Story>
 </Canvas>
+
+## Avatar
+
+An avatar component represents an object or entity, typically a user's profile picture.
+
+```javascript
+import { Avatar } from '@terenceodonoghue/react-components/velocity';
+```
+
+### Props
+
+The `variant` prop defines one of two styles: rounded (default) or square.
+
+<Canvas>
+  <Story name="AvatarVariant">
+    <Avatar src={faker.image.avatar()} variant="rounded" />
+    <Avatar src={faker.image.avatar()} variant="square" />
+  </Story>
+</Canvas>
+
+...`size`
+
+<Canvas>
+  <Story name="AvatarSize">
+    <Avatar size={32} src={faker.image.avatar()} variant="rounded" />
+    <Avatar size={48} src={faker.image.avatar()} variant="rounded" />
+    <Avatar size={64} src={faker.image.avatar()} variant="rounded" />
+    <Avatar size={80} src={faker.image.avatar()} variant="rounded" />
+  </Story>
+</Canvas>
+
+### Attributes
+
+Standard [img](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img) attributes are supported, e.g. `alt`.
 
 ## Card
 
