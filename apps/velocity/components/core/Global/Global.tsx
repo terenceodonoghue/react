@@ -1,4 +1,4 @@
-import normalize from 'normalize.css';
+import 'sanitize.css';
 import { em } from 'polished';
 import { FunctionComponent } from 'react';
 import { Global } from '@emotion/react';
@@ -7,7 +7,6 @@ import mq from '../../utils/mq';
 const GlobalStyles: FunctionComponent = () => (
   <Global
     styles={[
-      normalize,
       ({ palette, typography }) =>
         mq({
           '*, *::before, *::after': {

@@ -1,4 +1,8 @@
-import { Button, Card } from '@terenceodonoghue/react-components/velocity';
+import {
+  Button,
+  Card,
+  TextField,
+} from '@terenceodonoghue/react-components/velocity';
 import { NextPage } from 'next';
 import Head from 'next/head';
 import { linearGradient, rgba } from 'polished';
@@ -7,7 +11,6 @@ import Container from '../components/core/Container';
 import Flex from '../components/core/Flex';
 import Radio from '../components/core/Radio';
 import Switch from '../components/core/Switch';
-import TextField from '../components/core/TextField';
 import {
   GitHubIcon,
   InVisionIcon,
@@ -121,33 +124,47 @@ const SettingsPage: NextPage = () => (
             password.
           </p>
           <Flex css={{ margin: '24px -12px' }}>
-            <TextField inputProps={{ defaultValue: 'appleseed_jane@mac.com' }}>
-              Email address
-            </TextField>
-          </Flex>
-          <Flex css={{ flexWrap: 'wrap', margin: '24px -12px' }}>
-            <TextField inputProps={{ defaultValue: 'Jane' }}>
-              First name
-            </TextField>
-            <TextField inputProps={{ defaultValue: 'Appleseed' }}>
-              Last name
-            </TextField>
             <TextField
-              inputProps={{ defaultValue: '1965-05-25', type: 'date' }}
-            >
-              Birth date
-            </TextField>
+              css={{ flex: 1, maxWidth: 272 }}
+              defaultValue="appleseed_jane@mac.com"
+              label="Email address"
+            />
           </Flex>
           <Flex css={{ flexWrap: 'wrap', margin: '24px -12px' }}>
             <TextField
-              inputProps={{ defaultValue: 'password', type: 'password' }}
-            >
-              Current password
-            </TextField>
-            <TextField inputProps={{ type: 'password' }}>
-              New password
-            </TextField>
-            <TextField inputProps={{ type: 'password' }}>Confirm</TextField>
+              css={{ flex: 1, maxWidth: 272 }}
+              defaultValue="Jane"
+              label="First name"
+            />
+            <TextField
+              css={{ flex: 1, maxWidth: 272 }}
+              defaultValue="Appleseed"
+              label="Last name"
+            />
+            <TextField
+              css={{ flex: 1, maxWidth: 272 }}
+              defaultValue="1965-05-25"
+              label="Birth date"
+              type="date"
+            />
+          </Flex>
+          <Flex css={{ flexWrap: 'wrap', margin: '24px -12px' }}>
+            <TextField
+              css={{ flex: 1, maxWidth: 272 }}
+              defaultValue="password"
+              label="Current password"
+              type="password"
+            />
+            <TextField
+              css={{ flex: 1, maxWidth: 272 }}
+              label="New password"
+              type="password"
+            />
+            <TextField
+              css={{ flex: 1, maxWidth: 272 }}
+              label="confirm"
+              type="password"
+            />
           </Flex>
           <Button css={{ margin: '12px 0', width: 200 }}>Save Changes</Button>
         </Card>
