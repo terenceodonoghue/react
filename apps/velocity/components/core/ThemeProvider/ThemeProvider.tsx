@@ -48,7 +48,6 @@ export const defaultTheme: Theme = {
     },
   },
   typography: {
-    fontFamily: ['Rubik', 'sans-serif'].join(','),
     fontSize: 15,
     fontWeight: {
       light: 300,

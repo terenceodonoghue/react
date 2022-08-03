@@ -6,7 +6,7 @@
     "dev": "start-storybook -p 6006 --docs --quiet"
   },
   "dependencies": {
-    "@terenceodonoghue/react-components": "^1.3.5",
+    "@terenceodonoghue/react-components": "^1.4.1",
     "@terenceodonoghue/react-icons": "^1.1.1"
   },
   "devDependencies": {

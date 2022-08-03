@@ -1,3 +1,4 @@
+import '@terenceodonoghue/react-components/velocity.css';
 import { Avatar } from '@terenceodonoghue/react-components/velocity';
 import {
   Analytics,

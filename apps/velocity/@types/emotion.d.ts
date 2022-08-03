@@ -46,7 +46,6 @@ declare module '@emotion/react' {
       };
     };
     typography?: {
-      fontFamily?: string;
       fontSize?: number;
       fontWeight?: {
         light?: number;

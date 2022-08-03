@@ -21,9 +21,9 @@ const Container: FunctionComponent<ContainerProps> = ({
   >
     <div css={mq({ margin: [-6, -12] })}>
       {heading && (
-        <h1 css={{ margin: '0 12px' }} data-testid="container-heading">
+        <h3 css={{ margin: '8px 12px' }} data-testid="container-heading">
           {heading}
-        </h1>
+        </h3>
       )}
       {children}
     </div>
