@@ -123,14 +123,14 @@ const SettingsPage: NextPage = () => (
             Use this page to update your contact information and change your
             password.
           </p>
-          <Flex css={{ margin: '24px -12px' }}>
+          <Flex css={{ flexWrap: 'wrap', gap: 20, margin: '30px 0' }}>
             <TextField
               css={{ flex: 1, maxWidth: 272 }}
               defaultValue="appleseed_jane@mac.com"
               label="Email address"
             />
           </Flex>
-          <Flex css={{ flexWrap: 'wrap', margin: '24px -12px' }}>
+          <Flex css={{ flexWrap: 'wrap', gap: 20, margin: '30px 0' }}>
             <TextField
               css={{ flex: 1, maxWidth: 272 }}
               defaultValue="Jane"
@@ -148,7 +148,7 @@ const SettingsPage: NextPage = () => (
               type="date"
             />
           </Flex>
-          <Flex css={{ flexWrap: 'wrap', margin: '24px -12px' }}>
+          <Flex css={{ flexWrap: 'wrap', gap: 20, margin: '30px 0' }}>
             <TextField
               css={{ flex: 1, maxWidth: 272 }}
               defaultValue="password"
@@ -166,7 +166,7 @@ const SettingsPage: NextPage = () => (
               type="password"
             />
           </Flex>
-          <Button css={{ margin: '12px 0', width: 200 }}>Save Changes</Button>
+          <Button css={{ width: 200 }}>Save Changes</Button>
         </Card>
       </Flex>
       <Flex>
