@@ -4925,7 +4925,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@terenceodonoghue/react-components@npm:^1.1.0, @terenceodonoghue/react-components@npm:^1.4.1":
+"@terenceodonoghue/react-components@npm:^1.1.0":
   version: 1.4.1
   resolution: "@terenceodonoghue/react-components@npm:1.4.1::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40terenceodonoghue%2Freact-components%2F1.4.1%2Fea2c07c87b8f49e6b508a182701220db6a7fed5c66f34f5c97d3c47f49b1dc2f"
   dependencies:
@@ -4934,6 +4934,18 @@ __metadata:
     react: "*"
     react-dom: "*"
   checksum: 002b61eb318ef5acf7c7de323d5e8c4afdc13614ae06e2b4e3db1ac75d72fd0389e9a7b42799409488f0918504a51b62dbc8a7caab760a32c52eaad4e77565cd
+  languageName: node
+  linkType: hard
+
+"@terenceodonoghue/react-components@npm:^1.4.3":
+  version: 1.4.3
+  resolution: "@terenceodonoghue/react-components@npm:1.4.3::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40terenceodonoghue%2Freact-components%2F1.4.3%2F715dec2269acfe58d77692d585465b93ba5a9bef1d51def37f4fd5c1a0c0d138"
+  dependencies:
+    "@terenceodonoghue/web-components": "npm:^1.4.3"
+  peerDependencies:
+    react: "*"
+    react-dom: "*"
+  checksum: 2aec7b569d139cdbe0552f511d7b6fa890513f186b50d3b5905beee1a75992b73b43700a0279347ef0a28f49d605b383ab99a3df2ff97dbf2fb91a2b5cef15e7
   languageName: node
   linkType: hard
 
@@ -5005,7 +5017,7 @@ __metadata:
     "@storybook/manager-webpack5": "npm:next"
     "@storybook/react": "npm:^6.5.7"
     "@storybook/testing-library": "npm:^0.0.11"
-    "@terenceodonoghue/react-components": "npm:^1.4.1"
+    "@terenceodonoghue/react-components": "npm:^1.4.3"
     "@terenceodonoghue/react-hooks": "workspace:^"
     "@terenceodonoghue/react-icons": "npm:^1.1.1"
     babel-loader: "npm:^8.2.4"
@@ -5028,7 +5040,7 @@ __metadata:
     "@faker-js/faker": "npm:^7.3.0"
     "@svgr/cli": "npm:^5.5.0"
     "@svgr/webpack": "npm:^5.5.0"
-    "@terenceodonoghue/react-components": "npm:^1.4.1"
+    "@terenceodonoghue/react-components": "npm:^1.4.3"
     "@terenceodonoghue/react-icons": "npm:^1.1.1"
     "@testing-library/jest-dom": "npm:^5.14.1"
     "@testing-library/react": "npm:^12.1.1"
@@ -5076,6 +5088,16 @@ __metadata:
     polished: "npm:^4.2.2"
     sanitize.css: "npm:^13.0.0"
   checksum: bbe195238b5086883ca1972ddbbc517f7f36c29eea9a64315e1b33545c39d69a30f38fa95045490661bac0bd1c295c2e18117a9e276a55783d5b8634c4d30520
+  languageName: node
+  linkType: hard
+
+"@terenceodonoghue/web-components@npm:^1.4.3":
+  version: 1.4.3
+  resolution: "@terenceodonoghue/web-components@npm:1.4.3::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40terenceodonoghue%2Fweb-components%2F1.4.3%2F253b7d226ead597cc2c1e24dc70b2b477c5f31187f9ef13d7080715d955b1312"
+  dependencies:
+    polished: "npm:^4.2.2"
+    sanitize.css: "npm:^13.0.0"
+  checksum: bb89708020c5b56441404d9ae7940769e20bfe0d71be055ee3bac97ee1dd8d437b4aaa27dad41c26d64d3552b404a708054a7df4ea439a9d93a0e2a7f67afa1d
   languageName: node
   linkType: hard
 
