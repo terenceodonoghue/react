@@ -4937,15 +4937,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@terenceodonoghue/react-components@npm:^1.4.4":
-  version: 1.4.4
-  resolution: "@terenceodonoghue/react-components@npm:1.4.4::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40terenceodonoghue%2Freact-components%2F1.4.4%2F5015c131dde3cc0d916a8a0d296ab0ce3c604fb2e4f2ed560161b8a3e42c208a"
+"@terenceodonoghue/react-components@npm:^1.4.5":
+  version: 1.4.5
+  resolution: "@terenceodonoghue/react-components@npm:1.4.5::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40terenceodonoghue%2Freact-components%2F1.4.5%2F99343633180bc2ad5d8d400d97999288bc4f13093eb19cca0aa44f81cb3dd2ec"
   dependencies:
-    "@terenceodonoghue/web-components": "npm:^1.4.4"
+    "@terenceodonoghue/web-components": "npm:^1.4.5"
   peerDependencies:
     react: "*"
     react-dom: "*"
-  checksum: d8d8c3651b0e91d9bc1cf2d1b77f436a757aab61d34f1d803c853ed0cbbf1f8c195619c028c74b5f4cc3b8e385f4a0470b6245655d3fddab9859b74bf30a396a
+  checksum: bae617ef8f5f3db4be7389948d0db8d7d985118559b06608882e68a8c8990e6c8c65aa0b375c048849c88925f908dde6781e5e609e21d44d620c69f9087c12ed
   languageName: node
   linkType: hard
 
@@ -5017,7 +5017,7 @@ __metadata:
     "@storybook/manager-webpack5": "npm:next"
     "@storybook/react": "npm:^6.5.7"
     "@storybook/testing-library": "npm:^0.0.11"
-    "@terenceodonoghue/react-components": "npm:^1.4.4"
+    "@terenceodonoghue/react-components": "npm:^1.4.5"
     "@terenceodonoghue/react-hooks": "workspace:^"
     "@terenceodonoghue/react-icons": "npm:^1.1.1"
     babel-loader: "npm:^8.2.4"
@@ -5040,7 +5040,7 @@ __metadata:
     "@faker-js/faker": "npm:^7.3.0"
     "@svgr/cli": "npm:^5.5.0"
     "@svgr/webpack": "npm:^5.5.0"
-    "@terenceodonoghue/react-components": "npm:^1.4.4"
+    "@terenceodonoghue/react-components": "npm:^1.4.5"
     "@terenceodonoghue/react-icons": "npm:^1.1.1"
     "@testing-library/jest-dom": "npm:^5.14.1"
     "@testing-library/react": "npm:^12.1.1"
@@ -5091,13 +5091,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@terenceodonoghue/web-components@npm:^1.4.4":
-  version: 1.4.4
-  resolution: "@terenceodonoghue/web-components@npm:1.4.4::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40terenceodonoghue%2Fweb-components%2F1.4.4%2F26f01f666a32e6d1fc7562f29f399fb0b436077702227d8a277c7144352936f2"
+"@terenceodonoghue/web-components@npm:^1.4.5":
+  version: 1.4.5
+  resolution: "@terenceodonoghue/web-components@npm:1.4.5::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40terenceodonoghue%2Fweb-components%2F1.4.5%2Ff74d5b952f36adb08d4ebf2a9ef2e31b6fd15103a967c7dcb2852e769c86b8ca"
   dependencies:
     polished: "npm:^4.2.2"
     sanitize.css: "npm:^13.0.0"
-  checksum: 4e2473092449e8f527d1f7f5d1888a86b6290c4cae1f87afdbc5f33ea0bdf12174332d037144e3fa11b7bf2870546883ebc26ff10e0fe7146030a7ea3c8eddf4
+  checksum: fbce1a991f2b776d209c60d3d3d92233c87de60964f17ace740bff1bbe48a1dc22bb87ea2e42d94d22257fed76534f9fb7860c60f8794d82d3aa21780661f798
   languageName: node
   linkType: hard
 
