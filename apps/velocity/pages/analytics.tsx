@@ -1,4 +1,5 @@
 import { useTheme } from '@emotion/react';
+import { Flex } from '@terenceodonoghue/react-components/core';
 import { Card } from '@terenceodonoghue/react-components/velocity';
 import {
   Check,
@@ -23,7 +24,6 @@ import {
   YAxis,
 } from 'recharts';
 import Container from '../components/core/Container';
-import Flex from '../components/core/Flex';
 import mq from '../components/utils/mq';
 
 const AnalyticsPage: NextPage = () => {
@@ -241,7 +241,7 @@ const AnalyticsPage: NextPage = () => {
             </ResponsiveContainer>
           </Card>
         </Flex>
-        <Flex css={{ flexWrap: 'wrap' }}>
+        <Flex wrap="wrap">
           {[
             {
               label: 'Vehicles on track',
@@ -264,59 +264,55 @@ const AnalyticsPage: NextPage = () => {
             const IconComponent = iconMap[label].component;
 
             return (
-              <Flex
-                css={mq({ flex: ['1 0 50%', '1 0 50%', 1] })}
+              <Card
+                css={mq({
+                  flex: ['1 0 50%', '1 0 50%', 1],
+                  padding: ['16px', '32px 24px', '16px 24px'],
+                })}
                 // eslint-disable-next-line react/no-array-index-key
                 key={`${label}-${index}`}
               >
-                <Card
-                  css={mq({
-                    flex: 1,
-                    padding: ['16px', '32px 24px', '16px 24px'],
+                <Flex
+                  css={{
+                    backgroundColor: rgba(theme.palette.ui.purple, 0.15),
+                    borderRadius: '50%',
+                    height: 48,
+                    marginBottom: 16,
+                    width: 48,
+                  }}
+                  alignItems="center"
+                  justifyContent="center"
+                >
+                  <IconComponent
+                    color={iconMap[label].color}
+                    css={{ height: 19, width: 19 }}
+                  />
+                </Flex>
+                <span
+                  css={({ typography }) =>
+                    mq({
+                      display: 'inline-block',
+                      fontSize: [
+                        em(34, typography.fontSize),
+                        em(48, typography.fontSize),
+                      ],
+                      fontWeight: typography.fontWeight.light,
+                      letterSpacing: -0.6,
+                      lineHeight: em(57, 48),
+                    })
+                  }
+                >
+                  {metric.value}
+                </span>
+                <div
+                  css={({ palette }) => ({
+                    color: palette.neutral[600],
+                    lineHeight: '1.47em',
                   })}
                 >
-                  <Flex
-                    css={{
-                      alignItems: 'center',
-                      backgroundColor: rgba(theme.palette.ui.purple, 0.15),
-                      borderRadius: '50%',
-                      height: 48,
-                      marginBottom: 16,
-                      justifyContent: 'center',
-                      width: 48,
-                    }}
-                  >
-                    <IconComponent
-                      color={iconMap[label].color}
-                      css={{ height: 19, width: 19 }}
-                    />
-                  </Flex>
-                  <span
-                    css={({ typography }) =>
-                      mq({
-                        display: 'inline-block',
-                        fontSize: [
-                          em(34, typography.fontSize),
-                          em(48, typography.fontSize),
-                        ],
-                        fontWeight: typography.fontWeight.light,
-                        letterSpacing: -0.6,
-                        lineHeight: em(57, 48),
-                      })
-                    }
-                  >
-                    {metric.value}
-                  </span>
-                  <div
-                    css={({ palette }) => ({
-                      color: palette.neutral[600],
-                      lineHeight: '1.47em',
-                    })}
-                  >
-                    {metric.label}
-                  </div>
-                </Card>
-              </Flex>
+                  {metric.label}
+                </div>
+              </Card>
             );
           })}
         </Flex>

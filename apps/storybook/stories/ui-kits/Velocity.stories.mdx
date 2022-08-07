@@ -12,6 +12,8 @@ import {
   Card,
   TextField,
 } from '@terenceodonoghue/react-components/velocity';
+import { Flex } from '@terenceodonoghue/react-components/core';
+import '@terenceodonoghue/react-components/velocity.css';
 import * as Velocity from '@terenceodonoghue/react-icons/velocity';
 import {
   Analytics,
@@ -128,7 +130,7 @@ The `variant` prop defines one of two styles: rounded (default) or square.
 
 <Canvas>
   <Story name="AvatarVariant">
-    <Avatar src={faker.image.avatar()} variant="rounded" />
+    <Avatar src={faker.image.avatar()} />
     <Avatar src={faker.image.avatar()} variant="square" />
   </Story>
 </Canvas>
@@ -196,5 +198,22 @@ The `fill` prop sets the icon colour, or defaults to `currentColor` if left blan
     <Map fill="#D63649" style={{ height: 24, width: 24 }} />
     <Mail fill="#00C1D4" style={{ height: 24, width: 24 }} />
     <Settings fill="#F7C137" style={{ height: 24, width: 24 }} />
+  </Story>
+</Canvas>
+
+## Flex
+
+<Canvas>
+  <Story name="Flex">
+    <Flex>
+      <div>Row Item A</div>
+      <div>Row Item B</div>
+      <div>Row Item C</div>
+    </Flex>
+    <Flex direction="column">
+      <div>Column Item A</div>
+      <div>Column Item B</div>
+      <div>Column Item C</div>
+    </Flex>
   </Story>
 </Canvas>

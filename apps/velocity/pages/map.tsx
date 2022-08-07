@@ -1,4 +1,5 @@
 import { Interpolation, Theme, useTheme } from '@emotion/react';
+import { Flex } from '@terenceodonoghue/react-components/core';
 import { Avatar, Card } from '@terenceodonoghue/react-components/velocity';
 import { Check, Marker } from '@terenceodonoghue/react-icons/velocity';
 import { faker } from '@faker-js/faker';
@@ -6,7 +7,6 @@ import { NextPage } from 'next';
 import Head from 'next/head';
 import { em, rgba } from 'polished';
 import Container from '../components/core/Container';
-import Flex from '../components/core/Flex';
 import {
   ApplePayIcon,
   MastercardIcon,
@@ -59,13 +59,11 @@ const MapPage: NextPage = () => {
   };
 
   const paymentMethodIcon: Interpolation<Theme> = ({ palette }) => ({
-    alignItems: 'center',
     borderColor: palette.secondary,
     borderRadius: 5,
     borderStyle: 'solid',
     borderWidth: 1,
     height: 75,
-    justifyContent: 'center',
     margin: 12,
     padding: 8,
     width: 140,
@@ -103,7 +101,7 @@ const MapPage: NextPage = () => {
           >
             <Flex>
               <div css={{ flexBasis: 256, flexShrink: 0 }}>
-                <Flex css={{ alignItems: 'center', marginBottom: 24 }}>
+                <Flex css={{ marginBottom: 24 }} alignItems="center">
                   <Avatar
                     alt={faker.name.findName()}
                     size={48}
@@ -140,13 +138,16 @@ const MapPage: NextPage = () => {
               <Flex
                 css={{
                   alignContent: 'flex-start',
-                  flexDirection: 'row',
-                  flexWrap: 'wrap',
-                  justifyContent: 'center',
                   margin: -12,
                 }}
+                justifyContent="center"
+                wrap="wrap"
               >
-                <Flex css={paymentMethodIcon}>
+                <Flex
+                  css={paymentMethodIcon}
+                  alignItems="center"
+                  justifyContent="center"
+                >
                   <PayPalIcon
                     color={theme.palette.neutral[900]}
                     css={{ height: 25 }}
@@ -159,19 +160,29 @@ const MapPage: NextPage = () => {
                       backgroundColor: palette.accent,
                     },
                   ]}
+                  alignItems="center"
+                  justifyContent="center"
                 >
                   <VisaIcon
                     color={theme.palette.neutral[50]}
                     css={{ height: 24 }}
                   />
                 </Flex>
-                <Flex css={paymentMethodIcon}>
+                <Flex
+                  css={paymentMethodIcon}
+                  alignItems="center"
+                  justifyContent="center"
+                >
                   <MastercardIcon
                     color={theme.palette.neutral[900]}
                     css={{ height: 59 }}
                   />
                 </Flex>
-                <Flex css={paymentMethodIcon}>
+                <Flex
+                  css={paymentMethodIcon}
+                  alignItems="center"
+                  justifyContent="center"
+                >
                   <ApplePayIcon
                     color={theme.palette.neutral[900]}
                     css={{ height: 25 }}
@@ -180,9 +191,9 @@ const MapPage: NextPage = () => {
               </Flex>
             </Flex>
           </Card>
-          <Flex css={{ flexGrow: 1, flexDirection: 'column' }}>
+          <Flex css={{ flexGrow: 1 }} direction="column">
             <Card>
-              <Flex css={{ alignItems: 'center', margin: '0 -8px 12px' }}>
+              <Flex css={{ margin: '0 -8px 12px' }} alignItems="center">
                 <Flex
                   css={[
                     tripIcon,
@@ -224,10 +235,9 @@ const MapPage: NextPage = () => {
               </Flex>
               <Flex
                 css={{
-                  flexDirection: 'row',
-                  flexWrap: 'wrap',
                   marginBottom: 32,
                 }}
+                wrap="wrap"
               >
                 <div css={{ flex: 1 }}>
                   <span css={suburb}>Jackson Heights</span>
@@ -240,8 +250,6 @@ const MapPage: NextPage = () => {
               </Flex>
               <Flex
                 css={({ palette }) => ({
-                  flexDirection: 'row',
-                  flexWrap: 'wrap',
                   margin: '0 -24px',
                   '&::before': {
                     backgroundColor: palette.neutral[300],
@@ -250,6 +258,7 @@ const MapPage: NextPage = () => {
                     width: '100%',
                   },
                 })}
+                wrap="wrap"
               >
                 <div css={metric}>
                   <span css={metricValue}>12.3 km</span>

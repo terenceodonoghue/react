@@ -1,5 +1,6 @@
-import '@terenceodonoghue/react-components/velocity.css';
+import { Flex } from '@terenceodonoghue/react-components/core';
 import { Avatar } from '@terenceodonoghue/react-components/velocity';
+import '@terenceodonoghue/react-components/velocity.css';
 import {
   Analytics,
   Dashboard,
@@ -17,7 +18,6 @@ import { useRouter } from 'next/router';
 import { FunctionComponent, useEffect, useMemo, useState } from 'react';
 import AppBar from '../components/core/AppBar/AppBar';
 import { DrawerItem } from '../components/core/Drawer';
-import Flex from '../components/core/Flex';
 import Global from '../components/core/Global';
 import IconButton from '../components/core/IconButton';
 import ThemeProvider from '../components/core/ThemeProvider';
@@ -124,7 +124,7 @@ const App: FunctionComponent<AppProps> = ({ Component, pageProps }) => {
         </a>
       </div>
       <AppBar>
-        <Flex css={{ alignItems: 'center', flex: 1 }}>
+        <Flex css={{ flex: 1 }} alignItems="center">
           <IconButton
             aria-label="menu"
             css={({ palette, zIndex }) => ({
@@ -139,13 +139,13 @@ const App: FunctionComponent<AppProps> = ({ Component, pageProps }) => {
           </IconButton>
           <Flex
             css={mq({
-              alignItems: 'inherit',
               left: [0, 0, 80],
               maxWidth: 1360,
               padding: ['0 24px', '0 30px', '0 110px'],
               position: 'absolute',
               right: 0,
             })}
+            alignItems="center"
           >
             <Flex
               css={mq({

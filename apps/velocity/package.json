@@ -16,7 +16,7 @@
   "dependencies": {
     "@emotion/react": "^11.9.3",
     "@faker-js/faker": "^7.3.0",
-    "@terenceodonoghue/react-components": "^1.4.5",
+    "@terenceodonoghue/react-components": "^1.5.2",
     "@terenceodonoghue/react-icons": "^1.1.1",
     "facepaint": "^1.2.1",
     "hex-rgb": "^5.0.0",

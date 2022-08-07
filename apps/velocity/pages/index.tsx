@@ -1,4 +1,5 @@
 import { faker } from '@faker-js/faker';
+import { Flex } from '@terenceodonoghue/react-components/core';
 import { Avatar, Card } from '@terenceodonoghue/react-components/velocity';
 import { NextPage } from 'next';
 import dynamic from 'next/dynamic';
@@ -7,7 +8,6 @@ import numeral from 'numeral';
 import { em, rgba } from 'polished';
 import { useMemo } from 'react';
 import Container from '../components/core/Container';
-import Flex from '../components/core/Flex';
 import mq from '../components/utils/mq';
 
 const OperatingScore = dynamic(() => import('../components/OperatingScore'), {
@@ -76,11 +76,11 @@ const IndexPage: NextPage = () => {
               <Card css={{ flex: 1 }}>
                 <Flex
                   css={mq({
-                    alignItems: 'center',
                     flexDirection: ['row', 'column', 'row'],
                     marginLeft: -4,
                     marginRight: -4,
                   })}
+                  alignItems="center"
                 >
                   <div
                     css={mq({
@@ -184,7 +184,7 @@ const IndexPage: NextPage = () => {
                       />
                     </div>
                     <div css={{ flex: 1 }}>
-                      <Flex css={{ flex: 1, justifyContent: 'space-between' }}>
+                      <Flex css={{ flex: 1 }} justifyContent="space-between">
                         <span
                           css={({ typography }) => ({
                             fontWeight: typography.fontWeight.medium,
@@ -198,8 +198,8 @@ const IndexPage: NextPage = () => {
                         css={({ palette }) => ({
                           color: palette.neutral[600],
                           flex: 1,
-                          justifyContent: 'space-between',
                         })}
+                        justifyContent="space-between"
                       >
                         <span>{vehicle}</span>
                         <span>{numeral(distance).format('0,0')} miles</span>

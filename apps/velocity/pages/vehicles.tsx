@@ -1,9 +1,9 @@
 import { Interpolation, Theme } from '@emotion/react';
+import { Flex } from '@terenceodonoghue/react-components/core';
 import { Card, TextField } from '@terenceodonoghue/react-components/velocity';
 import { NextPage } from 'next';
 import Head from 'next/head';
 import Container from '../components/core/Container';
-import Flex from '../components/core/Flex';
 import Slider from '../components/core/Slider';
 
 const VehiclesPage: NextPage = () => {
@@ -26,7 +26,7 @@ const VehiclesPage: NextPage = () => {
         <Flex>
           <div css={{ flex: 4 }} />
           <Card css={{ flex: 1 }} heading="Filter">
-            <Flex css={{ flexDirection: 'column', gap: 24 }}>
+            <Flex direction="column" gap={24}>
               <Slider primary="Trips taken" secondary="753" />
               <Slider primary="Service due" secondary="14 days" />
               <TextField

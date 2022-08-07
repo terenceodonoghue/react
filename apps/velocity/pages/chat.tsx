@@ -1,10 +1,10 @@
 import { faker } from '@faker-js/faker';
+import { Flex } from '@terenceodonoghue/react-components/core';
 import { Avatar } from '@terenceodonoghue/react-components/velocity';
 import moment from 'moment';
 import { NextPage } from 'next';
 import Head from 'next/head';
 import { rgba, transitions as transition } from 'polished';
-import Flex from '../components/core/Flex';
 
 const fixtures = Array.from(Array(7)).map(() => ({
   isOnline: faker.datatype.boolean(),
@@ -65,8 +65,8 @@ const ChatPage: NextPage = () => (
               src={conversation.src}
               variant="rounded"
             />
-            <Flex css={{ flexDirection: 'column', justifyContent: 'center' }}>
-              <Flex css={{ justifyContent: 'space-between' }}>
+            <Flex direction="column" justifyContent="center">
+              <Flex justifyContent="space-between">
                 <span
                   css={({ typography }) => ({
                     fontWeight: typography.fontWeight.medium,

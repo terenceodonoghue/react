@@ -1,3 +1,4 @@
+import { Flex } from '@terenceodonoghue/react-components/core';
 import {
   Button,
   Card,
@@ -8,7 +9,6 @@ import Head from 'next/head';
 import { linearGradient, rgba } from 'polished';
 import { ComponentType, FunctionComponent, SVGProps } from 'react';
 import Container from '../components/core/Container';
-import Flex from '../components/core/Flex';
 import Radio from '../components/core/Radio';
 import Switch from '../components/core/Switch';
 import {
@@ -123,14 +123,14 @@ const SettingsPage: NextPage = () => (
             Use this page to update your contact information and change your
             password.
           </p>
-          <Flex css={{ flexWrap: 'wrap', gap: 20, margin: '30px 0' }}>
+          <Flex css={{ flexWrap: 'wrap', margin: '30px 0' }} gap={20}>
             <TextField
               css={{ flex: 1, maxWidth: 272 }}
               defaultValue="appleseed_jane@mac.com"
               label="Email address"
             />
           </Flex>
-          <Flex css={{ flexWrap: 'wrap', gap: 20, margin: '30px 0' }}>
+          <Flex css={{ flexWrap: 'wrap', margin: '30px 0' }} gap={20}>
             <TextField
               css={{ flex: 1, maxWidth: 272 }}
               defaultValue="Jane"
@@ -148,7 +148,7 @@ const SettingsPage: NextPage = () => (
               type="date"
             />
           </Flex>
-          <Flex css={{ flexWrap: 'wrap', gap: 20, margin: '30px 0' }}>
+          <Flex css={{ flexWrap: 'wrap', margin: '30px 0' }} gap={20}>
             <TextField
               css={{ flex: 1, maxWidth: 272 }}
               defaultValue="password"

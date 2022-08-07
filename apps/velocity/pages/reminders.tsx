@@ -1,4 +1,5 @@
 import { useTheme } from '@emotion/react';
+import { Flex } from '@terenceodonoghue/react-components/core';
 import { Card } from '@terenceodonoghue/react-components/velocity';
 import { NextPage } from 'next';
 import Head from 'next/head';
@@ -12,7 +13,6 @@ import {
   DropResult,
 } from 'react-beautiful-dnd';
 import Container from '../components/core/Container';
-import Flex from '../components/core/Flex';
 
 const COLUMNS = ['Service needed', 'Waiting', 'In service', 'Fully serviced'];
 
@@ -283,8 +283,8 @@ const RemindersPage: NextPage = () => {
                                       css={({ typography }) => ({
                                         fontWeight:
                                           typography.fontWeight.medium,
-                                        justifyContent: 'space-between',
                                       })}
+                                      justifyContent="space-between"
                                     >
                                       <span>{ticket.name}</span>
                                       <span>{ticket.price}</span>
@@ -292,8 +292,8 @@ const RemindersPage: NextPage = () => {
                                     <Flex
                                       css={({ palette }) => ({
                                         color: palette.neutral[600],
-                                        justifyContent: 'space-between',
                                       })}
+                                      justifyContent="space-between"
                                     >
                                       <span>{ticket.type}</span>
                                       <span>{ticket.date}</span>
@@ -318,7 +318,7 @@ const RemindersPage: NextPage = () => {
             css={{ flexBasis: 655, flexShrink: 0 }}
             heading="Service Centers"
           />
-          <Flex css={{ flexDirection: 'column', flexGrow: 1 }}>
+          <Flex css={{ flexGrow: 1 }} direction="column">
             <Card heading="Vehicle Service Status" />
             <Card heading="Top Drivers" />
           </Flex>
