@@ -7,6 +7,15 @@
   text-align: center;
 }
 
+.tagError {
+  composes: tag;
+  border: solid 1px #df0a00;
+}
+
+.error {
+  color: #df0a00;
+}
+
 .input {
   all: inherit;
   width: 100%;
@@ -22,23 +31,35 @@
   font-size: 13pt;
 }
 
+.brandError {
+  composes: brand error;
+}
+
 .description {
   font-size: 11pt;
+}
+
+.descriptionError {
+  composes: description error;
 }
 
 .size {
   font-size: 11pt;
 }
 
+.sizeError {
+  composes: size error;
+}
+
 .price {
   font-size: 34pt;
 }
 
-.saving {
+.save {
   font-size: 12pt;
 }
 
-.savingSubtext {
+.saveSubtext {
   font-size: 10pt;
 }
 
@@ -46,7 +67,7 @@
   font-size: 8pt;
 }
 
-.barcode {
+.ean_code {
   margin-top: 2pt;
   font-family: sans-serif;
   font-size: 10pt;

@@ -1,5 +1,6 @@
 /* eslint-disable react/destructuring-assignment */
-import { FunctionComponent, useState } from 'react';
+import { FunctionComponent, useMemo, useState } from 'react';
+import numeral from 'numeral';
 import styles from '../styles/Tag.module.css';
 
 export interface TagProps {
@@ -8,75 +9,91 @@ export interface TagProps {
   description: string;
   size: string;
   price: string;
-  saving: string;
+  save: string;
   endDate: string;
-  barcode: string;
+  ean_code: string;
 }
 
 const Tag: FunctionComponent<TagProps> = ({
-  title: defaultTitle,
+  title,
   brand: defaultBrand,
   description: defaultDescription,
   size: defaultSize,
-  price: defaultPrice,
-  saving: defaultSaving,
-  endDate: defaultEndDate,
-  barcode,
+  price,
+  save,
+  endDate,
+  ean_code: eanCode,
 }) => {
-  const [title, setTitle] = useState<string>(defaultTitle);
-  const [brand, setBrand] = useState<string>(defaultBrand);
-  const [description, setDescription] = useState<string>(defaultDescription);
-  const [size, setSize] = useState<string>(defaultSize);
-  const [price, setPrice] = useState<string>(defaultPrice);
-  const [saving, setSaving] = useState<string>(defaultSaving);
-  const [endDate, setEndDate] = useState<string>(defaultEndDate);
+  const [brand, setBrand] = useState<string>(defaultBrand.trim());
+  const [description, setDescription] = useState<string>(
+    defaultDescription.trim(),
+  );
+  const [size, setSize] = useState<string>(defaultSize.trim());
+
+  const brandError = useMemo(() => brand.length > 20, [brand]);
+  const descriptionError = useMemo(
+    () => description.length > 24,
+    [description],
+  );
+  const sizeError = useMemo(() => size.length > 24, [size]);
+
+  const formattedEndDate = useMemo(
+    () =>
+      new Date(endDate).toLocaleDateString('en-AU', {
+        day: 'numeric',
+        month: 'long',
+      }),
+    [endDate],
+  );
 
   return (
-    <div className={styles.tag}>
-      <span className={styles.title}>
-        <input
-          className={styles.input}
-          onChange={(e) => setTitle(e.currentTarget.value)}
-          value={title}
-        />
-      </span>
-      <span className={styles.brand}>
+    <div
+      className={
+        brandError || descriptionError || sizeError
+          ? styles.tagError
+          : styles.tag
+      }
+    >
+      <span className={styles.title}>{title}</span>
+      <span className={brandError ? styles.brandError : styles.brand}>
         <input
           className={styles.input}
           onChange={(e) => setBrand(e.currentTarget.value)}
           value={brand}
         />
       </span>
-      <span className={styles.description}>
+      <span
+        className={
+          descriptionError ? styles.descriptionError : styles.description
+        }
+      >
         <input
           className={styles.input}
           onChange={(e) => setDescription(e.currentTarget.value)}
           value={description}
         />
       </span>
-      <span className={styles.size}>
+      <span className={sizeError ? styles.sizeError : styles.size}>
         <input
           className={styles.input}
           onChange={(e) => setSize(e.currentTarget.value)}
           value={size}
         />
       </span>
-      <span className={styles.price}>
-        <input
-          className={styles.input}
-          onChange={(e) => setPrice(e.currentTarget.value)}
-          value={price}
-        />
-      </span>
-      <span className={styles.saving}>
-        Save {saving} <span className={styles.savingSubtext}>off RRP</span>
+      <span className={styles.price}>{numeral(price).format('$0.00')}</span>
+      <span className={styles.save}>
+        Save {save} <span className={styles.saveSubtext}>off RRP</span>
       </span>
       <span className={styles.endDate}>
-        Sale ends <span>{endDate}</span>
+        Sale ends <span>{formattedEndDate}</span>
       </span>
-      <span className={styles.barcode}>{barcode}</span>
+      <span className={styles.ean_code}>{eanCode}</span>
     </div>
   );
 };
 
 export default Tag;
+
+// brand = 20
+// desc = 24
+// size = 24
