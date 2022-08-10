@@ -1,20 +1,8 @@
 import chunk from 'lodash/chunk';
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { useMemo } from 'react';
+import { Tag } from '../components';
 import styles from '../styles/Home.module.css';
-
-interface Tag {
-  title: 'Catalogue' | 'Special';
-  brand: string;
-  description: string;
-  size: string;
-  price: string;
-  saving: string;
-  endDate: string;
-  barcode: number;
-  quantity?: number;
-}
 
 const data: Tag[] = [
   {
@@ -163,21 +151,7 @@ const Home: NextPage = () => {
         {chunkedData.map((page) => (
           <section className={styles.page}>
             {page.map((tag) => (
-              <div className={styles.tag}>
-                <span className={styles.title}>{tag.title}</span>
-                <span className={styles.brand}>{tag.brand}</span>
-                <span className={styles.description}>{tag.description}</span>
-                <span className={styles.size}>{tag.size}</span>
-                <span className={styles.price}>{tag.price}</span>
-                <span className={styles.saving}>
-                  Save <span>{tag.saving}</span>{' '}
-                  <span className={styles.savingSubtext}>off RRP</span>
-                </span>
-                <span className={styles.endDate}>
-                  Sale ends <span>{tag.endDate}</span>
-                </span>
-                <span className={styles.barcode}>{tag.barcode}</span>
-              </div>
+              <Tag {...tag} />
             ))}
           </section>
         ))}

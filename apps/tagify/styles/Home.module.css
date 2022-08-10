@@ -1,10 +1,3 @@
-@font-face {
-  font-family: 'Komika Axis';
-  font-style: normal;
-  font-weight: normal;
-  src: url('../public/fonts/Komika Axis.woff') format('woff');
-}
-
 .page {
   display: grid;
   grid-template-rows: repeat(3, 7.49cm);
@@ -13,52 +6,6 @@
   align-content: space-around;
   justify-content: space-between;
   color: black;
-}
-
-.tag {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: solid 1px #c0c0c0;
-  font-family: 'Komika Axis';
-}
-
-.title {
-  font-size: 20pt;
-  text-decoration: underline;
-}
-
-.brand {
-  font-size: 13pt;
-}
-
-.description {
-  font-size: 11pt;
-}
-
-.size {
-  font-size: 11pt;
-}
-
-.price {
-  font-size: 34pt;
-}
-
-.saving {
-  font-size: 12pt;
-}
-
-.savingSubtext {
-  font-size: 10pt;
-}
-
-.endDate {
-  font-sizt: 8pt;
-}
-
-.barcode {
-  font-family: sans-serif;
-  font-size: 10pt;
 }
 
 @media screen {
