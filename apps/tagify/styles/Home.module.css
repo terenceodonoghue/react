@@ -23,9 +23,11 @@
     padding: 8rem;
     flex: 1;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    gap: 24px;
   }
 
   .main:empty {
@@ -34,14 +36,14 @@
 
   .page {
     border-radius: 8px;
-    margin: 12pt 0;
-    padding: 24pt;
+    padding: 24px;
     background-color: white;
   }
 
   .heading {
     margin: 0 0 16px;
-    font-size: 72pt;
+    font-size: 56pt;
+    font-weight: 700;
   }
 
   .helpText {
@@ -52,9 +54,19 @@
     display: flex;
     align-items: center;
     gap: 24pt;
-    border: solid 1px #c0c0c0;
+    border: solid 2px white;
     border-radius: 8px;
     padding: 24px;
+  }
+
+  .label {
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+  }
+
+  .input {
+    margin: 0 4px;
   }
 
   .endDate {

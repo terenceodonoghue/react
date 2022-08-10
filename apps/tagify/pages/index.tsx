@@ -46,8 +46,9 @@ const Home: NextPage = () => {
             to get started.
           </p>
           <div className={styles.options}>
-            <label htmlFor="catalogue">
+            <label className={styles.label} htmlFor="catalogue">
               <input
+                className={styles.input}
                 id="catalogue"
                 type="radio"
                 name="title"
@@ -57,8 +58,9 @@ const Home: NextPage = () => {
               />
               Catalogue
             </label>
-            <label htmlFor="special">
+            <label className={styles.label} htmlFor="special">
               <input
+                className={styles.input}
                 id="special"
                 type="radio"
                 name="title"
@@ -68,10 +70,10 @@ const Home: NextPage = () => {
               />
               Special
             </label>
-            <label htmlFor="endDate">
+            <label className={styles.label} htmlFor="endDate">
               End Date
               <input
-                className={styles.endDate}
+                className={styles.input}
                 id="endDate"
                 type="date"
                 value={endDate}
@@ -79,6 +81,7 @@ const Home: NextPage = () => {
               />
             </label>
             <input
+              className={styles.input}
               disabled={!endDate}
               type="file"
               accept=".csv"
