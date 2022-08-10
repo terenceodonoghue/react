@@ -5169,6 +5169,7 @@ __metadata:
     "@types/react-dom": "npm:18.0.6"
     eslint: "npm:8.21.0"
     eslint-config-next: "npm:12.2.4"
+    lodash: "npm:^4.17.21"
     next: "npm:12.2.4"
     react: "npm:18.2.0"
     react-dom: "npm:18.2.0"

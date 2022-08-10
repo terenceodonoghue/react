@@ -1,5 +1,7 @@
+import chunk from 'lodash/chunk';
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import { useMemo } from 'react';
 import styles from '../styles/Home.module.css';
 
 interface Tag {
@@ -148,6 +150,8 @@ const data: Tag[] = [
 ];
 
 const Home: NextPage = () => {
+  const chunkedData = chunk(data, 9);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -156,37 +160,27 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <section className={styles.page}>
-          {data.map((tag) => (
-            <div className={styles.tag}>
-              <span className={styles.title} contentEditable>
-                {tag.title}
-              </span>
-              <span className={styles.brand} contentEditable>
-                {tag.brand}
-              </span>
-              <span className={styles.description} contentEditable>
-                {tag.description}
-              </span>
-              <span className={styles.size} contentEditable>
-                {tag.size}
-              </span>
-              <span className={styles.price} contentEditable>
-                {tag.price}
-              </span>
-              <span className={styles.saving}>
-                Save <span contentEditable>{tag.saving}</span>{' '}
-                <span className={styles.savingSubtext}>off RRP</span>
-              </span>
-              <span className={styles.endDate}>
-                Sale ends <span contentEditable>{tag.endDate}</span>
-              </span>
-              <span className={styles.barcode} contentEditable>
-                {tag.barcode}
-              </span>
-            </div>
-          ))}
-        </section>
+        {chunkedData.map((page) => (
+          <section className={styles.page}>
+            {page.map((tag) => (
+              <div className={styles.tag}>
+                <span className={styles.title}>{tag.title}</span>
+                <span className={styles.brand}>{tag.brand}</span>
+                <span className={styles.description}>{tag.description}</span>
+                <span className={styles.size}>{tag.size}</span>
+                <span className={styles.price}>{tag.price}</span>
+                <span className={styles.saving}>
+                  Save <span>{tag.saving}</span>{' '}
+                  <span className={styles.savingSubtext}>off RRP</span>
+                </span>
+                <span className={styles.endDate}>
+                  Sale ends <span>{tag.endDate}</span>
+                </span>
+                <span className={styles.barcode}>{tag.barcode}</span>
+              </div>
+            ))}
+          </section>
+        ))}
       </main>
     </div>
   );
