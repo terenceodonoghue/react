@@ -4,6 +4,12 @@
   align-items: center;
   border: solid 1px #c0c0c0;
   font-family: 'Komika Axis';
+  text-align: center;
+}
+
+.input {
+  all: inherit;
+  width: 100%;
 }
 
 .title {

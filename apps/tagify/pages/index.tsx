@@ -1,10 +1,10 @@
 import chunk from 'lodash/chunk';
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { Tag } from '../components';
+import { Tag, TagProps } from '../components';
 import styles from '../styles/Home.module.css';
 
-const data: Tag[] = [
+const data: TagProps[] = [
   {
     title: 'Catalogue',
     brand: 'Blackmores',
