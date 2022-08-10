@@ -32,10 +32,10 @@ const Tag: FunctionComponent<TagProps> = ({
 
   const brandError = useMemo(() => brand.length > 20, [brand]);
   const descriptionError = useMemo(
-    () => description.length > 24,
+    () => description.length > 20,
     [description],
   );
-  const sizeError = useMemo(() => size.length > 24, [size]);
+  const sizeError = useMemo(() => size.length > 20, [size]);
 
   const formattedEndDate = useMemo(
     () =>
