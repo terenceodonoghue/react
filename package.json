@@ -6,20 +6,21 @@
     "packages/*"
   ],
   "scripts": {
+    "lint": "yarn nx run-many --target=lint --all",
     "release": "yarn nx run-many --target=prepack --all && changeset publish"
   },
   "devDependencies": {
     "@changesets/cli": "^2.22.0",
     "@nrwl/cli": "latest",
     "@nrwl/workspace": "latest",
-    "@terenceodonoghue/eslint-config-react": "^1.0.6",
-    "@terenceodonoghue/eslint-import-resolver-exports": "^1.0.4",
+    "@terenceodonoghue/eslint-config-react": "^2.0.0",
     "@terenceodonoghue/prettier-plugin-packagejson": "^1.0.2",
     "@types/node": "^17.0.25",
     "@types/react": "^18.0.5",
     "@typescript-eslint/eslint-plugin": "^5.11.0",
     "@typescript-eslint/parser": "^5.11.0",
     "eslint": "^8.8.0",
+    "eslint-import-resolver-typescript": "^3.4.0",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-mdx": "^1.16.0",

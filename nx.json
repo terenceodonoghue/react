@@ -16,12 +16,6 @@
         "projects": "dependencies"
       }
     ],
-    "dev": [
-      {
-        "target": "build",
-        "projects": "dependencies"
-      }
-    ],
     "export": [
       {
         "target": "build",
