@@ -29,7 +29,9 @@
     "build:css": "postcss src/**/*.css --base src/ -d dist/ --no-map",
     "build:js": "tsc",
     "clean": "rimraf ./dist",
-    "lint": "eslint --ext .js,.ts,.tsx --ignore-path ../../.eslintignore --max-warnings=0 ./"
+    "lint": "eslint --ext .js,.ts,.tsx --ignore-path ../../.eslintignore --max-warnings=0 ./",
+    "prepack": "yarn build",
+    "prepublish": "yarn lint"
   },
   "dependencies": {
     "@emotion/react": "^11.10.0",
@@ -51,5 +53,8 @@
     "react": "*",
     "react-dom": "*"
   },
-  "packageManager": "yarn@4.0.0-rc.11"
+  "packageManager": "yarn@4.0.0-rc.11",
+  "engines": {
+    "node": ">=14.16"
+  }
 }
