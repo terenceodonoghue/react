@@ -1,6 +1,11 @@
+const react = require('@vitejs/plugin-react');
 const path = require('node:path');
+const { mergeConfig } = require('vite');
 
 module.exports = {
+  features: {
+    emotionAlias: false,
+  },
   core: { builder: '@storybook/builder-vite' },
   stories: [
     '../stories/**/*.stories.mdx',
@@ -13,15 +18,22 @@ module.exports = {
   ],
   framework: '@storybook/react',
   staticDirs: ['./public'],
-  viteFinal: (config) => {
-    config.resolve.alias = {
-      ...config.resolve.alias,
-      '@terenceodonoghue/react-hooks': path.resolve(
-        __dirname,
-        '../../../packages/react-hooks/src',
-      ),
-    };
-
-    return config;
-  },
+  viteFinal: (config) =>
+    mergeConfig(config, {
+      esbuild: {
+        logOverride: { 'this-is-undefined-in-esm': 'silent' },
+      },
+      resolve: {
+        alias: {
+          '@terenceodonoghue/react-components': path.resolve(
+            __dirname,
+            '../../../packages/react-components/src',
+          ),
+          '@terenceodonoghue/react-hooks': path.resolve(
+            __dirname,
+            '../../../packages/react-hooks/src',
+          ),
+        },
+      },
+    }),
 };

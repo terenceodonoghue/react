@@ -17,11 +17,11 @@
     "moduleResolution": "node",
     "baseUrl": ".",
     "paths": {
-      "~/*": [
-        "./*"
+      "@terenceodonoghue/react-components/core": [
+        "../../packages/react-components/src/core"
       ],
-      "test-utils": [
-        "./components/utils/test-utils"
+      "@terenceodonoghue/react-components/velocity": [
+        "../../packages/react-components/src/velocity"
       ]
     },
     "resolveJsonModule": true,

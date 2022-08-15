@@ -6,11 +6,15 @@ import {
   IconGallery,
   IconItem,
 } from '@storybook/addon-docs';
+import { Flex } from '@terenceodonoghue/react-components/core';
 import {
   Avatar,
   Button,
   Card,
+  Slider,
+  Switch,
   TextField,
+  ThemeProvider,
 } from '@terenceodonoghue/react-components/velocity';
 import * as Velocity from '@terenceodonoghue/react-icons/velocity';
 import {
@@ -25,19 +29,14 @@ import {
 import { useState } from 'react';
 
 <Meta
-  title="UI Kits/Velocity"
+  title="Components/Velocity"
   decorators={[
     (Story) => (
-      <div
-        style={{
-          display: 'flex',
-          gap: 32,
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
-      >
-        <Story />
-      </div>
+      <ThemeProvider>
+        <Flex gap={32} alignItems="center" justifyContent="center">
+          <Story />
+        </Flex>
+      </ThemeProvider>
     ),
   ]}
 />
@@ -196,5 +195,12 @@ The `fill` prop sets the icon colour, or defaults to `currentColor` if left blan
     <Map fill="#D63649" style={{ height: 24, width: 24 }} />
     <Mail fill="#00C1D4" style={{ height: 24, width: 24 }} />
     <Settings fill="#F7C137" style={{ height: 24, width: 24 }} />
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="Todo">
+    <Switch />
+    <Slider />
   </Story>
 </Canvas>

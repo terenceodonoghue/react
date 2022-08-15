@@ -1,6 +1,8 @@
 import { Flex } from '@terenceodonoghue/react-components/core';
-import { Avatar } from '@terenceodonoghue/react-components/velocity';
-import '@terenceodonoghue/react-components/velocity.css';
+import {
+  Avatar,
+  ThemeProvider,
+} from '@terenceodonoghue/react-components/velocity';
 import {
   Analytics,
   Dashboard,
@@ -18,9 +20,8 @@ import { useRouter } from 'next/router';
 import { FunctionComponent, useEffect, useMemo, useState } from 'react';
 import AppBar from '../components/core/AppBar/AppBar';
 import { DrawerItem } from '../components/core/Drawer';
-import Global from '../components/core/Global';
+
 import IconButton from '../components/core/IconButton';
-import ThemeProvider from '../components/core/ThemeProvider';
 import { MenuIcon, VelocityIcon } from '../components/icons';
 import mq from '../components/utils/mq';
 
@@ -51,7 +52,6 @@ const App: FunctionComponent<AppProps> = ({ Component, pageProps }) => {
 
   return (
     <ThemeProvider>
-      <Global />
       <div
         css={({ zIndex }) => ({
           position: 'sticky',
