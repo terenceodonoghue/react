@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { Interpolation, Theme, useTheme } from '@emotion/react';
+import { CSSObject, useTheme } from '@emotion/react';
 import { darken, rgba, rem, transitions } from 'polished';
 import { ButtonHTMLAttributes, FunctionComponent } from 'react';
 
@@ -13,7 +13,7 @@ const Button: FunctionComponent<ButtonProps> = ({
 }) => {
   const { color, font, transition } = useTheme();
 
-  const css: Record<string, Interpolation<Theme>> = {
+  const css: Record<string, CSSObject> = {
     contained: {
       backgroundColor: color.primary,
       color: 'white',

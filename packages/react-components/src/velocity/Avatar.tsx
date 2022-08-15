@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { Interpolation, Theme } from '@emotion/react';
+import { CSSObject } from '@emotion/react';
 import { FunctionComponent, ImgHTMLAttributes } from 'react';
 
 export interface AvatarProps extends ImgHTMLAttributes<HTMLImageElement> {
@@ -13,7 +13,7 @@ const Avatar: FunctionComponent<AvatarProps> = ({
   variant = 'rounded',
   ...props
 }) => {
-  const css: Record<string, Interpolation<Theme>> = {
+  const css: Record<string, CSSObject> = {
     rounded: {
       borderRadius: '50%',
     },
