@@ -1,12 +1,6 @@
 # @terenceodonoghue/react [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier) ![GitHub](https://img.shields.io/github/license/terenceodonoghue/react)
 
-✌️ Hooks, tools and sample apps for React
-
-## Tools
-
-| Name      | URL                                                                              | Status                                                                                                                                                                          |
-| :-------- | :------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Storybook | [https://storybook.terenceodonoghue.dev](https://storybook.terenceodonoghue.dev) | [![Netlify Status](https://api.netlify.com/api/v1/badges/606e6e49-7d4f-4e4f-9c2f-6aec79e14afe/deploy-status)](https://app.netlify.com/sites/stupendous-malasada-674d50/deploys) |
+✌️ Components, hooks, and sample apps for React
 
 ## Sample Apps
 
