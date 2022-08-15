@@ -1,5 +1,6 @@
 {
   "name": "@terenceodonoghue/storybook",
+  "version": "0.0.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -30,5 +31,5 @@
     "react": "*",
     "react-dom": "*"
   },
-  "packageManager": "yarn@3.2.0"
+  "packageManager": "yarn@4.0.0-rc.11"
 }

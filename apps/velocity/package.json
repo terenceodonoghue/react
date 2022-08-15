@@ -1,5 +1,6 @@
 {
   "name": "@terenceodonoghue/velocity",
+  "version": "0.0.0",
   "private": true,
   "scripts": {
     "build": "next build",
@@ -63,5 +64,6 @@
   "peerDependencies": {
     "react": "*",
     "react-dom": "*"
-  }
+  },
+  "packageManager": "yarn@4.0.0-rc.11"
 }
