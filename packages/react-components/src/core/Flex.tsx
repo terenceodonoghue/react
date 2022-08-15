@@ -5,9 +5,9 @@ import { FunctionComponent, HTMLAttributes } from 'react';
 export interface FlexProps extends HTMLAttributes<HTMLDivElement> {
   direction?: Property.FlexDirection;
   wrap?: Property.FlexWrap;
-  gap?: Property.Gap;
-  columnGap?: Property.ColumnGap;
-  rowGap?: Property.RowGap;
+  gap?: Property.Gap | number;
+  columnGap?: Property.ColumnGap | number;
+  rowGap?: Property.RowGap | number;
   alignItems?: Property.AlignItems;
   justifyContent?: Property.JustifyContent;
   justifyItems?: Property.JustifyItems;
