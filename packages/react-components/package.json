@@ -9,7 +9,8 @@
   "type": "module",
   "exports": {
     "./core": "./dist/core/index.js",
-    "./velocity": "./dist/velocity/index.js"
+    "./velocity": "./dist/velocity/index.js",
+    "./velocity.css": "./dist/velocity/index.css"
   },
   "typesVersions": {
     "*": {

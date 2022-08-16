@@ -33,7 +33,6 @@ declare module '@emotion/react' {
         light: number;
         regular: number;
         medium: number;
-        bold: number;
       };
     };
     transition: {

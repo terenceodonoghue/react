@@ -1,12 +1,6 @@
-import {
-  Global,
-  ThemeProvider as EmotionProvider,
-  Theme,
-} from '@emotion/react';
+import { ThemeProvider as EmotionProvider, Theme } from '@emotion/react';
 import { merge } from 'lodash-es';
 import { FunctionComponent, ReactNode } from 'react';
-import sanitize from 'sanitize.css';
-import velocity from './index.css';
 
 export const defaultTheme: Theme = {
   color: {
@@ -40,7 +34,6 @@ export const defaultTheme: Theme = {
       light: 300,
       regular: 400,
       medium: 500,
-      bold: 700,
     },
   },
   transition: {
@@ -63,7 +56,6 @@ const ThemeProvider: FunctionComponent<ThemeProviderProps> = ({
     theme={theme ? merge(defaultTheme, theme) : defaultTheme}
     {...props}
   >
-    <Global styles={[sanitize, velocity]} />
     {children}
   </EmotionProvider>
 );
