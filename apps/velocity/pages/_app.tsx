@@ -1,8 +1,10 @@
-import { Flex } from '@terenceodonoghue/react-components/core';
+import { Flex, Global } from '@terenceodonoghue/react-components/core';
 import {
   Avatar,
   ThemeProvider,
+  mq,
 } from '@terenceodonoghue/react-components/velocity';
+import velocity from '@terenceodonoghue/react-components/velocity.css';
 import {
   Analytics,
   Dashboard,
@@ -23,7 +25,6 @@ import { DrawerItem } from '../components/core/Drawer';
 
 import IconButton from '../components/core/IconButton';
 import { MenuIcon, VelocityIcon } from '../components/icons';
-import mq from '../components/utils/mq';
 
 const Drawer = dynamic(() => import('../components/core/Drawer'), {
   ssr: false,
@@ -52,11 +53,23 @@ const App: FunctionComponent<AppProps> = ({ Component, pageProps }) => {
 
   return (
     <ThemeProvider>
+      <Global
+        styles={[
+          velocity,
+          ({ color }) =>
+            mq({
+              body: {
+                backgroundColor: color.neutral[100],
+              },
+              main: { marginLeft: [0, 0, 80] },
+            }),
+        ]}
+      />
       <div
-        css={({ zIndex }) => ({
+        css={{
           position: 'sticky',
           top: 0,
-          zIndex: zIndex.appBar + 1,
+          zIndex: 1400,
           '.github-corner:hover': {
             '.octo-arm': {
               animation: 'octocat-wave 560ms ease-in-out',
@@ -85,7 +98,7 @@ const App: FunctionComponent<AppProps> = ({ Component, pageProps }) => {
               },
             },
           },
-        })}
+        }}
       >
         <a
           href="https://github.com/terenceodonoghue/react/tree/master/apps/velocity"
@@ -127,11 +140,11 @@ const App: FunctionComponent<AppProps> = ({ Component, pageProps }) => {
         <Flex css={{ flex: 1 }} alignItems="center">
           <IconButton
             aria-label="menu"
-            css={({ palette, zIndex }) => ({
-              color: palette.neutral[400],
+            css={({ color }) => ({
+              color: color.neutral[400],
               height: 28,
               width: 28,
-              zIndex: zIndex.menuButton,
+              zIndex: 1300,
             })}
             onClick={() => toggleDrawer(!drawerOpen)}
           >

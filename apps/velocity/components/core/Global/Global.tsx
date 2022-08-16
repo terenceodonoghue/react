@@ -1,15 +1,15 @@
 import { FunctionComponent } from 'react';
 import { Global } from '@emotion/react';
-import mq from '../../utils/mq';
+import { mq } from '@terenceodonoghue/react-components/velocity';
 
 const GlobalStyles: FunctionComponent = () => (
   <Global
     styles={[
-      ({ palette }) =>
+      ({ color }) =>
         mq({
           body: {
-            backgroundColor: palette.neutral[100],
-            color: palette.neutral[900],
+            backgroundColor: color.neutral[100],
+            color: color.neutral[900],
           },
           main: {
             marginLeft: [0, 0, 80],

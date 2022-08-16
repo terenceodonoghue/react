@@ -8,8 +8,10 @@ export interface TextFieldProps extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 const TextField: FunctionComponent<TextFieldProps> = ({
+  className,
   id,
   label,
+  style,
   ...props
 }) => {
   const { color, font, transition } = useTheme();
@@ -23,7 +25,9 @@ const TextField: FunctionComponent<TextFieldProps> = ({
         letterSpacing: 1.2,
         textTransform: 'uppercase',
       }}
+      className={className}
       htmlFor={id}
+      style={style}
     >
       {label ? (
         <span

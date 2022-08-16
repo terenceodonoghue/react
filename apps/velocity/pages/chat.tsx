@@ -4,7 +4,7 @@ import { Avatar } from '@terenceodonoghue/react-components/velocity';
 import moment from 'moment';
 import { NextPage } from 'next';
 import Head from 'next/head';
-import { rgba, transitions as transition } from 'polished';
+import { rgba, transitions } from 'polished';
 
 const fixtures = Array.from(Array(7)).map(() => ({
   isOnline: faker.datatype.boolean(),
@@ -23,9 +23,9 @@ const ChatPage: NextPage = () => (
     </Head>
     <Flex>
       <ul
-        css={({ palette }) => ({
-          backgroundColor: palette.neutral[50],
-          borderRightColor: rgba(palette.accent, 0.08),
+        css={({ color }) => ({
+          backgroundColor: color.neutral[50],
+          borderRightColor: rgba(color.primary, 0.08),
           borderRightStyle: 'solid',
           borderRightWidth: 1,
           flexBasis: 376,
@@ -38,18 +38,15 @@ const ChatPage: NextPage = () => (
       >
         {fixtures.map((conversation, index) => (
           <Flex
-            css={({ palette, transitions }) => ({
-              borderBottomColor: rgba(palette.accent, 0.08),
+            css={({ color, transition }) => ({
+              borderBottomColor: rgba(color.primary, 0.08),
               borderBottomStyle: 'solid',
               borderBottomWidth: 1,
               cursor: 'pointer',
               padding: '16px 24px',
-              ...transition(
-                'background-color',
-                `${transitions.duration.standard}ms ${transitions.easing.sharp}`,
-              ),
+              ...transitions(['background-color'], transition.slowly),
               '&:hover': {
-                backgroundColor: rgba(palette.accent, 0.08),
+                backgroundColor: rgba(color.primary, 0.08),
               },
             })}
             // eslint-disable-next-line react/no-array-index-key
@@ -68,15 +65,15 @@ const ChatPage: NextPage = () => (
             <Flex direction="column" justifyContent="center">
               <Flex justifyContent="space-between">
                 <span
-                  css={({ typography }) => ({
-                    fontWeight: typography.fontWeight.medium,
+                  css={({ font }) => ({
+                    fontWeight: font.weight.medium,
                   })}
                 >
                   {conversation.name}
                 </span>
                 <span
-                  css={({ palette }) => ({
-                    color: palette.neutral[600],
+                  css={({ color }) => ({
+                    color: color.neutral[600],
                     display: 'block',
                   })}
                 >
@@ -84,8 +81,8 @@ const ChatPage: NextPage = () => (
                 </span>
               </Flex>
               <span
-                css={({ palette }) => ({
-                  color: palette.neutral[600],
+                css={({ color }) => ({
+                  color: color.neutral[600],
                   maxWidth: 256,
                   overflow: 'hidden',
                   textOverflow: 'ellipsis',

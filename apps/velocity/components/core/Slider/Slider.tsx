@@ -1,4 +1,4 @@
-import { rgba } from 'polished';
+import { rgba, transitions } from 'polished';
 import {
   forwardRef,
   InputHTMLAttributes,
@@ -32,8 +32,8 @@ const Slider = forwardRef<HTMLLabelElement, SliderProps>(
           )}
           {secondary && (
             <p
-              css={({ palette }) => ({
-                color: palette.neutral[600],
+              css={({ color }) => ({
+                color: color.neutral[600],
                 lineHeight: '1.467em',
                 margin: 0,
               })}
@@ -45,20 +45,19 @@ const Slider = forwardRef<HTMLLabelElement, SliderProps>(
         </div>
       )}
       <input
-        css={({ palette, transitions }) => ({
+        css={({ color, transition }) => ({
           appearance: 'none',
-          backgroundColor: rgba(palette.accent, 0.15),
+          backgroundColor: rgba(color.primary, 0.15),
           borderRadius: 7,
           height: 4,
           outline: 'none',
-          transition: `opacity ${transitions.duration.standard}ms
-          ${transitions.easing.sharp}`,
+          ...transitions(['opacity'], transition.quickly),
           width: '100%',
           '&::-moz-range-progress': {
-            backgroundColor: palette.accent,
+            backgroundColor: color.primary,
           },
           '&::-moz-range-thumb': {
-            border: `solid 4px ${palette.accent}`,
+            border: `solid 4px ${color.primary}`,
             borderRadius: '50%',
             cursor: 'pointer',
             height: 8,
@@ -66,7 +65,7 @@ const Slider = forwardRef<HTMLLabelElement, SliderProps>(
           },
           '&::-webkit-slider-thumb': {
             appearance: 'none',
-            border: `solid 4px ${palette.accent}`,
+            border: `solid 4px ${color.primary}`,
             borderRadius: '50%',
             cursor: 'pointer',
             height: 16,

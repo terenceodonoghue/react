@@ -4,13 +4,15 @@ import { rgba, transitions } from 'polished';
 import { InputHTMLAttributes, FunctionComponent } from 'react';
 
 const Slider: FunctionComponent<InputHTMLAttributes<HTMLInputElement>> = ({
+  className,
   id,
+  style,
   ...props
 }) => {
   const { color, transition } = useTheme();
 
   return (
-    <label htmlFor={id}>
+    <label className={className} htmlFor={id} style={style}>
       <input
         css={{
           appearance: 'none',

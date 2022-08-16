@@ -1,6 +1,6 @@
 import { Avatar } from '@terenceodonoghue/react-components/velocity';
 import { FunctionComponent, HTMLAttributes } from 'react';
-import { transitions as transition } from 'polished';
+import { transitions } from 'polished';
 import { useMediaQuery } from 'react-responsive';
 import { animated, config, useSpring } from 'react-spring';
 import { DESKTOP } from '../../utils/breakpoints';
@@ -39,14 +39,14 @@ const Drawer: FunctionComponent<DrawerProps> & DrawerComposition = ({
   return (
     <animated.div
       css={[
-        ({ palette, zIndex }) => ({
-          backgroundColor: palette.neutral[50],
+        ({ color }) => ({
+          backgroundColor: color.neutral[50],
           bottom: 0,
           overflowX: 'hidden',
           padding: '20px 0',
           position: 'fixed',
           top: 79,
-          zIndex: zIndex.drawer,
+          zIndex: 1200,
         }),
         anchor === 'left' ? { left: 0 } : { right: 0 },
       ]}
@@ -56,16 +56,13 @@ const Drawer: FunctionComponent<DrawerProps> & DrawerComposition = ({
     >
       <div
         css={[
-          ({ transitions }) => ({
+          ({ transition }) => ({
             display: 'flex',
             alignItems: 'center',
             margin: '27px 0 34px',
             opacity: open ? 1 : 0,
             paddingLeft: 28,
-            ...transition(
-              'opacity',
-              `${transitions.duration.standard}ms ${transitions.easing.easeInOut}`,
-            ),
+            ...transitions(['opacity'], transition.quickly),
           }),
         ]}
       >
@@ -81,8 +78,8 @@ const Drawer: FunctionComponent<DrawerProps> & DrawerComposition = ({
         <div>
           <span>Welcome</span>
           <span
-            css={({ palette }) => ({
-              color: palette.neutral[400],
+            css={({ color }) => ({
+              color: color.neutral[400],
               display: 'block',
               whiteSpace: 'nowrap',
             })}

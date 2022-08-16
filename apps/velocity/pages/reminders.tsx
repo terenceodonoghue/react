@@ -3,7 +3,7 @@ import { Flex } from '@terenceodonoghue/react-components/core';
 import { Card } from '@terenceodonoghue/react-components/velocity';
 import { NextPage } from 'next';
 import Head from 'next/head';
-import { em, linearGradient, rgba, transitions as transition } from 'polished';
+import { linearGradient, rem, rgba, transitions } from 'polished';
 import { Dispatch, ReactElement, SetStateAction, useState } from 'react';
 import {
   DragDropContext,
@@ -171,10 +171,10 @@ const RemindersPage: NextPage = () => {
   const theme = useTheme();
 
   const colorMap = {
-    'service-needed': theme.palette.ui.blue,
-    waiting: theme.palette.ui.purple,
-    'in-service': theme.palette.ui.teal,
-    'fully-serviced': theme.palette.ui.yellow,
+    'service-needed': theme.color.ui.blue,
+    waiting: theme.color.ui.purple,
+    'in-service': theme.color.ui.teal,
+    'fully-serviced': theme.color.ui.yellow,
   };
 
   return (
@@ -203,10 +203,10 @@ const RemindersPage: NextPage = () => {
                   key={columnKey}
                 >
                   <h3
-                    css={({ palette, typography }) => ({
-                      color: palette.neutral[500],
-                      fontSize: em(12, typography.fontSize),
-                      fontWeight: typography.fontWeight.medium,
+                    css={({ color, font }) => ({
+                      color: color.neutral[500],
+                      fontSize: rem(12),
+                      fontWeight: font.weight.medium,
                       letterSpacing: 1.1,
                       margin: '8px 0',
                       textTransform: 'uppercase',
@@ -257,22 +257,22 @@ const RemindersPage: NextPage = () => {
                                   {...providedDrag.dragHandleProps}
                                 >
                                   <Card
-                                    css={({ palette, transitions }) => ({
+                                    css={({ color, transition }) => ({
                                       backgroundRepeat: 'no-repeat',
                                       borderRadius: 5,
                                       ...linearGradient({
                                         colorStops: [
                                           `${colorMap[columnKey]} 2px`,
-                                          `${palette.neutral[50]} 2px`,
+                                          `${color.neutral[50]} 2px`,
                                         ],
-                                        fallback: palette.neutral[50],
+                                        fallback: color.neutral[50],
                                         toDirection: '90deg',
                                       }),
                                       margin: '0 !important',
                                       padding: 24,
-                                      ...transition(
-                                        'box-shadow',
-                                        `${transitions.duration.standard}ms ${transitions.easing.sharp}`,
+                                      ...transitions(
+                                        ['box-shadow'],
+                                        transition.quickly,
                                       ),
                                       '&:not(:hover)': {
                                         boxShadow: 'none',
@@ -280,9 +280,8 @@ const RemindersPage: NextPage = () => {
                                     })}
                                   >
                                     <Flex
-                                      css={({ typography }) => ({
-                                        fontWeight:
-                                          typography.fontWeight.medium,
+                                      css={({ font }) => ({
+                                        fontWeight: font.weight.medium,
                                       })}
                                       justifyContent="space-between"
                                     >
@@ -290,8 +289,8 @@ const RemindersPage: NextPage = () => {
                                       <span>{ticket.price}</span>
                                     </Flex>
                                     <Flex
-                                      css={({ palette }) => ({
-                                        color: palette.neutral[600],
+                                      css={({ color }) => ({
+                                        color: color.neutral[600],
                                       })}
                                       justifyContent="space-between"
                                     >

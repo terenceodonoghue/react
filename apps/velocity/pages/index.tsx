@@ -1,14 +1,13 @@
 import { faker } from '@faker-js/faker';
 import { Flex } from '@terenceodonoghue/react-components/core';
-import { Avatar, Card } from '@terenceodonoghue/react-components/velocity';
+import { Avatar, Card, mq } from '@terenceodonoghue/react-components/velocity';
 import { NextPage } from 'next';
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import numeral from 'numeral';
-import { em, rgba } from 'polished';
+import { rem, rgba } from 'polished';
 import { useMemo } from 'react';
 import Container from '../components/core/Container';
-import mq from '../components/utils/mq';
 
 const OperatingScore = dynamic(() => import('../components/OperatingScore'), {
   ssr: false,
@@ -94,24 +93,18 @@ const IndexPage: NextPage = () => {
                   <div
                     css={mq({ marginTop: [0, 12, 0], marginLeft: [20, 0, 60] })}
                   >
-                    <h2
-                      css={({ typography }) =>
-                        mq({
-                          display: ['none', 'none', 'block'],
-                          margin: '0 0 13px',
-                          width: 135,
-                          fontSize: em(28, typography.fontSize),
-                          fontWeight: typography.fontWeight.light,
-                          lineHeight: '1.14em',
-                        })
-                      }
+                    <h3
+                      css={mq({
+                        display: ['none', 'none', 'block'],
+                        margin: '0 0 13px',
+                      })}
                     >
                       Welcome to Velocity
-                    </h2>
+                    </h3>
                     <p
-                      css={({ palette }) =>
+                      css={({ color }) =>
                         mq({
-                          color: palette.neutral[600],
+                          color: color.neutral[600],
                           margin: 0,
                           textAlign: ['left', 'center', 'left'],
                         })
@@ -155,18 +148,18 @@ const IndexPage: NextPage = () => {
                     key={`${earnings}-${distance}`}
                   >
                     <div
-                      css={({ palette, typography }) => ({
+                      css={({ color, font }) => ({
                         margin: '0 16px 0 0',
                         '&::after': {
                           alignItems: 'center',
-                          background: palette.neutral[50],
+                          background: color.neutral[50],
                           borderRadius: '50%',
-                          boxShadow: `0 3px 10px ${rgba(palette.accent, 0.3)}`,
-                          color: palette.neutral[700],
+                          boxShadow: `0 3px 10px ${rgba(color.primary, 0.3)}`,
+                          color: color.neutral[700],
                           content: `'${i + 1}'`,
                           display: 'flex',
-                          fontSize: em(10, typography.fontSize),
-                          fontWeight: typography.fontWeight.medium,
+                          fontSize: rem(10),
+                          fontWeight: font.weight.medium,
                           height: 16,
                           justifyContent: 'center',
                           left: 32,
@@ -186,8 +179,8 @@ const IndexPage: NextPage = () => {
                     <div css={{ flex: 1 }}>
                       <Flex css={{ flex: 1 }} justifyContent="space-between">
                         <span
-                          css={({ typography }) => ({
-                            fontWeight: typography.fontWeight.medium,
+                          css={({ font }) => ({
+                            fontWeight: font.weight.medium,
                           })}
                         >
                           {name}
@@ -195,8 +188,8 @@ const IndexPage: NextPage = () => {
                         <span>{numeral(earnings).format('$0')}</span>
                       </Flex>
                       <Flex
-                        css={({ palette }) => ({
-                          color: palette.neutral[600],
+                        css={({ color }) => ({
+                          color: color.neutral[600],
                           flex: 1,
                         })}
                         justifyContent="space-between"

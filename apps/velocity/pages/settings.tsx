@@ -34,9 +34,9 @@ const Integration: FunctionComponent<IntegrationProps> = ({
   selected,
 }) => (
   <Flex
-    css={({ palette }) => ({
+    css={({ color }) => ({
       alignItems: 'center',
-      borderColor: selected ? palette.accent : palette.secondary,
+      borderColor: selected ? color.primary : color.secondary,
       borderRadius: 5,
       borderStyle: 'solid',
       borderWidth: 1,
@@ -47,10 +47,10 @@ const Integration: FunctionComponent<IntegrationProps> = ({
     })}
   >
     <Flex
-      css={({ palette }) => ({
+      css={({ color }) => ({
         flexShrink: 0,
         alignItems: 'center',
-        backgroundColor: rgba(palette.neutral[700], 0.1),
+        backgroundColor: rgba(color.neutral[700], 0.1),
         borderRadius: '50%',
         height: 70,
         justifyContent: 'center',
@@ -61,14 +61,12 @@ const Integration: FunctionComponent<IntegrationProps> = ({
       <IconComponent css={{ height: 30, width: 30 }} />
     </Flex>
     <div>
-      <span
-        css={({ typography }) => ({ fontWeight: typography.fontWeight.medium })}
-      >
+      <span css={({ font }) => ({ fontWeight: font.weight.medium })}>
         {name}
       </span>
       <span
-        css={({ palette }) => ({
-          color: palette.neutral[600],
+        css={({ color }) => ({
+          color: color.neutral[600],
           display: 'block',
         })}
       >
@@ -78,13 +76,13 @@ const Integration: FunctionComponent<IntegrationProps> = ({
   </Flex>
 );
 
-interface PaletteProps {
+interface colorProps {
   colors: string[];
   defaultChecked?: boolean;
   name: string;
 }
 
-const Palette: FunctionComponent<PaletteProps> = ({
+const PaletteColor: FunctionComponent<colorProps> = ({
   colors,
   defaultChecked,
   name,
@@ -123,14 +121,14 @@ const SettingsPage: NextPage = () => (
             Use this page to update your contact information and change your
             password.
           </p>
-          <Flex css={{ flexWrap: 'wrap', margin: '30px 0' }} gap={20}>
+          <Flex css={{ margin: '30px 0' }} gap={20} wrap="wrap">
             <TextField
               css={{ flex: 1, maxWidth: 272 }}
               defaultValue="appleseed_jane@mac.com"
               label="Email address"
             />
           </Flex>
-          <Flex css={{ flexWrap: 'wrap', margin: '30px 0' }} gap={20}>
+          <Flex css={{ margin: '30px 0' }} gap={20} wrap="wrap">
             <TextField
               css={{ flex: 1, maxWidth: 272 }}
               defaultValue="Jane"
@@ -148,7 +146,7 @@ const SettingsPage: NextPage = () => (
               type="date"
             />
           </Flex>
-          <Flex css={{ flexWrap: 'wrap', margin: '30px 0' }} gap={20}>
+          <Flex css={{ margin: '30px 0' }} gap={20} wrap="wrap">
             <TextField
               css={{ flex: 1, maxWidth: 272 }}
               defaultValue="password"
@@ -243,24 +241,27 @@ const SettingsPage: NextPage = () => (
         <Card css={{ flex: 1 }} heading="Theme">
           <p>Select a color scheme for your Velocity app.</p>
           <Flex css={{ margin: '12px -16px' }}>
-            <Palette
+            <PaletteColor
               colors={['#2e5bff', '#e0e7ff', '#8097b1']}
               defaultChecked
               name="Shelob"
             />
-            <Palette
+            <PaletteColor
               colors={['#8c54ff', '#00c1d4', '#fad050']}
               name="Denethor"
             />
-            <Palette
+            <PaletteColor
               colors={['#00a4de', '#3b7ed5', '#00a550']}
               name="Quickbeam"
             />
-            <Palette
+            <PaletteColor
               colors={['#232a64', '#85c800', '#616266']}
               name="Shadowfax"
             />
-            <Palette colors={['#a728a3', '#f7e0ff', '#7675ac']} name="Grima" />
+            <PaletteColor
+              colors={['#a728a3', '#f7e0ff', '#7675ac']}
+              name="Grima"
+            />
           </Flex>
         </Card>
       </Flex>

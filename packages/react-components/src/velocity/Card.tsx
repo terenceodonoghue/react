@@ -2,6 +2,7 @@
 import { useTheme } from '@emotion/react';
 import { rem, rgba } from 'polished';
 import { FunctionComponent, HTMLAttributes } from 'react';
+import mq from './utils/mq.js';
 
 export interface CardProps extends HTMLAttributes<HTMLDivElement> {
   heading?: string;
@@ -16,15 +17,15 @@ const Card: FunctionComponent<CardProps> = ({
 
   return (
     <div
-      css={{
+      css={mq({
         border: `solid 1px ${rgba(color.primary, 0.08)}`,
         borderRadius: 1,
         boxShadow: `0 10px 20px 0 ${rgba(color.primary, 0.07)}`,
-        margin: 6,
+        margin: [6, 12],
         padding: '32px 24px',
         backgroundColor: color.neutral[50],
         color: color.neutral[900],
-      }}
+      })}
       {...props}
     >
       {heading ? (

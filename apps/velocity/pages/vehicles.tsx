@@ -7,12 +7,12 @@ import Container from '../components/core/Container';
 import Slider from '../components/core/Slider';
 
 const VehiclesPage: NextPage = () => {
-  const textField: Interpolation<Theme> = ({ palette }) => ({
+  const textField: Interpolation<Theme> = ({ color }) => ({
     input: {
       background: 'none',
-      color: palette.accent,
+      color: color.primary,
       '::placeholder': {
-        color: palette.neutral[600],
+        color: color.neutral[600],
       },
     },
   });

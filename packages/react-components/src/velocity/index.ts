@@ -1,3 +1,4 @@
+export { default as mq } from './utils/mq.js';
 export { default as Avatar } from './Avatar.js';
 export { default as Button } from './Button.js';
 export { default as Card } from './Card.js';

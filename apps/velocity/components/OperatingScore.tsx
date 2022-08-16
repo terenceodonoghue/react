@@ -59,7 +59,7 @@ const OperatingScore = () => {
           .map(() => ({
             name: 'score',
             value: 1,
-            fill: theme.palette.secondary,
+            fill: theme.color.secondary,
           }))}
         dataKey="value"
         innerRadius={isMobile ? 46 : 66}
@@ -79,13 +79,13 @@ const OperatingScore = () => {
               const value = i + 1;
               if (value + (1 % 2)) {
                 if (value <= (isMobile ? 22 : 33)) {
-                  return theme.palette.accent;
+                  return theme.color.primary;
                 }
 
                 return '#e0e7ff';
               }
 
-              return theme.palette.neutral[50];
+              return theme.color.neutral[50];
             })(),
           }))}
         dataKey="value"

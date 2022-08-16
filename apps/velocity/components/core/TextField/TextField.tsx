@@ -1,4 +1,4 @@
-import { em, rgba, transitions as transition } from 'polished';
+import { em, rem, rgba, transitions } from 'polished';
 import {
   forwardRef,
   InputHTMLAttributes,
@@ -15,11 +15,11 @@ const TextField = forwardRef<HTMLLabelElement, TextFieldProps>(
   ({ children, id, inputProps, inputRef, ...props }, ref) => (
     <label
       css={[
-        ({ palette, typography }) => ({
-          color: palette.neutral[500],
+        ({ color, font }) => ({
+          color: color.neutral[500],
           display: 'inline-block',
-          fontSize: em(12, typography.fontSize),
-          fontWeight: typography.fontWeight.medium,
+          fontSize: rem(12),
+          fontWeight: font.weight.medium,
           letterSpacing: 1.2,
           margin: '0 12px',
           textTransform: 'uppercase',
@@ -32,31 +32,28 @@ const TextField = forwardRef<HTMLLabelElement, TextFieldProps>(
     >
       {children}
       <input
-        css={({ palette, transitions }) => ({
+        css={({ color, transition }) => ({
           display: 'block',
-          backgroundColor: rgba(palette.secondary, 0.2),
-          border: `solid 1px ${palette.secondary}`,
+          backgroundColor: rgba(color.secondary, 0.2),
+          border: `solid 1px ${color.secondary}`,
           borderRadius: 5,
-          color: palette.neutral[900],
+          color: color.neutral[900],
           fontSize: em(15, 12),
           height: 38,
           margin: '8px 0',
           maxWidth: 270,
           padding: '10px 16px',
-          ...transition(
-            ['border', 'opacity'],
-            `${transitions.duration.standard}ms ${transitions.easing.sharp}`,
-          ),
+          ...transitions(['border', 'opacity'], transition.slowly),
           width: '100%',
           '&:disabled': {
             opacity: 0.3,
           },
           '&:focus': {
-            border: `solid 1px ${palette.accent}`,
+            border: `solid 1px ${color.primary}`,
             outline: 0,
           },
           '&::placeholder': {
-            color: palette.neutral[600],
+            color: color.neutral[600],
           },
         })}
         data-testid="textfield-input"

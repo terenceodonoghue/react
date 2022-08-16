@@ -16,14 +16,6 @@
     "module": "esnext",
     "moduleResolution": "node",
     "baseUrl": ".",
-    "paths": {
-      "@terenceodonoghue/react-components/core": [
-        "../../packages/react-components/src/core"
-      ],
-      "@terenceodonoghue/react-components/velocity": [
-        "../../packages/react-components/src/velocity"
-      ]
-    },
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",

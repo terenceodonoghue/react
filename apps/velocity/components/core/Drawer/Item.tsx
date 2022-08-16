@@ -1,5 +1,5 @@
 import { useTheme } from '@emotion/react';
-import { rgba } from 'polished';
+import { rgba, transitions } from 'polished';
 import {
   forwardRef,
   JSXElementConstructor,
@@ -23,21 +23,19 @@ const Item = forwardRef<HTMLLIElement, ItemProps>(
     return (
       <li
         css={[
-          ({ palette, transitions }) => ({
+          ({ color, transition }) => ({
             alignItems: 'center',
-            backgroundColor: selected ? rgba(palette.accent, 0.1) : undefined,
-            borderLeft: `solid 3px ${
-              selected ? palette.accent : 'transparent'
-            }`,
-            color: selected ? palette.accent : palette.neutral[500],
+            backgroundColor: selected ? rgba(color.primary, 0.1) : undefined,
+            borderLeft: `solid 3px ${selected ? color.primary : 'transparent'}`,
+            color: selected ? color.primary : color.neutral[500],
             cursor: 'pointer',
             display: 'flex',
             height: 56,
             justifyContent: 'flex-start',
             padding: '0 0 0 25px',
-            transition: `background-color ${transitions.duration.standard}ms ${transitions.easing.sharp}`,
+            ...transitions(['background-color'], transition.quickly),
             '&:hover': {
-              backgroundColor: !selected && rgba(palette.accent, 0.1),
+              backgroundColor: !selected && rgba(color.primary, 0.1),
             },
           }),
         ]}
@@ -47,7 +45,7 @@ const Item = forwardRef<HTMLLIElement, ItemProps>(
       >
         {Icon && (
           <Icon
-            color={theme.palette.neutral[400]}
+            color={theme.color.neutral[400]}
             css={{
               flexShrink: 0,
               height: 24,
@@ -58,10 +56,10 @@ const Item = forwardRef<HTMLLIElement, ItemProps>(
         )}
         <span
           css={[
-            ({ transitions }) => ({
+            ({ transition }) => ({
               marginLeft: 16,
               opacity: compact ? 0 : 1,
-              transition: `opacity ${transitions.duration.standard}ms ${transitions.easing.easeInOut}`,
+              ...transitions(['opacity'], transition.quickly),
             }),
           ]}
           data-testid="drawer-item-text"

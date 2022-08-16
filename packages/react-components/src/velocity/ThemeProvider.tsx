@@ -50,12 +50,8 @@ export interface ThemeProviderProps {
 const ThemeProvider: FunctionComponent<ThemeProviderProps> = ({
   children,
   theme,
-  ...props
 }) => (
-  <EmotionProvider
-    theme={theme ? merge(defaultTheme, theme) : defaultTheme}
-    {...props}
-  >
+  <EmotionProvider theme={theme ? merge(defaultTheme, theme) : defaultTheme}>
     {children}
   </EmotionProvider>
 );

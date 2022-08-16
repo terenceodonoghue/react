@@ -1,6 +1,6 @@
 import { useTheme } from '@emotion/react';
 import { Flex } from '@terenceodonoghue/react-components/core';
-import { Card } from '@terenceodonoghue/react-components/velocity';
+import { Card, mq } from '@terenceodonoghue/react-components/velocity';
 import {
   Check,
   Dynamic,
@@ -10,7 +10,7 @@ import {
 import { NextPage } from 'next';
 import Head from 'next/head';
 import numeral from 'numeral';
-import { em, rgba } from 'polished';
+import { em, rem, rgba } from 'polished';
 import {
   AreaChart,
   Area,
@@ -24,26 +24,25 @@ import {
   YAxis,
 } from 'recharts';
 import Container from '../components/core/Container';
-import mq from '../components/utils/mq';
 
 const AnalyticsPage: NextPage = () => {
   const theme = useTheme();
 
   const iconMap = {
     'vehicles-on-track': {
-      color: theme.palette.ui.purple,
+      color: theme.color.ui.purple,
       component: Check,
     },
     'distance-driven': {
-      color: theme.palette.ui.blue,
+      color: theme.color.ui.blue,
       component: Marker,
     },
     'energy-consumed': {
-      color: theme.palette.ui.blue,
+      color: theme.color.ui.blue,
       component: Energy,
     },
     'total-drive-time': {
-      color: theme.palette.ui.blue,
+      color: theme.color.ui.blue,
       component: Dynamic,
     },
   };
@@ -63,7 +62,7 @@ const AnalyticsPage: NextPage = () => {
         <li
           css={mq({
             alignItems: 'center',
-            color: theme.palette.neutral[600],
+            color: theme.color.neutral[600],
             display: 'flex',
             margin: ['0 6px', '0 12px'],
             '&::before': {
@@ -169,24 +168,24 @@ const AnalyticsPage: NextPage = () => {
                   <linearGradient id="colorRevenue" x1="0" y1="0" x2="0" y2="1">
                     <stop
                       offset="5%"
-                      stopColor={theme.palette.accent}
+                      stopColor={theme.color.primary}
                       stopOpacity={0.1}
                     />
                     <stop
                       offset="95%"
-                      stopColor={theme.palette.accent}
+                      stopColor={theme.color.primary}
                       stopOpacity={0}
                     />
                   </linearGradient>
                   <linearGradient id="colorTrips" x1="0" y1="0" x2="0" y2="1">
                     <stop
                       offset="5%"
-                      stopColor={theme.palette.ui.purple}
+                      stopColor={theme.color.ui.purple}
                       stopOpacity={0.1}
                     />
                     <stop
                       offset="95%"
-                      stopColor={theme.palette.ui.purple}
+                      stopColor={theme.color.ui.purple}
                       stopOpacity={0}
                     />
                   </linearGradient>
@@ -196,7 +195,7 @@ const AnalyticsPage: NextPage = () => {
                   fill="url(#colorRevenue)"
                   fillOpacity={1}
                   name="Revenue"
-                  stroke={theme.palette.accent}
+                  stroke={theme.color.primary}
                   strokeWidth={2}
                   dot
                 />
@@ -205,12 +204,12 @@ const AnalyticsPage: NextPage = () => {
                   fill="url(#colorTrips)"
                   fillOpacity={1}
                   name="Trips"
-                  stroke={theme.palette.ui.purple}
+                  stroke={theme.color.ui.purple}
                   strokeWidth={2}
                   dot
                 />
                 <CartesianGrid
-                  stroke={theme.palette.neutral[700]}
+                  stroke={theme.color.neutral[700]}
                   strokeDasharray="2 2"
                   strokeOpacity="0.3"
                 />
@@ -224,16 +223,16 @@ const AnalyticsPage: NextPage = () => {
                 <XAxis
                   dataKey="name"
                   interval="preserveStartEnd"
-                  stroke={theme.palette.secondary}
-                  tick={{ fill: theme.palette.neutral[500] }}
+                  stroke={theme.color.secondary}
+                  tick={{ fill: theme.color.neutral[500] }}
                   tickLine={false}
                   tickMargin={8.5}
                 />
                 <YAxis
-                  stroke={theme.palette.secondary}
+                  stroke={theme.color.secondary}
                   tickFormatter={yTickFormatter}
                   tickLine={false}
-                  tick={{ fill: theme.palette.neutral[500] }}
+                  tick={{ fill: theme.color.neutral[500] }}
                   ticks={[0, 5000, 10000, 15000, 20000, 25000, 30000]}
                   tickMargin={13.5}
                 />
@@ -274,7 +273,7 @@ const AnalyticsPage: NextPage = () => {
               >
                 <Flex
                   css={{
-                    backgroundColor: rgba(theme.palette.ui.purple, 0.15),
+                    backgroundColor: rgba(theme.color.ui.purple, 0.15),
                     borderRadius: '50%',
                     height: 48,
                     marginBottom: 16,
@@ -289,14 +288,11 @@ const AnalyticsPage: NextPage = () => {
                   />
                 </Flex>
                 <span
-                  css={({ typography }) =>
+                  css={({ font }) =>
                     mq({
                       display: 'inline-block',
-                      fontSize: [
-                        em(34, typography.fontSize),
-                        em(48, typography.fontSize),
-                      ],
-                      fontWeight: typography.fontWeight.light,
+                      fontSize: [rem(34), rem(48)],
+                      fontWeight: font.weight.light,
                       letterSpacing: -0.6,
                       lineHeight: em(57, 48),
                     })
@@ -305,8 +301,8 @@ const AnalyticsPage: NextPage = () => {
                   {metric.value}
                 </span>
                 <div
-                  css={({ palette }) => ({
-                    color: palette.neutral[600],
+                  css={({ color }) => ({
+                    color: color.neutral[600],
                     lineHeight: '1.47em',
                   })}
                 >
@@ -376,14 +372,14 @@ const AnalyticsPage: NextPage = () => {
                 <Bar
                   barSize={7}
                   dataKey="comfort"
-                  fill={theme.palette.ui.blue}
+                  fill={theme.color.ui.blue}
                   name="Comfort"
                   radius={5}
                 />
                 <Bar
                   barSize={7}
                   dataKey="premium"
-                  fill={theme.palette.ui.purple}
+                  fill={theme.color.ui.purple}
                   name="Premium"
                   radius={5}
                 />
@@ -402,23 +398,23 @@ const AnalyticsPage: NextPage = () => {
                 <Line
                   dataKey="average"
                   name="Average"
-                  stroke={theme.palette.ui.yellow}
+                  stroke={theme.color.ui.yellow}
                   strokeWidth={2}
                 />
                 <XAxis
                   dataKey="name"
                   interval="preserveStartEnd"
                   padding={{ left: 17, right: 16 }}
-                  stroke={theme.palette.secondary}
-                  tick={{ fill: theme.palette.neutral[500] }}
+                  stroke={theme.color.secondary}
+                  tick={{ fill: theme.color.neutral[500] }}
                   tickLine={false}
                   tickMargin={7.5}
                 />
                 <YAxis
                   tickLine={false}
                   tickMargin={1}
-                  stroke={theme.palette.secondary}
-                  tick={{ fill: theme.palette.neutral[500] }}
+                  stroke={theme.color.secondary}
+                  tick={{ fill: theme.color.neutral[500] }}
                   ticks={[0, 25, 50, 75, 100, 125, 150]}
                 />
               </ComposedChart>

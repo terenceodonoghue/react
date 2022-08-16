@@ -1,4 +1,4 @@
-import { rgba, transitions as transition } from 'polished';
+import { rgba, transitions } from 'polished';
 import {
   forwardRef,
   InputHTMLAttributes,
@@ -33,8 +33,8 @@ const Switch = forwardRef<HTMLLabelElement, SwitchProps>(
         >
           {primary && (
             <span
-              css={({ typography }) => ({
-                fontWeight: typography.fontWeight.medium,
+              css={({ font }) => ({
+                fontWeight: font.weight.medium,
               })}
               data-testid="switch-primary"
             >
@@ -43,8 +43,8 @@ const Switch = forwardRef<HTMLLabelElement, SwitchProps>(
           )}
           {secondary && (
             <span
-              css={({ palette }) => ({
-                color: palette.neutral[600],
+              css={({ color }) => ({
+                color: color.neutral[600],
               })}
               data-testid="switch-secondary"
             >
@@ -62,19 +62,16 @@ const Switch = forwardRef<HTMLLabelElement, SwitchProps>(
         {...inputProps}
       />
       <span
-        css={({ palette, transitions }) => ({
-          backgroundColor: rgba(palette.neutral[600], 0.4),
+        css={({ color, transition }) => ({
+          backgroundColor: rgba(color.neutral[600], 0.4),
           borderRadius: 10,
           cursor: 'pointer',
           height: 20,
           position: 'relative',
           width: 36,
-          ...transition(
-            ['background-color', 'opacity'],
-            `${transitions.duration.standard}ms ${transitions.easing.sharp}`,
-          ),
+          ...transitions(['background-color', 'opacity'], transition.slowly),
           '&::before': {
-            backgroundColor: palette.neutral[50],
+            backgroundColor: color.neutral[50],
             borderRadius: '50%',
             content: '""',
             height: 16,
@@ -82,16 +79,13 @@ const Switch = forwardRef<HTMLLabelElement, SwitchProps>(
             position: 'absolute',
             top: 2,
             width: 16,
-            ...transition(
-              'transform',
-              `${transitions.duration.standard}ms ${transitions.easing.sharp}`,
-            ),
+            ...transitions(['transform'], transition.slowly),
             'input:checked + &': {
               transform: 'translateX(16px)',
             },
           },
           'input:checked:enabled + &': {
-            backgroundColor: palette.ui.green,
+            backgroundColor: color.ui.green,
           },
           'input:disabled + &': {
             opacity: 0.4,

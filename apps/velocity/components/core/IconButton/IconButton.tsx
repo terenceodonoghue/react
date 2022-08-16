@@ -1,5 +1,5 @@
 import { ButtonHTMLAttributes, forwardRef } from 'react';
-import { rgba } from 'polished';
+import { rgba, transitions } from 'polished';
 
 const Button = forwardRef<
   HTMLButtonElement,
@@ -7,20 +7,19 @@ const Button = forwardRef<
 >(function Button(props, ref) {
   return (
     <button
-      css={({ palette, transitions, typography }) => ({
+      css={({ color, transition, font }) => ({
         alignItems: 'center',
         background: 'none',
         border: 'none',
         borderRadius: 4,
         cursor: 'pointer',
         display: 'flex',
-        fontWeight: typography.fontWeight.medium,
+        fontWeight: font.weight.medium,
         justifyContent: 'center',
         padding: 5,
-        transition: `background-color ${transitions.duration.standard}ms
-            ${transitions.easing.easeInOut}`,
+        ...transitions(['background-color'], transition.quickly),
         '&:enabled:hover': {
-          backgroundColor: rgba(palette.accent, 0.1),
+          backgroundColor: rgba(color.primary, 0.1),
         },
         '&:disabled': {
           opacity: 0.3,

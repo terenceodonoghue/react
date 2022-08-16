@@ -4,7 +4,9 @@ import { rgba, transitions } from 'polished';
 import { InputHTMLAttributes, FunctionComponent } from 'react';
 
 const Switch: FunctionComponent<InputHTMLAttributes<HTMLInputElement>> = ({
+  className,
   id,
+  style,
   ...props
 }) => {
   const { color, transition } = useTheme();
@@ -12,7 +14,9 @@ const Switch: FunctionComponent<InputHTMLAttributes<HTMLInputElement>> = ({
   return (
     <label
       css={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+      className={className}
       htmlFor={id}
+      style={style}
     >
       <input
         css={{ margin: 0, height: 0, width: 0, opacity: 0 }}

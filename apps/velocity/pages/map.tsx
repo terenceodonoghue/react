@@ -5,7 +5,7 @@ import { Check, Marker } from '@terenceodonoghue/react-icons/velocity';
 import { faker } from '@faker-js/faker';
 import { NextPage } from 'next';
 import Head from 'next/head';
-import { em, rgba } from 'polished';
+import { rem, rgba } from 'polished';
 import Container from '../components/core/Container';
 import {
   ApplePayIcon,
@@ -31,19 +31,19 @@ const MapPage: NextPage = () => {
     margin: '24px 24px 0',
   };
 
-  const metricLabel: Interpolation<Theme> = ({ palette }) => ({
-    color: palette.neutral[600],
+  const metricLabel: Interpolation<Theme> = ({ color }) => ({
+    color: color.neutral[600],
   });
 
-  const metricValue: Interpolation<Theme> = ({ typography }) => ({
+  const metricValue: Interpolation<Theme> = ({ font }) => ({
     display: 'block',
-    fontWeight: typography.fontWeight.medium,
+    fontWeight: font.weight.medium,
   });
 
-  const passengerLabel: Interpolation<Theme> = ({ palette, typography }) => ({
-    color: palette.neutral[500],
-    fontSize: em(12, typography.fontSize),
-    fontWeight: theme.typography.fontWeight.medium,
+  const passengerLabel: Interpolation<Theme> = ({ color }) => ({
+    color: color.neutral[500],
+    fontSize: rem(12),
+    fontWeight: theme.font.weight.medium,
     letterSpacing: 1.125,
     marginBottom: 8,
     marginTop: 16,
@@ -58,8 +58,8 @@ const MapPage: NextPage = () => {
     whiteSpace: 'nowrap',
   };
 
-  const paymentMethodIcon: Interpolation<Theme> = ({ palette }) => ({
-    borderColor: palette.secondary,
+  const paymentMethodIcon: Interpolation<Theme> = ({ color }) => ({
+    borderColor: color.secondary,
     borderRadius: 5,
     borderStyle: 'solid',
     borderWidth: 1,
@@ -69,13 +69,13 @@ const MapPage: NextPage = () => {
     width: 140,
   });
 
-  const streetAddress: Interpolation<Theme> = ({ palette }) => ({
-    color: palette.neutral[600],
+  const streetAddress: Interpolation<Theme> = ({ color }) => ({
+    color: color.neutral[600],
   });
 
-  const suburb: Interpolation<Theme> = ({ typography }) => ({
+  const suburb: Interpolation<Theme> = ({ font }) => ({
     display: 'block',
-    fontWeight: typography.fontWeight.medium,
+    fontWeight: font.weight.medium,
     margin: 0,
   });
 
@@ -110,16 +110,14 @@ const MapPage: NextPage = () => {
                   />
                   <div css={{ marginLeft: 16 }}>
                     <span
-                      css={({ typography }) => ({
+                      css={({ font }) => ({
                         display: 'block',
-                        fontWeight: typography.fontWeight.medium,
+                        fontWeight: font.weight.medium,
                       })}
                     >
                       {fixtures.name}
                     </span>
-                    <span
-                      css={({ palette }) => ({ color: palette.neutral[600] })}
-                    >
+                    <span css={({ color }) => ({ color: color.neutral[600] })}>
                       4 interactions
                     </span>
                   </div>
@@ -149,22 +147,22 @@ const MapPage: NextPage = () => {
                   justifyContent="center"
                 >
                   <PayPalIcon
-                    color={theme.palette.neutral[900]}
+                    color={theme.color.neutral[900]}
                     css={{ height: 25 }}
                   />
                 </Flex>
                 <Flex
-                  css={({ palette }) => [
+                  css={({ color }) => [
                     paymentMethodIcon,
                     {
-                      backgroundColor: palette.accent,
+                      backgroundColor: color.primary,
                     },
                   ]}
                   alignItems="center"
                   justifyContent="center"
                 >
                   <VisaIcon
-                    color={theme.palette.neutral[50]}
+                    color={theme.color.neutral[50]}
                     css={{ height: 24 }}
                   />
                 </Flex>
@@ -174,7 +172,7 @@ const MapPage: NextPage = () => {
                   justifyContent="center"
                 >
                   <MastercardIcon
-                    color={theme.palette.neutral[900]}
+                    color={theme.color.neutral[900]}
                     css={{ height: 59 }}
                   />
                 </Flex>
@@ -184,7 +182,7 @@ const MapPage: NextPage = () => {
                   justifyContent="center"
                 >
                   <ApplePayIcon
-                    color={theme.palette.neutral[900]}
+                    color={theme.color.neutral[900]}
                     css={{ height: 25 }}
                   />
                 </Flex>
@@ -197,20 +195,20 @@ const MapPage: NextPage = () => {
                 <Flex
                   css={[
                     tripIcon,
-                    ({ palette }) => ({
-                      backgroundColor: rgba(palette.ui.blue, 0.2),
+                    ({ color }) => ({
+                      backgroundColor: rgba(color.ui.blue, 0.2),
                     }),
                   ]}
                   role="presentation"
                 >
                   <Check
                     css={{ height: 16, width: 16 }}
-                    fill={theme.palette.ui.blue}
+                    fill={theme.color.ui.blue}
                   />
                 </Flex>
                 <span
-                  css={({ palette }) => ({
-                    borderColor: palette.primary,
+                  css={({ color }) => ({
+                    borderColor: color.primary,
                     borderStyle: 'solid',
                     borderWidth: 1,
                     flexGrow: 1,
@@ -221,14 +219,14 @@ const MapPage: NextPage = () => {
                 <Flex
                   css={[
                     tripIcon,
-                    ({ palette }) => ({
-                      backgroundColor: rgba(palette.ui.green, 0.2),
+                    ({ color }) => ({
+                      backgroundColor: rgba(color.ui.green, 0.2),
                     }),
                   ]}
                   role="presentation"
                 >
                   <Marker
-                    color={theme.palette.ui.green}
+                    color={theme.color.ui.green}
                     css={{ height: 16, width: 16 }}
                   />
                 </Flex>
@@ -249,10 +247,10 @@ const MapPage: NextPage = () => {
                 </div>
               </Flex>
               <Flex
-                css={({ palette }) => ({
+                css={({ color }) => ({
                   margin: '0 -24px',
                   '&::before': {
-                    backgroundColor: palette.neutral[300],
+                    backgroundColor: color.neutral[300],
                     content: '""',
                     height: 1,
                     width: '100%',

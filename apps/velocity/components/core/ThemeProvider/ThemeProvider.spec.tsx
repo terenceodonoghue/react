@@ -5,8 +5,8 @@ import ThemeProvider, { defaultTheme } from './ThemeProvider';
 const Consumer = () => (
   <div
     css={(theme) => ({
-      backgroundColor: theme.palette.accent,
-      color: theme.palette.neutral[50],
+      backgroundColor: theme.color.primary,
+      color: theme.color.neutral[50],
     })}
     data-testid="consumer"
   />
@@ -21,8 +21,8 @@ describe('ThemeProvider', () => {
     );
 
     expect(getByTestId('consumer')).toHaveStyle({
-      backgroundColor: defaultTheme.palette.accent,
-      color: defaultTheme.palette.neutral[50],
+      backgroundColor: defaultTheme.color.primary,
+      color: defaultTheme.color.neutral[50],
     });
   });
 
@@ -30,9 +30,9 @@ describe('ThemeProvider', () => {
     const { getByTestId } = render(
       <ThemeProvider
         theme={{
-          palette: {
-            accent: defaultTheme.palette.ui.green,
-            neutral: { 50: defaultTheme.palette.ui.purple },
+          color: {
+            accent: defaultTheme.color.ui.green,
+            neutral: { 50: defaultTheme.color.ui.purple },
           },
         }}
       >
@@ -41,8 +41,8 @@ describe('ThemeProvider', () => {
     );
 
     expect(getByTestId('consumer')).toHaveStyle({
-      backgroundColor: defaultTheme.palette.ui.green,
-      color: defaultTheme.palette.ui.purple,
+      backgroundColor: defaultTheme.color.ui.green,
+      color: defaultTheme.color.ui.purple,
     });
   });
 });

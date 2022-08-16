@@ -30,10 +30,10 @@ describe('Global', () => {
 
     expect(getByTestId('html')).toHaveStyle({
       boxSizing: 'border-box',
-      fontSize: em(defaultTheme.typography.fontSize),
+      fontSize: em(defaultTheme.font.size),
     });
     expect(getByTestId('body')).toHaveStyle({
-      backgroundColor: defaultTheme.palette.neutral[100],
+      backgroundColor: defaultTheme.color.neutral[100],
       boxSizing: 'border-box',
     });
     expect(getByTestId('main')).toHaveStyle({
@@ -42,7 +42,7 @@ describe('Global', () => {
     });
     expect(getByTestId('h1')).toHaveStyle({
       boxSizing: 'border-box',
-      fontSize: em(28, defaultTheme.typography.fontSize),
+      fontSize: em(28, defaultTheme.font.size),
     });
   });
 });

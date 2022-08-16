@@ -14,11 +14,11 @@ interface RadioProps extends LabelHTMLAttributes<HTMLLabelElement> {
 const Radio = forwardRef<HTMLLabelElement, RadioProps>(
   ({ children, id, inputProps, inputRef, ...props }, ref) => (
     <label
-      css={({ typography }) => ({
+      css={({ font }) => ({
         alignItems: 'center',
         cursor: 'pointer',
         display: 'flex',
-        fontWeight: typography.fontWeight.medium,
+        fontWeight: font.weight.medium,
       })}
       data-testid="radio"
       htmlFor={id}
@@ -39,8 +39,8 @@ const Radio = forwardRef<HTMLLabelElement, RadioProps>(
         {...inputProps}
       />
       <span
-        css={({ palette }) => ({
-          border: `solid 1px ${rgba(palette.neutral[700], 0.5)}`,
+        css={({ color }) => ({
+          border: `solid 1px ${rgba(color.neutral[700], 0.5)}`,
           borderRadius: '50%',
           display: 'inline-block',
           height: 16,
@@ -50,7 +50,7 @@ const Radio = forwardRef<HTMLLabelElement, RadioProps>(
             opacity: 0.4,
           },
           'input:checked:enabled + &': {
-            border: `solid 4px ${palette.accent}`,
+            border: `solid 4px ${color.primary}`,
           },
         })}
       />

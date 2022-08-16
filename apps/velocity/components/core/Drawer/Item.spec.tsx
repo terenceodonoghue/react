@@ -38,7 +38,7 @@ describe('Item', () => {
       borderLeft: 'solid 3px transparent',
     });
     expect(getByTestId('drawer-item')).not.toHaveStyle({
-      backgroundColor: rgba(defaultTheme.palette.accent, 0.1),
+      backgroundColor: rgba(defaultTheme.color.primary, 0.1),
     });
     expect(container).toMatchSnapshot();
   });
@@ -47,10 +47,10 @@ describe('Item', () => {
     const { container, getByTestId } = render(<Item selected />);
 
     expect(getByTestId('drawer-item')).toHaveStyle({
-      borderLeft: `solid 3px ${defaultTheme.palette.accent}`,
+      borderLeft: `solid 3px ${defaultTheme.color.primary}`,
     });
     expect(getByTestId('drawer-item')).toHaveStyle({
-      backgroundColor: rgba(defaultTheme.palette.accent, 0.1),
+      backgroundColor: rgba(defaultTheme.color.primary, 0.1),
     });
     expect(container).toMatchSnapshot();
   });
