@@ -12,7 +12,12 @@ const Slider: FunctionComponent<InputHTMLAttributes<HTMLInputElement>> = ({
   const { color, transition } = useTheme();
 
   return (
-    <label className={className} htmlFor={id} style={style}>
+    <label
+      css={{ display: 'flex' }}
+      className={className}
+      htmlFor={id}
+      style={style}
+    >
       <input
         css={{
           appearance: 'none',

@@ -9,7 +9,7 @@ export interface AvatarProps extends ImgHTMLAttributes<HTMLImageElement> {
 
 const Avatar: FunctionComponent<AvatarProps> = ({
   alt,
-  size,
+  size = 128,
   variant = 'rounded',
   ...props
 }) => {

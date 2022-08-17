@@ -34,7 +34,7 @@ import { useState } from 'react';
   decorators={[
     (Story) => (
       <ThemeProvider>
-        <Flex gap={32} alignItems="center" justifyContent="center">
+        <Flex gap={32} alignItems="center" justifyContent="center" wrap="wrap">
           <Story />
         </Flex>
       </ThemeProvider>
@@ -54,24 +54,13 @@ Buttons allow users to trigger an action or event with a single click.
 import { Button } from '@terenceodonoghue/react-components/velocity';
 ```
 
-### Props
-
-The `variant` prop defines one of three styles: contained (default), outlined, or text.
+The `variant` prop defines one of three styles: contained (default), outlined, or text. Standard [button](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button) attributes are also supported, e.g. `disabled`.
 
 <Canvas>
-  <Story name="ButtonVariants">
+  <Story name="Button">
     <Button variant="contained">Contained</Button>
     <Button variant="outlined">Outlined</Button>
     <Button variant="text">Text</Button>
-  </Story>
-</Canvas>
-
-### Attributes
-
-Standard [button](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button) attributes are supported, e.g. `disabled`.
-
-<Canvas>
-  <Story name="ButtonAttributes">
     <Button variant="contained" disabled>
       Contained
     </Button>
@@ -84,6 +73,25 @@ Standard [button](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/butt
   </Story>
 </Canvas>
 
+## Switch
+
+Switches toggle the state of a single setting on or off.
+
+```javascript
+import { Slider, Switch } from '@terenceodonoghue/react-components/velocity';
+```
+
+Standard [input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input) attributes for [checkboxes](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox) are supported, e.g. `defaultChecked` or `disabled`.
+
+<Canvas>
+  <Story name="Switch">
+    <Switch />
+    <Switch defaultChecked />
+    <Switch defaultChecked disabled />
+    <Switch disabled />
+  </Story>
+</Canvas>
+
 ## TextField
 
 Text fields let users enter and edit text.
@@ -92,22 +100,11 @@ Text fields let users enter and edit text.
 import { TextField } from '@terenceodonoghue/react-components/velocity';
 ```
 
-### Props
-
-Text can be placed above the input using the `label` prop.
+Text can be placed above the input using the `label` prop, alongside any standard [input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input) attributes, e.g. `placeholder`, `type` or `disabled`.
 
 <Canvas>
-  <Story name="TextFieldLabel">
+  <Story name="TextField">
     <TextField label="Label" />
-  </Story>
-</Canvas>
-
-### Attributes
-
-Standard [input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input) attributes are supported, e.g. `placeholder`, `type` or `disabled`.
-
-<Canvas>
-  <Story name="TextFieldAttributes">
     <TextField label="Email Address" placeholder="samplemail@mail.com" />
     <TextField label="Password" type="password" />
     <TextField label="Disabled" disabled />
@@ -122,13 +119,11 @@ An avatar component represents an object or entity, typically a user's profile p
 import { Avatar } from '@terenceodonoghue/react-components/velocity';
 ```
 
-### Props
-
-The `variant` prop defines one of two styles: rounded (default) or square.
+The `variant` prop defines one of two styles: rounded (default) or square. Standard [img](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img) attributes are also supported, e.g. `alt`.
 
 <Canvas>
-  <Story name="AvatarVariant">
-    <Avatar src={faker.image.avatar()} />
+  <Story name="Avatar">
+    <Avatar alt="hello" src={faker.image.avatar()} />
     <Avatar src={faker.image.avatar()} variant="square" />
   </Story>
 </Canvas>
@@ -144,10 +139,6 @@ Height and width can be customised by providing a number to the `size` prop.
   </Story>
 </Canvas>
 
-### Attributes
-
-Standard [img](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img) attributes are supported, e.g. `alt`.
-
 ## Card
 
 Cards contain content and actions about a single subject.
@@ -156,12 +147,10 @@ Cards contain content and actions about a single subject.
 import { Card } from '@terenceodonoghue/react-components/velocity';
 ```
 
-### Props
-
 An optional `heading` prop renders text above the content block.
 
 <Canvas>
-  <Story name="CardHeading">
+  <Story name="Card">
     <Card heading="Heading">Content</Card>
     <Card>Content</Card>
   </Story>
@@ -169,26 +158,16 @@ An optional `heading` prop renders text above the content block.
 
 ## Icons
 
-...
+Icons can be used to improve visual interest and draw attention to an element.
 
 ```javascript
 import /* { IconName } */  from '@terenceodonoghue/react-icons/velocity';
 ```
 
-<IconGallery>
-  {Object.entries(Velocity).map(([name, Icon]) => (
-    <IconItem name={name}>
-      <Icon />
-    </IconItem>
-  ))}
-</IconGallery>
-
-### Props
-
 The `fill` prop sets the icon colour, or defaults to `currentColor` if left blank. Other properties such as the icon's size can be defined through React's styling API, using either [className](https://reactjs.org/docs/faq-styling.html) (recommended) or [style](https://reactjs.org/docs/dom-elements.html#style).
 
 <Canvas>
-  <Story name="IconFill">
+  <Story name="Icons">
     <Dashboard style={{ height: 24, width: 24 }} />
     <Analytics fill="#2E5BFF" style={{ height: 24, width: 24 }} />
     <Vehicles fill="#33AC2E" style={{ height: 24, width: 24 }} />
@@ -199,9 +178,12 @@ The `fill` prop sets the icon colour, or defaults to `currentColor` if left blan
   </Story>
 </Canvas>
 
-<Canvas>
-  <Story name="Todo">
-    <Switch />
-    <Slider />
-  </Story>
-</Canvas>
+The full set of available icons is shown below.
+
+<IconGallery>
+  {Object.entries(Velocity).map(([name, Icon]) => (
+    <IconItem name={name}>
+      <Icon />
+    </IconItem>
+  ))}
+</IconGallery>

@@ -49,8 +49,10 @@ const Button: FunctionComponent<ButtonProps> = ({
         fontSize: rem(15),
         fontWeight: 500,
         lineHeight: rem(21),
-        cursor: 'pointer',
         ...transitions(['background-color'], transition.quickly),
+        '&:enabled': {
+          cursor: 'pointer',
+        },
         '&:disabled': {
           opacity: 0.3,
         },

@@ -31,7 +31,6 @@ const Switch: FunctionComponent<InputHTMLAttributes<HTMLInputElement>> = ({
           height: 20,
           width: 36,
           backgroundColor: rgba(color.neutral[600], 0.4),
-          cursor: 'pointer',
           ...transitions(['background-color'], transition.slowly),
           '&::before': {
             position: 'absolute',
@@ -46,6 +45,9 @@ const Switch: FunctionComponent<InputHTMLAttributes<HTMLInputElement>> = ({
             'input:checked + &': {
               transform: 'translateX(16px)',
             },
+          },
+          'input:enabled + &': {
+            cursor: 'pointer',
           },
           'input:checked:enabled + &': {
             backgroundColor: color.ui.green,
