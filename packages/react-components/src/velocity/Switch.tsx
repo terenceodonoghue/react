@@ -53,6 +53,7 @@ const Switch: FunctionComponent<InputHTMLAttributes<HTMLInputElement>> = ({
             backgroundColor: color.ui.green,
           },
           'input:disabled + &': {
+            cursor: 'not-allowed',
             opacity: 0.4,
           },
         }}

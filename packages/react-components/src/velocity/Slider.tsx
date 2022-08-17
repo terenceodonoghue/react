@@ -26,7 +26,6 @@ const Slider: FunctionComponent<InputHTMLAttributes<HTMLInputElement>> = ({
           height: 4,
           width: '100%',
           backgroundColor: rgba(color.primary, 0.15),
-          cursor: 'pointer',
           ...transitions(['opacity'], transition.slowly),
           '&::-moz-range-progress': {
             backgroundColor: color.primary,
@@ -43,6 +42,8 @@ const Slider: FunctionComponent<InputHTMLAttributes<HTMLInputElement>> = ({
             borderRadius: '50%',
             height: 16,
             width: 16,
+          },
+          '&:enabled': {
             cursor: 'pointer',
           },
           '&:disabled': {

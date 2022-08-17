@@ -59,7 +59,7 @@ const OperatingScore = () => {
           .map(() => ({
             name: 'score',
             value: 1,
-            fill: theme.color.secondary,
+            fill: '#E0E7FF',
           }))}
         dataKey="value"
         innerRadius={isMobile ? 46 : 66}

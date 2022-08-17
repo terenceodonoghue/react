@@ -5,7 +5,7 @@ import Drawer from './Drawer';
 describe('Drawer', () => {
   it('is closed by default', () => {
     const avatar = faker.image.avatar();
-    const name = faker.name.findName();
+    const name = faker.name.fullName();
     const { container, getByTestId } = render(
       <Drawer avatar={avatar} name={name} />,
     );
@@ -16,7 +16,7 @@ describe('Drawer', () => {
 
   it('expands when opened', () => {
     const avatar = faker.image.avatar();
-    const name = faker.name.findName();
+    const name = faker.name.fullName();
     const { container, getByTestId } = render(
       <Drawer avatar={avatar} name={name} open />,
     );
@@ -27,7 +27,7 @@ describe('Drawer', () => {
 
   it('anchors to the left', () => {
     const avatar = faker.image.avatar();
-    const name = faker.name.findName();
+    const name = faker.name.fullName();
     const { container, getByTestId } = render(
       <Drawer anchor="left" avatar={avatar} name={name} />,
     );
@@ -38,7 +38,7 @@ describe('Drawer', () => {
 
   it('anchors to the right', () => {
     const avatar = faker.image.avatar();
-    const name = faker.name.findName();
+    const name = faker.name.fullName();
     const { container, getByTestId } = render(
       <Drawer anchor="right" avatar={avatar} name={name} />,
     );

@@ -18,7 +18,7 @@ const fixtures = {
   avatar: faker.image.avatar(),
   city: faker.address.city(),
   email: faker.internet.exampleEmail(),
-  name: faker.name.findName(),
+  name: faker.name.fullName(),
   phone: faker.phone.phoneNumberFormat(),
   state: faker.address.stateAbbr(),
 };
@@ -103,7 +103,7 @@ const MapPage: NextPage = () => {
               <div css={{ flexBasis: 256, flexShrink: 0 }}>
                 <Flex css={{ marginBottom: 24 }} alignItems="center">
                   <Avatar
-                    alt={faker.name.findName()}
+                    alt={faker.name.fullName()}
                     size={48}
                     src={fixtures.avatar}
                     variant="rounded"

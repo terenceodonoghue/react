@@ -5,7 +5,7 @@ import Avatar from './Avatar';
 describe('Avatar', () => {
   it('is rounded by default', () => {
     const { container, getByTestId } = render(
-      <Avatar alt={faker.name.findName()} src={faker.image.avatar()} />,
+      <Avatar alt={faker.name.fullName()} src={faker.image.avatar()} />,
     );
 
     expect(getByTestId('avatar')).toHaveStyle({ borderRadius: '50%' });
@@ -15,7 +15,7 @@ describe('Avatar', () => {
   it('renders rounded variant', () => {
     const { container, getByTestId } = render(
       <Avatar
-        alt={faker.name.findName()}
+        alt={faker.name.fullName()}
         src={faker.image.avatar()}
         variant="rounded"
       />,
@@ -28,7 +28,7 @@ describe('Avatar', () => {
   it('renders square variant', () => {
     const { container, getByTestId } = render(
       <Avatar
-        alt={faker.name.findName()}
+        alt={faker.name.fullName()}
         src={faker.image.avatar()}
         variant="square"
       />,

@@ -9,7 +9,7 @@ import { rgba, transitions } from 'polished';
 const fixtures = Array.from(Array(7)).map(() => ({
   isOnline: faker.datatype.boolean(),
   message: faker.lorem.sentences(),
-  name: faker.name.findName(),
+  name: faker.name.fullName(),
   src: faker.image.avatar(),
   time: moment()
     .minutes(faker.datatype.number({ min: 1, max: 19 }))
@@ -56,7 +56,7 @@ const ChatPage: NextPage = () => (
               .toLowerCase()}-${index}`}
           >
             <Avatar
-              alt={faker.name.findName()}
+              alt={faker.name.fullName()}
               css={{ marginRight: 8 }}
               size={48}
               src={conversation.src}

@@ -73,6 +73,24 @@ The `variant` prop defines one of three styles: contained (default), outlined, o
   </Story>
 </Canvas>
 
+## Slider
+
+Sliders allow users to make selections from a range of values.
+
+```javascript
+import { Slider } from '@terenceodonoghue/react-components/velocity';
+```
+
+Standard [input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input) attributes are supported, e.g. `min`, `max`, `step` or `disabled`.
+
+<Canvas>
+  <Story name="Slider">
+    <Slider />
+    <Slider min={0} max={100} step={25} />
+    <Slider disabled />
+  </Story>
+</Canvas>
+
 ## Switch
 
 Switches toggle the state of a single setting on or off.
