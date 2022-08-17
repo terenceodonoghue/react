@@ -78,7 +78,7 @@ The `variant` prop defines one of three styles: contained (default), outlined, o
 Switches toggle the state of a single setting on or off.
 
 ```javascript
-import { Slider, Switch } from '@terenceodonoghue/react-components/velocity';
+import { Switch } from '@terenceodonoghue/react-components/velocity';
 ```
 
 Standard [input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input) attributes are supported, e.g. `defaultChecked` or `disabled`.
@@ -178,12 +178,4 @@ The `fill` prop sets the icon colour, or defaults to `currentColor` if left blan
   </Story>
 </Canvas>
 
-The full set of available icons is shown below.
-
-<IconGallery>
-  {Object.entries(Velocity).map(([name, Icon]) => (
-    <IconItem name={name}>
-      <Icon />
-    </IconItem>
-  ))}
-</IconGallery>
+Refer to [the icon gallery](?path=/docs/icons-velocity--page) to see the full set of icons.
