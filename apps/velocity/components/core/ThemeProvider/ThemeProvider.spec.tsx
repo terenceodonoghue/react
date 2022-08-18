@@ -1,5 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { render } from '@testing-library/react';
+
 import ThemeProvider, { defaultTheme } from './ThemeProvider';
 
 const Consumer = () => (

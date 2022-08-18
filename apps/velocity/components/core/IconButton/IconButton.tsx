@@ -1,5 +1,5 @@
-import { ButtonHTMLAttributes, forwardRef } from 'react';
 import { rgba, transitions } from 'polished';
+import { ButtonHTMLAttributes, forwardRef } from 'react';
 
 const Button = forwardRef<
   HTMLButtonElement,

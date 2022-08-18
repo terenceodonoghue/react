@@ -1,5 +1,6 @@
 import { faker } from '@faker-js/faker';
 import { rgba } from 'polished';
+
 import { render } from '../../utils/test-utils';
 import { defaultTheme } from '../ThemeProvider';
 import Item from './Item';

@@ -1,13 +1,15 @@
+import { NextPage } from 'next';
+import Head from 'next/head';
+import { linearGradient, rgba } from 'polished';
+import { ComponentType, FunctionComponent, SVGProps } from 'react';
+
 import { Flex } from '@terenceodonoghue/react-components/core';
 import {
   Button,
   Card,
   TextField,
 } from '@terenceodonoghue/react-components/velocity';
-import { NextPage } from 'next';
-import Head from 'next/head';
-import { linearGradient, rgba } from 'polished';
-import { ComponentType, FunctionComponent, SVGProps } from 'react';
+
 import Container from '../components/core/Container';
 import Radio from '../components/core/Radio';
 import Switch from '../components/core/Switch';

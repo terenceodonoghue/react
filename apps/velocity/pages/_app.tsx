@@ -1,3 +1,10 @@
+import { faker } from '@faker-js/faker';
+import { AppProps } from 'next/app';
+import dynamic from 'next/dynamic';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { FunctionComponent, useEffect, useMemo, useState } from 'react';
+
 import {
   Flex,
   GitHubCorner,
@@ -18,15 +25,9 @@ import {
   Settings,
   Vehicles,
 } from '@terenceodonoghue/react-icons/velocity';
-import { faker } from '@faker-js/faker';
-import { AppProps } from 'next/app';
-import dynamic from 'next/dynamic';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { FunctionComponent, useEffect, useMemo, useState } from 'react';
+
 import AppBar from '../components/core/AppBar/AppBar';
 import { DrawerItem } from '../components/core/Drawer';
-
 import IconButton from '../components/core/IconButton';
 import { MenuIcon, VelocityIcon } from '../components/icons';
 

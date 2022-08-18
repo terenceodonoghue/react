@@ -1,6 +1,4 @@
 import { useTheme } from '@emotion/react';
-import { Flex } from '@terenceodonoghue/react-components/core';
-import { Card } from '@terenceodonoghue/react-components/velocity';
 import { NextPage } from 'next';
 import Head from 'next/head';
 import { linearGradient, rem, rgba, transitions } from 'polished';
@@ -12,6 +10,10 @@ import {
   Droppable,
   DropResult,
 } from 'react-beautiful-dnd';
+
+import { Flex } from '@terenceodonoghue/react-components/core';
+import { Card } from '@terenceodonoghue/react-components/velocity';
+
 import Container from '../components/core/Container';
 
 const COLUMNS = ['Service needed', 'Waiting', 'In service', 'Fully serviced'];

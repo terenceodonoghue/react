@@ -1,5 +1,6 @@
-import { FunctionComponent } from 'react';
 import { Global } from '@emotion/react';
+import { FunctionComponent } from 'react';
+
 import { mq } from '@terenceodonoghue/react-components/velocity';
 
 const GlobalStyles: FunctionComponent = () => (

@@ -1,11 +1,13 @@
 import { Interpolation, Theme, useTheme } from '@emotion/react';
-import { Flex } from '@terenceodonoghue/react-components/core';
-import { Avatar, Card } from '@terenceodonoghue/react-components/velocity';
-import { Check, Marker } from '@terenceodonoghue/react-icons/velocity';
 import { faker } from '@faker-js/faker';
 import { NextPage } from 'next';
 import Head from 'next/head';
 import { rem, rgba } from 'polished';
+
+import { Flex } from '@terenceodonoghue/react-components/core';
+import { Avatar, Card } from '@terenceodonoghue/react-components/velocity';
+import { Check, Marker } from '@terenceodonoghue/react-icons/velocity';
+
 import Container from '../components/core/Container';
 import {
   ApplePayIcon,

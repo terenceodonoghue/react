@@ -1,6 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
-import { FunctionComponent, ReactElement } from 'react';
 import { render, RenderOptions, RenderResult } from '@testing-library/react';
+import { FunctionComponent, ReactElement } from 'react';
+
 import ThemeProvider, { ThemeProviderProps } from '../core/ThemeProvider';
 
 const Provider: FunctionComponent<ThemeProviderProps> = ({ children }) => (

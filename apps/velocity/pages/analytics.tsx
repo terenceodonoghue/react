@@ -1,12 +1,4 @@
 import { useTheme } from '@emotion/react';
-import { Flex } from '@terenceodonoghue/react-components/core';
-import { Card, mq } from '@terenceodonoghue/react-components/velocity';
-import {
-  Check,
-  Dynamic,
-  Energy,
-  Marker,
-} from '@terenceodonoghue/react-icons/velocity';
 import { NextPage } from 'next';
 import Head from 'next/head';
 import numeral from 'numeral';
@@ -23,6 +15,16 @@ import {
   XAxis,
   YAxis,
 } from 'recharts';
+
+import { Flex } from '@terenceodonoghue/react-components/core';
+import { Card, mq } from '@terenceodonoghue/react-components/velocity';
+import {
+  Check,
+  Dynamic,
+  Energy,
+  Marker,
+} from '@terenceodonoghue/react-icons/velocity';
+
 import Container from '../components/core/Container';
 
 const AnalyticsPage: NextPage = () => {

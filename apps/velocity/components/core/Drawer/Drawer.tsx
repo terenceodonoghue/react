@@ -1,8 +1,10 @@
-import { Avatar } from '@terenceodonoghue/react-components/velocity';
-import { FunctionComponent, HTMLAttributes } from 'react';
 import { transitions } from 'polished';
+import { FunctionComponent, HTMLAttributes } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { animated, config, useSpring } from 'react-spring';
+
+import { Avatar } from '@terenceodonoghue/react-components/velocity';
+
 import { DESKTOP } from '../../utils/breakpoints';
 import Item, { ItemProps } from './Item';
 

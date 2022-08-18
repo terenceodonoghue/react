@@ -1,8 +1,10 @@
 import { Interpolation, Theme } from '@emotion/react';
-import { Flex } from '@terenceodonoghue/react-components/core';
-import { Card, TextField } from '@terenceodonoghue/react-components/velocity';
 import { NextPage } from 'next';
 import Head from 'next/head';
+
+import { Flex } from '@terenceodonoghue/react-components/core';
+import { Card, TextField } from '@terenceodonoghue/react-components/velocity';
+
 import Container from '../components/core/Container';
 import Slider from '../components/core/Slider';
 

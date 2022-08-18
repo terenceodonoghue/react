@@ -1,4 +1,5 @@
 import facepaint from 'facepaint';
+
 import breakpoints from './breakpoints';
 
 const mq = facepaint(

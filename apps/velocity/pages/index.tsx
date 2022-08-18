@@ -1,12 +1,14 @@
 import { faker } from '@faker-js/faker';
-import { Flex } from '@terenceodonoghue/react-components/core';
-import { Avatar, Card, mq } from '@terenceodonoghue/react-components/velocity';
 import { NextPage } from 'next';
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import numeral from 'numeral';
 import { rem, rgba } from 'polished';
 import { useMemo } from 'react';
+
+import { Flex } from '@terenceodonoghue/react-components/core';
+import { Avatar, Card, mq } from '@terenceodonoghue/react-components/velocity';
+
 import Container from '../components/core/Container';
 
 const OperatingScore = dynamic(() => import('../components/OperatingScore'), {
