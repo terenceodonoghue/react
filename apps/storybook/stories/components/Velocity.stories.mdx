@@ -11,6 +11,7 @@ import {
   Avatar,
   Button,
   Card,
+  Radio,
   Slider,
   Switch,
   TextField,
@@ -70,6 +71,25 @@ The `variant` prop defines one of three styles: contained (default), outlined, o
     <Button variant="text" disabled>
       Text
     </Button>
+  </Story>
+</Canvas>
+
+## Radio
+
+Radio buttons allow the user to select one option from a set.
+
+```javascript
+import { Radio } from '@terenceodonoghue/react-components/velocity';
+```
+
+Text can be placed to the right of the input using the `label` prop, alongside any standard [input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input) attributes, e.g. `name`, `defaultChecked` or `disabled`.
+
+<Canvas>
+  <Story name="Radio">
+    <Radio label="Option A" name="radio-group-1" defaultChecked />
+    <Radio label="Option B" name="radio-group-1" />
+    <Radio label="Option C" name="radio-group-2" defaultChecked disabled />
+    <Radio label="Option D" name="radio-group-2" disabled />
   </Story>
 </Canvas>
 

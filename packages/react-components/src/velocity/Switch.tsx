@@ -46,11 +46,11 @@ const Switch: FunctionComponent<InputHTMLAttributes<HTMLInputElement>> = ({
               transform: 'translateX(16px)',
             },
           },
+          'input:checked + &': {
+            backgroundColor: color.ui.green,
+          },
           'input:enabled + &': {
             cursor: 'pointer',
-          },
-          'input:checked:enabled + &': {
-            backgroundColor: color.ui.green,
           },
           'input:disabled + &': {
             cursor: 'not-allowed',

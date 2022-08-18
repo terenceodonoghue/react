@@ -84,7 +84,7 @@ const Switch = forwardRef<HTMLLabelElement, SwitchProps>(
               transform: 'translateX(16px)',
             },
           },
-          'input:checked:enabled + &': {
+          'input:enabled:checked + &': {
             backgroundColor: color.ui.green,
           },
           'input:disabled + &': {

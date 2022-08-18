@@ -49,7 +49,7 @@ const Radio = forwardRef<HTMLLabelElement, RadioProps>(
           'input:disabled + &': {
             opacity: 0.4,
           },
-          'input:checked:enabled + &': {
+          'input:enabled:checked + &': {
             border: `solid 4px ${color.primary}`,
           },
         })}
