@@ -1,5 +1,15 @@
 # @terenceodonoghue/react-components
 
+## 2.0.0
+
+### Major Changes
+
+- 0c1992a: Remove iconColor, backdropColor props from Metric
+
+### Minor Changes
+
+- 22a1cd7: Add color prop to Metric
+
 ## 1.1.0
 
 ### Minor Changes
