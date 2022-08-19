@@ -2,14 +2,15 @@ import { faker } from '@faker-js/faker';
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
 import { useState } from 'react';
 
-import { Flex } from '@terenceodonoghue/react-components/core';
+import { Global } from '@terenceodonoghue/react-components/core';
 import {
   Backdrop,
   Logo,
   Metric,
   ThemeProvider,
+  mq,
 } from '@terenceodonoghue/react-components/velocity';
-import '@terenceodonoghue/react-components/velocity.css';
+import velocity from '@terenceodonoghue/react-components/velocity.css';
 import * as Velocity from '@terenceodonoghue/react-icons/velocity';
 import {
   Check,
@@ -23,9 +24,23 @@ import {
   decorators={[
     (Story) => (
       <ThemeProvider>
-        <Flex gap={32} alignItems="center" justifyContent="center" wrap="wrap">
-          <Story />
-        </Flex>
+        <Global
+          styles={[
+            velocity,
+            mq({
+              '.metric': {
+                display: 'grid',
+                gridTemplateColumns: [
+                  'repeat(2, 1fr)',
+                  'repeat(2, 1fr)',
+                  'repeat(3, 1fr)',
+                ],
+                gap: 0,
+              },
+            }),
+          ]}
+        />
+        <Story />
       </ThemeProvider>
     ),
   ]}
@@ -39,35 +54,46 @@ Molecules are relatively simple groups of UI elements (atoms) functioning togeth
 
 ## Metric
 
-...
+```javascript
+import { Metric } from '@terenceodonoghue/react-components/velocity';
+```
 
 <Canvas>
-  <Story name="Metric">
+  <Story
+    name="Metric"
+    decorators={[
+      (Story) => (
+        <div className="metric">
+          <Story />
+        </div>
+      ),
+    ]}
+  >
     <Metric
       icon={Check}
       backdropColor="#33AC2E"
-      iconColor="#8C54FF"
+      iconColor="#33AC2E"
       label="Vehicles on track"
-      value="$1,428"
+      value="1,428"
     />
     <Metric
       icon={Marker}
       backdropColor="#00C1D4"
-      iconColor="#2E5BFF"
+      iconColor="#00C1D4"
       label="Distance driven"
       value="158.3 mi"
     />
     <Metric
       icon={Energy}
       backdropColor="#8C54FF"
-      iconColor="#2E5BFF"
+      iconColor="#8C54FF"
       label="Energy consumed"
       value="87.4 kWh"
     />
     <Metric
       icon={Dynamic}
       backdropColor="#F7C137"
-      iconColor="#2E5BFF"
+      iconColor="#F7C137"
       label="Total drive time"
       value="24.2 h"
     />

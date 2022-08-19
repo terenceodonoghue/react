@@ -7,10 +7,10 @@ import { ReactIcon } from '@terenceodonoghue/react-icons';
 
 import Backdrop from '../atoms/Backdrop.js';
 import Card from '../atoms/Card.js';
+import mq from '../utils/mq.js';
 
 interface MetricProps {
   backdropColor: string;
-  compact?: boolean;
   icon: ReactIcon;
   iconColor?: string;
   label: string;
@@ -19,7 +19,6 @@ interface MetricProps {
 
 const Metric: FunctionComponent<MetricProps> = ({
   backdropColor,
-  compact,
   icon: Icon,
   iconColor,
   label,
@@ -28,23 +27,29 @@ const Metric: FunctionComponent<MetricProps> = ({
   const { color, font } = useTheme();
 
   return (
-    <Card css={{ padding: '16px 24px' }}>
-      {Icon ? (
-        <Backdrop
-          css={{ marginBottom: 16, marginRight: 16 }}
-          color={backdropColor}
-        >
-          <Icon color={iconColor} size={20} />
-        </Backdrop>
-      ) : undefined}
+    <Card
+      css={mq({
+        display: 'flex',
+        alignItems: 'flex-start',
+        flexDirection: ['column', 'row', 'column'],
+        padding: ['16px', '32px 24px', '16px 24px'],
+      })}
+    >
+      <Backdrop
+        css={mq({ marginBottom: [16, 0, 16], marginRight: [0, 16, 0] })}
+        color={backdropColor}
+      >
+        <Icon color={iconColor} size={20} />
+      </Backdrop>
       <div css={{ display: 'flex', flexDirection: 'column' }}>
         <span
-          css={{
-            fontSize: rem(48),
+          css={mq({
+            marginBottom: [6, 0],
+            fontSize: [rem(34), rem(48)],
             fontWeight: font.weight.light,
             letterSpacing: -0.6,
-            lineHeight: rem(57),
-          }}
+            lineHeight: [rem(32), rem(57)],
+          })}
         >
           {value}
         </span>

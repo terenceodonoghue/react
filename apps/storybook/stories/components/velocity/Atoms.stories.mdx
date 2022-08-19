@@ -8,7 +8,6 @@ import {
 } from '@storybook/addon-docs';
 import { useState } from 'react';
 
-import { Flex } from '@terenceodonoghue/react-components/core';
 import {
   Avatar,
   Backdrop,
@@ -42,9 +41,17 @@ import {
   decorators={[
     (Story) => (
       <ThemeProvider>
-        <Flex gap={32} alignItems="center" justifyContent="center" wrap="wrap">
+        <div
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: 32,
+          }}
+        >
           <Story />
-        </Flex>
+        </div>
       </ThemeProvider>
     ),
   ]}
@@ -251,16 +258,16 @@ The `color` prop sets the backdrop colour with a default opacity of `0.15`. This
 <Canvas>
   <Story name="Backdrop">
     <Backdrop color="#33AC2E">
-      <Check color="#8C54FF" size={20} />
+      <Check color="#33AC2E" size={20} />
     </Backdrop>
     <Backdrop color="#00C1D4">
-      <Marker color="#2E5BFF" size={20} />
+      <Marker color="#00C1D4" size={20} />
     </Backdrop>
     <Backdrop color="#8C54FF">
-      <Energy color="#2E5BFF" size={20} />
+      <Energy color="#8C54FF" size={20} />
     </Backdrop>
     <Backdrop color="#F7C137">
-      <Dynamic color="#2E5BFF" size={20} />
+      <Dynamic color="#F7C137" size={20} />
     </Backdrop>
   </Story>
 </Canvas>
