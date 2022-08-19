@@ -28,25 +28,6 @@ import Container from '../components/core/Container';
 const AnalyticsPage: NextPage = () => {
   const theme = useTheme();
 
-  const iconMap = {
-    'vehicles-on-track': {
-      color: theme.color.ui.purple,
-      component: Check,
-    },
-    'distance-driven': {
-      color: theme.color.ui.blue,
-      component: Marker,
-    },
-    'energy-consumed': {
-      color: theme.color.ui.blue,
-      component: Energy,
-    },
-    'total-drive-time': {
-      color: theme.color.ui.blue,
-      component: Dynamic,
-    },
-  };
-
   const renderLegend = ({ payload }) => (
     <ul
       css={{
