@@ -5085,6 +5085,7 @@ __metadata:
   resolution: "@terenceodonoghue/react-components@workspace:packages/react-components"
   dependencies:
     "@emotion/react": "npm:^11.10.0"
+    "@terenceodonoghue/react-icons": "npm:^1.1.1"
     "@types/lodash-es": "npm:^4.17.6"
     concurrently: "npm:^7.3.0"
     csstype: "npm:^3.1.0"
@@ -5123,6 +5124,16 @@ __metadata:
     react: "*"
     react-dom: "*"
   checksum: ef2a811cccdbf8dca8ba0d2063f18fb93d5176033caeaad05e6f4a96de87f012fe6e6335b497e9830099ceee3e42e6a5082c2f51823adab9995b3c87a73bf1d0
+  languageName: node
+  linkType: hard
+
+"@terenceodonoghue/react-icons@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "@terenceodonoghue/react-icons@npm:2.0.0::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40terenceodonoghue%2Freact-icons%2F2.0.0%2Fd03e7806a5653cf5827030306dabdde3e131294e"
+  peerDependencies:
+    react: "*"
+    react-dom: "*"
+  checksum: d0e523ac4d10a9a693742dff716a0f28bd6d5e8bde157b0c18c0f5e5045b2e5d6e14f7ed45237be671bce905c86646d5c4af70c6103b84ba5987b02042b84dec
   languageName: node
   linkType: hard
 
@@ -5172,7 +5183,7 @@ __metadata:
     "@storybook/testing-library": "npm:^0.0.11"
     "@terenceodonoghue/react-components": "workspace:^"
     "@terenceodonoghue/react-hooks": "workspace:^"
-    "@terenceodonoghue/react-icons": "npm:^1.1.1"
+    "@terenceodonoghue/react-icons": "npm:^2.0.0"
     babel-loader: "npm:^8.2.4"
     vite: "npm:^3.0.6"
   peerDependencies:
@@ -5211,7 +5222,7 @@ __metadata:
     "@svgr/cli": "npm:^6.3.1"
     "@svgr/webpack": "npm:^6.3.1"
     "@terenceodonoghue/react-components": "workspace:^"
-    "@terenceodonoghue/react-icons": "npm:^1.1.1"
+    "@terenceodonoghue/react-icons": "npm:^2.0.0"
     "@testing-library/jest-dom": "npm:^5.16.5"
     "@testing-library/react": "npm:^13.3.0"
     "@testing-library/user-event": "npm:^14.4.3"

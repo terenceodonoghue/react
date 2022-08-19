@@ -1,13 +1,13 @@
 import { FunctionComponent, HTMLAttributes } from 'react';
 
 interface GitHubCornerProps extends HTMLAttributes<HTMLDivElement> {
-  fill: string;
-  href: string;
+  color: string;
+  url: string;
 }
 
 const GitHubCorner: FunctionComponent<GitHubCornerProps> = ({
-  fill,
-  href,
+  color,
+  url,
   ...props
 }) => (
   <div
@@ -46,7 +46,7 @@ const GitHubCorner: FunctionComponent<GitHubCornerProps> = ({
     }}
     {...props}
   >
-    <a href={href} className="github-corner" aria-label="View source on GitHub">
+    <a href={url} className="github-corner" aria-label="View source on GitHub">
       <svg
         width={80}
         height={80}
@@ -58,7 +58,7 @@ const GitHubCorner: FunctionComponent<GitHubCornerProps> = ({
           right: 0,
         }}
         aria-hidden="true"
-        fill={fill}
+        fill={color}
         color="#fff"
       >
         <path d="M0 0l115 115h15l12 27 108 108V0z" />

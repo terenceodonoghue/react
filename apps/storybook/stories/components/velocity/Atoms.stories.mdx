@@ -211,17 +211,17 @@ Icons can be used to improve visual interest and draw attention to an element.
 import /* { IconName } */  from '@terenceodonoghue/react-icons/velocity';
 ```
 
-The `fill` prop sets the icon colour, or defaults to `currentColor` if left blank. Other properties such as the icon's size can be defined through React's styling API, using either [className](https://reactjs.org/docs/faq-styling.html) (recommended) or [style](https://reactjs.org/docs/dom-elements.html#style).
+The `color` prop sets the icon colour, or defaults to `currentColor` if left blank.
 
 <Canvas>
   <Story name="Icons">
-    <Dashboard style={{ height: 24, width: 24 }} />
-    <Analytics fill="#2E5BFF" style={{ height: 24, width: 24 }} />
-    <Vehicles fill="#33AC2E" style={{ height: 24, width: 24 }} />
-    <Service fill="#8C54FF" style={{ height: 24, width: 24 }} />
-    <Map fill="#D63649" style={{ height: 24, width: 24 }} />
-    <Mail fill="#00C1D4" style={{ height: 24, width: 24 }} />
-    <Settings fill="#F7C137" style={{ height: 24, width: 24 }} />
+    <Dashboard />
+    <Analytics color="#2E5BFF" />
+    <Vehicles color="#33AC2E" />
+    <Service color="#8C54FF" />
+    <Map color="#D63649" />
+    <Mail color="#00C1D4" />
+    <Settings color="#F7C137" />
   </Story>
 </Canvas>
 
@@ -235,21 +235,21 @@ A backdrop can be used with icons for added emphasis.
 import { Backdrop } from '@terenceodonoghue/react-components/velocity';
 ```
 
-The `color` prop sets the backdrop's colour with a default opacity of `0.15`. This can be adjusted with the `opacity` prop.
+The `color` prop sets the backdrop colour with a default opacity of `0.15`. This can be adjusted with the `opacity` prop.
 
 <Canvas>
   <Story name="Backdrop">
     <Backdrop color="#33AC2E">
-      <Check fill="#8C54FF" style={{ height: 20, width: 20 }} />
+      <Check color="#8C54FF" size={20} />
     </Backdrop>
     <Backdrop color="#00C1D4">
-      <Marker fill="#2E5BFF" style={{ height: 20, width: 20 }} />
+      <Marker color="#2E5BFF" size={20} />
     </Backdrop>
     <Backdrop color="#8C54FF">
-      <Energy fill="#2E5BFF" style={{ height: 20, width: 20 }} />
+      <Energy color="#2E5BFF" size={20} />
     </Backdrop>
     <Backdrop color="#F7C137">
-      <Dynamic fill="#2E5BFF" style={{ height: 20, width: 20 }} />
+      <Dynamic color="#2E5BFF" size={20} />
     </Backdrop>
   </Story>
 </Canvas>

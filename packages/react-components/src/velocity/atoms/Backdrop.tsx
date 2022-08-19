@@ -1,19 +1,22 @@
 /** @jsxImportSource @emotion/react */
+import { useTheme } from '@emotion/react';
 import { rgba } from 'polished';
 import { FunctionComponent, HTMLAttributes, ReactNode } from 'react';
 
 export interface BackdropProps extends HTMLAttributes<HTMLDivElement> {
   children?: ReactNode;
-  color: string;
+  color?: string;
   opacity?: number;
 }
 
 const Backdrop: FunctionComponent<BackdropProps> = ({
   children,
-  color,
+  color: backgroundColor,
   opacity = 0.15,
   ...props
 }) => {
+  const { color } = useTheme();
+
   return (
     <div
       css={{
@@ -22,7 +25,7 @@ const Backdrop: FunctionComponent<BackdropProps> = ({
         justifyContent: 'center',
         borderRadius: '50%',
         padding: 14,
-        backgroundColor: rgba(color, opacity),
+        backgroundColor: rgba(backgroundColor || color.primary, opacity),
       }}
       {...props}
     >

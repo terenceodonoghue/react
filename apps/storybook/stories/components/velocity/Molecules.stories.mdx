@@ -1,35 +1,21 @@
 import { faker } from '@faker-js/faker';
-import {
-  Canvas,
-  Meta,
-  Story,
-  IconGallery,
-  IconItem,
-} from '@storybook/addon-docs';
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
 import { useState } from 'react';
 
 import { Flex } from '@terenceodonoghue/react-components/core';
 import {
-  Avatar,
-  Button,
-  Card,
+  Backdrop,
   Logo,
-  Radio,
-  Slider,
-  Switch,
-  TextField,
+  Metric,
   ThemeProvider,
 } from '@terenceodonoghue/react-components/velocity';
 import '@terenceodonoghue/react-components/velocity.css';
 import * as Velocity from '@terenceodonoghue/react-icons/velocity';
 import {
-  Analytics,
-  Dashboard,
-  Mail,
-  Map,
-  Service,
-  Settings,
-  Vehicles,
+  Check,
+  Dynamic,
+  Energy,
+  Marker,
 } from '@terenceodonoghue/react-icons/velocity';
 
 <Meta
@@ -50,3 +36,40 @@ import {
 # Molecules
 
 Molecules are relatively simple groups of UI elements (atoms) functioning together as a unit.
+
+## Metric
+
+...
+
+<Canvas>
+  <Story name="Metric">
+    <Metric
+      icon={Check}
+      backdropColor="#33AC2E"
+      iconColor="#8C54FF"
+      label="Vehicles on track"
+      value="$1,428"
+    />
+    <Metric
+      icon={Marker}
+      backdropColor="#00C1D4"
+      iconColor="#2E5BFF"
+      label="Distance driven"
+      value="158.3 mi"
+    />
+    <Metric
+      icon={Energy}
+      backdropColor="#8C54FF"
+      iconColor="#2E5BFF"
+      label="Energy consumed"
+      value="87.4 kWh"
+    />
+    <Metric
+      icon={Dynamic}
+      backdropColor="#F7C137"
+      iconColor="#2E5BFF"
+      label="Total drive time"
+      value="24.2 h"
+    />
+  </Story>
+</Canvas>

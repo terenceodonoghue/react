@@ -203,10 +203,7 @@ const MapPage: NextPage = () => {
                   ]}
                   role="presentation"
                 >
-                  <Check
-                    css={{ height: 16, width: 16 }}
-                    fill={theme.color.ui.blue}
-                  />
+                  <Check color={theme.color.ui.blue} size={16} />
                 </Flex>
                 <span
                   css={({ color }) => ({

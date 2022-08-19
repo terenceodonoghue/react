@@ -72,8 +72,8 @@ const App: FunctionComponent<AppProps> = ({ Component, pageProps }) => {
       />
       <GitHubCorner
         css={{ zIndex: 1400 }}
-        fill="#151513"
-        href="https://github.com/terenceodonoghue/react/tree/master/apps/velocity"
+        color="#151513"
+        url="https://github.com/terenceodonoghue/react/tree/master/apps/velocity"
       />
       <AppBar>
         <Flex css={{ flex: 1 }} alignItems="center">
