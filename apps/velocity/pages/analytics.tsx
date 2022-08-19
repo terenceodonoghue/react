@@ -26,7 +26,7 @@ import {
 import Container from '../components/core/Container';
 
 const AnalyticsPage: NextPage = () => {
-  const theme = useTheme();
+  const { color } = useTheme();
 
   const renderLegend = ({ payload }) => (
     <ul
@@ -43,7 +43,7 @@ const AnalyticsPage: NextPage = () => {
         <li
           css={mq({
             alignItems: 'center',
-            color: theme.color.neutral[600],
+            color: color.neutral[600],
             display: 'flex',
             margin: ['0 6px', '0 12px'],
             '&::before': {
@@ -153,24 +153,24 @@ const AnalyticsPage: NextPage = () => {
                   <linearGradient id="colorRevenue" x1="0" y1="0" x2="0" y2="1">
                     <stop
                       offset="5%"
-                      stopColor={theme.color.primary}
+                      stopColor={color.primary}
                       stopOpacity={0.1}
                     />
                     <stop
                       offset="95%"
-                      stopColor={theme.color.primary}
+                      stopColor={color.primary}
                       stopOpacity={0}
                     />
                   </linearGradient>
                   <linearGradient id="colorTrips" x1="0" y1="0" x2="0" y2="1">
                     <stop
                       offset="5%"
-                      stopColor={theme.color.ui.purple}
+                      stopColor={color.ui.purple}
                       stopOpacity={0.1}
                     />
                     <stop
                       offset="95%"
-                      stopColor={theme.color.ui.purple}
+                      stopColor={color.ui.purple}
                       stopOpacity={0}
                     />
                   </linearGradient>
@@ -180,7 +180,7 @@ const AnalyticsPage: NextPage = () => {
                   fill="url(#colorRevenue)"
                   fillOpacity={1}
                   name="Revenue"
-                  stroke={theme.color.primary}
+                  stroke={color.primary}
                   strokeWidth={2}
                   dot
                 />
@@ -189,12 +189,12 @@ const AnalyticsPage: NextPage = () => {
                   fill="url(#colorTrips)"
                   fillOpacity={1}
                   name="Trips"
-                  stroke={theme.color.ui.purple}
+                  stroke={color.ui.purple}
                   strokeWidth={2}
                   dot
                 />
                 <CartesianGrid
-                  stroke={theme.color.neutral[700]}
+                  stroke={color.neutral[700]}
                   strokeDasharray="2 2"
                   strokeOpacity="0.3"
                 />
@@ -208,16 +208,16 @@ const AnalyticsPage: NextPage = () => {
                 <XAxis
                   dataKey="name"
                   interval="preserveStartEnd"
-                  stroke={theme.color.secondary}
-                  tick={{ fill: theme.color.neutral[500] }}
+                  stroke={color.secondary}
+                  tick={{ fill: color.neutral[500] }}
                   tickLine={false}
                   tickMargin={8.5}
                 />
                 <YAxis
-                  stroke={theme.color.secondary}
+                  stroke={color.secondary}
                   tickFormatter={yTickFormatter}
                   tickLine={false}
-                  tick={{ fill: theme.color.neutral[500] }}
+                  tick={{ fill: color.neutral[500] }}
                   ticks={[0, 5000, 10000, 15000, 20000, 25000, 30000]}
                   tickMargin={13.5}
                 />
@@ -239,29 +239,25 @@ const AnalyticsPage: NextPage = () => {
           {[
             {
               icon: Check,
-              backdropColor: '#33AC2E',
-              iconColor: '#33AC2E',
+              color: color.ui.green,
               label: 'Vehicles on track',
               value: '1,428',
             },
             {
               icon: Marker,
-              backdropColor: '#00C1D4',
-              iconColor: '#00C1D4',
+              color: color.ui.teal,
               label: 'Distance driven',
               value: '158.3 mi',
             },
             {
               icon: Energy,
-              backdropColor: '#8C54FF',
-              iconColor: '#8C54FF',
+              color: color.ui.purple,
               label: 'Energy consumed',
               value: '87.4 kWh',
             },
             {
               icon: Dynamic,
-              backdropColor: '#F7C137',
-              iconColor: '#F7C137',
+              color: color.ui.yellow,
               label: 'Total drive time',
               value: '24.2 h',
             },
@@ -334,14 +330,14 @@ const AnalyticsPage: NextPage = () => {
                 <Bar
                   barSize={7}
                   dataKey="comfort"
-                  fill={theme.color.ui.blue}
+                  fill={color.ui.blue}
                   name="Comfort"
                   radius={5}
                 />
                 <Bar
                   barSize={7}
                   dataKey="premium"
-                  fill={theme.color.ui.purple}
+                  fill={color.ui.purple}
                   name="Premium"
                   radius={5}
                 />
@@ -360,23 +356,23 @@ const AnalyticsPage: NextPage = () => {
                 <Line
                   dataKey="average"
                   name="Average"
-                  stroke={theme.color.ui.yellow}
+                  stroke={color.ui.yellow}
                   strokeWidth={2}
                 />
                 <XAxis
                   dataKey="name"
                   interval="preserveStartEnd"
                   padding={{ left: 17, right: 16 }}
-                  stroke={theme.color.secondary}
-                  tick={{ fill: theme.color.neutral[500] }}
+                  stroke={color.secondary}
+                  tick={{ fill: color.neutral[500] }}
                   tickLine={false}
                   tickMargin={7.5}
                 />
                 <YAxis
                   tickLine={false}
                   tickMargin={1}
-                  stroke={theme.color.secondary}
-                  tick={{ fill: theme.color.neutral[500] }}
+                  stroke={color.secondary}
+                  tick={{ fill: color.neutral[500] }}
                   ticks={[0, 25, 50, 75, 100, 125, 150]}
                 />
               </ComposedChart>

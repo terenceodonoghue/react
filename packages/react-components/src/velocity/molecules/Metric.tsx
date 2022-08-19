@@ -10,17 +10,15 @@ import Card from '../atoms/Card.js';
 import mq from '../utils/mq.js';
 
 interface MetricProps {
-  backdropColor: string;
+  color?: string;
   icon: ReactIcon;
-  iconColor?: string;
   label: string;
   value: string | number;
 }
 
 const Metric: FunctionComponent<MetricProps> = ({
-  backdropColor,
+  color: iconColor,
   icon: Icon,
-  iconColor,
   label,
   value,
 }) => {
@@ -37,9 +35,9 @@ const Metric: FunctionComponent<MetricProps> = ({
     >
       <Backdrop
         css={mq({ marginBottom: [16, 0, 16], marginRight: [0, 16, 0] })}
-        color={backdropColor}
+        color={iconColor || color.primary}
       >
-        <Icon color={iconColor} size={20} />
+        <Icon color={iconColor || color.primary} size={20} />
       </Backdrop>
       <div css={{ display: 'flex', flexDirection: 'column' }}>
         <span
