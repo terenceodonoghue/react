@@ -2,7 +2,6 @@ import { useTheme } from '@emotion/react';
 import { NextPage } from 'next';
 import Head from 'next/head';
 import numeral from 'numeral';
-import { em, rem, rgba } from 'polished';
 import {
   AreaChart,
   Area,
@@ -16,8 +15,7 @@ import {
   YAxis,
 } from 'recharts';
 
-import { Flex } from '@terenceodonoghue/react-components/core';
-import { Card, mq } from '@terenceodonoghue/react-components/velocity';
+import { Card, Metric, mq } from '@terenceodonoghue/react-components/velocity';
 import {
   Check,
   Dynamic,
@@ -94,7 +92,11 @@ const AnalyticsPage: NextPage = () => {
         <title>Velocity | Analytics</title>
       </Head>
       <Container heading="Analytics">
-        <Flex>
+        <div
+          css={{
+            display: 'flex',
+          }}
+        >
           <Card css={{ flex: 1 }} heading="Revenue">
             <ResponsiveContainer width="100%" height={340}>
               <AreaChart
@@ -241,80 +243,57 @@ const AnalyticsPage: NextPage = () => {
               </AreaChart>
             </ResponsiveContainer>
           </Card>
-        </Flex>
-        <Flex wrap="wrap">
+        </div>
+        <div
+          css={mq({
+            display: 'grid',
+            gridTemplateColumns: [
+              'repeat(2, 1fr)',
+              'repeat(2, 1fr)',
+              'repeat(4, 1fr)',
+            ],
+            gap: 0,
+          })}
+        >
           {[
             {
+              icon: Check,
+              backdropColor: '#33AC2E',
+              iconColor: '#33AC2E',
               label: 'Vehicles on track',
-              value: '$1,428',
+              value: '1,428',
             },
             {
+              icon: Marker,
+              backdropColor: '#00C1D4',
+              iconColor: '#00C1D4',
               label: 'Distance driven',
               value: '158.3 mi',
             },
             {
+              icon: Energy,
+              backdropColor: '#8C54FF',
+              iconColor: '#8C54FF',
               label: 'Energy consumed',
               value: '87.4 kWh',
             },
             {
+              icon: Dynamic,
+              backdropColor: '#F7C137',
+              iconColor: '#F7C137',
               label: 'Total drive time',
               value: '24.2 h',
             },
-          ].map((metric, index) => {
-            const label = metric.label.split(' ').join('-').toLowerCase();
-            const IconComponent = iconMap[label].component;
-
-            return (
-              <Card
-                css={mq({
-                  flex: ['1 0 50%', '1 0 50%', 1],
-                  padding: ['16px', '32px 24px', '16px 24px'],
-                })}
-                // eslint-disable-next-line react/no-array-index-key
-                key={`${label}-${index}`}
-              >
-                <Flex
-                  css={{
-                    backgroundColor: rgba(theme.color.ui.purple, 0.15),
-                    borderRadius: '50%',
-                    height: 48,
-                    marginBottom: 16,
-                    width: 48,
-                  }}
-                  alignItems="center"
-                  justifyContent="center"
-                >
-                  <IconComponent
-                    color={iconMap[label].color}
-                    css={{ height: 19, width: 19 }}
-                  />
-                </Flex>
-                <span
-                  css={({ font }) =>
-                    mq({
-                      display: 'inline-block',
-                      fontSize: [rem(34), rem(48)],
-                      fontWeight: font.weight.light,
-                      letterSpacing: -0.6,
-                      lineHeight: em(57, 48),
-                    })
-                  }
-                >
-                  {metric.value}
-                </span>
-                <div
-                  css={({ color }) => ({
-                    color: color.neutral[600],
-                    lineHeight: '1.47em',
-                  })}
-                >
-                  {metric.label}
-                </div>
-              </Card>
-            );
+          ].map((metric) => {
+            return <Metric key={metric.label} {...metric} />;
           })}
-        </Flex>
-        <Flex css={mq({ flexDirection: ['column', 'column', 'row'] })}>
+        </div>
+        <div
+          css={mq({
+            display: 'flex',
+            flexDirection: ['column', 'column', 'row'],
+          })}
+        >
           <Card css={{ flex: 1 }} heading="Latest trips" />
           <Card css={mq({ flex: [1, 1, 2] })} heading="Trips by Weekday">
             <ResponsiveContainer width="100%" height={340}>
@@ -422,7 +401,7 @@ const AnalyticsPage: NextPage = () => {
               </ComposedChart>
             </ResponsiveContainer>
           </Card>
-        </Flex>
+        </div>
       </Container>
     </>
   );
