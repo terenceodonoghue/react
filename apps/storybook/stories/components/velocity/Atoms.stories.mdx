@@ -14,6 +14,7 @@ import {
   Button,
   Card,
   Logo,
+  Pill,
   Radio,
   Slider,
   Switch,
@@ -190,6 +191,25 @@ Height and width can be customised by providing a number to the `size` prop.
     <Avatar size={48} src={faker.image.avatar()} variant="rounded" />
     <Avatar size={64} src={faker.image.avatar()} variant="rounded" />
     <Avatar size={80} src={faker.image.avatar()} variant="rounded" />
+  </Story>
+</Canvas>
+
+## Pill
+
+Pills are simple labels with a background color.
+
+```javascript
+import { Pill } from '@terenceodonoghue/react-components/velocity';
+```
+
+Set the text value using the `label` prop, alongside `color` to set both the text and backdrop colours. The backdrop has a default opacity of `0.2`, but this can be adjusted with the `opacity` prop.
+
+<Canvas>
+  <Story name="Pill">
+    <Pill color="#2E5BFF" label={76} />
+    <Pill color="#8C54FF" label={69} />
+    <Pill color="#00C1D4" label={28} />
+    <Pill color="#F7C137" label={198} />
   </Story>
 </Canvas>
 
