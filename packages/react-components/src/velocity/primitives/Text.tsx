@@ -1,15 +1,20 @@
 /** @jsxImportSource @emotion/react */
 import { CSSObject, useTheme } from '@emotion/react';
+import { Property } from 'csstype';
 import { rem } from 'polished';
 import { ElementType, FunctionComponent, HTMLAttributes } from 'react';
 
 export interface TextProps extends HTMLAttributes<HTMLElement> {
+  align?: Property.TextAlign;
   as?: ElementType;
+  truncate?: boolean;
   variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'p1' | 'p2' | 'p3' | 'c1' | 'c2';
 }
 
 const Text: FunctionComponent<TextProps> = ({
+  align,
   as: Tag = 'p',
+  truncate,
   variant = 'p1',
   ...props
 }) => {
@@ -77,7 +82,22 @@ const Text: FunctionComponent<TextProps> = ({
     },
   };
 
-  return <Tag css={{ ...css[variant], fontFamily: font.family }} {...props} />;
+  return (
+    <Tag
+      css={[
+        css[variant],
+        { fontFamily: font.family, textAlign: align },
+        truncate
+          ? {
+              textOverflow: 'ellipsis',
+              overflow: 'hidden',
+              whiteSpace: 'nowrap',
+            }
+          : undefined,
+      ]}
+      {...props}
+    />
+  );
 };
 
 export default Text;

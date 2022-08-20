@@ -39,24 +39,26 @@ const Button: FunctionComponent<ButtonProps> = ({
 
   return (
     <button
-      css={{
-        ...css[variant],
-        border: 'none',
-        borderRadius: 4,
-        minWidth: 100,
-        padding: 10,
-        fontFamily: font.family,
-        fontSize: rem(15),
-        fontWeight: 500,
-        lineHeight: rem(21),
-        ...transitions(['background-color'], transition.quickly),
-        '&:enabled': {
-          cursor: 'pointer',
+      css={[
+        css[variant],
+        {
+          border: 'none',
+          borderRadius: 4,
+          minWidth: 100,
+          padding: 10,
+          fontFamily: font.family,
+          fontSize: rem(15),
+          fontWeight: 500,
+          lineHeight: rem(21),
+          ...transitions(['background-color'], transition.quickly),
+          '&:enabled': {
+            cursor: 'pointer',
+          },
+          '&:disabled': {
+            opacity: 0.3,
+          },
         },
-        '&:disabled': {
-          opacity: 0.3,
-        },
-      }}
+      ]}
       type="button"
       {...props}
     />

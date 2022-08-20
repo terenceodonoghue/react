@@ -24,11 +24,13 @@ const Avatar: FunctionComponent<AvatarProps> = ({
 
   return (
     <img
-      css={{
-        ...css[variant],
-        height: size,
-        width: size,
-      }}
+      css={[
+        css[variant],
+        {
+          height: size,
+          width: size,
+        },
+      ]}
       alt={alt}
       {...props}
     />

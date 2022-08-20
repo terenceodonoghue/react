@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { Global } from '@terenceodonoghue/react-components/core';
 import {
   Backdrop,
+  KanbanCard,
   Logo,
   Metric,
   ThemeProvider,
@@ -25,9 +26,20 @@ import {
     (Story) => (
       <ThemeProvider>
         <Global
-          styles={[
+          styles={({ color }) => [
             velocity,
             mq({
+              '.docs-story': {
+                backgroundColor: color.neutral[100],
+              },
+              '.kanban-card': {
+                display: 'grid',
+                gridTemplateColumns: [
+                  'repeat(1, 1fr)',
+                  'repeat(2, 1fr)',
+                  'repeat(3, 1fr)',
+                ],
+              },
               '.metric': {
                 display: 'grid',
                 gridTemplateColumns: [
@@ -35,7 +47,6 @@ import {
                   'repeat(2, 1fr)',
                   'repeat(3, 1fr)',
                 ],
-                gap: 0,
               },
             }),
           ]}
@@ -51,6 +62,54 @@ import {
 # Molecules
 
 Molecules are relatively simple groups of UI elements (atoms) functioning together as a unit.
+
+## Kanban Card
+
+```javascript
+import { KanbanCard } from '@terenceodonoghue/react-components/velocity';
+```
+
+<Canvas>
+  <Story
+    name="KanbanCard"
+    decorators={[
+      (Story) => (
+        <div className="kanban-card">
+          <Story />
+        </div>
+      ),
+    ]}
+  >
+    <KanbanCard
+      color="#2E5BFF"
+      name="Spire"
+      description="Tire replacement"
+      cost="$233"
+      date="June 12"
+    />
+    <KanbanCard
+      color="#8C54FF"
+      name="Expedition"
+      description="Tire replacement"
+      cost="$766"
+      date="June 3"
+    />
+    <KanbanCard
+      color="#00C1D4"
+      name="Scorpion"
+      description="Monthly service"
+      cost="$430"
+      date="June 4"
+    />
+    <KanbanCard
+      color="#F7C137"
+      name="Empire"
+      description="Engine check-up"
+      cost="$542"
+      date="June 24"
+    />
+  </Story>
+</Canvas>
 
 ## Metric
 
