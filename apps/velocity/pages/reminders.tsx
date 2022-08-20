@@ -317,11 +317,11 @@ const RemindersPage: NextPage = () => {
         <Flex>
           <Card
             css={{ flexBasis: 655, flexShrink: 0 }}
-            heading="Service Centers"
+            caption="Service Centers"
           />
           <Flex css={{ flexGrow: 1 }} direction="column">
-            <Card heading="Vehicle Service Status" />
-            <Card heading="Top Drivers" />
+            <Card caption="Vehicle Service Status" />
+            <Card caption="Top Drivers" />
           </Flex>
         </Flex>
       </Container>

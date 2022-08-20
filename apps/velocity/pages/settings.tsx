@@ -118,7 +118,7 @@ const SettingsPage: NextPage = () => (
     </Head>
     <Container heading="Settings">
       <Flex>
-        <Card css={{ flex: 1 }} heading="Personal data">
+        <Card css={{ flex: 1 }} caption="Personal data">
           <p>
             Use this page to update your contact information and change your
             password.
@@ -170,7 +170,7 @@ const SettingsPage: NextPage = () => (
         </Card>
       </Flex>
       <Flex>
-        <Card css={{ flex: 1 }} heading="Integrations">
+        <Card css={{ flex: 1 }} caption="Integrations">
           <p>Manage third-party app integrations.</p>
           <Flex css={{ margin: '0 -24px' }}>
             <Integration
@@ -211,7 +211,7 @@ const SettingsPage: NextPage = () => (
         </Card>
       </Flex>
       <Flex>
-        <Card css={{ flex: 1 }} heading="Notifications">
+        <Card css={{ flex: 1 }} caption="Notifications">
           <p>Control your notification and auto-follow settings.</p>
           <Flex css={{ margin: '0 -60px' }}>
             <Switch
@@ -240,7 +240,7 @@ const SettingsPage: NextPage = () => (
         </Card>
       </Flex>
       <Flex>
-        <Card css={{ flex: 1 }} heading="Theme">
+        <Card css={{ flex: 1 }} caption="Theme">
           <p>Select a color scheme for your Velocity app.</p>
           <Flex css={{ margin: '12px -16px' }}>
             <PaletteColor

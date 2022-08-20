@@ -27,7 +27,7 @@ const VehiclesPage: NextPage = () => {
       <Container heading="Vehicles Dashboard">
         <Flex>
           <div css={{ flex: 4 }} />
-          <Card css={{ flex: 1 }} heading="Filter">
+          <Card css={{ flex: 1 }} caption="Filter">
             <Flex direction="column" gap={24}>
               <Slider primary="Trips taken" secondary="753" />
               <Slider primary="Service due" secondary="14 days" />

@@ -122,22 +122,22 @@ const IndexPage: NextPage = () => {
             <Flex
               css={mq({ flex: 1, flexDirection: ['row', 'column', 'row'] })}
             >
-              <Card css={{ flex: 1 }} heading="Vehicles on track" />
-              <Card css={{ flex: 1 }} heading="Distance driven" />
+              <Card css={{ flex: 1 }} caption="Vehicles on track" />
+              <Card css={{ flex: 1 }} caption="Distance driven" />
             </Flex>
           </Flex>
           <Flex css={{ flex: 1 }}>
-            <Card css={{ flex: 1 }} heading="Today's Trips" />
+            <Card css={{ flex: 1 }} caption="Today's Trips" />
           </Flex>
         </Flex>
-        <Card heading="Fleet activity map" />
+        <Card caption="Fleet activity map" />
         <Flex
           css={mq({
             flexDirection: ['column', 'row'],
             flexWrap: ['no-wrap', 'wrap', 'no-wrap'],
           })}
         >
-          <Card css={{ flex: 1 }} heading="Top Drivers">
+          <Card css={{ flex: 1 }} caption="Top Drivers">
             <div css={{ marginBottom: -12 }}>
               {fixtures.map(
                 ({ avatar, distance, earnings, name, vehicle }, i) => (
@@ -205,13 +205,13 @@ const IndexPage: NextPage = () => {
               )}
             </div>
           </Card>
-          <Card css={{ flex: 1 }} heading="Trips by type" />
+          <Card css={{ flex: 1 }} caption="Trips by type" />
           <Card
             css={mq({
               display: ['none', 'block'],
               flex: ['initial', '0 1 100%', 1],
             })}
-            heading="Service Reminders"
+            caption="Service Reminders"
           />
         </Flex>
       </Container>

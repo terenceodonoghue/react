@@ -99,7 +99,7 @@ const MapPage: NextPage = () => {
         <Flex>
           <Card
             css={{ flexBasis: 655, flexShrink: 0 }}
-            heading="Passenger info"
+            caption="Passenger info"
           >
             <Flex>
               <div css={{ flexBasis: 256, flexShrink: 0 }}>

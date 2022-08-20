@@ -15,7 +15,11 @@ import {
   YAxis,
 } from 'recharts';
 
-import { Card, Metric, mq } from '@terenceodonoghue/react-components/velocity';
+import {
+  Card,
+  MetricCard,
+  mq,
+} from '@terenceodonoghue/react-components/velocity';
 import {
   Check,
   Dynamic,
@@ -78,7 +82,7 @@ const AnalyticsPage: NextPage = () => {
             display: 'flex',
           }}
         >
-          <Card css={{ flex: 1 }} heading="Revenue">
+          <Card css={{ flex: 1 }} caption="Revenue">
             <ResponsiveContainer width="100%" height={340}>
               <AreaChart
                 data={[
@@ -262,7 +266,7 @@ const AnalyticsPage: NextPage = () => {
               value: '24.2 h',
             },
           ].map((metric) => {
-            return <Metric key={metric.label} {...metric} />;
+            return <MetricCard key={metric.label} {...metric} />;
           })}
         </div>
         <div
@@ -271,8 +275,8 @@ const AnalyticsPage: NextPage = () => {
             flexDirection: ['column', 'column', 'row'],
           })}
         >
-          <Card css={{ flex: 1 }} heading="Latest trips" />
-          <Card css={mq({ flex: [1, 1, 2] })} heading="Trips by Weekday">
+          <Card css={{ flex: 1 }} caption="Latest trips" />
+          <Card css={mq({ flex: [1, 1, 2] })} caption="Trips by Weekday">
             <ResponsiveContainer width="100%" height={340}>
               <ComposedChart
                 data={[
