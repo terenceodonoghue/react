@@ -12,7 +12,7 @@ export { default as Switch } from './atoms/Switch.js';
 export { default as TextField } from './atoms/TextField.js';
 
 export { default as KanbanCard } from './molecules/KanbanCard.js';
-export { default as Metric } from './molecules/Metric.js';
+export { default as MetricCard } from './molecules/MetricCard.js';
 
 export { default as Text } from './primitives/Text.js';
 

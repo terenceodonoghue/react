@@ -10,14 +10,14 @@ import Card from '../atoms/Card.js';
 import Text from '../primitives/Text.js';
 import mq from '../utils/mq.js';
 
-interface MetricProps {
+interface MetricCardProps {
   color?: string;
   icon: ReactIcon;
   label: string;
   value: string | number;
 }
 
-const Metric: FunctionComponent<MetricProps> = ({
+const MetricCard: FunctionComponent<MetricCardProps> = ({
   color: iconColor,
   icon: Icon,
   label,
@@ -60,4 +60,4 @@ const Metric: FunctionComponent<MetricProps> = ({
   );
 };
 
-export default Metric;
+export default MetricCard;

@@ -5,9 +5,9 @@ import { useState } from 'react';
 import { Global } from '@terenceodonoghue/react-components/core';
 import {
   Backdrop,
-  KanbanCard,
   Logo,
-  Metric,
+  MetricCard,
+  KanbanCard,
   ThemeProvider,
   mq,
 } from '@terenceodonoghue/react-components/velocity';
@@ -111,15 +111,15 @@ import { KanbanCard } from '@terenceodonoghue/react-components/velocity';
   </Story>
 </Canvas>
 
-## Metric
+## Metric Card
 
 ```javascript
-import { Metric } from '@terenceodonoghue/react-components/velocity';
+import { MetricCard } from '@terenceodonoghue/react-components/velocity';
 ```
 
 <Canvas>
   <Story
-    name="Metric"
+    name="MetricCard"
     decorators={[
       (Story) => (
         <div className="metric">
@@ -128,26 +128,26 @@ import { Metric } from '@terenceodonoghue/react-components/velocity';
       ),
     ]}
   >
-    <Metric
+    <MetricCard
       icon={Check}
       color="#33AC2E"
       label="Vehicles on track"
       value="1,428"
     />
-    <Metric
+    <MetricCard
       icon={Marker}
       color="#00C1D4"
       label="Distance driven"
       value="158.3 mi"
     />
-    <Metric
+    <MetricCard
       icon={Energy}
       color="#8C54FF"
       iconColor="#8C54FF"
       label="Energy consumed"
       value="87.4 kWh"
     />
-    <Metric
+    <MetricCard
       icon={Dynamic}
       color="#F7C137"
       label="Total drive time"
