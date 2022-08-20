@@ -27,7 +27,7 @@ const KanbanCard: FunctionComponent<KanbanCardProps> = ({
     <Card
       css={{
         display: 'grid',
-        gridTemplateColumns: 'repeat(2, 1fr)',
+        gridTemplateColumns: '2fr 1fr',
         gap: 4,
         borderLeft: 0,
         borderRadius: 5,
