@@ -1,20 +1,21 @@
 /** @jsxImportSource @emotion/react */
 import { useTheme } from '@emotion/react';
-import { rem, rgba } from 'polished';
+import { rgba } from 'polished';
 import { FunctionComponent, HTMLAttributes } from 'react';
 
+import Text from '../primitives/Text.js';
 import mq from '../utils/mq.js';
 
 export interface CardProps extends HTMLAttributes<HTMLDivElement> {
-  heading?: string;
+  caption?: string;
 }
 
 const Card: FunctionComponent<CardProps> = ({
+  caption,
   children,
-  heading,
   ...props
 }) => {
-  const { color, font } = useTheme();
+  const { color } = useTheme();
 
   return (
     <div
@@ -29,23 +30,17 @@ const Card: FunctionComponent<CardProps> = ({
       })}
       {...props}
     >
-      {heading ? (
-        <h3
+      {caption ? (
+        <Text
           css={{
+            display: 'block',
             margin: '0 0 24px',
-            color: color.neutral[600],
-            fontSize: rem(13),
-            fontWeight: font.weight.regular,
-            letterSpacing: 1.2,
-            lineHeight: rem(15),
-            textTransform: 'uppercase',
-            '&:empty': {
-              display: 'none',
-            },
           }}
+          as="h2"
+          variant="c2"
         >
-          {heading}
-        </h3>
+          {caption}
+        </Text>
       ) : undefined}
       {children}
     </div>

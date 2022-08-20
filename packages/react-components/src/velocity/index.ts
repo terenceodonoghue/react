@@ -13,6 +13,8 @@ export { default as TextField } from './atoms/TextField.js';
 
 export { default as Metric } from './molecules/Metric.js';
 
+export { default as Text } from './primitives/Text.js';
+
 export { default as ThemeProvider } from './providers/ThemeProvider.js';
 
 export { default as mq } from './utils/mq.js';
