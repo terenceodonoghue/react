@@ -9,7 +9,7 @@ export interface TextProps extends HTMLAttributes<HTMLElement> {
 }
 
 const Text: FunctionComponent<TextProps> = ({
-  as: Tag = 'span',
+  as: Tag = 'p',
   variant = 'p1',
   ...props
 }) => {
