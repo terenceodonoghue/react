@@ -3,6 +3,8 @@ import { useTheme } from '@emotion/react';
 import { rem, rgba, transitions } from 'polished';
 import { InputHTMLAttributes, FunctionComponent } from 'react';
 
+import Text from '../primitives/Text.js';
+
 export interface TextFieldProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;
 }
@@ -17,30 +19,18 @@ const TextField: FunctionComponent<TextFieldProps> = ({
   const { color, font, transition } = useTheme();
 
   return (
-    <label
-      css={{
-        color: color.neutral[500],
-        fontSize: rem(12),
-        fontWeight: font.weight.medium,
-        letterSpacing: 1.2,
-        textTransform: 'uppercase',
-      }}
-      className={className}
-      htmlFor={id}
-      style={style}
-    >
+    <label className={className} htmlFor={id} style={style}>
       {label ? (
-        <span
+        <Text
           css={{
             display: 'block',
             margin: '0 0 8px',
-            '&:empty': {
-              display: 'none',
-            },
           }}
+          as="span"
+          variant="c1"
         >
           {label}
-        </span>
+        </Text>
       ) : undefined}
       <input
         css={{

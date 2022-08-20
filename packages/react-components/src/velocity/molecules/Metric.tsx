@@ -7,6 +7,7 @@ import { ReactIcon } from '@terenceodonoghue/react-icons';
 
 import Backdrop from '../atoms/Backdrop.js';
 import Card from '../atoms/Card.js';
+import Text from '../primitives/Text.js';
 import mq from '../utils/mq.js';
 
 interface MetricProps {
@@ -51,16 +52,9 @@ const Metric: FunctionComponent<MetricProps> = ({
         >
           {value}
         </span>
-        <span
-          css={{
-            color: color.neutral[600],
-            fontSize: rem(15),
-            fontWeight: font.weight.regular,
-            lineHeight: rem(22),
-          }}
-        >
+        <Text as="span" variant="p2">
           {label}
-        </span>
+        </Text>
       </div>
     </Card>
   );

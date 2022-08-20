@@ -3,6 +3,8 @@ import { useTheme } from '@emotion/react';
 import { rgba } from 'polished';
 import { InputHTMLAttributes, FunctionComponent } from 'react';
 
+import Text from '../primitives/Text.js';
+
 export interface RadioProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;
 }
@@ -15,14 +17,13 @@ const Radio: FunctionComponent<RadioProps> = ({
   style,
   ...props
 }) => {
-  const { color, font } = useTheme();
+  const { color } = useTheme();
 
   return (
     <label
       css={{
         display: 'flex',
         alignItems: 'center',
-        fontWeight: font.weight.medium,
         cursor: disabled ? 'not-allowed' : 'pointer',
         opacity: disabled ? 0.4 : 1,
       }}
@@ -61,7 +62,9 @@ const Radio: FunctionComponent<RadioProps> = ({
           },
         }}
       />
-      {label}
+      <Text as="span" variant="h4">
+        {label}
+      </Text>
     </label>
   );
 };
