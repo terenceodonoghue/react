@@ -25,7 +25,7 @@ const ThemeCard: FunctionComponent<ThemeCardProps> = ({
       }}
     >
       {colors.map((backgroundColor) => (
-        <div css={{ flex: 1, backgroundColor }} />
+        <div key={backgroundColor} css={{ flex: 1, backgroundColor }} />
       ))}
     </div>
     <Radio label={label} name={name} {...props} />

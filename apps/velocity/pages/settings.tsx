@@ -86,58 +86,72 @@ const SettingsPage: NextPage = () => (
       <title>Velocity | Settings</title>
     </Head>
     <Container heading="Settings">
-      <Flex>
+      <div css={{ display: 'flex' }}>
         <Card css={{ flex: 1 }} caption="Personal data">
           <Text>
             Use this page to update your contact information and change your
             password.
           </Text>
-          <Flex css={{ margin: '30px 0' }} gap={20} wrap="wrap">
+          <div
+            css={mq({
+              display: 'grid',
+              gridTemplateAreas: [
+                "'a' 'b' 'c' 'd' 'e' 'f' 'g'",
+                "'a . .' 'b c d' 'e f g'",
+              ],
+              gridTemplateColumns: [
+                '1fr',
+                'repeat(3, 1fr)',
+                'repeat(3, minmax(max-content, 272px))',
+              ],
+              columnGap: 24,
+              rowGap: [16, 32],
+              margin: ['24px 0', '32px 0'],
+            })}
+          >
             <TextField
-              css={{ flex: 1, maxWidth: 272 }}
+              css={{ gridArea: 'a' }}
               defaultValue="appleseed_jane@mac.com"
               label="Email address"
             />
-          </Flex>
-          <Flex css={{ margin: '30px 0' }} gap={20} wrap="wrap">
+
             <TextField
-              css={{ flex: 1, maxWidth: 272 }}
+              css={{ gridArea: 'b' }}
               defaultValue="Jane"
               label="First name"
             />
             <TextField
-              css={{ flex: 1, maxWidth: 272 }}
+              css={{ gridArea: 'c' }}
               defaultValue="Appleseed"
               label="Last name"
             />
             <TextField
-              css={{ flex: 1, maxWidth: 272 }}
+              css={{ gridArea: 'd' }}
               defaultValue="1965-05-25"
               label="Birth date"
               type="date"
             />
-          </Flex>
-          <Flex css={{ margin: '30px 0' }} gap={20} wrap="wrap">
+
             <TextField
-              css={{ flex: 1, maxWidth: 272 }}
+              css={{ gridArea: 'e' }}
               defaultValue="password"
               label="Current password"
               type="password"
             />
             <TextField
-              css={{ flex: 1, maxWidth: 272 }}
+              css={{ gridArea: 'f' }}
               label="New password"
               type="password"
             />
             <TextField
-              css={{ flex: 1, maxWidth: 272 }}
+              css={{ gridArea: 'g' }}
               label="confirm"
               type="password"
             />
-          </Flex>
-          <Button css={{ width: 200 }}>Save Changes</Button>
+          </div>
+          <Button css={mq({ width: ['100%', 200] })}>Save Changes</Button>
         </Card>
-      </Flex>
+      </div>
       <Flex>
         <Card css={{ flex: 1 }} caption="Integrations">
           <Text>Manage third-party app integrations.</Text>
