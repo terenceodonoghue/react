@@ -13,6 +13,7 @@ export { default as TextField } from './atoms/TextField.js';
 
 export { default as KanbanCard } from './molecules/KanbanCard.js';
 export { default as MetricCard } from './molecules/MetricCard.js';
+export { default as ThemeCard } from './molecules/ThemeCard.js';
 
 export { default as Text } from './primitives/Text.js';
 

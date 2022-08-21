@@ -8,6 +8,7 @@ import {
   Logo,
   MetricCard,
   KanbanCard,
+  ThemeCard,
   ThemeProvider,
   mq,
 } from '@terenceodonoghue/react-components/velocity';
@@ -25,37 +26,50 @@ import {
   decorators={[
     (Story) => (
       <ThemeProvider>
-        <Global
-          styles={({ color }) => [
-            velocity,
-            mq({
-              '.docs-story': {
-                backgroundColor: color.neutral[100],
-              },
-              '.kanban-card': {
-                display: 'grid',
-                gridTemplateColumns: [
-                  'repeat(1, 1fr)',
-                  'repeat(2, 1fr)',
-                  'repeat(3, 1fr)',
-                ],
-              },
-              '.metric': {
-                display: 'grid',
-                gridTemplateColumns: [
-                  'repeat(2, 1fr)',
-                  'repeat(2, 1fr)',
-                  'repeat(3, 1fr)',
-                ],
-              },
-            }),
-          ]}
-        />
         <Story />
       </ThemeProvider>
     ),
   ]}
 />
+
+<ThemeProvider>
+  <Global
+    styles={({ color }) => [
+      velocity,
+      mq({
+        '[data-has-bg] .docs-story': {
+          backgroundColor: color.neutral[100],
+        },
+        '.kanban-card': {
+          display: 'grid',
+          gridTemplateColumns: [
+            'repeat(1, 1fr)',
+            'repeat(2, 1fr)',
+            'repeat(3, 1fr)',
+          ],
+        },
+        '.metric-card': {
+          display: 'grid',
+          gridTemplateColumns: [
+            'repeat(2, 1fr)',
+            'repeat(2, 1fr)',
+            'repeat(3, 1fr)',
+          ],
+        },
+        '.theme-card': {
+          backgroundColor: 'white',
+          display: 'grid',
+          gridTemplateColumns: [
+            'repeat(2, 1fr)',
+            'repeat(4, 1fr)',
+            'repeat(5, 1fr)',
+          ],
+          gap: [24, 32],
+        },
+      }),
+    ]}
+  />
+</ThemeProvider>
 
 <Logo style={{ marginBottom: '1.5rem' }} />
 
@@ -69,7 +83,7 @@ Molecules are relatively simple groups of UI elements (atoms) functioning togeth
 import { KanbanCard } from '@terenceodonoghue/react-components/velocity';
 ```
 
-<Canvas>
+<Canvas data-has-bg>
   <Story
     name="KanbanCard"
     decorators={[
@@ -117,12 +131,12 @@ import { KanbanCard } from '@terenceodonoghue/react-components/velocity';
 import { MetricCard } from '@terenceodonoghue/react-components/velocity';
 ```
 
-<Canvas>
+<Canvas data-has-bg>
   <Story
     name="MetricCard"
     decorators={[
       (Story) => (
-        <div className="metric">
+        <div className="metric-card">
           <Story />
         </div>
       ),
@@ -153,5 +167,34 @@ import { MetricCard } from '@terenceodonoghue/react-components/velocity';
       label="Total drive time"
       value="24.2 h"
     />
+  </Story>
+</Canvas>
+
+## Theme Card
+
+```javascript
+import { ThemeCard } from '@terenceodonoghue/react-components/velocity';
+```
+
+<Canvas>
+  <Story
+    name="ThemeCard"
+    decorators={[
+      (Story) => (
+        <div className="theme-card">
+          <Story />
+        </div>
+      ),
+    ]}
+  >
+    <ThemeCard
+      label="Shelob"
+      colors={['#2e5bff', '#e0e7ff', '#8097b1']}
+      defaultChecked
+    />
+    <ThemeCard label="Denethor" colors={['#8c54ff', '#00c1d4', '#fad050']} />
+    <ThemeCard label="Quickbeam" colors={['#00a4de', '#3b7ed5', '#00a550']} />
+    <ThemeCard label="Shadowfax" colors={['#232a64', '#85c800', '#616266']} />
+    <ThemeCard label="Grima" colors={['#a728a3', '#f7e0ff', '#7675ac']} />
   </Story>
 </Canvas>

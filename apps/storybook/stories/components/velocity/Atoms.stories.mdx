@@ -8,6 +8,7 @@ import {
 } from '@storybook/addon-docs';
 import { useState } from 'react';
 
+import { Global } from '@terenceodonoghue/react-components/core';
 import {
   Avatar,
   Backdrop,
@@ -21,7 +22,7 @@ import {
   TextField,
   ThemeProvider,
 } from '@terenceodonoghue/react-components/velocity';
-import '@terenceodonoghue/react-components/velocity.css';
+import velocity from '@terenceodonoghue/react-components/velocity.css';
 import * as Velocity from '@terenceodonoghue/react-icons/velocity';
 import {
   Analytics,
@@ -57,6 +58,19 @@ import {
     ),
   ]}
 />
+
+<ThemeProvider>
+  <Global
+    styles={({ color }) => [
+      velocity,
+      {
+        '[data-has-bg] .docs-story': {
+          backgroundColor: color.neutral[100],
+        },
+      },
+    ]}
+  />
+</ThemeProvider>
 
 <Logo style={{ marginBottom: '1.5rem' }} />
 
@@ -223,7 +237,7 @@ import { Card } from '@terenceodonoghue/react-components/velocity';
 
 An optional `caption` prop renders text above the content block.
 
-<Canvas>
+<Canvas data-has-bg>
   <Story name="Card">
     <Card caption="Caption">Content</Card>
     <Card>Content</Card>
