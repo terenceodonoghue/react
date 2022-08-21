@@ -1,5 +1,25 @@
 # @terenceodonoghue/react-components
 
+## 3.0.0
+
+### Major Changes
+
+- 361f680: Remove heading prop from Card
+- 45d5de2: Rename Metric to MetricCard
+
+### Minor Changes
+
+- abb9476: Add caption prop to Card
+- 705f3bd: Add align, truncate props to Text
+- 13b3de7: Add KanbanCard component
+- 76d03e6: Add Text component
+- 9e603d5: Add Pill component
+
+### Patch Changes
+
+- 2c70ce5: Extend KanbanCard, MetricCard interfaces from CardProps
+- d995d66: Refactor components to use Text component
+
 ## 2.0.0
 
 ### Major Changes
