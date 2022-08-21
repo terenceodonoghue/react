@@ -14,7 +14,6 @@ import {
 } from '@terenceodonoghue/react-components/velocity';
 
 import Container from '../components/core/Container';
-import Radio from '../components/core/Radio';
 import Switch from '../components/core/Switch';
 import {
   GitHubIcon,
@@ -81,39 +80,6 @@ const Integration: FunctionComponent<IntegrationProps> = ({
   </Flex>
 );
 
-interface colorProps {
-  colors: string[];
-  defaultChecked?: boolean;
-  name: string;
-}
-
-const PaletteColor: FunctionComponent<colorProps> = ({
-  colors,
-  defaultChecked,
-  name,
-}) => (
-  <div css={{ margin: '0 16px' }}>
-    <div
-      css={{
-        borderRadius: 4,
-        height: 65,
-        margin: '12px 0',
-        width: 120,
-        ...linearGradient({
-          colorStops: colors.map(
-            (color, i) =>
-              `${color} ${(i / colors.length) * 100}%, ${color} ${
-                ((i + 1) / colors.length) * 100
-              }%`,
-          ),
-          toDirection: '90deg',
-        }),
-      }}
-    />
-    <Radio inputProps={{ defaultChecked, name: 'theme' }}>{name}</Radio>
-  </div>
-);
-
 const SettingsPage: NextPage = () => (
   <>
     <Head>
@@ -122,10 +88,10 @@ const SettingsPage: NextPage = () => (
     <Container heading="Settings">
       <Flex>
         <Card css={{ flex: 1 }} caption="Personal data">
-          <p>
+          <Text>
             Use this page to update your contact information and change your
             password.
-          </p>
+          </Text>
           <Flex css={{ margin: '30px 0' }} gap={20} wrap="wrap">
             <TextField
               css={{ flex: 1, maxWidth: 272 }}
@@ -174,7 +140,7 @@ const SettingsPage: NextPage = () => (
       </Flex>
       <Flex>
         <Card css={{ flex: 1 }} caption="Integrations">
-          <p>Manage third-party app integrations.</p>
+          <Text>Manage third-party app integrations.</Text>
           <Flex css={{ margin: '0 -24px' }}>
             <Integration
               description="Boards and prototypes"
@@ -215,7 +181,7 @@ const SettingsPage: NextPage = () => (
       </Flex>
       <Flex>
         <Card css={{ flex: 1 }} caption="Notifications">
-          <p>Control your notification and auto-follow settings.</p>
+          <Text>Control your notification and auto-follow settings.</Text>
           <Flex css={{ margin: '0 -60px' }}>
             <Switch
               css={{ margin: '12px 60px' }}
