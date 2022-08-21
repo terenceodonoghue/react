@@ -1,7 +1,15 @@
 import { useTheme } from '@emotion/react';
+import { faker } from '@faker-js/faker';
 import { NextPage } from 'next';
 import Head from 'next/head';
-import { Dispatch, ReactElement, SetStateAction, useState } from 'react';
+import numeral from 'numeral';
+import {
+  Dispatch,
+  ReactElement,
+  SetStateAction,
+  useMemo,
+  useState,
+} from 'react';
 import {
   DragDropContext,
   Draggable,
@@ -13,6 +21,7 @@ import {
 import { Flex } from '@terenceodonoghue/react-components/core';
 import {
   Card,
+  Driver,
   KanbanCard,
   Pill,
   Text,
@@ -85,6 +94,32 @@ const onDragEnd = (
 };
 
 const RemindersPage: NextPage = () => {
+  const fixtures = useMemo(() => {
+    return [
+      {
+        avatar: faker.image.avatar(),
+        name: 'Bebop',
+        vehicle: 'Tesla Model X',
+        totalEarnings: 6432,
+        totalDistance: 1322,
+      },
+      {
+        avatar: faker.image.avatar(),
+        name: 'Gran Tesoro',
+        vehicle: 'Chevrolet Bolt',
+        totalEarnings: 6432,
+        totalDistance: 1322,
+      },
+      {
+        avatar: faker.image.avatar(),
+        name: 'Belafonte',
+        vehicle: 'Tesla Model X',
+        totalEarnings: 6432,
+        totalDistance: 1322,
+      },
+    ];
+  }, []);
+
   const [tickets, setTickets] = useState([
     [
       {
@@ -274,7 +309,23 @@ const RemindersPage: NextPage = () => {
           />
           <Flex css={{ flexGrow: 1 }} direction="column">
             <Card caption="Vehicle Service Status" />
-            <Card caption="Top Drivers" />
+            <Card
+              css={{ display: 'flex', flexDirection: 'column', gap: 12 }}
+              caption="Top Drivers"
+            >
+              {fixtures.map(
+                ({ totalDistance, totalEarnings, ...driver }, i) => (
+                  <Driver
+                    rank={i + 1}
+                    totalDistance={`${numeral(totalDistance).format(
+                      '0,0',
+                    )} miles`}
+                    totalEarnings={numeral(totalEarnings).format('$0')}
+                    {...driver}
+                  />
+                ),
+              )}
+            </Card>
           </Flex>
         </Flex>
       </Container>

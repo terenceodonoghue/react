@@ -22,9 +22,7 @@ const Driver: FunctionComponent<DriverProps> = ({
   totalEarnings,
   vehicle,
 }) => (
-  <div
-    css={{ display: 'flex', alignItems: 'center', gap: 16, margin: '16px 0' }}
-  >
+  <div css={{ display: 'flex', alignItems: 'center', gap: 16 }}>
     <Badge label={rank}>
       <Avatar size={48} src={avatar} />
     </Badge>
