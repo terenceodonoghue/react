@@ -1,6 +1,6 @@
 import { NextPage } from 'next';
 import Head from 'next/head';
-import { linearGradient, rgba } from 'polished';
+import { rgba } from 'polished';
 import { ComponentType, FunctionComponent, SVGProps } from 'react';
 
 import { Flex } from '@terenceodonoghue/react-components/core';
