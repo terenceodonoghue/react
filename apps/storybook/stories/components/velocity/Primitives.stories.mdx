@@ -1,0 +1,69 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import { Global } from '@terenceodonoghue/react-components/core';
+import {
+  Logo,
+  Text,
+  ThemeProvider,
+  mq,
+} from '@terenceodonoghue/react-components/velocity';
+
+<Meta
+  title="Components/Velocity/Primitives"
+  decorators={[
+    (Story) => (
+      <ThemeProvider>
+        <div
+          style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            alignItems: 'center',
+            justifyContent: 'flex-start',
+            gap: 32,
+          }}
+        >
+          <Story />
+        </div>
+      </ThemeProvider>
+    ),
+  ]}
+/>
+
+<Logo style={{ marginBottom: '1.5rem' }} />
+
+# Primitives
+
+## Text
+
+Use typography to present your design and content as clearly and efficiently as possible.
+
+```javascript
+import { Text } from '@terenceodonoghue/react-components/velocity';
+```
+
+The `variant` prop sets the style. The available variants are: `h1`, `h2`,`h3`,`h4`,`p1` (default),`p2`,`p3`,`c1`,`c2`.
+
+<Canvas>
+  <Story name="Text">
+    <Text variant="h1">Heading 1</Text>
+    <Text variant="h2">Heading 2</Text>
+    <Text variant="h3">Heading 3</Text>
+    <Text variant="h4">Heading 4</Text>
+    <Text variant="p1">Paragraph 1</Text>
+    <Text variant="p2">Paragraph 2</Text>
+    <Text variant="p3">Paragraph 3</Text>
+    <Text variant="c1">Caption 1</Text>
+    <Text variant="c2">Caption 2</Text>
+  </Story>
+</Canvas>
+
+A `p` element is rendered by default, unless specified otherwise by `as`. This only affects the semantic element, and is independent of the style specified by `variant`. This allows elements and styles to be applied independently.
+
+<Canvas>
+  <Story name="TextAs">
+    <Text as="h3">Heading h3 (as="h3")</Text>
+    <Text as="h3" variant="h3">
+      Heading h3 (as="h3" variant="h3")
+    </Text>
+  </Story>
+</Canvas>
