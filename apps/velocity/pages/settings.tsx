@@ -86,8 +86,14 @@ const SettingsPage: NextPage = () => (
       <title>Velocity | Settings</title>
     </Head>
     <Container heading="Settings">
-      <div css={{ display: 'flex' }}>
-        <Card css={{ flex: 1 }} caption="Personal data">
+      <div
+        css={mq({
+          display: 'flex',
+          flexDirection: 'column',
+          gap: [8, 16, 32],
+        })}
+      >
+        <Card caption="Personal data">
           <Text>
             Use this page to update your contact information and change your
             password.
@@ -151,9 +157,7 @@ const SettingsPage: NextPage = () => (
           </div>
           <Button css={mq({ width: ['100%', 200] })}>Save Changes</Button>
         </Card>
-      </div>
-      <Flex>
-        <Card css={{ flex: 1 }} caption="Integrations">
+        <Card caption="Integrations">
           <Text>Manage third-party app integrations.</Text>
           <Flex css={{ margin: '0 -24px' }}>
             <Integration
@@ -192,9 +196,7 @@ const SettingsPage: NextPage = () => (
             />
           </Flex>
         </Card>
-      </Flex>
-      <Flex>
-        <Card css={{ flex: 1 }} caption="Notifications">
+        <Card caption="Notifications">
           <Text>Control your notification and auto-follow settings.</Text>
           <Flex css={{ margin: '0 -60px' }}>
             <Switch
@@ -221,9 +223,7 @@ const SettingsPage: NextPage = () => (
             />
           </Flex>
         </Card>
-      </Flex>
-      <Flex>
-        <Card css={{ flex: 1 }} caption="Theme">
+        <Card caption="Theme">
           <Text>Select a color scheme for your Velocity app.</Text>
           <div
             css={mq({
@@ -258,7 +258,7 @@ const SettingsPage: NextPage = () => (
             />
           </div>
         </Card>
-      </Flex>
+      </div>
     </Container>
   </>
 );
