@@ -154,14 +154,20 @@ const IndexPage: NextPage = () => {
             css={{ display: 'flex', flex: 1, flexDirection: 'column', gap: 12 }}
             caption="Top Drivers"
           >
-            {fixtures.map(({ totalDistance, totalEarnings, ...driver }, i) => (
-              <Driver
-                rank={i + 1}
-                totalDistance={`${numeral(totalDistance).format('0,0')} miles`}
-                totalEarnings={numeral(totalEarnings).format('$0')}
-                {...driver}
-              />
-            ))}
+            {fixtures.map(
+              ({ name, totalDistance, totalEarnings, ...driver }, i) => (
+                <Driver
+                  key={name}
+                  rank={i + 1}
+                  name={name}
+                  totalDistance={`${numeral(totalDistance).format(
+                    '0,0',
+                  )} miles`}
+                  totalEarnings={numeral(totalEarnings).format('$0')}
+                  {...driver}
+                />
+              ),
+            )}
           </Card>
           <Card css={{ flex: 1 }} caption="Trips by type" />
           <Card

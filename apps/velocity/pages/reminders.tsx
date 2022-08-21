@@ -314,9 +314,11 @@ const RemindersPage: NextPage = () => {
               caption="Top Drivers"
             >
               {fixtures.map(
-                ({ totalDistance, totalEarnings, ...driver }, i) => (
+                ({ name, totalDistance, totalEarnings, ...driver }, i) => (
                   <Driver
+                    key={name}
                     rank={i + 1}
+                    name={name}
                     totalDistance={`${numeral(totalDistance).format(
                       '0,0',
                     )} miles`}
