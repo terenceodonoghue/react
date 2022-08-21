@@ -7,22 +7,24 @@ import Text from '../primitives/Text.js';
 
 export interface DriverProps {
   avatar: string;
-  description: string;
   name: string;
   rank: number;
   totalDistance: string;
   totalEarnings: string;
+  vehicle: string;
 }
 
 const Driver: FunctionComponent<DriverProps> = ({
   avatar,
-  description,
   name,
   rank,
   totalDistance,
   totalEarnings,
+  vehicle,
 }) => (
-  <div css={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+  <div
+    css={{ display: 'flex', alignItems: 'center', gap: 16, margin: '16px 0' }}
+  >
     <Badge label={rank}>
       <Avatar size={48} src={avatar} />
     </Badge>
@@ -30,13 +32,13 @@ const Driver: FunctionComponent<DriverProps> = ({
       <Text as="span" variant="h4">
         {name}
       </Text>
-      <Text as="span" variant="p1">
+      <Text as="span" variant="p1" align="right">
         {totalEarnings}
       </Text>
       <Text as="span" variant="p2" truncate>
-        {description}
+        {vehicle}
       </Text>
-      <Text as="span" variant="p2">
+      <Text as="span" variant="p2" align="right" truncate>
         {totalDistance}
       </Text>
     </div>

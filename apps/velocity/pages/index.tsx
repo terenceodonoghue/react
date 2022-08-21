@@ -6,8 +6,12 @@ import numeral from 'numeral';
 import { rem, rgba } from 'polished';
 import { useMemo } from 'react';
 
-import { Flex } from '@terenceodonoghue/react-components/core';
-import { Avatar, Card, mq } from '@terenceodonoghue/react-components/velocity';
+import {
+  Avatar,
+  Card,
+  Driver,
+  mq,
+} from '@terenceodonoghue/react-components/velocity';
 
 import Container from '../components/core/Container';
 
@@ -22,43 +26,43 @@ const IndexPage: NextPage = () => {
         avatar: faker.image.avatar(),
         name: 'Bebop',
         vehicle: 'Volvo Intellisafe',
-        earnings: 6432,
-        distance: 1232,
+        totalEarnings: 6432,
+        totalDistance: 1232,
       },
       {
         avatar: faker.image.avatar(),
         name: 'Gran Tesoro',
         vehicle: 'Chevrolet Bolt',
-        earnings: 5342,
-        distance: 945,
+        totalEarnings: 5342,
+        totalDistance: 945,
       },
       {
         avatar: faker.image.avatar(),
         name: 'Belafonte',
         vehicle: 'Infiniti Q50S',
-        earnings: 5133,
-        distance: 834,
+        totalEarnings: 5133,
+        totalDistance: 834,
       },
       {
         avatar: faker.image.avatar(),
         name: 'Chester',
         vehicle: 'Audi RS 7',
-        earnings: 4755,
-        distance: 812,
+        totalEarnings: 4755,
+        totalDistance: 812,
       },
       {
         avatar: faker.image.avatar(),
         name: 'Expedia',
         vehicle: 'Tesla Model X',
-        earnings: 4140,
-        distance: 724,
+        totalEarnings: 4140,
+        totalDistance: 724,
       },
       {
         avatar: faker.image.avatar(),
         name: 'Aeolus',
         vehicle: 'Tesla Model S',
-        earnings: 3323,
-        distance: 466,
+        totalEarnings: 3323,
+        totalDistance: 466,
       },
     ];
   }, []);
@@ -69,19 +73,29 @@ const IndexPage: NextPage = () => {
         <title>Velocity | Dashboard</title>
       </Head>
       <Container>
-        <Flex css={mq({ flexDirection: ['column', 'column', 'row'] })}>
-          <Flex
-            css={mq({ flex: 1, flexDirection: ['column', 'row', 'column'] })}
+        <div
+          css={mq({
+            display: 'flex',
+            flexDirection: ['column', 'column', 'row'],
+          })}
+        >
+          <div
+            css={mq({
+              display: 'flex',
+              flex: 1,
+              flexDirection: ['column', 'row', 'column'],
+            })}
           >
-            <Flex css={{ flex: 1 }}>
+            <div css={{ display: 'flex', flex: 1 }}>
               <Card css={{ flex: 1 }}>
-                <Flex
+                <div
                   css={mq({
+                    display: 'flex',
                     flexDirection: ['row', 'column', 'row'],
+                    alignItems: 'center',
                     marginLeft: -4,
                     marginRight: -4,
                   })}
-                  alignItems="center"
                 >
                   <div
                     css={mq({
@@ -116,23 +130,28 @@ const IndexPage: NextPage = () => {
                       your last login.
                     </p>
                   </div>
-                </Flex>
+                </div>
               </Card>
-            </Flex>
-            <Flex
-              css={mq({ flex: 1, flexDirection: ['row', 'column', 'row'] })}
+            </div>
+            <div
+              css={mq({
+                display: 'flex',
+                flex: 1,
+                flexDirection: ['row', 'column', 'row'],
+              })}
             >
               <Card css={{ flex: 1 }} caption="Vehicles on track" />
               <Card css={{ flex: 1 }} caption="Distance driven" />
-            </Flex>
-          </Flex>
-          <Flex css={{ flex: 1 }}>
+            </div>
+          </div>
+          <div css={{ display: 'flex', flex: 1 }}>
             <Card css={{ flex: 1 }} caption="Today's Trips" />
-          </Flex>
-        </Flex>
+          </div>
+        </div>
         <Card caption="Fleet activity map" />
-        <Flex
+        <div
           css={mq({
+            display: 'flex',
             flexDirection: ['column', 'row'],
             flexWrap: ['no-wrap', 'wrap', 'no-wrap'],
           })}
@@ -140,67 +159,15 @@ const IndexPage: NextPage = () => {
           <Card css={{ flex: 1 }} caption="Top Drivers">
             <div css={{ marginBottom: -12 }}>
               {fixtures.map(
-                ({ avatar, distance, earnings, name, vehicle }, i) => (
-                  <Flex
-                    css={{
-                      lineHeight: '1.47em',
-                      margin: '12px 0',
-                      position: 'relative',
-                    }}
-                    key={`${earnings}-${distance}`}
-                  >
-                    <div
-                      css={({ color, font }) => ({
-                        margin: '0 16px 0 0',
-                        '&::after': {
-                          alignItems: 'center',
-                          background: color.neutral[50],
-                          borderRadius: '50%',
-                          boxShadow: `0 3px 10px ${rgba(color.primary, 0.3)}`,
-                          color: color.neutral[700],
-                          content: `'${i + 1}'`,
-                          display: 'flex',
-                          fontSize: rem(10),
-                          fontWeight: font.weight.medium,
-                          height: 16,
-                          justifyContent: 'center',
-                          left: 32,
-                          position: 'absolute',
-                          top: 0,
-                          width: 16,
-                        },
-                      })}
-                    >
-                      <Avatar
-                        alt={name}
-                        size={48}
-                        src={avatar}
-                        variant="rounded"
-                      />
-                    </div>
-                    <div css={{ flex: 1 }}>
-                      <Flex css={{ flex: 1 }} justifyContent="space-between">
-                        <span
-                          css={({ font }) => ({
-                            fontWeight: font.weight.medium,
-                          })}
-                        >
-                          {name}
-                        </span>
-                        <span>{numeral(earnings).format('$0')}</span>
-                      </Flex>
-                      <Flex
-                        css={({ color }) => ({
-                          color: color.neutral[600],
-                          flex: 1,
-                        })}
-                        justifyContent="space-between"
-                      >
-                        <span>{vehicle}</span>
-                        <span>{numeral(distance).format('0,0')} miles</span>
-                      </Flex>
-                    </div>
-                  </Flex>
+                ({ totalDistance, totalEarnings, ...driver }, i) => (
+                  <Driver
+                    rank={i + 1}
+                    totalDistance={`${numeral(totalDistance).format(
+                      '0,0',
+                    )} miles`}
+                    totalEarnings={numeral(totalEarnings).format('$0')}
+                    {...driver}
+                  />
                 ),
               )}
             </div>
@@ -213,7 +180,7 @@ const IndexPage: NextPage = () => {
             })}
             caption="Service Reminders"
           />
-        </Flex>
+        </div>
       </Container>
     </>
   );
