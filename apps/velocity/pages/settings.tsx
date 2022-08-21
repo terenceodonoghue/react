@@ -7,7 +7,10 @@ import { Flex } from '@terenceodonoghue/react-components/core';
 import {
   Button,
   Card,
+  mq,
+  Text,
   TextField,
+  ThemeCard,
 } from '@terenceodonoghue/react-components/velocity';
 
 import Container from '../components/core/Container';
@@ -241,30 +244,39 @@ const SettingsPage: NextPage = () => (
       </Flex>
       <Flex>
         <Card css={{ flex: 1 }} caption="Theme">
-          <p>Select a color scheme for your Velocity app.</p>
-          <Flex css={{ margin: '12px -16px' }}>
-            <PaletteColor
+          <Text>Select a color scheme for your Velocity app.</Text>
+          <div
+            css={mq({
+              display: 'grid',
+              gridTemplateColumns: [
+                'repeat(auto-fit, 140px)',
+                'repeat(auto-fit, 120px)',
+              ],
+              gap: [24, 32],
+            })}
+          >
+            <ThemeCard
+              label="Shelob"
               colors={['#2e5bff', '#e0e7ff', '#8097b1']}
               defaultChecked
-              name="Shelob"
             />
-            <PaletteColor
+            <ThemeCard
+              label="Denethor"
               colors={['#8c54ff', '#00c1d4', '#fad050']}
-              name="Denethor"
             />
-            <PaletteColor
+            <ThemeCard
+              label="Quickbeam"
               colors={['#00a4de', '#3b7ed5', '#00a550']}
-              name="Quickbeam"
             />
-            <PaletteColor
+            <ThemeCard
+              label="Shadowfax"
               colors={['#232a64', '#85c800', '#616266']}
-              name="Shadowfax"
             />
-            <PaletteColor
+            <ThemeCard
+              label="Grima"
               colors={['#a728a3', '#f7e0ff', '#7675ac']}
-              name="Grima"
             />
-          </Flex>
+          </div>
         </Card>
       </Flex>
     </Container>

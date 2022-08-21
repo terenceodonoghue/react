@@ -14,14 +14,13 @@ const ThemeCard: FunctionComponent<ThemeCardProps> = ({
   name = 'theme',
   ...props
 }) => (
-  <div>
+  <div css={{ minWidth: 120 }}>
     <div
       css={{
         display: 'flex',
         borderRadius: 5,
         margin: '12px 0',
         height: 65,
-        width: 140,
         overflow: 'hidden',
       }}
     >
