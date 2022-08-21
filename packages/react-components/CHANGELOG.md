@@ -1,5 +1,11 @@
 # @terenceodonoghue/react-components
 
+## 3.1.1
+
+### Patch Changes
+
+- be1d94c: Fix key warning in ThemeCard
+
 ## 3.1.0
 
 ### Minor Changes
