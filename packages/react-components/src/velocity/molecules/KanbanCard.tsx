@@ -3,10 +3,10 @@ import { useTheme } from '@emotion/react';
 import { linearGradient, transitions } from 'polished';
 import { FunctionComponent } from 'react';
 
-import Card from '../atoms/Card.js';
+import Card, { CardProps } from '../atoms/Card.js';
 import Text from '../primitives/Text.js';
 
-interface KanbanCardProps {
+interface KanbanCardProps extends CardProps {
   color?: string;
   cost: string;
   date: string;
@@ -20,6 +20,7 @@ const KanbanCard: FunctionComponent<KanbanCardProps> = ({
   date,
   description,
   name,
+  ...props
 }) => {
   const { color, transition } = useTheme();
 
@@ -47,6 +48,7 @@ const KanbanCard: FunctionComponent<KanbanCardProps> = ({
           boxShadow: 'none',
         },
       }}
+      {...props}
     >
       <Text as="span" variant="h4">
         {name}

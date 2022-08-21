@@ -6,11 +6,11 @@ import { FunctionComponent } from 'react';
 import { ReactIcon } from '@terenceodonoghue/react-icons';
 
 import Backdrop from '../atoms/Backdrop.js';
-import Card from '../atoms/Card.js';
+import Card, { CardProps } from '../atoms/Card.js';
 import Text from '../primitives/Text.js';
 import mq from '../utils/mq.js';
 
-interface MetricCardProps {
+interface MetricCardProps extends CardProps {
   color?: string;
   icon: ReactIcon;
   label: string;

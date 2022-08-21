@@ -1,7 +1,6 @@
 import { useTheme } from '@emotion/react';
 import { NextPage } from 'next';
 import Head from 'next/head';
-import { linearGradient, rem, rgba, transitions } from 'polished';
 import { Dispatch, ReactElement, SetStateAction, useState } from 'react';
 import {
   DragDropContext,
@@ -12,7 +11,12 @@ import {
 } from 'react-beautiful-dnd';
 
 import { Flex } from '@terenceodonoghue/react-components/core';
-import { Card } from '@terenceodonoghue/react-components/velocity';
+import {
+  Card,
+  KanbanCard,
+  Pill,
+  Text,
+} from '@terenceodonoghue/react-components/velocity';
 
 import Container from '../components/core/Container';
 
@@ -170,13 +174,13 @@ const RemindersPage: NextPage = () => {
     ],
   ]);
 
-  const theme = useTheme();
+  const { color } = useTheme();
 
   const colorMap = {
-    'service-needed': theme.color.ui.blue,
-    waiting: theme.color.ui.purple,
-    'in-service': theme.color.ui.teal,
-    'fully-serviced': theme.color.ui.yellow,
+    'service-needed': color.ui.blue,
+    waiting: color.ui.purple,
+    'in-service': color.ui.teal,
+    'fully-serviced': color.ui.yellow,
   };
 
   return (
@@ -199,37 +203,22 @@ const RemindersPage: NextPage = () => {
                     flexBasis: 264,
                     flexGrow: 1,
                     flexShrink: 0,
-                    padding: '0 12px',
                   }}
                   data-role={columnKey}
                   key={columnKey}
                 >
-                  <h3
-                    css={({ color, font }) => ({
-                      color: color.neutral[500],
-                      fontSize: rem(12),
-                      fontWeight: font.weight.medium,
-                      letterSpacing: 1.1,
-                      margin: '8px 0',
-                      textTransform: 'uppercase',
-                      '&::after': {
-                        alignItems: 'center',
-                        backgroundColor: rgba(colorMap[columnKey], 0.2),
-                        borderRadius: 10,
-                        color: colorMap[columnKey],
-                        content: `"${tickets[i].length}"`,
-                        display: 'inline-flex',
-                        height: 20,
-                        letterSpacing: 'normal',
-                        marginLeft: 8,
-                        justifyContent: 'center',
-                        width: 32,
-                        ...colorMap[columnKey],
-                      },
-                    })}
+                  <Text
+                    css={{ display: 'inline-block', marginLeft: 12 }}
+                    as="h3"
+                    variant="c1"
                   >
                     {columnName}
-                  </h3>
+                  </Text>
+                  <Pill
+                    css={{ marginLeft: 8 }}
+                    color={colorMap[columnKey]}
+                    label={tickets[i].length}
+                  />
                   <Droppable droppableId={`${i}`}>
                     {(providedDrop): ReactElement => (
                       <ul
@@ -253,53 +242,17 @@ const RemindersPage: NextPage = () => {
                             >
                               {(providedDrag): ReactElement => (
                                 <li
-                                  css={{ padding: '4px 0' }}
                                   ref={providedDrag.innerRef}
                                   {...providedDrag.draggableProps}
                                   {...providedDrag.dragHandleProps}
                                 >
-                                  <Card
-                                    css={({ color, transition }) => ({
-                                      backgroundRepeat: 'no-repeat',
-                                      borderRadius: 5,
-                                      ...linearGradient({
-                                        colorStops: [
-                                          `${colorMap[columnKey]} 2px`,
-                                          `${color.neutral[50]} 2px`,
-                                        ],
-                                        fallback: color.neutral[50],
-                                        toDirection: '90deg',
-                                      }),
-                                      margin: '0 !important',
-                                      padding: 24,
-                                      ...transitions(
-                                        ['box-shadow'],
-                                        transition.quickly,
-                                      ),
-                                      '&:not(:hover)': {
-                                        boxShadow: 'none',
-                                      },
-                                    })}
-                                  >
-                                    <Flex
-                                      css={({ font }) => ({
-                                        fontWeight: font.weight.medium,
-                                      })}
-                                      justifyContent="space-between"
-                                    >
-                                      <span>{ticket.name}</span>
-                                      <span>{ticket.price}</span>
-                                    </Flex>
-                                    <Flex
-                                      css={({ color }) => ({
-                                        color: color.neutral[600],
-                                      })}
-                                      justifyContent="space-between"
-                                    >
-                                      <span>{ticket.type}</span>
-                                      <span>{ticket.date}</span>
-                                    </Flex>
-                                  </Card>
+                                  <KanbanCard
+                                    color={colorMap[columnKey]}
+                                    name={ticket.name}
+                                    cost={ticket.price}
+                                    description={ticket.type}
+                                    date={ticket.date}
+                                  />
                                 </li>
                               )}
                             </Draggable>
