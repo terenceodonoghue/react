@@ -1,5 +1,17 @@
 # @terenceodonoghue/react-components
 
+## 4.0.0
+
+### Major Changes
+
+- b1517e0: Remove description prop from Driver
+
+### Minor Changes
+
+- 011f201: Add Badge component
+- 9bb0e46: Add vehicle prop to Driver
+- d7d28d0: Add Driver component
+
 ## 3.1.1
 
 ### Patch Changes
