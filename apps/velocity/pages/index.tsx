@@ -3,15 +3,9 @@ import { NextPage } from 'next';
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import numeral from 'numeral';
-import { rem, rgba } from 'polished';
 import { useMemo } from 'react';
 
-import {
-  Avatar,
-  Card,
-  Driver,
-  mq,
-} from '@terenceodonoghue/react-components/velocity';
+import { Card, Driver, mq } from '@terenceodonoghue/react-components/velocity';
 
 import Container from '../components/core/Container';
 
