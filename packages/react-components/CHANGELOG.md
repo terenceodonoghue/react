@@ -1,5 +1,11 @@
 # @terenceodonoghue/react-components
 
+## 3.1.0
+
+### Minor Changes
+
+- 43a1bed: Add ThemeCard component
+
 ## 3.0.0
 
 ### Major Changes

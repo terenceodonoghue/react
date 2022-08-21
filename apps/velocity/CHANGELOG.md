@@ -1,5 +1,12 @@
 # @terenceodonoghue/velocity
 
+## 1.0.5
+
+### Patch Changes
+
+- Updated dependencies [43a1bed]
+  - @terenceodonoghue/react-components@3.1.0
+
 ## 1.0.4
 
 ### Patch Changes
