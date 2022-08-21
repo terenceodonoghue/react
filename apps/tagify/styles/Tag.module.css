@@ -52,8 +52,8 @@
 }
 
 .price {
-  margin-top: 2pt;
-  font-size: 34pt;
+  font-size: 36pt;
+  line-height: 1.58em;
 }
 
 .save {
@@ -66,13 +66,13 @@
 }
 
 .endDate {
-  font-size: 8pt;
+  font-size: 9pt;
 }
 
 .ean_code {
   margin-top: 2pt;
   font-family: sans-serif;
-  font-size: 10pt;
+  font-size: 7.5pt;
 }
 
 @media print {
