@@ -1,6 +1,7 @@
 /* eslint-disable react/destructuring-assignment */
-import { FunctionComponent, useMemo, useState } from 'react';
 import numeral from 'numeral';
+import { FunctionComponent, useMemo, useState } from 'react';
+
 import styles from '../styles/Tag.module.css';
 
 export interface TagProps {

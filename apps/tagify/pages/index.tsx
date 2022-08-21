@@ -59,17 +59,17 @@ const Home: NextPage = () => {
               />
               Catalogue
             </label>
-            <label className={styles.label} htmlFor="special">
+            <label className={styles.label} htmlFor="clearance">
               <input
                 className={styles.input}
-                id="special"
+                id="clearance"
                 type="radio"
                 name="title"
-                value="Special"
-                checked={title === 'Special'}
+                value="Clearance"
+                checked={title === 'Clearance'}
                 onChange={onTitleChange}
               />
-              Special
+              Clearance
             </label>
             <label className={styles.label} htmlFor="endDate">
               End Date
