@@ -27,7 +27,7 @@
 }
 
 .brand {
-  margin-top: 4pt;
+  margin-top: 6pt;
   font-size: 12pt;
 }
 
@@ -52,10 +52,12 @@
 }
 
 .price {
+  margin-top: 2pt;
   font-size: 34pt;
 }
 
 .save {
+  margin-top: 1pt;
   font-size: 12pt;
 }
 
@@ -71,4 +73,18 @@
   margin-top: 2pt;
   font-family: sans-serif;
   font-size: 10pt;
+}
+
+@media print {
+  .tag {
+    border: none;
+  }
+
+  .tagError {
+    border: none;
+  }
+
+  .title {
+    visibility: hidden;
+  }
 }
