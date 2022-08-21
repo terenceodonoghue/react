@@ -19,7 +19,7 @@ const ThemeCard: FunctionComponent<ThemeCardProps> = ({
       css={{
         display: 'flex',
         borderRadius: 5,
-        margin: '12px 0',
+        marginBottom: 12,
         height: 65,
         overflow: 'hidden',
       }}
