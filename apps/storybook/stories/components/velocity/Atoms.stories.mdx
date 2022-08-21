@@ -12,6 +12,7 @@ import { Global } from '@terenceodonoghue/react-components/core';
 import {
   Avatar,
   Backdrop,
+  Badge,
   Button,
   Card,
   Logo,
@@ -205,6 +206,33 @@ Height and width can be customised by providing a number to the `size` prop.
     <Avatar size={48} src={faker.image.avatar()} variant="rounded" />
     <Avatar size={64} src={faker.image.avatar()} variant="rounded" />
     <Avatar size={80} src={faker.image.avatar()} variant="rounded" />
+  </Story>
+</Canvas>
+
+## Badge
+
+A badge is appended to the top-right of its child(ren).
+
+```javascript
+import { Badge } from '@terenceodonoghue/react-components/velocity';
+```
+
+Set the text value using the `label` prop.
+
+<Canvas>
+  <Story name="Badge">
+    <Badge label={1}>
+      <Avatar size={48} src={faker.image.avatar()} variant="rounded" />
+    </Badge>
+    <Badge label={2}>
+      <Avatar size={48} src={faker.image.avatar()} variant="rounded" />
+    </Badge>
+    <Badge label={3}>
+      <Avatar size={48} src={faker.image.avatar()} variant="rounded" />
+    </Badge>
+    <Badge label={4}>
+      <Avatar size={48} src={faker.image.avatar()} variant="rounded" />
+    </Badge>
   </Story>
 </Canvas>
 
