@@ -15,6 +15,7 @@ import {
   Badge,
   Button,
   Card,
+  Indicator,
   Logo,
   Pill,
   Radio,
@@ -34,6 +35,7 @@ import {
   Mail,
   Map,
   Marker,
+  Notifications,
   Service,
   Settings,
   Vehicles,
@@ -211,7 +213,7 @@ Height and width can be customised by providing a number to the `size` prop.
 
 ## Badge
 
-A badge is appended to the top-right of its child(ren).
+A badge appends text content to the top-right of its child(ren).
 
 ```javascript
 import { Badge } from '@terenceodonoghue/react-components/velocity';
@@ -233,6 +235,33 @@ Set the text value using the `label` prop.
     <Badge label={4}>
       <Avatar size={48} src={faker.image.avatar()} variant="rounded" />
     </Badge>
+  </Story>
+</Canvas>
+
+## Indicator
+
+An indicator appends a simple coloured dot to the top-right of its child(ren).
+
+```javascript
+import { Indicator } from '@terenceodonoghue/react-components/velocity';
+```
+
+By default the indicator uses the primary theme colour and is always visible, but these can be controlled using the `color` and `visible` props.
+
+<Canvas>
+  <Story name="Indicator">
+    <Indicator>
+      <Avatar size={48} src={faker.image.avatar()} variant="rounded" />
+    </Indicator>
+    <Indicator color="#33AC2E">
+      <Avatar size={48} src={faker.image.avatar()} variant="rounded" />
+    </Indicator>
+    <Indicator>
+      <Notifications color="#BFC5D2" size={32} />
+    </Indicator>
+    <Indicator visible={false}>
+      <Mail color="#BFC5D2" size={32} />
+    </Indicator>
   </Story>
 </Canvas>
 

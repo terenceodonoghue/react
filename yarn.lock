@@ -5127,6 +5127,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@terenceodonoghue/react-icons@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "@terenceodonoghue/react-icons@npm:2.0.1::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40terenceodonoghue%2Freact-icons%2F2.0.1%2Fa5acf5488018956a12ccd924538f46119ded0df3"
+  peerDependencies:
+    react: "*"
+    react-dom: "*"
+  checksum: 9f3f59094fa88c14c1c90bd2522b6c76d0b61fd81b6690d112ca9ea07eb88ad14e97daf8a87abdbda33ea6f332577c1a289f226099069b59aeaccd56c6a7931e
+  languageName: node
+  linkType: hard
+
 "@terenceodonoghue/react@workspace:.":
   version: 0.0.0-use.local
   resolution: "@terenceodonoghue/react@workspace:."
@@ -5173,7 +5183,7 @@ __metadata:
     "@storybook/testing-library": "npm:^0.0.11"
     "@terenceodonoghue/react-components": "workspace:^"
     "@terenceodonoghue/react-hooks": "workspace:^"
-    "@terenceodonoghue/react-icons": "npm:^2.0.0"
+    "@terenceodonoghue/react-icons": "npm:^2.0.1"
     babel-loader: "npm:^8.2.4"
     vite: "npm:^3.0.6"
   peerDependencies:
@@ -5212,7 +5222,7 @@ __metadata:
     "@svgr/cli": "npm:^6.3.1"
     "@svgr/webpack": "npm:^6.3.1"
     "@terenceodonoghue/react-components": "workspace:^"
-    "@terenceodonoghue/react-icons": "npm:^2.0.0"
+    "@terenceodonoghue/react-icons": "npm:^2.0.1"
     "@testing-library/jest-dom": "npm:^5.16.5"
     "@testing-library/react": "npm:^13.3.0"
     "@testing-library/user-event": "npm:^14.4.3"

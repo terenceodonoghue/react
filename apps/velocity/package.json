@@ -18,7 +18,7 @@
     "@emotion/react": "^11.10.0",
     "@faker-js/faker": "^7.4.0",
     "@terenceodonoghue/react-components": "workspace:^",
-    "@terenceodonoghue/react-icons": "^2.0.0",
+    "@terenceodonoghue/react-icons": "^2.0.1",
     "add": "^2.0.6",
     "facepaint": "^1.2.1",
     "hex-rgb": "^5.0.0",
