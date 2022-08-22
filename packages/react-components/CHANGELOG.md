@@ -1,5 +1,12 @@
 # @terenceodonoghue/react-components
 
+## 4.1.0
+
+### Minor Changes
+
+- 3841f6e: Add TopDrivers component
+- c87cdac: Add types to package exports
+
 ## 4.0.0
 
 ### Major Changes
