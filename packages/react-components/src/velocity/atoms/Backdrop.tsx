@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { useTheme } from '@emotion/react';
 import { rgba } from 'polished';
-import { FunctionComponent, HTMLAttributes, ReactNode } from 'react';
+import type { FunctionComponent, HTMLAttributes, ReactNode } from 'react';
 
 export interface BackdropProps extends HTMLAttributes<HTMLDivElement> {
   children?: ReactNode;

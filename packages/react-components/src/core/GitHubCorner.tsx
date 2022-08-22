@@ -1,6 +1,6 @@
-import { FunctionComponent, HTMLAttributes } from 'react';
+import type { FunctionComponent, HTMLAttributes } from 'react';
 
-interface GitHubCornerProps extends HTMLAttributes<HTMLDivElement> {
+export interface GitHubCornerProps extends HTMLAttributes<HTMLDivElement> {
   color: string;
   url: string;
 }

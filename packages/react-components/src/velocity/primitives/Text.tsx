@@ -1,8 +1,8 @@
 /** @jsxImportSource @emotion/react */
-import { CSSObject, useTheme } from '@emotion/react';
-import { Property } from 'csstype';
+import { type CSSObject, useTheme } from '@emotion/react';
+import type { Property } from 'csstype';
 import { rem } from 'polished';
-import { ElementType, FunctionComponent, HTMLAttributes } from 'react';
+import type { ElementType, FunctionComponent, HTMLAttributes } from 'react';
 
 export interface TextProps extends HTMLAttributes<HTMLElement> {
   align?: Property.TextAlign;

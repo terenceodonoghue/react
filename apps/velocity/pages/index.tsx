@@ -5,7 +5,12 @@ import Head from 'next/head';
 import numeral from 'numeral';
 import { useMemo } from 'react';
 
-import { Card, Driver, mq } from '@terenceodonoghue/react-components/velocity';
+import {
+  Card,
+  type DriverProps,
+  TopDrivers,
+  mq,
+} from '@terenceodonoghue/react-components/velocity';
 
 import Container from '../components/core/Container';
 
@@ -14,52 +19,58 @@ const OperatingScore = dynamic(() => import('../components/OperatingScore'), {
 });
 
 const IndexPage: NextPage = () => {
-  const fixtures = useMemo(() => {
-    return [
-      {
-        avatar: faker.image.avatar(),
-        name: 'Bebop',
-        vehicle: 'Volvo Intellisafe',
-        totalEarnings: 6432,
-        totalDistance: 1232,
-      },
-      {
-        avatar: faker.image.avatar(),
-        name: 'Gran Tesoro',
-        vehicle: 'Chevrolet Bolt',
-        totalEarnings: 5342,
-        totalDistance: 945,
-      },
-      {
-        avatar: faker.image.avatar(),
-        name: 'Belafonte',
-        vehicle: 'Infiniti Q50S',
-        totalEarnings: 5133,
-        totalDistance: 834,
-      },
-      {
-        avatar: faker.image.avatar(),
-        name: 'Chester',
-        vehicle: 'Audi RS 7',
-        totalEarnings: 4755,
-        totalDistance: 812,
-      },
-      {
-        avatar: faker.image.avatar(),
-        name: 'Expedia',
-        vehicle: 'Tesla Model X',
-        totalEarnings: 4140,
-        totalDistance: 724,
-      },
-      {
-        avatar: faker.image.avatar(),
-        name: 'Aeolus',
-        vehicle: 'Tesla Model S',
-        totalEarnings: 3323,
-        totalDistance: 466,
-      },
-    ];
-  }, []);
+  const drivers = useMemo<DriverProps[]>(
+    () =>
+      [
+        {
+          avatar: faker.image.avatar(),
+          name: 'Bebop',
+          vehicle: 'Volvo Intellisafe',
+          totalEarnings: 6432,
+          totalDistance: 1232,
+        },
+        {
+          avatar: faker.image.avatar(),
+          name: 'Gran Tesoro',
+          vehicle: 'Chevrolet Bolt',
+          totalEarnings: 5342,
+          totalDistance: 945,
+        },
+        {
+          avatar: faker.image.avatar(),
+          name: 'Belafonte',
+          vehicle: 'Infiniti Q50S',
+          totalEarnings: 5133,
+          totalDistance: 834,
+        },
+        {
+          avatar: faker.image.avatar(),
+          name: 'Chester',
+          vehicle: 'Audi RS 7',
+          totalEarnings: 4755,
+          totalDistance: 812,
+        },
+        {
+          avatar: faker.image.avatar(),
+          name: 'Expedia',
+          vehicle: 'Tesla Model X',
+          totalEarnings: 4140,
+          totalDistance: 724,
+        },
+        {
+          avatar: faker.image.avatar(),
+          name: 'Aeolus',
+          vehicle: 'Tesla Model S',
+          totalEarnings: 3323,
+          totalDistance: 466,
+        },
+      ].map(({ totalDistance, totalEarnings, ...driver }) => ({
+        ...driver,
+        totalEarnings: numeral(totalEarnings).format('$0'),
+        totalDistance: `${numeral(totalDistance).format('0,0')} miles`,
+      })),
+    [],
+  );
 
   return (
     <>
@@ -150,25 +161,7 @@ const IndexPage: NextPage = () => {
             flexWrap: ['no-wrap', 'wrap', 'no-wrap'],
           })}
         >
-          <Card
-            css={{ display: 'flex', flex: 1, flexDirection: 'column', gap: 12 }}
-            caption="Top Drivers"
-          >
-            {fixtures.map(
-              ({ name, totalDistance, totalEarnings, ...driver }, i) => (
-                <Driver
-                  key={name}
-                  rank={i + 1}
-                  name={name}
-                  totalDistance={`${numeral(totalDistance).format(
-                    '0,0',
-                  )} miles`}
-                  totalEarnings={numeral(totalEarnings).format('$0')}
-                  {...driver}
-                />
-              ),
-            )}
-          </Card>
+          <TopDrivers css={{ flex: 1 }} drivers={drivers} />
           <Card css={{ flex: 1 }} caption="Trips by type" />
           <Card
             css={mq({

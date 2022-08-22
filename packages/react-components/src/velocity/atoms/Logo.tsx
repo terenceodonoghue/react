@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import { SVGProps } from 'react';
+import { type SVGProps } from 'react';
 
 const Logo = (props: SVGProps<SVGSVGElement>) => (
   <svg

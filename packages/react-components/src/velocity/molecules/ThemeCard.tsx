@@ -1,9 +1,9 @@
 /** @jsxImportSource @emotion/react */
-import { FunctionComponent } from 'react';
+import type { FunctionComponent } from 'react';
 
-import Radio, { RadioProps } from '../atoms/Radio.js';
+import Radio, { type RadioProps } from '../atoms/Radio.js';
 
-interface ThemeCardProps extends RadioProps {
+export interface ThemeCardProps extends RadioProps {
   colors: string[];
   label: string;
 }

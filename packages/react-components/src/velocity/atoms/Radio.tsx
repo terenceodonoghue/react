@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { useTheme } from '@emotion/react';
 import { rgba } from 'polished';
-import { InputHTMLAttributes, FunctionComponent } from 'react';
+import type { InputHTMLAttributes, FunctionComponent } from 'react';
 
 import Text from '../primitives/Text.js';
 

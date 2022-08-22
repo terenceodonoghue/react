@@ -1,12 +1,12 @@
 /** @jsxImportSource @emotion/react */
 import { useTheme } from '@emotion/react';
 import { linearGradient, transitions } from 'polished';
-import { FunctionComponent } from 'react';
+import type { FunctionComponent } from 'react';
 
 import Card, { CardProps } from '../atoms/Card.js';
 import Text from '../primitives/Text.js';
 
-interface KanbanCardProps extends CardProps {
+export interface KanbanCardProps extends CardProps {
   color?: string;
   cost: string;
   date: string;

@@ -1,6 +1,6 @@
-import { ThemeProvider as EmotionProvider, Theme } from '@emotion/react';
+import { ThemeProvider as EmotionProvider, type Theme } from '@emotion/react';
 import { merge } from 'lodash-es';
-import { FunctionComponent, ReactNode } from 'react';
+import type { FunctionComponent, ReactNode } from 'react';
 
 export const defaultTheme: Theme = {
   color: {

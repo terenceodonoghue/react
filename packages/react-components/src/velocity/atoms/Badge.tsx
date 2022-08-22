@@ -1,11 +1,11 @@
 /** @jsxImportSource @emotion/react */
 import { useTheme } from '@emotion/react';
 import { rem, rgba } from 'polished';
-import { FunctionComponent, HTMLAttributes, ReactNode } from 'react';
+import type { FunctionComponent, HTMLAttributes, ReactNode } from 'react';
 
 export interface BadgeProps extends HTMLAttributes<HTMLDivElement> {
   children?: ReactNode;
-  label: string | number;
+  label?: string | number;
 }
 
 const Badge: FunctionComponent<BadgeProps> = ({
@@ -45,7 +45,6 @@ const Badge: FunctionComponent<BadgeProps> = ({
           {label}
         </div>
       ) : undefined}
-
       {children}
     </div>
   );

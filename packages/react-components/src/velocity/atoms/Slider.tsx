@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { useTheme } from '@emotion/react';
 import { rgba, transitions } from 'polished';
-import { InputHTMLAttributes, FunctionComponent } from 'react';
+import type { InputHTMLAttributes, FunctionComponent } from 'react';
 
 const Slider: FunctionComponent<InputHTMLAttributes<HTMLInputElement>> = ({
   className,

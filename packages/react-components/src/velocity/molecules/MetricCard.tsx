@@ -1,16 +1,16 @@
 /** @jsxImportSource @emotion/react */
 import { useTheme } from '@emotion/react';
 import { rem } from 'polished';
-import { FunctionComponent } from 'react';
+import type { FunctionComponent } from 'react';
 
-import { ReactIcon } from '@terenceodonoghue/react-icons';
+import type { ReactIcon } from '@terenceodonoghue/react-icons';
 
 import Backdrop from '../atoms/Backdrop.js';
-import Card, { CardProps } from '../atoms/Card.js';
+import Card, { type CardProps } from '../atoms/Card.js';
 import Text from '../primitives/Text.js';
 import mq from '../utils/mq.js';
 
-interface MetricCardProps extends CardProps {
+export interface MetricCardProps extends CardProps {
   color?: string;
   icon: ReactIcon;
   label: string;

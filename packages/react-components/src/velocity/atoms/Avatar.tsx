@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
-import { CSSObject } from '@emotion/react';
-import { FunctionComponent, ImgHTMLAttributes } from 'react';
+import type { CSSObject } from '@emotion/react';
+import type { FunctionComponent, ImgHTMLAttributes } from 'react';
 
 export interface AvatarProps extends ImgHTMLAttributes<HTMLImageElement> {
   size?: number;

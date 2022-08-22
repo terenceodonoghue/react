@@ -21,10 +21,11 @@ import {
 import { Flex } from '@terenceodonoghue/react-components/core';
 import {
   Card,
-  Driver,
+  type DriverProps,
   KanbanCard,
   Pill,
   Text,
+  TopDrivers,
 } from '@terenceodonoghue/react-components/velocity';
 
 import Container from '../components/core/Container';
@@ -94,31 +95,37 @@ const onDragEnd = (
 };
 
 const RemindersPage: NextPage = () => {
-  const fixtures = useMemo(() => {
-    return [
-      {
-        avatar: faker.image.avatar(),
-        name: 'Bebop',
-        vehicle: 'Tesla Model X',
-        totalEarnings: 6432,
-        totalDistance: 1322,
-      },
-      {
-        avatar: faker.image.avatar(),
-        name: 'Gran Tesoro',
-        vehicle: 'Chevrolet Bolt',
-        totalEarnings: 6432,
-        totalDistance: 1322,
-      },
-      {
-        avatar: faker.image.avatar(),
-        name: 'Belafonte',
-        vehicle: 'Tesla Model X',
-        totalEarnings: 6432,
-        totalDistance: 1322,
-      },
-    ];
-  }, []);
+  const drivers = useMemo<DriverProps[]>(
+    () =>
+      [
+        {
+          avatar: faker.image.avatar(),
+          name: 'Bebop',
+          vehicle: 'Tesla Model X',
+          totalEarnings: 6432,
+          totalDistance: 1322,
+        },
+        {
+          avatar: faker.image.avatar(),
+          name: 'Gran Tesoro',
+          vehicle: 'Chevrolet Bolt',
+          totalEarnings: 6432,
+          totalDistance: 1322,
+        },
+        {
+          avatar: faker.image.avatar(),
+          name: 'Belafonte',
+          vehicle: 'Tesla Model X',
+          totalEarnings: 6432,
+          totalDistance: 1322,
+        },
+      ].map(({ totalDistance, totalEarnings, ...driver }) => ({
+        ...driver,
+        totalEarnings: numeral(totalEarnings).format('$0'),
+        totalDistance: `${numeral(totalDistance).format('0,0')} miles`,
+      })),
+    [],
+  );
 
   const [tickets, setTickets] = useState([
     [
@@ -309,25 +316,7 @@ const RemindersPage: NextPage = () => {
           />
           <Flex css={{ flexGrow: 1 }} direction="column">
             <Card caption="Vehicle Service Status" />
-            <Card
-              css={{ display: 'flex', flexDirection: 'column', gap: 12 }}
-              caption="Top Drivers"
-            >
-              {fixtures.map(
-                ({ name, totalDistance, totalEarnings, ...driver }, i) => (
-                  <Driver
-                    key={name}
-                    rank={i + 1}
-                    name={name}
-                    totalDistance={`${numeral(totalDistance).format(
-                      '0,0',
-                    )} miles`}
-                    totalEarnings={numeral(totalEarnings).format('$0')}
-                    {...driver}
-                  />
-                ),
-              )}
-            </Card>
+            <TopDrivers drivers={drivers} />
           </Flex>
         </Flex>
       </Container>

@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { useTheme } from '@emotion/react';
 import { rgba } from 'polished';
-import { FunctionComponent, HTMLAttributes } from 'react';
+import type { FunctionComponent, HTMLAttributes } from 'react';
 
 import Text from '../primitives/Text.js';
 import mq from '../utils/mq.js';
@@ -34,7 +34,7 @@ const Card: FunctionComponent<CardProps> = ({
         <Text
           css={{
             display: 'block',
-            margin: '0 0 24px',
+            margin: '0 0 20px',
           }}
           as="h2"
           variant="c2"

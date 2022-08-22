@@ -1,5 +1,5 @@
-import { Global, GlobalProps } from '@emotion/react';
-import { FunctionComponent } from 'react';
+import { Global, type GlobalProps } from '@emotion/react';
+import type { FunctionComponent } from 'react';
 
 const GlobalStyles: FunctionComponent<GlobalProps> = ({ styles }) => (
   <Global styles={styles} />

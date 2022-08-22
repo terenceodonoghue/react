@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
-import { Property } from 'csstype';
-import { FunctionComponent, HTMLAttributes } from 'react';
+import type { Property } from 'csstype';
+import type { FunctionComponent, HTMLAttributes } from 'react';
 
 export interface FlexProps extends HTMLAttributes<HTMLDivElement> {
   direction?: Property.FlexDirection;

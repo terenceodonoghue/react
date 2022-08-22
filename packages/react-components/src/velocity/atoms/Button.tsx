@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
-import { CSSObject, useTheme } from '@emotion/react';
+import { type CSSObject, useTheme } from '@emotion/react';
 import { darken, rgba, rem, transitions } from 'polished';
-import { ButtonHTMLAttributes, FunctionComponent } from 'react';
+import type { ButtonHTMLAttributes, FunctionComponent } from 'react';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'contained' | 'outlined' | 'text';

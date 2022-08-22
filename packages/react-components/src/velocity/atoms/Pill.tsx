@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { useTheme } from '@emotion/react';
 import { rem, rgba } from 'polished';
-import { FunctionComponent, HTMLAttributes } from 'react';
+import type { FunctionComponent, HTMLAttributes } from 'react';
 
 export interface PillProps extends HTMLAttributes<HTMLDivElement> {
   color?: string;
