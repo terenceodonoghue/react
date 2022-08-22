@@ -1,5 +1,11 @@
 # @terenceodonoghue/react-components
 
+## 4.2.0
+
+### Minor Changes
+
+- f973aed: Add Indicator component
+
 ## 4.1.0
 
 ### Minor Changes
