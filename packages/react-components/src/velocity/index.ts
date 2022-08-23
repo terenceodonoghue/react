@@ -21,6 +21,10 @@ export {
 
 export { default as Driver, type DriverProps } from './molecules/Driver.js';
 export {
+  default as ChatCard,
+  type ChatCardProps,
+} from './molecules/ChatCard.js';
+export {
   default as KanbanCard,
   type KanbanCardProps,
 } from './molecules/KanbanCard.js';
