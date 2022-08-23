@@ -1,5 +1,11 @@
 # @terenceodonoghue/react-components
 
+## 4.4.0
+
+### Minor Changes
+
+- 2afb475: Add ChatList component
+
 ## 4.3.0
 
 ### Minor Changes
