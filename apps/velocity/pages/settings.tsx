@@ -37,16 +37,15 @@ const Integration: FunctionComponent<IntegrationProps> = ({
   name,
   selected,
 }) => (
-  <Flex
+  <div
     css={({ color }) => ({
+      display: 'flex',
       alignItems: 'center',
-      borderColor: selected ? color.primary : color.secondary,
+      borderColor: selected ? color.primary : '#E0E7FF',
       borderRadius: 5,
       borderStyle: 'solid',
       borderWidth: 1,
       cursor: 'pointer',
-      flex: 1,
-      margin: '12px 24px',
       padding: 18,
     })}
   >
@@ -77,7 +76,7 @@ const Integration: FunctionComponent<IntegrationProps> = ({
         {description}
       </span>
     </div>
-  </Flex>
+  </div>
 );
 
 const SettingsPage: NextPage = () => (
@@ -159,7 +158,20 @@ const SettingsPage: NextPage = () => (
         </Card>
         <Card caption="Integrations">
           <Text>Manage third-party app integrations.</Text>
-          <Flex css={{ margin: '0 -24px' }}>
+          <div
+            css={mq({
+              display: 'grid',
+              gridTemplateColumns: [
+                'repeat(1, minmax(0, 1fr))',
+                'repeat(2, minmax(0, 1fr))',
+                'repeat(3, minmax(0, 1fr))',
+              ],
+              gridAutoRows: '1fr',
+              rowGap: [16, 24],
+              columnGap: 48,
+              marginTop: [24, 32],
+            })}
+          >
             <Integration
               description="Boards and prototypes"
               icon={InVisionIcon}
@@ -177,8 +189,6 @@ const SettingsPage: NextPage = () => (
               icon={SlackIcon}
               name="Slack"
             />
-          </Flex>
-          <Flex css={{ margin: '0 -24px' }}>
             <Integration
               description="Subscribers list"
               icon={MailchimpIcon}
@@ -194,7 +204,7 @@ const SettingsPage: NextPage = () => (
               icon={MediumIcon}
               name="Medium"
             />
-          </Flex>
+          </div>
         </Card>
         <Card caption="Notifications">
           <Text>Control your notification and auto-follow settings.</Text>
@@ -233,6 +243,7 @@ const SettingsPage: NextPage = () => (
                 'repeat(auto-fit, 120px)',
               ],
               gap: [24, 32],
+              marginTop: [24, 32],
             })}
           >
             <ThemeCard

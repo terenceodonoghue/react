@@ -8,5 +8,4 @@ export { default as MenuIcon } from './menu.svg';
 export { default as PayPalIcon } from './payPal.svg';
 export { default as SlackIcon } from './slack.svg';
 export { default as TwitterIcon } from './twitter.svg';
-export { default as VelocityIcon } from './velocity.svg';
 export { default as VisaIcon } from './visa.svg';

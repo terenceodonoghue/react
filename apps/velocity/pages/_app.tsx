@@ -12,6 +12,7 @@ import {
 } from '@terenceodonoghue/react-components/core';
 import {
   Avatar,
+  Logo,
   ThemeProvider,
   mq,
 } from '@terenceodonoghue/react-components/velocity';
@@ -29,7 +30,7 @@ import {
 import AppBar from '../components/core/AppBar/AppBar';
 import { DrawerItem } from '../components/core/Drawer';
 import IconButton from '../components/core/IconButton';
-import { MenuIcon, VelocityIcon } from '../components/icons';
+import { MenuIcon } from '../components/icons';
 
 const Drawer = dynamic(() => import('../components/core/Drawer'), {
   ssr: false,
@@ -106,7 +107,7 @@ const App: FunctionComponent<AppProps> = ({ Component, pageProps }) => {
                 visibility: ['hidden', 'visible'],
               })}
             >
-              <VelocityIcon css={{ height: 28, width: 102 }} />
+              <Logo />
             </Flex>
             <IconButton
               aria-label="user"
