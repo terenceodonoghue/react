@@ -1,13 +1,13 @@
 /** @jsxImportSource @emotion/react */
 import { useTheme } from '@emotion/react';
 import { transitions } from 'polished';
-import type { FunctionComponent } from 'react';
+import type { FunctionComponent, HTMLAttributes } from 'react';
 
 import Avatar from '../atoms/Avatar.js';
 import Indicator from '../atoms/Indicator.js';
 import Text from '../primitives/Text.js';
 
-export interface ChatCardProps {
+export interface ChatCardProps extends HTMLAttributes<HTMLDivElement> {
   avatar: string;
   name: string;
   message: string;
@@ -23,6 +23,7 @@ const ChatCard: FunctionComponent<ChatCardProps> = ({
   online = false,
   selected = false,
   time,
+  ...props
 }) => {
   const { color, transition } = useTheme();
 
@@ -40,6 +41,7 @@ const ChatCard: FunctionComponent<ChatCardProps> = ({
           backgroundColor: color.neutral[100],
         },
       }}
+      {...props}
     >
       <Indicator visible={online}>
         <Avatar size={48} src={avatar} />

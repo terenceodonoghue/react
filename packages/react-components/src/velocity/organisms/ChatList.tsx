@@ -1,27 +1,33 @@
 /** @jsxImportSource @emotion/react */
 import { useTheme } from '@emotion/react';
-import type { FunctionComponent } from 'react';
+import type { FunctionComponent, HTMLAttributes } from 'react';
 
 import ChatCard, { type ChatCardProps } from '../molecules/ChatCard.js';
+import mq from '../utils/mq.js';
 
-export interface ChatListProps {
+export interface ChatListProps extends HTMLAttributes<HTMLDivElement> {
   chats: ChatCardProps[];
 }
 
-const ChatList: FunctionComponent<ChatListProps> = ({ chats }) => {
+const ChatList: FunctionComponent<ChatListProps> = ({ chats, ...props }) => {
   const { color } = useTheme();
 
   return (
     <div
-      css={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: 1,
-        backgroundColor: color.neutral[200],
-      }}
+      css={mq({
+        borderRight: [undefined, `solid 1px ${color.neutral[200]}`],
+        height: '100%',
+        backgroundColor: color.neutral[50],
+        overflow: 'scroll',
+      })}
+      {...props}
     >
       {chats.map((chat) => (
-        <ChatCard key={chat.name} {...chat} />
+        <ChatCard
+          css={{ borderBottom: `solid 1px ${color.neutral[200]}` }}
+          key={chat.name}
+          {...chat}
+        />
       ))}
     </div>
   );

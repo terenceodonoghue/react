@@ -21,11 +21,11 @@ import {
 import { Flex } from '@terenceodonoghue/react-components/core';
 import {
   Card,
-  type DriverProps,
   KanbanCard,
   Pill,
   Text,
   TopDrivers,
+  type TopDriversProps,
 } from '@terenceodonoghue/react-components/velocity';
 
 import Container from '../components/core/Container';
@@ -95,9 +95,9 @@ const onDragEnd = (
 };
 
 const RemindersPage: NextPage = () => {
-  const drivers = useMemo<DriverProps[]>(
-    () =>
-      [
+  const topDriversFixtures = useMemo<TopDriversProps>(
+    () => ({
+      drivers: [
         {
           avatar: faker.image.avatar(),
           name: 'Bebop',
@@ -124,6 +124,7 @@ const RemindersPage: NextPage = () => {
         totalEarnings: numeral(totalEarnings).format('$0'),
         totalDistance: `${numeral(totalDistance).format('0,0')} miles`,
       })),
+    }),
     [],
   );
 
@@ -316,7 +317,7 @@ const RemindersPage: NextPage = () => {
           />
           <Flex css={{ flexGrow: 1 }} direction="column">
             <Card caption="Vehicle Service Status" />
-            <TopDrivers drivers={drivers} />
+            <TopDrivers {...topDriversFixtures} />
           </Flex>
         </Flex>
       </Container>

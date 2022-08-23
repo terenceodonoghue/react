@@ -7,8 +7,8 @@ import { useMemo } from 'react';
 
 import {
   Card,
-  type DriverProps,
   TopDrivers,
+  type TopDriversProps,
   mq,
 } from '@terenceodonoghue/react-components/velocity';
 
@@ -19,9 +19,9 @@ const OperatingScore = dynamic(() => import('../components/OperatingScore'), {
 });
 
 const IndexPage: NextPage = () => {
-  const drivers = useMemo<DriverProps[]>(
-    () =>
-      [
+  const topDriversFixtures = useMemo<TopDriversProps>(
+    () => ({
+      drivers: [
         {
           avatar: faker.image.avatar(),
           name: 'Bebop',
@@ -69,6 +69,7 @@ const IndexPage: NextPage = () => {
         totalEarnings: numeral(totalEarnings).format('$0'),
         totalDistance: `${numeral(totalDistance).format('0,0')} miles`,
       })),
+    }),
     [],
   );
 
@@ -161,7 +162,7 @@ const IndexPage: NextPage = () => {
             flexWrap: ['no-wrap', 'wrap', 'no-wrap'],
           })}
         >
-          <TopDrivers css={{ flex: 1 }} drivers={drivers} />
+          <TopDrivers css={{ flex: 1 }} {...topDriversFixtures} />
           <Card css={{ flex: 1 }} caption="Trips by type" />
           <Card
             css={mq({
