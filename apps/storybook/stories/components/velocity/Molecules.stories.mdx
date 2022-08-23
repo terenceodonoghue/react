@@ -42,13 +42,10 @@ import {
           backgroundColor: color.neutral[100],
         },
         '.chat-card': {
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 1,
-          margin: '0 auto',
-          maxWidth: [undefined, '50%'],
-          padding: 1,
-          backgroundColor: color.neutral[200],
+          display: 'grid',
+          gridTemplateColumns: ['1fr', 'repeat(3, 1fr)'],
+          justifyContent: 'center',
+          gap: 12,
         },
         '.driver': {
           display: 'flex',
@@ -119,28 +116,11 @@ import { Driver } from '@terenceodonoghue/react-components/velocity';
       totalDistance="1,232 miles"
     />
     <Driver
-      number={2}
       avatar={faker.image.avatar()}
       name="Gran Tesoro"
       vehicle={faker.vehicle.vehicle()}
       totalEarnings="$5,342"
       totalDistance="945 miles"
-    />
-    <Driver
-      number={3}
-      avatar={faker.image.avatar()}
-      name="Belafonte"
-      vehicle={faker.vehicle.vehicle()}
-      totalEarnings="$5,133"
-      totalDistance="834 miles"
-    />
-    <Driver
-      number={4}
-      avatar={faker.image.avatar()}
-      name="Chester"
-      vehicle={faker.vehicle.vehicle()}
-      totalEarnings="$4,755"
-      totalDistance="812 miles"
     />
   </Story>
 </Canvas>
@@ -172,16 +152,16 @@ import { ChatCard } from '@terenceodonoghue/react-components/velocity';
     <ChatCard
       avatar={faker.image.avatar()}
       name={faker.name.fullName()}
-      time="40m"
+      time="51m"
       message={faker.hacker.phrase()}
-      online={false}
+      selected={true}
     />
     <ChatCard
       avatar={faker.image.avatar()}
       name={faker.name.fullName()}
-      time="51m"
+      time="40m"
       message={faker.hacker.phrase()}
-      selected={true}
+      online={false}
     />
   </Story>
 </Canvas>

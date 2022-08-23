@@ -1,5 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { useTheme } from '@emotion/react';
+import { transitions } from 'polished';
 import type { FunctionComponent } from 'react';
 
 import Avatar from '../atoms/Avatar.js';
@@ -10,8 +11,8 @@ export interface ChatCardProps {
   avatar: string;
   name: string;
   message: string;
-  online: boolean;
-  selected: boolean;
+  online?: boolean;
+  selected?: boolean;
   time: string;
 }
 
@@ -23,7 +24,7 @@ const ChatCard: FunctionComponent<ChatCardProps> = ({
   selected = false,
   time,
 }) => {
-  const { color } = useTheme();
+  const { color, transition } = useTheme();
 
   return (
     <div
@@ -34,6 +35,10 @@ const ChatCard: FunctionComponent<ChatCardProps> = ({
         padding: '20px 24px',
         backgroundColor: selected ? color.neutral[100] : color.neutral[50],
         cursor: 'pointer',
+        ...transitions(['background-color'], transition.quickly),
+        '&:hover': {
+          backgroundColor: color.neutral[100],
+        },
       }}
     >
       <Indicator visible={online}>
@@ -43,6 +48,7 @@ const ChatCard: FunctionComponent<ChatCardProps> = ({
         css={{
           display: 'grid',
           gridTemplateColumns: '2fr 1fr',
+          alignItems: 'center',
           flex: 1,
         }}
       >

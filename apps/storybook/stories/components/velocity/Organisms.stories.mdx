@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 import { Global } from '@terenceodonoghue/react-components/core';
 import {
+  ChatList,
   Logo,
   ThemeProvider,
   TopDrivers,
@@ -37,6 +38,17 @@ import {
         '[data-has-bg] .docs-story': {
           backgroundColor: color.neutral[100],
         },
+        '.chat-list': {
+          margin: '0 auto',
+          maxWidth: [undefined, '378px'],
+        },
+        '.top-drivers': {
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 12,
+          margin: '0 auto',
+          maxWidth: 'fit-content',
+        },
       }),
     ]}
   />
@@ -47,6 +59,57 @@ import {
 # Organisms
 
 Organisms are relatively complex UI components composed of groups of molecules and/or atoms and/or other organisms. These organisms form distinct sections of an interface.
+
+## Chat List
+
+```javascript
+import { ChatList } from '@terenceodonoghue/react-components/velocity';
+```
+
+<Canvas data-has-bg>
+  <Story
+    name="ChatList"
+    decorators={[
+      (Story) => (
+        <div className="chat-list">
+          <Story />
+        </div>
+      ),
+    ]}
+  >
+    <ChatList
+      chats={[
+        {
+          avatar: faker.image.avatar(),
+          name: faker.name.fullName(),
+          time: '2m',
+          message: faker.hacker.phrase(),
+          online: true,
+        },
+        {
+          avatar: faker.image.avatar(),
+          name: faker.name.fullName(),
+          time: '40m',
+          message: faker.hacker.phrase(),
+        },
+        {
+          avatar: faker.image.avatar(),
+          name: faker.name.fullName(),
+          time: '51m',
+          message: faker.hacker.phrase(),
+          online: true,
+          selected: true,
+        },
+        {
+          avatar: faker.image.avatar(),
+          name: faker.name.fullName(),
+          time: '2h',
+          message: faker.hacker.phrase(),
+        },
+      ]}
+    />
+  </Story>
+</Canvas>
 
 ## Top Drivers
 
@@ -59,21 +122,8 @@ import { TopDrivers } from '@terenceodonoghue/react-components/velocity';
     name="TopDrivers"
     decorators={[
       (Story) => (
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-          }}
-        >
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              gap: 12,
-            }}
-          >
-            <Story />
-          </div>
+        <div className="top-drivers">
+          <Story />
         </div>
       ),
     ]}

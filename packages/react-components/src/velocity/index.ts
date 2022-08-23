@@ -36,6 +36,11 @@ export {
   default as ThemeCard,
   type ThemeCardProps,
 } from './molecules/ThemeCard.js';
+
+export {
+  default as ChatList,
+  type ChatListProps,
+} from './organisms/ChatList.js';
 export {
   default as TopDrivers,
   type TopDriversProps,
