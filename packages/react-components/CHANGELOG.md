@@ -1,5 +1,11 @@
 # @terenceodonoghue/react-components
 
+## 4.4.2
+
+### Patch Changes
+
+- f6c177a: Extend ChatCard, ChatList interfaces from div attributes
+
 ## 4.4.1
 
 ### Patch Changes
