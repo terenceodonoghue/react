@@ -21,7 +21,7 @@ const ChatList: FunctionComponent<ChatListProps> = ({ chats }) => {
       }}
     >
       {chats.map((chat) => (
-        <ChatCard {...chat} />
+        <ChatCard key={chat.name} {...chat} />
       ))}
     </div>
   );
