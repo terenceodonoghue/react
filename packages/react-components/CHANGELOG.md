@@ -1,5 +1,11 @@
 # @terenceodonoghue/react-components
 
+## 4.3.0
+
+### Minor Changes
+
+- 39003d1: Add ChatCard component
+
 ## 4.2.0
 
 ### Minor Changes
