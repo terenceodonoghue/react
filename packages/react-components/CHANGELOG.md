@@ -1,5 +1,11 @@
 # @terenceodonoghue/react-components
 
+## 4.4.1
+
+### Patch Changes
+
+- 6a4b009: Fix key warning in ChatList
+
 ## 4.4.0
 
 ### Minor Changes
