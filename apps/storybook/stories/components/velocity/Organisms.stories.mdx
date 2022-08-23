@@ -81,48 +81,40 @@ import { TopDrivers } from '@terenceodonoghue/react-components/velocity';
     <TopDrivers
       drivers={[
         {
-          avatar: faker.image.avatar(),
           name: 'Bebop',
-          vehicle: 'Volvo Intellisafe',
           totalEarnings: '$6432',
           totalDistance: '1,232 miles',
         },
         {
-          avatar: faker.image.avatar(),
           name: 'Gran Tesoro',
-          vehicle: 'Chevrolet Bolt',
           totalEarnings: '$5342',
           totalDistance: '945 miles',
         },
         {
-          avatar: faker.image.avatar(),
           name: 'Belafonte',
-          vehicle: 'Infiniti Q50S',
           totalEarnings: '$5133',
           totalDistance: '834 miles',
         },
         {
-          avatar: faker.image.avatar(),
           name: 'Chester',
-          vehicle: 'Audi RS 7',
           totalEarnings: '$4755',
           totalDistance: '812 miles',
         },
         {
-          avatar: faker.image.avatar(),
           name: 'Expedia',
-          vehicle: 'Tesla Model X',
           totalEarnings: '$4140',
           totalDistance: '724 miles',
         },
         {
-          avatar: faker.image.avatar(),
           name: 'Aeolus',
-          vehicle: 'Tesla Model S',
           totalEarnings: '$3323',
           totalDistance: '466 miles',
         },
-      ]}
+      ].map((driver) => ({
+        ...driver,
+        avatar: faker.image.avatar(),
+        vehicle: faker.vehicle.vehicle(),
+      }))}
     />
   </Story>
 </Canvas>

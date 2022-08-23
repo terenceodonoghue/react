@@ -114,7 +114,7 @@ import { Driver } from '@terenceodonoghue/react-components/velocity';
       number={1}
       avatar={faker.image.avatar()}
       name="Bebop"
-      vehicle="Volvo Intellisafe"
+      vehicle={faker.vehicle.vehicle()}
       totalEarnings="$6432"
       totalDistance="1,232 miles"
     />
@@ -122,7 +122,7 @@ import { Driver } from '@terenceodonoghue/react-components/velocity';
       number={2}
       avatar={faker.image.avatar()}
       name="Gran Tesoro"
-      vehicle="Chevrolet Bolt"
+      vehicle={faker.vehicle.vehicle()}
       totalEarnings="$5,342"
       totalDistance="945 miles"
     />
@@ -130,7 +130,7 @@ import { Driver } from '@terenceodonoghue/react-components/velocity';
       number={3}
       avatar={faker.image.avatar()}
       name="Belafonte"
-      vehicle="Infiniti Q50S"
+      vehicle={faker.vehicle.vehicle()}
       totalEarnings="$5,133"
       totalDistance="834 miles"
     />
@@ -138,7 +138,7 @@ import { Driver } from '@terenceodonoghue/react-components/velocity';
       number={4}
       avatar={faker.image.avatar()}
       name="Chester"
-      vehicle="Audi RS 7"
+      vehicle={faker.vehicle.vehicle()}
       totalEarnings="$4,755"
       totalDistance="812 miles"
     />
@@ -164,23 +164,23 @@ import { ChatCard } from '@terenceodonoghue/react-components/velocity';
   >
     <ChatCard
       avatar={faker.image.avatar()}
-      name="Lisa F. Bogar"
+      name={faker.name.fullName()}
       time="2m"
-      message={faker.lorem.paragraph()}
+      message={faker.hacker.phrase()}
       online
     />
     <ChatCard
       avatar={faker.image.avatar()}
-      name="Kathey K. Hernandez"
+      name={faker.name.fullName()}
       time="40m"
-      message={faker.lorem.sentence(4)}
+      message={faker.hacker.phrase()}
       online={false}
     />
     <ChatCard
       avatar={faker.image.avatar()}
-      name="Nora M. Buchanan"
+      name={faker.name.fullName()}
       time="51m"
-      message={faker.lorem.paragraph()}
+      message={faker.hacker.phrase()}
       selected={true}
     />
   </Story>
