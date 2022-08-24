@@ -51,7 +51,7 @@ const IntegrationCard: FunctionComponent<IntegrationCardProps> = ({
             backgroundColor: rgba(color.neutral[700], 0.1),
           }}
         >
-          🎉
+          <Icon size={30} />
         </div>
         <div css={{ display: 'flex', flexDirection: 'column' }}>
           <Text css={{ lineHeight: rem(22) }} as="span" variant="h4">

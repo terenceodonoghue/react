@@ -15,6 +15,7 @@ import {
   mq,
 } from '@terenceodonoghue/react-components/velocity';
 import velocity from '@terenceodonoghue/react-components/velocity.css';
+import { InVision, GitHub } from '@terenceodonoghue/react-icons/brands';
 import * as Velocity from '@terenceodonoghue/react-icons/velocity';
 import {
   Check,
@@ -193,9 +194,14 @@ import { IntegrationCard } from '@terenceodonoghue/react-components/velocity';
     <IntegrationCard
       name="InVision"
       description="Boards and prototypes"
+      icon={InVision}
       enabled
     />
-    <IntegrationCard name="GitHub" description="Commits data and history" />
+    <IntegrationCard
+      name="GitHub"
+      description="Commits data and history"
+      icon={GitHub}
+    />
   </Story>
 </Canvas>
 
