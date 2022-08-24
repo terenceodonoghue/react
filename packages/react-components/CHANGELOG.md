@@ -1,5 +1,11 @@
 # @terenceodonoghue/react-components
 
+## 4.5.0
+
+### Minor Changes
+
+- 79ed461: Add IntegrationCard component
+
 ## 4.4.2
 
 ### Patch Changes

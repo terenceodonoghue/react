@@ -1,5 +1,12 @@
 # @terenceodonoghue/storybook
 
+## 1.1.12
+
+### Patch Changes
+
+- Updated dependencies [79ed461]
+  - @terenceodonoghue/react-components@4.5.0
+
 ## 1.1.11
 
 ### Patch Changes
