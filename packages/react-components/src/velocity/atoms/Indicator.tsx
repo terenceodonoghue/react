@@ -41,6 +41,7 @@ const Indicator: FunctionComponent<IndicatorProps> = ({
             height: Icon ? 18 : 12,
             width: Icon ? 18 : 12,
             backgroundColor: indicatorColor || color.primary,
+            transform: Icon ? 'translate(8px, -7px)' : undefined,
           }}
         >
           {Icon ? <Icon color={color.neutral[50]} size={12} /> : undefined}
