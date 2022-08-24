@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { useTheme } from '@emotion/react';
 import { rem, rgba } from 'polished';
-import type { FunctionComponent } from 'react';
+import type { FunctionComponent, HTMLAttributes } from 'react';
 
 import type { ReactIcon } from '@terenceodonoghue/react-icons';
 import { Check } from '@terenceodonoghue/react-icons/velocity';
@@ -9,7 +9,7 @@ import { Check } from '@terenceodonoghue/react-icons/velocity';
 import Indicator from '../atoms/Indicator.js';
 import Text from '../primitives/Text.js';
 
-export interface IntegrationCardProps {
+export interface IntegrationCardProps extends HTMLAttributes<HTMLDivElement> {
   description: string;
   enabled?: boolean;
   icon: ReactIcon;
@@ -21,6 +21,7 @@ const IntegrationCard: FunctionComponent<IntegrationCardProps> = ({
   enabled = false,
   name,
   icon: Icon,
+  ...props
 }) => {
   const { color } = useTheme();
 
@@ -37,6 +38,7 @@ const IntegrationCard: FunctionComponent<IntegrationCardProps> = ({
           padding: 20,
           cursor: 'pointer',
         }}
+        {...props}
       >
         <div
           css={{
