@@ -4,7 +4,7 @@
   font-family: 'Komika Axis';
   font-style: normal;
   font-weight: normal;
-  src: url('../public/fonts/Komika Axis.woff') format('woff');
+  src: url('/fonts/Komika Axis.woff') format('woff');
 }
 
 html,
