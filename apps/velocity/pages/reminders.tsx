@@ -3,13 +3,7 @@ import { faker } from '@faker-js/faker';
 import { NextPage } from 'next';
 import Head from 'next/head';
 import numeral from 'numeral';
-import {
-  Dispatch,
-  ReactElement,
-  SetStateAction,
-  useMemo,
-  useState,
-} from 'react';
+import { Dispatch, ReactElement, SetStateAction, useState } from 'react';
 import {
   DragDropContext,
   Draggable,
@@ -25,7 +19,6 @@ import {
   Pill,
   Text,
   TopDrivers,
-  type TopDriversProps,
 } from '@terenceodonoghue/react-components/velocity';
 
 import Container from '../components/core/Container';
@@ -95,39 +88,6 @@ const onDragEnd = (
 };
 
 const RemindersPage: NextPage = () => {
-  const topDriversFixtures = useMemo<TopDriversProps>(
-    () => ({
-      drivers: [
-        {
-          avatar: faker.image.avatar(),
-          name: 'Bebop',
-          vehicle: 'Tesla Model X',
-          totalEarnings: 6432,
-          totalDistance: 1322,
-        },
-        {
-          avatar: faker.image.avatar(),
-          name: 'Gran Tesoro',
-          vehicle: 'Chevrolet Bolt',
-          totalEarnings: 6432,
-          totalDistance: 1322,
-        },
-        {
-          avatar: faker.image.avatar(),
-          name: 'Belafonte',
-          vehicle: 'Tesla Model X',
-          totalEarnings: 6432,
-          totalDistance: 1322,
-        },
-      ].map(({ totalDistance, totalEarnings, ...driver }) => ({
-        ...driver,
-        totalEarnings: numeral(totalEarnings).format('$0'),
-        totalDistance: `${numeral(totalDistance).format('0,0')} miles`,
-      })),
-    }),
-    [],
-  );
-
   const [tickets, setTickets] = useState([
     [
       {
@@ -317,7 +277,35 @@ const RemindersPage: NextPage = () => {
           />
           <Flex css={{ flexGrow: 1 }} direction="column">
             <Card caption="Vehicle Service Status" />
-            <TopDrivers {...topDriversFixtures} />
+            <TopDrivers
+              drivers={[
+                {
+                  avatar: faker.image.avatar(),
+                  name: 'Bebop',
+                  vehicle: 'Tesla Model X',
+                  totalEarnings: 6432,
+                  totalDistance: 1322,
+                },
+                {
+                  avatar: faker.image.avatar(),
+                  name: 'Gran Tesoro',
+                  vehicle: 'Chevrolet Bolt',
+                  totalEarnings: 6432,
+                  totalDistance: 1322,
+                },
+                {
+                  avatar: faker.image.avatar(),
+                  name: 'Belafonte',
+                  vehicle: 'Tesla Model X',
+                  totalEarnings: 6432,
+                  totalDistance: 1322,
+                },
+              ].map(({ totalDistance, totalEarnings, ...driver }) => ({
+                ...driver,
+                totalEarnings: numeral(totalEarnings).format('$0'),
+                totalDistance: `${numeral(totalDistance).format('0,0')} miles`,
+              }))}
+            />
           </Flex>
         </Flex>
       </Container>

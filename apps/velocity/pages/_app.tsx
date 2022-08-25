@@ -3,7 +3,7 @@ import { AppProps } from 'next/app';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { FunctionComponent, useEffect, useMemo, useState } from 'react';
+import { FunctionComponent, useEffect, useState } from 'react';
 
 import {
   Flex,
@@ -40,14 +40,7 @@ const App: FunctionComponent<AppProps> = ({ Component, pageProps }) => {
   const router = useRouter();
   const [drawerOpen, toggleDrawer] = useState(false);
 
-  const fixtures = useMemo(() => {
-    faker.seed(123);
-
-    return {
-      avatar: faker.image.avatar(),
-      name: faker.name.fullName(),
-    };
-  }, []);
+  faker.seed(123);
 
   useEffect(() => {
     const handleRouteChange = () => {
@@ -114,16 +107,20 @@ const App: FunctionComponent<AppProps> = ({ Component, pageProps }) => {
               css={{ borderRadius: '50%', flexGrow: 0 }}
             >
               <Avatar
-                alt={fixtures.name}
+                alt={faker.name.fullName()}
                 size={40}
-                src={fixtures.avatar}
+                src={faker.image.avatar()}
                 variant="rounded"
               />
             </IconButton>
           </Flex>
         </Flex>
       </AppBar>
-      <Drawer avatar={fixtures.avatar} name={fixtures.name} open={drawerOpen}>
+      <Drawer
+        avatar={faker.image.avatar()}
+        name={faker.name.fullName()}
+        open={drawerOpen}
+      >
         <Link href="/">
           <DrawerItem
             compact={!drawerOpen}
