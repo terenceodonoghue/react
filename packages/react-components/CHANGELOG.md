@@ -1,5 +1,16 @@
 # @terenceodonoghue/react-components
 
+## 4.7.0
+
+### Minor Changes
+
+- 43ec3be: Add compact styling to Backdrop
+- 80853ee: Add TripSummary component
+
+### Patch Changes
+
+- f192c22: Add fixed height/width to Backdrop
+
 ## 4.6.0
 
 ### Minor Changes
