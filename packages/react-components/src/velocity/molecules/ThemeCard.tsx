@@ -9,12 +9,14 @@ export interface ThemeCardProps extends RadioProps {
 }
 
 const ThemeCard: FunctionComponent<ThemeCardProps> = ({
+  className,
   colors,
   label,
   name = 'theme',
+  style,
   ...props
 }) => (
-  <div css={{ minWidth: 120 }}>
+  <div css={{ minWidth: 120 }} className={className} style={style}>
     <div
       css={{
         display: 'flex',

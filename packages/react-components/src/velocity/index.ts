@@ -13,7 +13,7 @@ export { default as Logo } from './atoms/Logo.js';
 export { default as Pill, type PillProps } from './atoms/Pill.js';
 export { default as Radio, type RadioProps } from './atoms/Radio.js';
 export { default as Slider } from './atoms/Slider.js';
-export { default as Switch } from './atoms/Switch.js';
+export { default as Switch, type SwitchProps } from './atoms/Switch.js';
 export {
   default as TextField,
   type TextFieldProps,
@@ -36,6 +36,7 @@ export {
   default as MetricCard,
   type MetricCardProps,
 } from './molecules/MetricCard.js';
+export { default as Setting, type SettingProps } from './molecules/Setting.js';
 export {
   default as ThemeCard,
   type ThemeCardProps,

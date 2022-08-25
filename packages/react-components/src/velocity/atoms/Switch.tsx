@@ -3,7 +3,9 @@ import { useTheme } from '@emotion/react';
 import { rgba, transitions } from 'polished';
 import type { InputHTMLAttributes, FunctionComponent } from 'react';
 
-const Switch: FunctionComponent<InputHTMLAttributes<HTMLInputElement>> = ({
+export type SwitchProps = InputHTMLAttributes<HTMLInputElement>;
+
+const Switch: FunctionComponent<SwitchProps> = ({
   className,
   id,
   style,

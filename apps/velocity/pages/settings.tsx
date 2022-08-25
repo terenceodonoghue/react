@@ -1,14 +1,12 @@
 import { NextPage } from 'next';
 import Head from 'next/head';
-import { useMemo } from 'react';
 
-import { Flex } from '@terenceodonoghue/react-components/core';
 import {
   Button,
   Card,
   IntegrationCard,
-  type IntegrationCardProps,
   mq,
+  Setting,
   Text,
   TextField,
   ThemeCard,
@@ -22,42 +20,8 @@ import {
 } from '@terenceodonoghue/react-icons/brands';
 
 import Container from '../components/core/Container';
-import Switch from '../components/core/Switch';
 
 const SettingsPage: NextPage = () => {
-  const integrationCardFixtures = useMemo<IntegrationCardProps[]>(
-    () => [
-      {
-        name: 'InVision',
-        description: 'Boards and prototypes',
-        icon: InVision,
-        enabled: true,
-      },
-      {
-        name: 'GitHub',
-        description: 'Commits data and history',
-        icon: GitHub,
-        enabled: true,
-      },
-      {
-        name: 'Slack',
-        description: 'Messages and channels',
-        icon: Slack,
-      },
-      {
-        name: 'Twitter',
-        description: 'Tweets data',
-        icon: Twitter,
-      },
-      {
-        name: 'Medium',
-        description: 'Followers count',
-        icon: Medium,
-      },
-    ],
-    [],
-  );
-
   return (
     <>
       <Head>
@@ -151,47 +115,84 @@ const SettingsPage: NextPage = () => {
                 marginTop: [24, 32],
               })}
             >
-              {integrationCardFixtures.map((integration) => (
+              {[
+                {
+                  name: 'InVision',
+                  description: 'Boards and prototypes',
+                  icon: InVision,
+                  enabled: true,
+                },
+                {
+                  name: 'GitHub',
+                  description: 'Commits data and history',
+                  icon: GitHub,
+                  enabled: true,
+                },
+                {
+                  name: 'Slack',
+                  description: 'Messages and channels',
+                  icon: Slack,
+                },
+                {
+                  name: 'Twitter',
+                  description: 'Tweets data',
+                  icon: Twitter,
+                },
+                {
+                  name: 'Medium',
+                  description: 'Followers count',
+                  icon: Medium,
+                },
+              ].map((integration) => (
                 <IntegrationCard key={integration.name} {...integration} />
               ))}
             </div>
           </Card>
           <Card caption="Notifications">
             <Text>Control your notification and auto-follow settings.</Text>
-            <Flex css={{ margin: '0 -60px' }}>
-              <Switch
-                css={{ margin: '12px 60px' }}
-                primary="Email Notification"
-                secondary="Commits data and history"
-              />
-              <Switch
-                css={{ margin: '12px 60px' }}
-                primary="Monthly Reports"
-                secondary="Commits data and history"
-              />
-            </Flex>
-            <Flex css={{ margin: '0 -60px' }}>
-              <Switch
-                css={{ margin: '12px 60px' }}
-                primary="Push Notification"
-                secondary="Commits data and history"
-              />
-              <Switch
-                css={{ margin: '12px 60px' }}
-                primary="Quarter Reports"
-                secondary="Commits data and history"
-              />
-            </Flex>
+            <div
+              css={mq({
+                display: 'grid',
+                gridAutoFlow: [undefined, 'column'],
+                gridTemplateColumns: [
+                  'repeat(1, 1fr)',
+                  'repeat(2, min-content)',
+                ],
+                gridTemplateRows: [undefined, 'repeat(2, 1fr)'],
+                columnGap: [undefined, 110],
+                rowGap: 20,
+                marginTop: [24, 32],
+              })}
+            >
+              {[
+                {
+                  name: 'Email Notification',
+                  description: 'Commits data and history',
+                },
+                {
+                  name: 'Push Notification',
+                  description: 'Commits data and history',
+                  defaultChecked: true,
+                },
+                {
+                  name: 'Monthly Reports',
+                  description: 'Commits data and history',
+                },
+                {
+                  name: 'Quarter Reports',
+                  description: 'Commits data and history',
+                },
+              ].map((setting) => (
+                <Setting key={setting.name} {...setting} />
+              ))}
+            </div>
           </Card>
           <Card caption="Theme">
             <Text>Select a color scheme for your Velocity app.</Text>
             <div
               css={mq({
                 display: 'grid',
-                gridTemplateColumns: [
-                  'repeat(auto-fit, 140px)',
-                  'repeat(auto-fit, 120px)',
-                ],
+                gridTemplateColumns: 'repeat(auto-fit, 120px)',
                 gap: [24, 32],
                 marginTop: [24, 32],
               })}

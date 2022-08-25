@@ -10,6 +10,7 @@ import {
   Logo,
   MetricCard,
   KanbanCard,
+  Setting,
   ThemeCard,
   ThemeProvider,
   mq,
@@ -51,7 +52,7 @@ import {
         '.driver': {
           display: 'flex',
           flexDirection: 'column',
-          gap: 12,
+          gap: 16,
           margin: '0 auto',
           maxWidth: 'fit-content',
         },
@@ -78,6 +79,14 @@ import {
             'repeat(3, 1fr)',
           ],
         },
+        '.setting': {
+          display: 'grid',
+          gridTemplateColumns: ['repeat(1, 1fr)', 'repeat(2, 1fr)'],
+          columnGap: 64,
+          rowGap: 20,
+          margin: '0 auto',
+          maxWidth: 'fit-content',
+        },
         '.theme-card': {
           display: 'grid',
           gridTemplateColumns: [
@@ -89,7 +98,8 @@ import {
         },
       }),
     ]}
-  />
+/>
+
 </ThemeProvider>
 
 <Logo style={{ marginBottom: '1.5rem' }} />
@@ -129,6 +139,32 @@ import { Driver } from '@terenceodonoghue/react-components/velocity';
       vehicle={faker.vehicle.vehicle()}
       totalEarnings="$5,342"
       totalDistance="945 miles"
+    />
+  </Story>
+</Canvas>
+
+## Setting
+
+```javascript
+import { Setting } from '@terenceodonoghue/react-components/velocity';
+```
+
+<Canvas>
+  <Story
+    name="Setting"
+    decorators={[
+      (Story) => (
+        <div className="setting">
+          <Story />
+        </div>
+      ),
+    ]}
+  >
+    <Setting name="Email Notification" description="Commits data and history" />
+    <Setting
+      name="Push Notification"
+      description="Commits data and history"
+      defaultChecked
     />
   </Story>
 </Canvas>

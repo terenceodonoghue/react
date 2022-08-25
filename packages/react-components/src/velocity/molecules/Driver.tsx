@@ -1,11 +1,11 @@
 /** @jsxImportSource @emotion/react */
-import type { FunctionComponent } from 'react';
+import type { FunctionComponent, HTMLAttributes } from 'react';
 
 import Avatar from '../atoms/Avatar.js';
 import Badge from '../atoms/Badge.js';
 import Text from '../primitives/Text.js';
 
-export interface DriverProps {
+export interface DriverProps extends HTMLAttributes<HTMLDivElement> {
   avatar: string;
   name: string;
   number?: number;
@@ -21,8 +21,9 @@ const Driver: FunctionComponent<DriverProps> = ({
   totalDistance,
   totalEarnings,
   vehicle,
+  ...props
 }) => (
-  <div css={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+  <div css={{ display: 'flex', alignItems: 'center', gap: 16 }} {...props}>
     <Badge label={number}>
       <Avatar size={48} src={avatar} />
     </Badge>
