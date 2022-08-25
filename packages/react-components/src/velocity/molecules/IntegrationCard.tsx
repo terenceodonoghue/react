@@ -59,7 +59,7 @@ const IntegrationCard: FunctionComponent<IntegrationCardProps> = ({
           <Text css={{ lineHeight: rem(22) }} as="span" variant="h4">
             {name}
           </Text>
-          <Text css={{ lineHeight: rem(22) }} as="span" variant="p2">
+          <Text as="span" variant="p2">
             {description}
           </Text>
         </div>

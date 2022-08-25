@@ -13,6 +13,7 @@ import {
   Setting,
   ThemeCard,
   ThemeProvider,
+  TripSummary,
   mq,
 } from '@terenceodonoghue/react-components/velocity';
 import velocity from '@terenceodonoghue/react-components/velocity.css';
@@ -96,6 +97,10 @@ import {
           justifyContent: 'center',
           gap: [24, 32],
         },
+        '.trip-summary': {
+          margin: '0 auto',
+          maxWidth: 'fit-content',
+        },
       }),
     ]}
 />
@@ -165,6 +170,32 @@ import { Setting } from '@terenceodonoghue/react-components/velocity';
       name="Push Notification"
       description="Commits data and history"
       defaultChecked
+    />
+  </Story>
+</Canvas>
+
+## Trip Summary
+
+```javascript
+import { TripSummary } from '@terenceodonoghue/react-components/velocity';
+```
+
+<Canvas>
+  <Story
+    name="TripSummary"
+    decorators={[
+      (Story) => (
+        <div className="trip-summary">
+          <Story />
+        </div>
+      ),
+    ]}
+  >
+    <TripSummary
+      origin={faker.address.city()}
+      originAddress={faker.address.streetAddress()}
+      destination={faker.address.city()}
+      destinationAddress={faker.address.streetAddress()}
     />
   </Story>
 </Canvas>

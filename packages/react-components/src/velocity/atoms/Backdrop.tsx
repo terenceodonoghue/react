@@ -22,11 +22,13 @@ const Backdrop: FunctionComponent<BackdropProps> = ({
   return (
     <div
       css={{
-        display: 'inline-flex',
+        display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
         borderRadius: '50%',
         padding: compact ? 8 : 14,
+        height: 'fit-content',
+        width: 'fit-content',
         backgroundColor: rgba(backgroundColor || color.primary, opacity),
       }}
       {...props}

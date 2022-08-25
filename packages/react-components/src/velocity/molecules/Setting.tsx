@@ -33,7 +33,7 @@ const Setting: FunctionComponent<SettingProps> = ({
       <Text css={{ lineHeight: rem(22) }} as="span" variant="h4">
         {name}
       </Text>
-      <Text css={{ lineHeight: rem(22) }} as="span" variant="p2" truncate>
+      <Text as="span" variant="p2" truncate>
         {description}
       </Text>
     </div>
