@@ -1,5 +1,11 @@
 # @terenceodonoghue/react-components
 
+## 4.6.0
+
+### Minor Changes
+
+- b436052: Add Setting component
+
 ## 4.5.0
 
 ### Minor Changes
