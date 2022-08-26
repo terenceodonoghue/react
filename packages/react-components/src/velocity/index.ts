@@ -42,6 +42,10 @@ export {
   type ThemeCardProps,
 } from './molecules/ThemeCard.js';
 export {
+  default as TripDetails,
+  type TripDetailsProps,
+} from './molecules/TripDetails.js';
+export {
   default as TripSummary,
   type TripSummaryProps,
 } from './molecules/TripSummary.js';

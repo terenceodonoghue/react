@@ -13,6 +13,7 @@ import {
   Setting,
   ThemeCard,
   ThemeProvider,
+  TripDetails,
   TripSummary,
   mq,
 } from '@terenceodonoghue/react-components/velocity';
@@ -96,6 +97,10 @@ import {
           ],
           justifyContent: 'center',
           gap: [24, 32],
+        },
+        '.trip-details': {
+          margin: '0 auto',
+          maxWidth: 'fit-content',
         },
         '.trip-summary': {
           margin: '0 auto',
@@ -196,6 +201,32 @@ import { TripSummary } from '@terenceodonoghue/react-components/velocity';
       originAddress={faker.address.streetAddress()}
       destination={faker.address.city()}
       destinationAddress={faker.address.streetAddress()}
+    />
+  </Story>
+</Canvas>
+
+## Trip Details
+
+```javascript
+import { TripDetails } from '@terenceodonoghue/react-components/velocity';
+```
+
+<Canvas>
+  <Story
+    name="TripDetails"
+    decorators={[
+      (Story) => (
+        <div className="trip-details">
+          <Story />
+        </div>
+      ),
+    ]}
+  >
+    <TripDetails
+      distance="12.3km"
+      time="42 min"
+      price="$34.20"
+      energy="12.4 kWh"
     />
   </Story>
 </Canvas>
