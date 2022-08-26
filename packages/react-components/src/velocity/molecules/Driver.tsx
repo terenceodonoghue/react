@@ -8,7 +8,7 @@ import Text from '../primitives/Text.js';
 export interface DriverProps extends HTMLAttributes<HTMLDivElement> {
   avatar: string;
   name: string;
-  number?: number;
+  rank?: number;
   totalDistance: string;
   totalEarnings: string;
   vehicle: string;
@@ -17,14 +17,14 @@ export interface DriverProps extends HTMLAttributes<HTMLDivElement> {
 const Driver: FunctionComponent<DriverProps> = ({
   avatar,
   name,
-  number,
+  rank,
   totalDistance,
   totalEarnings,
   vehicle,
   ...props
 }) => (
   <div css={{ display: 'flex', alignItems: 'center', gap: 16 }} {...props}>
-    <Badge label={number}>
+    <Badge label={rank}>
       <Avatar size={48} src={avatar} />
     </Badge>
     <div css={{ display: 'grid', gridTemplateColumns: '2fr 1fr', flex: 1 }}>

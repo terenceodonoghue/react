@@ -18,7 +18,7 @@ const TopDrivers: FunctionComponent<TopDriversProps> = ({
     {...props}
   >
     {drivers.map((driver, i) => (
-      <Driver key={driver.name} number={i + 1} {...driver} />
+      <Driver key={driver.name} rank={i + 1} {...driver} />
     ))}
   </Card>
 );
