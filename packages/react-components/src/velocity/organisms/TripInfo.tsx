@@ -21,11 +21,12 @@ const TripInfo: FunctionComponent<TripInfoProps> = ({
   originAddress,
   price,
   time,
+  ...props
 }) => {
   const { color } = useTheme();
 
   return (
-    <Card css={{ paddingBottom: 24 }}>
+    <Card css={{ paddingBottom: 24 }} {...props}>
       <TripSummary
         css={{
           '&::after': {
