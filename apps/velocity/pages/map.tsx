@@ -2,11 +2,13 @@ import { Interpolation, Theme, useTheme } from '@emotion/react';
 import { faker } from '@faker-js/faker';
 import { NextPage } from 'next';
 import Head from 'next/head';
-import { rem, rgba } from 'polished';
+import { rem } from 'polished';
 
-import { Flex } from '@terenceodonoghue/react-components/core';
-import { Avatar, Card } from '@terenceodonoghue/react-components/velocity';
-import { Check, Marker } from '@terenceodonoghue/react-icons/velocity';
+import {
+  Avatar,
+  Card,
+  TripSummary,
+} from '@terenceodonoghue/react-components/velocity';
 
 import Container from '../components/core/Container';
 import {
@@ -61,6 +63,9 @@ const MapPage: NextPage = () => {
   };
 
   const paymentMethodIcon: Interpolation<Theme> = ({ color }) => ({
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
     borderColor: color.secondary,
     borderRadius: 5,
     borderStyle: 'solid',
@@ -71,39 +76,26 @@ const MapPage: NextPage = () => {
     width: 140,
   });
 
-  const streetAddress: Interpolation<Theme> = ({ color }) => ({
-    color: color.neutral[600],
-  });
-
-  const suburb: Interpolation<Theme> = ({ font }) => ({
-    display: 'block',
-    fontWeight: font.weight.medium,
-    margin: 0,
-  });
-
-  const tripIcon: Interpolation<Theme> = {
-    alignItems: 'center',
-    borderRadius: '50%',
-    height: 32,
-    justifyContent: 'center',
-    margin: '0 8px',
-    width: 32,
-  };
-
   return (
     <>
       <Head>
         <title>Velocity | Map</title>
       </Head>
       <Container>
-        <Flex>
+        <div css={{ display: 'flex' }}>
           <Card
             css={{ flexBasis: 655, flexShrink: 0 }}
             caption="Passenger info"
           >
-            <Flex>
+            <div css={{ display: 'flex' }}>
               <div css={{ flexBasis: 256, flexShrink: 0 }}>
-                <Flex css={{ marginBottom: 24 }} alignItems="center">
+                <div
+                  css={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    marginBottom: 24,
+                  }}
+                >
                   <Avatar
                     alt={faker.name.fullName()}
                     size={48}
@@ -123,7 +115,7 @@ const MapPage: NextPage = () => {
                       4 interactions
                     </span>
                   </div>
-                </Flex>
+                </div>
                 <dl>
                   <dt css={passengerLabel}>Email</dt>
                   <dd css={passengerValue}>{fixtures.email}</dd>
@@ -135,118 +127,62 @@ const MapPage: NextPage = () => {
                   </dd>
                 </dl>
               </div>
-              <Flex
+              <div
                 css={{
+                  display: 'flex',
+                  flexWrap: 'wrap',
                   alignContent: 'flex-start',
+                  justifyContent: 'center',
                   margin: -12,
                 }}
-                justifyContent="center"
-                wrap="wrap"
               >
-                <Flex
-                  css={paymentMethodIcon}
-                  alignItems="center"
-                  justifyContent="center"
-                >
+                <div css={paymentMethodIcon}>
                   <PayPalIcon
                     color={theme.color.neutral[900]}
                     css={{ height: 25 }}
                   />
-                </Flex>
-                <Flex
+                </div>
+                <div
                   css={({ color }) => [
                     paymentMethodIcon,
                     {
                       backgroundColor: color.primary,
                     },
                   ]}
-                  alignItems="center"
-                  justifyContent="center"
                 >
                   <VisaIcon
                     color={theme.color.neutral[50]}
                     css={{ height: 24 }}
                   />
-                </Flex>
-                <Flex
-                  css={paymentMethodIcon}
-                  alignItems="center"
-                  justifyContent="center"
-                >
+                </div>
+                <div css={paymentMethodIcon}>
                   <MastercardIcon
                     color={theme.color.neutral[900]}
                     css={{ height: 59 }}
                   />
-                </Flex>
-                <Flex
-                  css={paymentMethodIcon}
-                  alignItems="center"
-                  justifyContent="center"
-                >
+                </div>
+                <div css={paymentMethodIcon}>
                   <ApplePayIcon
                     color={theme.color.neutral[900]}
                     css={{ height: 25 }}
                   />
-                </Flex>
-              </Flex>
-            </Flex>
+                </div>
+              </div>
+            </div>
           </Card>
-          <Flex css={{ flexGrow: 1 }} direction="column">
+          <div css={{ display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
             <Card>
-              <Flex css={{ margin: '0 -8px 12px' }} alignItems="center">
-                <Flex
-                  css={[
-                    tripIcon,
-                    ({ color }) => ({
-                      backgroundColor: rgba(color.ui.blue, 0.2),
-                    }),
-                  ]}
-                  role="presentation"
-                >
-                  <Check color={theme.color.ui.blue} size={16} />
-                </Flex>
-                <span
-                  css={({ color }) => ({
-                    borderColor: color.primary,
-                    borderStyle: 'solid',
-                    borderWidth: 1,
-                    flexGrow: 1,
-                    maxWidth: 'calc(50% - 56px)',
-                  })}
-                  role="presentation"
-                />
-                <Flex
-                  css={[
-                    tripIcon,
-                    ({ color }) => ({
-                      backgroundColor: rgba(color.ui.green, 0.2),
-                    }),
-                  ]}
-                  role="presentation"
-                >
-                  <Marker
-                    color={theme.color.ui.green}
-                    css={{ height: 16, width: 16 }}
-                  />
-                </Flex>
-              </Flex>
-              <Flex
-                css={{
-                  marginBottom: 32,
-                }}
-                wrap="wrap"
-              >
-                <div css={{ flex: 1 }}>
-                  <span css={suburb}>Jackson Heights</span>
-                  <span css={streetAddress}>37-27 74th Street</span>
-                </div>
-                <div css={{ flex: 1 }}>
-                  <span css={suburb}>Greenpoint</span>
-                  <span css={streetAddress}>81 Gate St Brooklyn</span>
-                </div>
-              </Flex>
-              <Flex
+              <TripSummary
+                css={{ marginBottom: 32 }}
+                origin={faker.address.city()}
+                originAddress={faker.address.streetAddress()}
+                destination={faker.address.city()}
+                destinationAddress={faker.address.streetAddress()}
+              />
+              <div
                 css={({ color }) => ({
+                  display: 'flex',
+                  flexWrap: 'wrap',
                   margin: '0 -24px',
                   '&::before': {
                     backgroundColor: color.neutral[300],
@@ -255,7 +191,6 @@ const MapPage: NextPage = () => {
                     width: '100%',
                   },
                 })}
-                wrap="wrap"
               >
                 <div css={metric}>
                   <span css={metricValue}>12.3 km</span>
@@ -273,11 +208,11 @@ const MapPage: NextPage = () => {
                   <span css={metricValue}>12.4 kWh</span>
                   <span css={metricLabel}>Energy</span>
                 </div>
-              </Flex>
+              </div>
             </Card>
             <Card css={{ flex: 1 }} />
-          </Flex>
-        </Flex>
+          </div>
+        </div>
       </Container>
     </>
   );

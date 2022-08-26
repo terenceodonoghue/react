@@ -20,6 +20,7 @@ const TripSummary: FunctionComponent<TripSummaryProps> = ({
   destinationAddress,
   origin,
   originAddress,
+  ...props
 }) => {
   const { color } = useTheme();
 
@@ -31,6 +32,7 @@ const TripSummary: FunctionComponent<TripSummaryProps> = ({
         columnGap: 8,
         rowGap: 12,
       }}
+      {...props}
     >
       <div
         css={{
@@ -59,7 +61,7 @@ const TripSummary: FunctionComponent<TripSummaryProps> = ({
           overflow: 'hidden',
         }}
       >
-        <Text css={{ lineHeight: rem(22) }} as="span" variant="h4">
+        <Text css={{ lineHeight: rem(22) }} as="span" variant="h4" truncate>
           {origin}
         </Text>
         <Text as="span" variant="p2" truncate>
@@ -69,7 +71,7 @@ const TripSummary: FunctionComponent<TripSummaryProps> = ({
       <div
         css={{ display: 'flex', flexDirection: 'column', overflow: 'hidden' }}
       >
-        <Text css={{ lineHeight: rem(22) }} as="span" variant="h4">
+        <Text css={{ lineHeight: rem(22) }} as="span" variant="h4" truncate>
           {destination}
         </Text>
         <Text as="span" variant="p2" truncate>
