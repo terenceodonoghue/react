@@ -30,20 +30,6 @@ const fixtures = {
 const MapPage: NextPage = () => {
   const theme = useTheme();
 
-  const metric: Interpolation<Theme> = {
-    flex: 1,
-    margin: '24px 24px 0',
-  };
-
-  const metricLabel: Interpolation<Theme> = ({ color }) => ({
-    color: color.neutral[600],
-  });
-
-  const metricValue: Interpolation<Theme> = ({ font }) => ({
-    display: 'block',
-    fontWeight: font.weight.medium,
-  });
-
   const passengerLabel: Interpolation<Theme> = ({ color }) => ({
     color: color.neutral[500],
     fontSize: rem(12),
