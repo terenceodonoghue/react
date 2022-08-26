@@ -8,6 +8,7 @@ import {
   Logo,
   ThemeProvider,
   TopDrivers,
+  TripInfo,
   mq,
 } from '@terenceodonoghue/react-components/velocity';
 import velocity from '@terenceodonoghue/react-components/velocity.css';
@@ -43,6 +44,10 @@ import {
           maxWidth: [undefined, '378px'],
         },
         '.top-drivers': {
+          margin: '0 auto',
+          maxWidth: 'fit-content',
+        },
+        '.trip-info': {
           margin: '0 auto',
           maxWidth: 'fit-content',
         },
@@ -162,6 +167,36 @@ import { TopDrivers } from '@terenceodonoghue/react-components/velocity';
         avatar: faker.image.avatar(),
         vehicle: faker.vehicle.vehicle(),
       }))}
+    />
+  </Story>
+</Canvas>
+
+## Trip Info
+
+```javascript
+import { TripInfo } from '@terenceodonoghue/react-components/velocity';
+```
+
+<Canvas data-has-bg>
+  <Story
+    name="TripInfo"
+    decorators={[
+      (Story) => (
+        <div className="trip-info">
+          <Story />
+        </div>
+      ),
+    ]}
+  >
+    <TripInfo
+      origin={faker.address.city()}
+      originAddress={faker.address.streetAddress()}
+      destination={faker.address.city()}
+      destinationAddress={faker.address.streetAddress()}
+      distance="12.3km"
+      time="42 min"
+      price="$34.20"
+      energy="12.4 kWh"
     />
   </Story>
 </Canvas>

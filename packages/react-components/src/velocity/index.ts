@@ -58,6 +58,10 @@ export {
   default as TopDrivers,
   type TopDriversProps,
 } from './organisms/TopDrivers.js';
+export {
+  default as TripInfo,
+  type TripInfoProps,
+} from './organisms/TripInfo.js';
 
 export { default as Text, type TextProps } from './primitives/Text.js';
 

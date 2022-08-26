@@ -16,6 +16,7 @@ const TripDetails: FunctionComponent<TripDetailsProps> = ({
   energy,
   price,
   time,
+  ...props
 }) => (
   <div
     css={{
@@ -24,6 +25,7 @@ const TripDetails: FunctionComponent<TripDetailsProps> = ({
       gridTemplateRows: 'repeat(2, 1fr)',
       columnGap: 16,
     }}
+    {...props}
   >
     <Text css={{ lineHeight: rem(22) }} as="span" variant="h4" truncate>
       {distance}

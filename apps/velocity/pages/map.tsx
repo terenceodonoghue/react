@@ -7,7 +7,7 @@ import { rem } from 'polished';
 import {
   Avatar,
   Card,
-  TripSummary,
+  TripInfo,
 } from '@terenceodonoghue/react-components/velocity';
 
 import Container from '../components/core/Container';
@@ -171,45 +171,16 @@ const MapPage: NextPage = () => {
             </div>
           </Card>
           <div css={{ display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
-            <Card>
-              <TripSummary
-                css={{ marginBottom: 32 }}
-                origin={faker.address.city()}
-                originAddress={faker.address.streetAddress()}
-                destination={faker.address.city()}
-                destinationAddress={faker.address.streetAddress()}
-              />
-              <div
-                css={({ color }) => ({
-                  display: 'flex',
-                  flexWrap: 'wrap',
-                  margin: '0 -24px',
-                  '&::before': {
-                    backgroundColor: color.neutral[300],
-                    content: '""',
-                    height: 1,
-                    width: '100%',
-                  },
-                })}
-              >
-                <div css={metric}>
-                  <span css={metricValue}>12.3 km</span>
-                  <span css={metricLabel}>Distance</span>
-                </div>
-                <div css={metric}>
-                  <span css={metricValue}>42 min</span>
-                  <span css={metricLabel}>Time</span>
-                </div>
-                <div css={metric}>
-                  <span css={metricValue}>${(34.2).toFixed(2)}</span>
-                  <span css={metricLabel}>Price</span>
-                </div>
-                <div css={metric}>
-                  <span css={metricValue}>12.4 kWh</span>
-                  <span css={metricLabel}>Energy</span>
-                </div>
-              </div>
-            </Card>
+            <TripInfo
+              origin={faker.address.city()}
+              originAddress={faker.address.streetAddress()}
+              destination={faker.address.city()}
+              destinationAddress={faker.address.streetAddress()}
+              distance="12.3km"
+              time="42 min"
+              price="$34.20"
+              energy="12.4 kWh"
+            />
             <Card css={{ flex: 1 }} />
           </div>
         </div>
