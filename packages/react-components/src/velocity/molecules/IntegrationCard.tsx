@@ -1,15 +1,16 @@
 /** @jsxImportSource @emotion/react */
 import { useTheme } from '@emotion/react';
 import { rem, rgba } from 'polished';
-import type { FunctionComponent, HTMLAttributes } from 'react';
+import type { FunctionComponent } from 'react';
 
 import type { ReactIcon } from '@terenceodonoghue/react-icons';
 import { Check } from '@terenceodonoghue/react-icons/velocity';
 
+import Box, { type BoxProps } from '../atoms/Box.js';
 import Indicator from '../atoms/Indicator.js';
 import Text from '../primitives/Text.js';
 
-export interface IntegrationCardProps extends HTMLAttributes<HTMLDivElement> {
+export interface IntegrationCardProps extends BoxProps {
   description: string;
   enabled?: boolean;
   icon: ReactIcon;
@@ -27,17 +28,12 @@ const IntegrationCard: FunctionComponent<IntegrationCardProps> = ({
 
   return (
     <Indicator icon={Check} visible={enabled}>
-      <div
+      <Box
         css={{
-          display: 'flex',
-          alignItems: 'center',
-          borderColor: enabled ? color.primary : '#E0E7FF',
-          borderRadius: 5,
-          borderStyle: 'solid',
-          borderWidth: 1,
-          padding: 20,
+          borderColor: enabled ? color.primary : color.secondary,
           cursor: 'pointer',
         }}
+        p={20}
         {...props}
       >
         <div
@@ -55,7 +51,7 @@ const IntegrationCard: FunctionComponent<IntegrationCardProps> = ({
         >
           <Icon size={30} />
         </div>
-        <div css={{ display: 'flex', flexDirection: 'column' }}>
+        <div css={{ display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
           <Text css={{ lineHeight: rem(22) }} as="span" variant="h4">
             {name}
           </Text>
@@ -63,7 +59,7 @@ const IntegrationCard: FunctionComponent<IntegrationCardProps> = ({
             {description}
           </Text>
         </div>
-      </div>
+      </Box>
     </Indicator>
   );
 };

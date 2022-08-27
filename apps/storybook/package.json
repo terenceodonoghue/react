@@ -10,7 +10,7 @@
   "dependencies": {
     "@terenceodonoghue/react-components": "workspace:^",
     "@terenceodonoghue/react-hooks": "workspace:^",
-    "@terenceodonoghue/react-icons": "^2.1.0"
+    "@terenceodonoghue/react-icons": "^2.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.17.9",

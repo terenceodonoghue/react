@@ -13,6 +13,7 @@ import {
   Avatar,
   Backdrop,
   Badge,
+  Box,
   Button,
   Card,
   Indicator,
@@ -302,6 +303,25 @@ An optional `caption` prop renders text above the content block.
   </Story>
 </Canvas>
 
+## Box
+
+A box is a simple wrapper for separating content.
+
+```javascript
+import { Box } from '@terenceodonoghue/react-components/velocity';
+```
+
+The default padding is `20`, but this can be adjusted with `p`, `py` or `px`.
+
+<Canvas>
+  <Story name="Box">
+    <Box>Beep</Box>
+    <Box p={48}>Boop</Box>
+    <Box py={48}>Beep</Box>
+    <Box px={48}>Boop</Box>
+  </Story>
+</Canvas>
+
 ## Icons
 
 Icons can be used to improve visual interest and draw attention to an element.
@@ -391,7 +411,7 @@ Lists are continuous, vertical indexes of labelled text.
 import { List } from '@terenceodonoghue/react-components/velocity';
 ```
 
-A collection of `items`, each with a `label` and `value` property, makes up a list. Standard [dl](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl) attributes are also supported.
+A collection of `items`, each with a `label` and a `value`, makes up a list. Standard [dl](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl) attributes are also supported.
 
 <Canvas>
   <Story name="List">

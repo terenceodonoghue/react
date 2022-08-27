@@ -2,39 +2,29 @@ import { Interpolation, Theme, useTheme } from '@emotion/react';
 import { faker } from '@faker-js/faker';
 import { NextPage } from 'next';
 import Head from 'next/head';
-import { rem } from 'polished';
 
 import {
   Avatar,
+  Box,
   Card,
   List,
   TripInfo,
 } from '@terenceodonoghue/react-components/velocity';
+import { Mastercard } from '@terenceodonoghue/react-icons/brands';
 
 import Container from '../components/core/Container';
-import {
-  ApplePayIcon,
-  MastercardIcon,
-  PayPalIcon,
-  VisaIcon,
-} from '../components/icons';
+import { ApplePayIcon, PayPalIcon, VisaIcon } from '../components/icons';
 
 const MapPage: NextPage = () => {
   const theme = useTheme();
 
-  const paymentMethodIcon: Interpolation<Theme> = ({ color }) => ({
+  const paymentMethodIcon: Interpolation<Theme> = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    borderColor: color.secondary,
-    borderRadius: 5,
-    borderStyle: 'solid',
-    borderWidth: 1,
     height: 75,
-    margin: 12,
-    padding: 8,
     width: 140,
-  });
+  };
 
   return (
     <>
@@ -96,20 +86,21 @@ const MapPage: NextPage = () => {
                   flexWrap: 'wrap',
                   alignContent: 'flex-start',
                   justifyContent: 'center',
-                  margin: -12,
+                  gap: 12,
                 }}
               >
-                <div css={paymentMethodIcon}>
+                <Box css={paymentMethodIcon}>
                   <PayPalIcon
                     color={theme.color.neutral[900]}
                     css={{ height: 25 }}
                   />
-                </div>
-                <div
+                </Box>
+                <Box
                   css={({ color }) => [
                     paymentMethodIcon,
                     {
                       backgroundColor: color.primary,
+                      borderColor: color.primary,
                     },
                   ]}
                 >
@@ -117,19 +108,16 @@ const MapPage: NextPage = () => {
                     color={theme.color.neutral[50]}
                     css={{ height: 24 }}
                   />
-                </div>
-                <div css={paymentMethodIcon}>
-                  <MastercardIcon
-                    color={theme.color.neutral[900]}
-                    css={{ height: 59 }}
-                  />
-                </div>
-                <div css={paymentMethodIcon}>
+                </Box>
+                <Box css={paymentMethodIcon}>
+                  <Mastercard size="100%" />
+                </Box>
+                <Box css={paymentMethodIcon}>
                   <ApplePayIcon
                     color={theme.color.neutral[900]}
                     css={{ height: 25 }}
                   />
-                </div>
+                </Box>
               </div>
             </div>
           </Card>

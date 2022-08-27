@@ -38,7 +38,7 @@ const TextField: FunctionComponent<TextFieldProps> = ({
           border: 'solid 1px #E0E7FF',
           borderRadius: 5,
           padding: '10px 16px',
-          backgroundColor: rgba('#E0E7FF', 0.2),
+          backgroundColor: rgba(color.secondary, 0.2),
           color: color.neutral[900],
           fontFamily: font.family,
           fontSize: rem(15),

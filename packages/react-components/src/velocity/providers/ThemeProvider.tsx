@@ -5,7 +5,7 @@ import type { FunctionComponent, ReactNode } from 'react';
 export const defaultTheme: Theme = {
   color: {
     primary: '#2e5bff',
-    secondary: '#8c54ff',
+    secondary: '#e0e7ff',
     neutral: {
       50: '#fff',
       100: '#f4f6fc',
