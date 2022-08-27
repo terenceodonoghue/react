@@ -16,6 +16,7 @@ import {
   Button,
   Card,
   Indicator,
+  List,
   Logo,
   Pill,
   Radio,
@@ -379,5 +380,30 @@ There's also a `compact` version.
     <Backdrop color="#F7C137" compact>
       <Dynamic color="#F7C137" size={16} />
     </Backdrop>
+  </Story>
+</Canvas>
+
+## List
+
+Lists are continuous, vertical indexes of labelled text.
+
+```javascript
+import { List } from '@terenceodonoghue/react-components/velocity';
+```
+
+A collection of `items`, each with a `label` and `value` property, makes up a list. Standard [dl](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl) attributes are also supported.
+
+<Canvas>
+  <Story name="List">
+    <List
+      items={[
+        { label: 'email', value: faker.internet.exampleEmail() },
+        { label: 'phone', value: faker.phone.number('+144–####–####') },
+        {
+          label: 'location',
+          value: `${faker.address.cityName()}, ${faker.address.stateAbbr()}`,
+        },
+      ]}
+    />
   </Story>
 </Canvas>
