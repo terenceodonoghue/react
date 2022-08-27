@@ -8,12 +8,13 @@ import {
   Box,
   Card,
   List,
+  mq,
+  PaymentMethod,
   TripInfo,
 } from '@terenceodonoghue/react-components/velocity';
-import { Mastercard } from '@terenceodonoghue/react-icons/brands';
 
 import Container from '../components/core/Container';
-import { ApplePayIcon, PayPalIcon, VisaIcon } from '../components/icons';
+import { PayPalIcon, VisaIcon } from '../components/icons';
 
 const MapPage: NextPage = () => {
   const theme = useTheme();
@@ -32,13 +33,15 @@ const MapPage: NextPage = () => {
         <title>Velocity | Map</title>
       </Head>
       <Container>
-        <div css={{ display: 'flex' }}>
-          <Card
-            css={{ flexBasis: 655, flexShrink: 0 }}
-            caption="Passenger info"
-          >
-            <div css={{ display: 'flex' }}>
-              <div css={{ flexBasis: 256, flexShrink: 0 }}>
+        <div
+          css={mq({
+            display: 'flex',
+            flexDirection: ['column-reverse', 'column-reverse', 'row'],
+          })}
+        >
+          <Card css={{ flexGrow: 2 }} caption="Passenger info">
+            <div css={{ display: 'flex', gap: 40 }}>
+              <div css={{ overflow: 'hidden' }}>
                 <div
                   css={{
                     display: 'flex',
@@ -81,13 +84,13 @@ const MapPage: NextPage = () => {
                 />
               </div>
               <div
-                css={{
-                  display: 'flex',
-                  flexWrap: 'wrap',
-                  alignContent: 'flex-start',
-                  justifyContent: 'center',
-                  gap: 12,
-                }}
+                css={mq({
+                  display: 'grid',
+                  gridTemplateColumns: ['repeat(4, 1fr)', 'repeat(2, 1fr)'],
+                  gridAutoRows: 'min-content',
+                  gap: [12, 24],
+                  margin: '0 auto',
+                })}
               >
                 <Box css={paymentMethodIcon}>
                   <PayPalIcon
@@ -109,15 +112,8 @@ const MapPage: NextPage = () => {
                     css={{ height: 24 }}
                   />
                 </Box>
-                <Box css={paymentMethodIcon}>
-                  <Mastercard size="100%" />
-                </Box>
-                <Box css={paymentMethodIcon}>
-                  <ApplePayIcon
-                    color={theme.color.neutral[900]}
-                    css={{ height: 25 }}
-                  />
-                </Box>
+                <PaymentMethod type="mastercard" />
+                <PaymentMethod type="applepay" />
               </div>
             </div>
           </Card>
@@ -132,7 +128,7 @@ const MapPage: NextPage = () => {
               price="$34.20"
               energy="12.4 kWh"
             />
-            <Card css={{ flex: 1 }} />
+            <Card css={mq({ display: ['none', 'none', 'block'], flex: 1 })} />
           </div>
         </div>
       </Container>

@@ -10,6 +10,7 @@ import {
   Logo,
   MetricCard,
   KanbanCard,
+  PaymentMethod,
   Setting,
   ThemeCard,
   ThemeProvider,
@@ -80,6 +81,16 @@ import {
             'repeat(2, 1fr)',
             'repeat(3, 1fr)',
           ],
+        },
+        '.payment-method': {
+          display: 'grid',
+          gridTemplateColumns: [
+            'repeat(2, 1fr)',
+            'repeat(4, 1fr)',
+          ],
+          gap: [16, 24],
+          margin: '0 auto',
+          maxWidth: 'fit-content',
         },
         '.setting': {
           display: 'grid',
@@ -393,6 +404,30 @@ import { MetricCard } from '@terenceodonoghue/react-components/velocity';
       label="Total drive time"
       value="24.2 h"
     />
+  </Story>
+</Canvas>
+
+## Payment Method
+
+```javascript
+import { PaymentMethod } from '@terenceodonoghue/react-components/velocity';
+```
+
+<Canvas>
+  <Story
+    name="PaymentMethod"
+    decorators={[
+      (Story) => (
+        <div className="payment-method">
+          <Story />
+        </div>
+      ),
+    ]}
+  >
+    <PaymentMethod type="applepay" />
+    <PaymentMethod type="applepay" selected />
+    <PaymentMethod type="mastercard" />
+    <PaymentMethod type="mastercard" selected />
   </Story>
 </Canvas>
 

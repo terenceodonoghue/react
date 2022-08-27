@@ -38,6 +38,10 @@ export {
   default as MetricCard,
   type MetricCardProps,
 } from './molecules/MetricCard.js';
+export {
+  default as PaymentMethod,
+  type PaymentMethodProps,
+} from './molecules/PaymentMethod.js';
 export { default as Setting, type SettingProps } from './molecules/Setting.js';
 export {
   default as ThemeCard,
