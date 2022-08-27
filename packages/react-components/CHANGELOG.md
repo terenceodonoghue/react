@@ -1,5 +1,24 @@
 # @terenceodonoghue/react-components
 
+## 5.0.0
+
+### Major Changes
+
+- bbd5d10: Remove number prop from Driver
+
+### Minor Changes
+
+- 4c35ad7: Add TripInfo component
+- 622c982: Add rank prop to Driver
+- 29ff8dd: Add List component
+- ccee938: Add TripDetails component
+- 43d1a7d: Add Box component
+
+### Patch Changes
+
+- 3a99f29: Truncate origin and destination text in TripSummary
+- a6e0bda: Update secondary colour to correct value
+
 ## 4.7.0
 
 ### Minor Changes
