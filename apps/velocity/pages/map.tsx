@@ -7,6 +7,7 @@ import { rem } from 'polished';
 import {
   Avatar,
   Card,
+  List,
   TripInfo,
 } from '@terenceodonoghue/react-components/velocity';
 
@@ -18,35 +19,8 @@ import {
   VisaIcon,
 } from '../components/icons';
 
-const fixtures = {
-  avatar: faker.image.avatar(),
-  city: faker.address.city(),
-  email: faker.internet.exampleEmail(),
-  name: faker.name.fullName(),
-  phone: faker.phone.phoneNumberFormat(),
-  state: faker.address.stateAbbr(),
-};
-
 const MapPage: NextPage = () => {
   const theme = useTheme();
-
-  const passengerLabel: Interpolation<Theme> = ({ color }) => ({
-    color: color.neutral[500],
-    fontSize: rem(12),
-    fontWeight: theme.font.weight.medium,
-    letterSpacing: 1.125,
-    marginBottom: 8,
-    marginTop: 16,
-    textTransform: 'uppercase',
-  });
-
-  const passengerValue: Interpolation<Theme> = {
-    margin: 0,
-    maxWidth: 256,
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
-    whiteSpace: 'nowrap',
-  };
 
   const paymentMethodIcon: Interpolation<Theme> = ({ color }) => ({
     display: 'flex',
@@ -85,7 +59,7 @@ const MapPage: NextPage = () => {
                   <Avatar
                     alt={faker.name.fullName()}
                     size={48}
-                    src={fixtures.avatar}
+                    src={faker.image.avatar()}
                     variant="rounded"
                   />
                   <div css={{ marginLeft: 16 }}>
@@ -95,23 +69,26 @@ const MapPage: NextPage = () => {
                         fontWeight: font.weight.medium,
                       })}
                     >
-                      {fixtures.name}
+                      {faker.name.fullName()}
                     </span>
                     <span css={({ color }) => ({ color: color.neutral[600] })}>
                       4 interactions
                     </span>
                   </div>
                 </div>
-                <dl>
-                  <dt css={passengerLabel}>Email</dt>
-                  <dd css={passengerValue}>{fixtures.email}</dd>
-                  <dt css={passengerLabel}>Phone</dt>
-                  <dd css={passengerValue}>+{fixtures.phone}</dd>
-                  <dt css={passengerLabel}>Location</dt>
-                  <dd css={passengerValue}>
-                    {fixtures.city}, {fixtures.state}
-                  </dd>
-                </dl>
+                <List
+                  items={[
+                    { label: 'email', value: faker.internet.exampleEmail() },
+                    {
+                      label: 'phone',
+                      value: faker.phone.number('+144–####–####'),
+                    },
+                    {
+                      label: 'location',
+                      value: `${faker.address.cityName()}, ${faker.address.stateAbbr()}`,
+                    },
+                  ]}
+                />
               </div>
               <div
                 css={{
