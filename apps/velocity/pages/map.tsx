@@ -92,26 +92,8 @@ const MapPage: NextPage = () => {
                   margin: '0 auto',
                 })}
               >
-                <Box css={paymentMethodIcon}>
-                  <PayPalIcon
-                    color={theme.color.neutral[900]}
-                    css={{ height: 25 }}
-                  />
-                </Box>
-                <Box
-                  css={({ color }) => [
-                    paymentMethodIcon,
-                    {
-                      backgroundColor: color.primary,
-                      borderColor: color.primary,
-                    },
-                  ]}
-                >
-                  <VisaIcon
-                    color={theme.color.neutral[50]}
-                    css={{ height: 24 }}
-                  />
-                </Box>
+                <PaymentMethod type="paypal" />
+                <PaymentMethod type="visa" selected />
                 <PaymentMethod type="mastercard" />
                 <PaymentMethod type="applepay" />
               </div>

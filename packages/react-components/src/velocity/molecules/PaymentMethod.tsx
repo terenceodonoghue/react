@@ -1,16 +1,21 @@
 /** @jsxImportSource @emotion/react */
-import { useTheme } from '@emotion/react';
+import { type CSSObject, useTheme } from '@emotion/react';
 import { FunctionComponent, useMemo } from 'react';
 
 import type { ReactIcon } from '@terenceodonoghue/react-icons';
-import { ApplePay, Mastercard } from '@terenceodonoghue/react-icons/brands';
+import {
+  ApplePay,
+  Mastercard,
+  PayPalLogo,
+  VisaLogo,
+} from '@terenceodonoghue/react-icons/brands';
 
 import Box, { type BoxProps } from '../atoms/Box.js';
 import mq from '../utils/mq.js';
 
 export interface PaymentMethodProps extends BoxProps {
   selected?: boolean;
-  type: 'applepay' | 'mastercard';
+  type: 'applepay' | 'mastercard' | 'paypal' | 'visa';
 }
 
 const IntegrationCard: FunctionComponent<PaymentMethodProps> = ({
@@ -20,6 +25,21 @@ const IntegrationCard: FunctionComponent<PaymentMethodProps> = ({
 }) => {
   const { color } = useTheme();
 
+  const css: Record<string, CSSObject> = {
+    applepay: {
+      filter: selected ? 'grayscale(1) invert(1)' : 'grayscale(1)',
+    },
+    mastercard: {
+      filter: selected ? 'grayscale(1) invert(1)' : 'grayscale(1)',
+    },
+    paypal: {
+      filter: selected ? 'brightness(0) invert(1)' : 'grayscale(1)',
+    },
+    visa: {
+      filter: selected ? 'brightness(0) invert(1)' : 'grayscale(1)',
+    },
+  };
+
   const Icon: ReactIcon | null = useMemo(() => {
     if (type === 'applepay') {
       return ApplePay;
@@ -27,6 +47,14 @@ const IntegrationCard: FunctionComponent<PaymentMethodProps> = ({
 
     if (type === 'mastercard') {
       return Mastercard;
+    }
+
+    if (type === 'paypal') {
+      return PayPalLogo;
+    }
+
+    if (type === 'visa') {
+      return VisaLogo;
     }
 
     return null;
@@ -40,17 +68,11 @@ const IntegrationCard: FunctionComponent<PaymentMethodProps> = ({
         width: [119, 140],
         backgroundColor: selected ? color.primary : undefined,
       })}
-      p={0}
+      px={32}
+      py={0}
       {...props}
     >
-      {Icon ? (
-        <Icon
-          css={{
-            filter: selected ? 'grayscale(1) invert(1)' : 'grayscale(1)',
-          }}
-          size="100%"
-        />
-      ) : undefined}
+      {Icon ? <Icon css={css[type]} size="100%" /> : undefined}
     </Box>
   );
 };

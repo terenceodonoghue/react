@@ -17,6 +17,9 @@ const Box: FunctionComponent<BoxProps> = ({
 }) => {
   const { color } = useTheme();
 
+  const paddingX = Number.isInteger(px) ? px : p;
+  const paddingY = Number.isInteger(py) ? py : p;
+
   return (
     <div
       css={{
@@ -27,7 +30,8 @@ const Box: FunctionComponent<BoxProps> = ({
         borderRadius: 5,
         borderStyle: 'solid',
         borderWidth: 1,
-        padding: !px && !py ? `${p}px` : `${py || p}px ${px || p}px`,
+        padding:
+          paddingX === paddingY ? `${p}px` : `${paddingY}px ${paddingX}px`,
       }}
       {...props}
     >

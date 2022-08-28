@@ -5085,7 +5085,7 @@ __metadata:
   resolution: "@terenceodonoghue/react-components@workspace:packages/react-components"
   dependencies:
     "@emotion/react": "npm:^11.10.0"
-    "@terenceodonoghue/react-icons": "npm:^2.1.1"
+    "@terenceodonoghue/react-icons": "npm:^2.1.2"
     "@types/lodash-es": "npm:^4.17.6"
     concurrently: "npm:^7.3.0"
     csstype: "npm:^3.1.0"
@@ -5117,13 +5117,13 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@terenceodonoghue/react-icons@npm:^2.1.1":
-  version: 2.1.1
-  resolution: "@terenceodonoghue/react-icons@npm:2.1.1::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40terenceodonoghue%2Freact-icons%2F2.1.1%2F2c9d9d3577e49da975c6d1b9309f4f322c575c93"
+"@terenceodonoghue/react-icons@npm:^2.1.2":
+  version: 2.1.2
+  resolution: "@terenceodonoghue/react-icons@npm:2.1.2::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40terenceodonoghue%2Freact-icons%2F2.1.2%2Fb836b85bd7634625fb3bad4d2e061c8a813063ec"
   peerDependencies:
     react: "*"
     react-dom: "*"
-  checksum: 101437d2faaec4ec4b2389a40bc56fbba232d6e1b1bfb9418e52844e81fe3d8607c3f7a07028d6ffb5e3d69116ad4364d0adbe9795419e6d1ebaa04e7bb58f9d
+  checksum: 2251a436153759fbe2b2e0c8e347acb516f0a35664e9bf72904d646b6c678edf1cd2bcf25d7b2ca82eae223638e71cc20a72e0996cc154d3e9c432c41719b714
   languageName: node
   linkType: hard
 
@@ -5173,7 +5173,7 @@ __metadata:
     "@storybook/testing-library": "npm:^0.0.11"
     "@terenceodonoghue/react-components": "workspace:^"
     "@terenceodonoghue/react-hooks": "workspace:^"
-    "@terenceodonoghue/react-icons": "npm:^2.1.1"
+    "@terenceodonoghue/react-icons": "npm:^2.1.2"
     babel-loader: "npm:^8.2.4"
     vite: "npm:^3.0.6"
   peerDependencies:
@@ -5212,7 +5212,7 @@ __metadata:
     "@svgr/cli": "npm:^6.3.1"
     "@svgr/webpack": "npm:^6.3.1"
     "@terenceodonoghue/react-components": "workspace:^"
-    "@terenceodonoghue/react-icons": "npm:^2.1.1"
+    "@terenceodonoghue/react-icons": "npm:^2.1.2"
     "@testing-library/jest-dom": "npm:^5.16.5"
     "@testing-library/react": "npm:^13.3.0"
     "@testing-library/user-event": "npm:^14.4.3"
