@@ -27,6 +27,10 @@ export {
   type ChatCardProps,
 } from './molecules/ChatCard.js';
 export {
+  default as Customer,
+  default as CustomerProps,
+} from './molecules/Customer.js';
+export {
   default as IntegrationCard,
   type IntegrationCardProps,
 } from './molecules/IntegrationCard.js';

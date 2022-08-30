@@ -5,6 +5,7 @@ import Head from 'next/head';
 import {
   Avatar,
   Card,
+  Customer,
   List,
   mq,
   PaymentMethod,
@@ -27,34 +28,19 @@ const MapPage: NextPage = () => (
       >
         <Card css={{ flexGrow: 2 }} caption="Passenger info">
           <div css={{ display: 'flex', gap: 40 }}>
-            <div css={{ overflow: 'hidden' }}>
-              <div
-                css={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  marginBottom: 24,
-                }}
-              >
-                <Avatar
-                  alt={faker.name.fullName()}
-                  size={48}
-                  src={faker.image.avatar()}
-                  variant="rounded"
-                />
-                <div css={{ marginLeft: 16 }}>
-                  <span
-                    css={({ font }) => ({
-                      display: 'block',
-                      fontWeight: font.weight.medium,
-                    })}
-                  >
-                    {faker.name.fullName()}
-                  </span>
-                  <span css={({ color }) => ({ color: color.neutral[600] })}>
-                    4 interactions
-                  </span>
-                </div>
-              </div>
+            <div
+              css={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 24,
+                overflow: 'hidden',
+              }}
+            >
+              <Customer
+                avatar={faker.image.avatar()}
+                name={faker.name.fullName()}
+                interactions={4}
+              />
               <List
                 items={[
                   { label: 'email', value: faker.internet.exampleEmail() },

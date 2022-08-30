@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { Global } from '@terenceodonoghue/react-components/core';
 import {
   ChatCard,
+  Customer,
   Driver,
   IntegrationCard,
   Logo,
@@ -51,6 +52,13 @@ import {
           display: 'grid',
           gridTemplateColumns: ['1fr', 'repeat(3, 1fr)'],
           gap: 12,
+        },
+        '.customer': {
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 16,
+          margin: '0 auto',
+          maxWidth: 'fit-content',
         },
         '.driver': {
           display: 'flex',
@@ -128,6 +136,36 @@ import {
 # Molecules
 
 Molecules are relatively simple groups of UI elements (atoms) functioning together as a unit.
+
+## Customer
+
+```javascript
+import { Customer } from '@terenceodonoghue/react-components/velocity';
+```
+
+<Canvas>
+  <Story
+    name="Customer"
+    decorators={[
+      (Story) => (
+        <div className="customer">
+          <Story />
+        </div>
+      ),
+    ]}
+  >
+    <Customer
+      avatar={faker.image.avatar()}
+      name={faker.name.fullName()}
+      interactions={1}
+    />
+    <Customer
+      avatar={faker.image.avatar()}
+      name={faker.name.fullName()}
+      interactions={2}
+    />
+  </Story>
+</Canvas>
 
 ## Driver
 
