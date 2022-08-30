@@ -3,7 +3,6 @@ import { NextPage } from 'next';
 import Head from 'next/head';
 
 import {
-  Avatar,
   Card,
   Customer,
   List,
