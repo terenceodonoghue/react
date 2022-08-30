@@ -4,10 +4,8 @@ import Head from 'next/head';
 
 import {
   Card,
-  Customer,
-  List,
   mq,
-  PaymentMethod,
+  PassengerInfo,
   TripInfo,
 } from '@terenceodonoghue/react-components/velocity';
 
@@ -25,51 +23,17 @@ const MapPage: NextPage = () => (
           flexDirection: ['column-reverse', 'column-reverse', 'row'],
         })}
       >
-        <Card css={{ flexGrow: 2 }} caption="Passenger info">
-          <div css={{ display: 'flex', gap: 40 }}>
-            <div
-              css={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: 24,
-                overflow: 'hidden',
-              }}
-            >
-              <Customer
-                avatar={faker.image.avatar()}
-                name={faker.name.fullName()}
-                interactions={4}
-              />
-              <List
-                items={[
-                  { label: 'email', value: faker.internet.exampleEmail() },
-                  {
-                    label: 'phone',
-                    value: faker.phone.number('+144–####–####'),
-                  },
-                  {
-                    label: 'location',
-                    value: `${faker.address.cityName()}, ${faker.address.stateAbbr()}`,
-                  },
-                ]}
-              />
-            </div>
-            <div
-              css={mq({
-                display: 'grid',
-                gridTemplateColumns: ['repeat(4, 1fr)', 'repeat(2, 1fr)'],
-                gridAutoRows: 'min-content',
-                gap: [12, 24],
-                margin: '0 auto',
-              })}
-            >
-              <PaymentMethod type="paypal" />
-              <PaymentMethod type="visa" selected />
-              <PaymentMethod type="mastercard" />
-              <PaymentMethod type="applepay" />
-            </div>
-          </div>
-        </Card>
+        <PassengerInfo
+          css={{ flexGrow: 2 }}
+          avatar={faker.image.avatar()}
+          city={faker.address.cityName()}
+          email={faker.internet.exampleEmail()}
+          interactions={4}
+          name={faker.name.fullName()}
+          paymentMethod="visa"
+          phoneNumber={faker.phone.number('+144–####–####')}
+          state={faker.address.stateAbbr()}
+        />
         <div css={{ display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
           <TripInfo
             origin={faker.address.city()}

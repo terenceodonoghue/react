@@ -6,6 +6,7 @@ import { Global } from '@terenceodonoghue/react-components/core';
 import {
   ChatList,
   Logo,
+  PassengerInfo,
   ThemeProvider,
   TopDrivers,
   TripInfo,
@@ -42,6 +43,10 @@ import {
         '.chat-list': {
           margin: '0 auto',
           maxWidth: [undefined, '378px'],
+        },
+        '.passenger-info': {
+          margin: '0 auto',
+          maxWidth: 'fit-content',
         },
         '.top-drivers': {
           margin: '0 auto',
@@ -167,6 +172,35 @@ import { TopDrivers } from '@terenceodonoghue/react-components/velocity';
         avatar: faker.image.avatar(),
         vehicle: faker.vehicle.vehicle(),
       }))}
+    />
+  </Story>
+</Canvas>
+
+## Passenger Info
+
+```javascript
+import { PassengerInfo } from '@terenceodonoghue/react-components/velocity';
+```
+
+<Canvas data-has-bg>
+  <Story
+    name="PassengerInfo"
+    decorators={[
+      (Story) => (
+        <div className="passenger-info">
+          <Story />
+        </div>
+      ),
+    ]}
+  >
+    <PassengerInfo
+      avatar={faker.image.avatar()}
+      city={faker.address.cityName()}
+      email={faker.internet.exampleEmail()}
+      name={faker.name.fullName()}
+      paymentMethod="visa"
+      phoneNumber={faker.phone.number('+144–####–####')}
+      state={faker.address.stateAbbr()}
     />
   </Story>
 </Canvas>
