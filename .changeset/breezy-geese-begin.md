@@ -2,4 +2,4 @@
 '@terenceodonoghue/react-components': patch
 ---
 
-Correct apply Box padding when value iz zero
+Correctly apply Box padding when value is zero
