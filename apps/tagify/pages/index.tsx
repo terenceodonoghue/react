@@ -91,7 +91,7 @@ const Home: NextPage = () => {
                   Papa.parse<Tag>(e.currentTarget.files[0], {
                     header: true,
                     skipEmptyLines: true,
-                    transformHeader: (header) => header.toLowerCase(),
+                    transformHeader: (header) => header.toLowerCase().trim(),
                     complete: (results) => {
                       setData(results.data);
                     },

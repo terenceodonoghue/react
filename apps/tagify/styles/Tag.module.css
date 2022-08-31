@@ -54,6 +54,7 @@
 .price {
   font-size: 36pt;
   line-height: 1.58em;
+  transform: translateY(-1pt);
 }
 
 .save {
