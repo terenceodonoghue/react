@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import type { FunctionComponent } from 'react';
 
 import Card, { type CardProps } from '../atoms/Card.js';

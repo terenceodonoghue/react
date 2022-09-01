@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import type { FunctionComponent, HTMLAttributes } from 'react';
 
 import Avatar from '../atoms/Avatar.js';
@@ -19,10 +18,8 @@ const Customer: FunctionComponent<CustomerProps> = ({
   <div css={{ display: 'flex', alignItems: 'center', gap: 16 }} {...props}>
     <Avatar size={48} src={avatar} />
     <div css={{ display: 'flex', flexDirection: 'column' }}>
-      <Text as="span" variant="h4">
-        {name}
-      </Text>
-      <Text as="span" variant="p2" truncate>
+      <Text variant="h4">{name}</Text>
+      <Text variant="p2" truncate>
         {interactions} interaction{interactions > 1 ? 's' : ''}
       </Text>
     </div>

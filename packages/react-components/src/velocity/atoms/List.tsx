@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import type { FunctionComponent, HTMLAttributes } from 'react';
 
 import Text from '../primitives/Text.js';

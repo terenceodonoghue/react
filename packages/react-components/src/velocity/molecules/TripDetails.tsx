@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import { rem } from 'polished';
 import type { FunctionComponent, HTMLAttributes } from 'react';
 
@@ -27,28 +26,28 @@ const TripDetails: FunctionComponent<TripDetailsProps> = ({
     }}
     {...props}
   >
-    <Text css={{ lineHeight: rem(22) }} as="span" variant="h4" truncate>
+    <Text css={{ lineHeight: rem(22) }} variant="h4" truncate>
       {distance}
     </Text>
-    <Text css={{ lineHeight: rem(22) }} as="span" variant="h4" truncate>
+    <Text css={{ lineHeight: rem(22) }} variant="h4" truncate>
       {time}
     </Text>
-    <Text css={{ lineHeight: rem(22) }} as="span" variant="h4" truncate>
+    <Text css={{ lineHeight: rem(22) }} variant="h4" truncate>
       {price}
     </Text>
-    <Text css={{ lineHeight: rem(22) }} as="span" variant="h4" truncate>
+    <Text css={{ lineHeight: rem(22) }} variant="h4" truncate>
       {energy}
     </Text>
-    <Text as="span" variant="p2" truncate>
+    <Text variant="p2" truncate>
       Distance
     </Text>
-    <Text as="span" variant="p2" truncate>
+    <Text variant="p2" truncate>
       Time
     </Text>
-    <Text as="span" variant="p2" truncate>
+    <Text variant="p2" truncate>
       Price
     </Text>
-    <Text as="span" variant="p2" truncate>
+    <Text variant="p2" truncate>
       Energy
     </Text>
   </div>

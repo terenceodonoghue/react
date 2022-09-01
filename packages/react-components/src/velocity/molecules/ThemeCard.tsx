@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import type { FunctionComponent } from 'react';
 
 import Radio, { type RadioProps } from '../atoms/Radio.js';

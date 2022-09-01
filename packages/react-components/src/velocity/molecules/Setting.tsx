@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import { rem } from 'polished';
 import type { FunctionComponent } from 'react';
 
@@ -30,10 +29,10 @@ const Setting: FunctionComponent<SettingProps> = ({
     style={style}
   >
     <div css={{ display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
-      <Text css={{ lineHeight: rem(22) }} as="span" variant="h4">
+      <Text css={{ lineHeight: rem(22) }} variant="h4">
         {name}
       </Text>
-      <Text as="span" variant="p2" truncate>
+      <Text variant="p2" truncate>
         {description}
       </Text>
     </div>

@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import { useTheme } from '@emotion/react';
 import { rgba } from 'polished';
 import type { InputHTMLAttributes, FunctionComponent } from 'react';
@@ -62,9 +61,7 @@ const Radio: FunctionComponent<RadioProps> = ({
           },
         }}
       />
-      <Text as="span" variant="h4">
-        {label}
-      </Text>
+      <Text variant="h4">{label}</Text>
     </label>
   );
 };

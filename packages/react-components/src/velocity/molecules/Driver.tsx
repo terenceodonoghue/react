@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import type { FunctionComponent, HTMLAttributes } from 'react';
 
 import Avatar from '../atoms/Avatar.js';
@@ -28,16 +27,14 @@ const Driver: FunctionComponent<DriverProps> = ({
       <Avatar size={48} src={avatar} />
     </Badge>
     <div css={{ display: 'grid', gridTemplateColumns: '2fr 1fr', flex: 1 }}>
-      <Text as="span" variant="h4">
-        {name}
-      </Text>
-      <Text as="span" variant="p1" align="right">
+      <Text variant="h4">{name}</Text>
+      <Text variant="p1" align="right">
         {totalEarnings}
       </Text>
-      <Text as="span" variant="p2" truncate>
+      <Text variant="p2" truncate>
         {vehicle}
       </Text>
-      <Text as="span" variant="p2" align="right" truncate>
+      <Text variant="p2" align="right" truncate>
         {totalDistance}
       </Text>
     </div>

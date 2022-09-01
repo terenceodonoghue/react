@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import { useTheme } from '@emotion/react';
 import { rem } from 'polished';
 import type { FunctionComponent } from 'react';
@@ -52,9 +51,7 @@ const MetricCard: FunctionComponent<MetricCardProps> = ({
         >
           {value}
         </span>
-        <Text as="span" variant="p2">
-          {label}
-        </Text>
+        <Text variant="p2">{label}</Text>
       </div>
     </Card>
   );

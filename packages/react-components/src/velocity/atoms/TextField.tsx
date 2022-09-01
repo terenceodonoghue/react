@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import { useTheme } from '@emotion/react';
 import { rem, rgba, transitions } from 'polished';
 import type { InputHTMLAttributes, FunctionComponent } from 'react';
@@ -26,7 +25,6 @@ const TextField: FunctionComponent<TextFieldProps> = ({
             display: 'block',
             margin: '0 0 8px',
           }}
-          as="span"
           variant="c1"
         >
           {label}

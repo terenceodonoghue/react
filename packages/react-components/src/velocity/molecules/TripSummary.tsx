@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import { useTheme } from '@emotion/react';
 import { rem, rgba } from 'polished';
 import type { FunctionComponent, HTMLAttributes } from 'react';
@@ -61,20 +60,20 @@ const TripSummary: FunctionComponent<TripSummaryProps> = ({
           overflow: 'hidden',
         }}
       >
-        <Text css={{ lineHeight: rem(22) }} as="span" variant="h4" truncate>
+        <Text css={{ lineHeight: rem(22) }} variant="h4" truncate>
           {origin}
         </Text>
-        <Text as="span" variant="p2" truncate>
+        <Text variant="p2" truncate>
           {originAddress}
         </Text>
       </div>
       <div
         css={{ display: 'flex', flexDirection: 'column', overflow: 'hidden' }}
       >
-        <Text css={{ lineHeight: rem(22) }} as="span" variant="h4" truncate>
+        <Text css={{ lineHeight: rem(22) }} variant="h4" truncate>
           {destination}
         </Text>
-        <Text as="span" variant="p2" truncate>
+        <Text variant="p2" truncate>
           {destinationAddress}
         </Text>
       </div>

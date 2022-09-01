@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import { useTheme } from '@emotion/react';
 import { rem, rgba } from 'polished';
 import type { FunctionComponent } from 'react';
@@ -52,12 +51,10 @@ const IntegrationCard: FunctionComponent<IntegrationCardProps> = ({
           <Icon size={30} />
         </div>
         <div css={{ display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
-          <Text css={{ lineHeight: rem(22) }} as="span" variant="h4">
+          <Text css={{ lineHeight: rem(22) }} variant="h4">
             {name}
           </Text>
-          <Text as="span" variant="p2">
-            {description}
-          </Text>
+          <Text variant="p2">{description}</Text>
         </div>
       </Box>
     </Indicator>

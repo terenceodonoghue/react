@@ -7,6 +7,7 @@ module.exports = {
     emotionAlias: false,
   },
   core: { builder: '@storybook/builder-vite' },
+  features: { previewMdx2: true },
   stories: [
     '../stories/**/*.stories.mdx',
     '../stories/**/*.stories.@(js|jsx|ts|tsx)',
@@ -18,8 +19,8 @@ module.exports = {
   ],
   framework: '@storybook/react',
   staticDirs: ['./public'],
-  viteFinal: (config) =>
-    mergeConfig(config, {
+  viteFinal: (config) => {
+    const mergedConfig = mergeConfig(config, {
       esbuild: {
         logOverride: { 'this-is-undefined-in-esm': 'silent' },
       },
@@ -39,5 +40,23 @@ module.exports = {
           ),
         },
       },
-    }),
+    });
+
+    return {
+      ...mergedConfig,
+      plugins: [
+        // Filter out `vite:react-jsx` per suggestion in `plugin-react`...
+        // "You should stop using "vite:react-jsx" since this plugin conflicts with it."
+        // Implementation suggestion from: https://github.com/storybookjs/builder-vite/issues/113#issuecomment-940190931
+        ...config.plugins.filter(
+          (plugin) =>
+            !(
+              Array.isArray(plugin) &&
+              plugin.some((p) => p.name === 'vite:react-jsx')
+            ),
+        ),
+        react({ jsxImportSource: '@emotion/react' }),
+      ],
+    };
+  },
 };

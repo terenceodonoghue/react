@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import { type CSSObject, useTheme } from '@emotion/react';
 import type { Property } from 'csstype';
 import { rem } from 'polished';
@@ -13,7 +12,7 @@ export interface TextProps extends HTMLAttributes<HTMLElement> {
 
 const Text: FunctionComponent<TextProps> = ({
   align,
-  as: Tag = 'p',
+  as: Tag = 'span',
   truncate,
   variant = 'p1',
   ...props

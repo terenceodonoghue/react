@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import type { Property } from 'csstype';
 import type { FunctionComponent, HTMLAttributes } from 'react';
 

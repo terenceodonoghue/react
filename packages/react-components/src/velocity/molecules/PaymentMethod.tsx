@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import { type CSSObject, useTheme } from '@emotion/react';
 import { FunctionComponent, useMemo } from 'react';
 

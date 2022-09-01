@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import { useTheme } from '@emotion/react';
 import { rgba, transitions } from 'polished';
 import type { InputHTMLAttributes, FunctionComponent } from 'react';

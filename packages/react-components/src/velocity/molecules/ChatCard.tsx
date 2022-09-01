@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import { useTheme } from '@emotion/react';
 import { transitions } from 'polished';
 import type { FunctionComponent, HTMLAttributes } from 'react';
@@ -54,13 +53,13 @@ const ChatCard: FunctionComponent<ChatCardProps> = ({
           flex: 1,
         }}
       >
-        <Text as="span" variant="h4" truncate>
+        <Text variant="h4" truncate>
           {name}
         </Text>
-        <Text as="span" variant="p2" align="right">
+        <Text variant="p2" align="right">
           {time}
         </Text>
-        <Text css={{ gridColumn: '1 / 3' }} as="span" variant="p2" truncate>
+        <Text css={{ gridColumn: '1 / 3' }} variant="p2" truncate>
           {message}
         </Text>
       </div>

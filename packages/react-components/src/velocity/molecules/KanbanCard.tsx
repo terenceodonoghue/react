@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import { useTheme } from '@emotion/react';
 import { linearGradient, transitions } from 'polished';
 import type { FunctionComponent } from 'react';
@@ -50,16 +49,14 @@ const KanbanCard: FunctionComponent<KanbanCardProps> = ({
       }}
       {...props}
     >
-      <Text as="span" variant="h4">
-        {name}
-      </Text>
-      <Text as="span" variant="h4" align="right">
+      <Text variant="h4">{name}</Text>
+      <Text variant="h4" align="right">
         {cost}
       </Text>
-      <Text as="span" variant="p2" truncate>
+      <Text variant="p2" truncate>
         {description}
       </Text>
-      <Text as="span" variant="p2" align="right">
+      <Text variant="p2" align="right">
         {date}
       </Text>
     </Card>

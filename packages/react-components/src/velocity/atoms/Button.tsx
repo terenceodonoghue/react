@@ -1,4 +1,3 @@
-/** @jsxImportSource @emotion/react */
 import { type CSSObject, useTheme } from '@emotion/react';
 import { darken, rgba, rem, transitions } from 'polished';
 import type { ButtonHTMLAttributes, FunctionComponent } from 'react';
