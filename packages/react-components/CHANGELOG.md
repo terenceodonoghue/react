@@ -1,5 +1,19 @@
 # @terenceodonoghue/react-components
 
+## 5.1.0
+
+### Minor Changes
+
+- 5f7a2ba: Add PaymentMethod component
+- 2b9a51a: Add IconButton component
+- 61e3fe6: Add PassengerInfo component
+- ec4b1e8: Add Customer component
+
+### Patch Changes
+
+- ebcba62: Correctly apply Box padding when value is zero
+- ad56ab6: Add PayPal, Visa payment methods
+
 ## 5.0.0
 
 ### Major Changes
