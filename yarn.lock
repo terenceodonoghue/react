@@ -5085,7 +5085,7 @@ __metadata:
   resolution: "@terenceodonoghue/react-components@workspace:packages/react-components"
   dependencies:
     "@emotion/react": "npm:^11.10.0"
-    "@terenceodonoghue/react-icons": "npm:^2.1.2"
+    "@terenceodonoghue/react-icons": "npm:^2.1.3"
     "@types/lodash-es": "npm:^4.17.6"
     concurrently: "npm:^7.3.0"
     csstype: "npm:^3.1.0"
@@ -5116,16 +5116,6 @@ __metadata:
     react-dom: "*"
   languageName: unknown
   linkType: soft
-
-"@terenceodonoghue/react-icons@npm:^2.1.2":
-  version: 2.1.2
-  resolution: "@terenceodonoghue/react-icons@npm:2.1.2::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40terenceodonoghue%2Freact-icons%2F2.1.2%2Fb836b85bd7634625fb3bad4d2e061c8a813063ec"
-  peerDependencies:
-    react: "*"
-    react-dom: "*"
-  checksum: 2251a436153759fbe2b2e0c8e347acb516f0a35664e9bf72904d646b6c678edf1cd2bcf25d7b2ca82eae223638e71cc20a72e0996cc154d3e9c432c41719b714
-  languageName: node
-  linkType: hard
 
 "@terenceodonoghue/react-icons@npm:^2.1.3":
   version: 2.1.3

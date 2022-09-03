@@ -9,7 +9,7 @@ export interface IconButtonProps
 }
 
 const IconButton: FunctionComponent<IconButtonProps> = ({
-  variant = 'rounded',
+  variant = 'square',
   ...props
 }) => {
   const { color, font, transition } = useTheme();
@@ -28,11 +28,8 @@ const IconButton: FunctionComponent<IconButtonProps> = ({
       css={[
         css[variant],
         {
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
           border: 'none',
-          padding: 5,
+          padding: 4,
           background: 'none',
           fontWeight: font.weight.medium,
           cursor: 'pointer',

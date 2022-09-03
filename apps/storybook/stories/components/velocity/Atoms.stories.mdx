@@ -413,15 +413,15 @@ Icon buttons are commonly found in app bars and toolbars.
 import { IconButton } from '@terenceodonoghue/react-components/velocity';
 ```
 
-The `variant` prop defines one of two styles: rounded (default) or square. Standard [button](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button) attributes are also supported.
+The `variant` prop defines one of two styles: square (default) or rounded. Standard [button](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button) attributes are also supported.
 
 <Canvas>
   <Story name="IconButton">
     <IconButton>
-      <Avatar src={faker.image.avatar()} size={40} />
-    </IconButton>
-    <IconButton variant="square">
       <Menu color="#BFC5D2" size={18} />
+    </IconButton>
+    <IconButton variant="rounded">
+      <Avatar src={faker.image.avatar()} size={40} />
     </IconButton>
   </Story>
 </Canvas>
