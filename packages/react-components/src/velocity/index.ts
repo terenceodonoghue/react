@@ -7,6 +7,10 @@ export { default as Box, type BoxProps } from './atoms/Box.js';
 export { default as Button, type ButtonProps } from './atoms/Button.js';
 export { default as Card, type CardProps } from './atoms/Card.js';
 export {
+  default as IconButton,
+  type IconButtonProps,
+} from './atoms/IconButton.js';
+export {
   default as Indicator,
   type IndicatorProps,
 } from './atoms/Indicator.js';

@@ -16,6 +16,7 @@ import {
   Box,
   Button,
   Card,
+  IconButton,
   Indicator,
   List,
   Logo,
@@ -37,6 +38,7 @@ import {
   Mail,
   Map,
   Marker,
+  Menu,
   Notifications,
   Service,
   Settings,
@@ -400,6 +402,27 @@ There's also a `compact` version.
     <Backdrop color="#F7C137" compact>
       <Dynamic color="#F7C137" size={16} />
     </Backdrop>
+  </Story>
+</Canvas>
+
+## Icon Button
+
+Icon buttons are commonly found in app bars and toolbars.
+
+```javascript
+import { IconButton } from '@terenceodonoghue/react-components/velocity';
+```
+
+The `variant` prop defines one of two styles: rounded (default) or square. Standard [button](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button) attributes are also supported.
+
+<Canvas>
+  <Story name="IconButton">
+    <IconButton>
+      <Avatar src={faker.image.avatar()} size={40} />
+    </IconButton>
+    <IconButton variant="square">
+      <Menu color="#BFC5D2" size={18} />
+    </IconButton>
   </Story>
 </Canvas>
 
