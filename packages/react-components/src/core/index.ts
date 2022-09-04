@@ -1,4 +1,3 @@
-export { default as Flex } from './Flex.js';
 export {
   default as GitHubCorner,
   type GitHubCornerProps,

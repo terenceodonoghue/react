@@ -10,6 +10,7 @@ import {
   IntegrationCard,
   Logo,
   MetricCard,
+  NavItem,
   KanbanCard,
   PaymentMethod,
   Setting,
@@ -21,7 +22,7 @@ import {
 } from '@terenceodonoghue/react-components/velocity';
 import velocity from '@terenceodonoghue/react-components/velocity.css';
 import { InVision, GitHub } from '@terenceodonoghue/react-icons/brands';
-import * as Velocity from '@terenceodonoghue/react-icons/velocity';
+import { Dashboard } from '@terenceodonoghue/react-icons/velocity';
 import {
   Check,
   Dynamic,
@@ -89,6 +90,13 @@ import {
             'repeat(2, 1fr)',
             'repeat(3, 1fr)',
           ],
+        },
+        '.nav-item': {
+          display: 'grid',
+          gridTemplateColumns: 'repeat(2, min-content)',
+          gap: 16,
+          margin: '0 auto',
+          maxWidth: 'fit-content'
         },
         '.payment-method': {
           display: 'grid',
@@ -199,6 +207,26 @@ import { Driver } from '@terenceodonoghue/react-components/velocity';
       totalEarnings="$5,342"
       totalDistance="945 miles"
     />
+  </Story>
+</Canvas>
+
+## NavItem
+
+<Canvas>
+  <Story
+    name="NavItem"
+    decorators={[
+      (Story) => (
+        <div className="nav-item">
+          <Story />
+        </div>
+      ),
+    ]}
+  >
+    <NavItem icon={Dashboard} label="Overview" compact selected />
+    <NavItem icon={Dashboard} label="Overview" selected />
+    <NavItem icon={Dashboard} label="Overview" compact />
+    <NavItem icon={Dashboard} label="Overview" />
   </Story>
 </Canvas>
 

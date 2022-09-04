@@ -46,6 +46,7 @@ export {
   default as MetricCard,
   type MetricCardProps,
 } from './molecules/MetricCard.js';
+export { default as NavItem, type NavItemProps } from './molecules/NavItem.js';
 export {
   default as PaymentMethod,
   type PaymentMethodProps,
