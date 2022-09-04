@@ -64,6 +64,7 @@ export {
   type TripSummaryProps,
 } from './molecules/TripSummary.js';
 
+export { default as AppBar, type AppBarProps } from './organisms/AppBar.js';
 export {
   default as ChatList,
   type ChatListProps,

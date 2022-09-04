@@ -35,6 +35,9 @@ declare module '@emotion/react' {
         medium: number;
       };
     };
+    page: {
+      maxWidth: number;
+    };
     transition: {
       quickly: string;
       slowly: string;

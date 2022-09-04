@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 import { Global } from '@terenceodonoghue/react-components/core';
 import {
+  AppBar,
   ChatList,
   Logo,
   PassengerInfo,
@@ -66,6 +67,26 @@ import {
 # Organisms
 
 Organisms are relatively complex UI components composed of groups of molecules and/or atoms and/or other organisms. These organisms form distinct sections of an interface.
+
+## App Bar
+
+```javascript
+import { AppBar } from '@terenceodonoghue/react-components/velocity';
+```
+
+<Canvas>
+  <Story name="AppBar">
+    <AppBar
+      avatar={faker.image.avatar()}
+      drawerHandler={() => null}
+      messageHandler={() => null}
+      notificationHandler={() => null}
+      profileHandler={() => null}
+      hasMessage
+      hasNotification
+    />
+  </Story>
+</Canvas>
 
 ## Chat List
 

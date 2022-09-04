@@ -5,14 +5,9 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FunctionComponent, useEffect, useState } from 'react';
 
+import { GitHubCorner, Global } from '@terenceodonoghue/react-components/core';
 import {
-  Flex,
-  GitHubCorner,
-  Global,
-} from '@terenceodonoghue/react-components/core';
-import {
-  Avatar,
-  Logo,
+  AppBar,
   ThemeProvider,
   mq,
 } from '@terenceodonoghue/react-components/velocity';
@@ -27,10 +22,7 @@ import {
   Vehicles,
 } from '@terenceodonoghue/react-icons/velocity';
 
-import AppBar from '../components/core/AppBar/AppBar';
 import { DrawerItem } from '../components/core/Drawer';
-import IconButton from '../components/core/IconButton';
-import { MenuIcon } from '../components/icons';
 
 const Drawer = dynamic(() => import('../components/core/Drawer'), {
   ssr: false,
@@ -69,53 +61,15 @@ const App: FunctionComponent<AppProps> = ({ Component, pageProps }) => {
         color="#151513"
         url="https://github.com/terenceodonoghue/react/tree/master/apps/velocity"
       />
-      <AppBar>
-        <Flex css={{ flex: 1 }} alignItems="center">
-          <IconButton
-            aria-label="menu"
-            css={({ color }) => ({
-              color: color.neutral[400],
-              height: 28,
-              width: 28,
-              zIndex: 1300,
-            })}
-            onClick={() => toggleDrawer(!drawerOpen)}
-          >
-            <MenuIcon color="currentColor" css={{ height: 16, width: 18 }} />
-          </IconButton>
-          <Flex
-            css={mq({
-              left: [0, 0, 80],
-              maxWidth: 1360,
-              padding: ['0 24px', '0 30px', '0 110px'],
-              position: 'absolute',
-              right: 0,
-            })}
-            alignItems="center"
-          >
-            <Flex
-              css={mq({
-                flex: 1,
-                justifyContent: ['initial', 'center', 'flex-start'],
-                visibility: ['hidden', 'visible'],
-              })}
-            >
-              <Logo />
-            </Flex>
-            <IconButton
-              aria-label="user"
-              css={{ borderRadius: '50%', flexGrow: 0 }}
-            >
-              <Avatar
-                alt={faker.name.fullName()}
-                size={40}
-                src={faker.image.avatar()}
-                variant="rounded"
-              />
-            </IconButton>
-          </Flex>
-        </Flex>
-      </AppBar>
+      <AppBar
+        avatar={faker.image.avatar()}
+        drawerHandler={() => toggleDrawer(!drawerOpen)}
+        messageHandler={() => null}
+        notificationHandler={() => null}
+        profileHandler={() => null}
+        hasMessage
+        hasNotification
+      />
       <Drawer
         avatar={faker.image.avatar()}
         name={faker.name.fullName()}
