@@ -36,6 +36,9 @@ export const defaultTheme: Theme = {
       medium: 500,
     },
   },
+  page: {
+    maxWidth: 1360,
+  },
   transition: {
     quickly: '250ms cubic-bezier(0.4, 0, 0.2, 1)',
     slowly: '300ms cubic-bezier(0.4, 0, 0.6, 1)',
