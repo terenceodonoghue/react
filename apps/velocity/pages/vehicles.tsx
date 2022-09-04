@@ -2,7 +2,6 @@ import { Interpolation, Theme } from '@emotion/react';
 import { NextPage } from 'next';
 import Head from 'next/head';
 
-import { Flex } from '@terenceodonoghue/react-components/core';
 import { Card, TextField } from '@terenceodonoghue/react-components/velocity';
 
 import Container from '../components/core/Container';
@@ -25,10 +24,10 @@ const VehiclesPage: NextPage = () => {
         <title>Velocity | Vehicles Dashboard</title>
       </Head>
       <Container heading="Vehicles Dashboard">
-        <Flex>
+        <div css={{ display: 'flex' }}>
           <div css={{ flex: 4 }} />
           <Card css={{ flex: 1 }} caption="Filter">
-            <Flex direction="column" gap={24}>
+            <div css={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
               <Slider primary="Trips taken" secondary="753" />
               <Slider primary="Service due" secondary="14 days" />
               <TextField
@@ -48,9 +47,9 @@ const VehiclesPage: NextPage = () => {
                 label="Location"
                 placeholder="Location"
               />
-            </Flex>
+            </div>
           </Card>
-        </Flex>
+        </div>
       </Container>
     </>
   );

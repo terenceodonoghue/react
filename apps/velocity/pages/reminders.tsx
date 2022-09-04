@@ -12,7 +12,6 @@ import {
   DropResult,
 } from 'react-beautiful-dnd';
 
-import { Flex } from '@terenceodonoghue/react-components/core';
 import {
   Card,
   KanbanCard,
@@ -192,7 +191,7 @@ const RemindersPage: NextPage = () => {
         <title>Velocity | Service Reminders</title>
       </Head>
       <Container heading="Service Reminders">
-        <Flex css={{ margin: '12px 0', overflow: 'scroll' }}>
+        <div css={{ display: 'flex', margin: '12px 0', overflow: 'scroll' }}>
           <DragDropContext
             onDragEnd={(dragResult): void =>
               onDragEnd(dragResult, tickets, setTickets)
@@ -269,13 +268,13 @@ const RemindersPage: NextPage = () => {
               );
             })}
           </DragDropContext>
-        </Flex>
-        <Flex>
+        </div>
+        <div css={{ display: 'flex' }}>
           <Card
             css={{ flexBasis: 655, flexShrink: 0 }}
             caption="Service Centers"
           />
-          <Flex css={{ flexGrow: 1 }} direction="column">
+          <div css={{ display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
             <Card caption="Vehicle Service Status" />
             <TopDrivers
               drivers={[
@@ -306,8 +305,8 @@ const RemindersPage: NextPage = () => {
                 totalDistance: `${numeral(totalDistance).format('0,0')} miles`,
               }))}
             />
-          </Flex>
-        </Flex>
+          </div>
+        </div>
       </Container>
     </>
   );

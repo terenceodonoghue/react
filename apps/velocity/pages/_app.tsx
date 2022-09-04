@@ -8,6 +8,7 @@ import { FunctionComponent, useEffect, useState } from 'react';
 import { GitHubCorner, Global } from '@terenceodonoghue/react-components/core';
 import {
   AppBar,
+  NavItem,
   ThemeProvider,
   mq,
 } from '@terenceodonoghue/react-components/velocity';
@@ -76,13 +77,12 @@ const App: FunctionComponent<AppProps> = ({ Component, pageProps }) => {
         open={drawerOpen}
       >
         <Link href="/">
-          <DrawerItem
+          <NavItem
             compact={!drawerOpen}
             icon={Dashboard}
+            label="Overview"
             selected={router.pathname === '/'}
-          >
-            Overview
-          </DrawerItem>
+          />
         </Link>
         <Link href="/analytics">
           <DrawerItem
