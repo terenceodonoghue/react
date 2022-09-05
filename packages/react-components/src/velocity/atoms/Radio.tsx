@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { useTheme } from '@emotion/react';
 import { rgba } from 'polished';
-import type { InputHTMLAttributes, FunctionComponent } from 'react';
+import { InputHTMLAttributes, FunctionComponent, forwardRef } from 'react';
 
 import Text from '../primitives/Text.js';
 
@@ -9,14 +9,10 @@ export interface RadioProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;
 }
 
-const Radio: FunctionComponent<RadioProps> = ({
-  className,
-  disabled,
-  id,
-  label,
-  style,
-  ...props
-}) => {
+const Radio: FunctionComponent<RadioProps> = forwardRef<
+  HTMLInputElement,
+  RadioProps
+>(({ className, disabled, id, label, style, ...props }, ref) => {
   const { color } = useTheme();
 
   return (
@@ -40,6 +36,7 @@ const Radio: FunctionComponent<RadioProps> = ({
         }}
         disabled={disabled}
         id={id}
+        ref={ref}
         type="radio"
         {...props}
       />
@@ -67,6 +64,6 @@ const Radio: FunctionComponent<RadioProps> = ({
       </Text>
     </label>
   );
-};
+});
 
 export default Radio;

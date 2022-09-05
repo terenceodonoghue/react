@@ -1,17 +1,17 @@
 /** @jsxImportSource @emotion/react */
 import { type CSSObject, useTheme } from '@emotion/react';
 import { rgba, transitions } from 'polished';
-import type { ButtonHTMLAttributes, FunctionComponent } from 'react';
+import { ButtonHTMLAttributes, forwardRef, FunctionComponent } from 'react';
 
 export interface IconButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'rounded' | 'square';
 }
 
-const IconButton: FunctionComponent<IconButtonProps> = ({
-  variant = 'square',
-  ...props
-}) => {
+const IconButton: FunctionComponent<IconButtonProps> = forwardRef<
+  HTMLButtonElement,
+  IconButtonProps
+>(({ variant = 'square', ...props }, ref) => {
   const { color, font, transition } = useTheme();
 
   const css: Record<string, CSSObject> = {
@@ -46,10 +46,11 @@ const IconButton: FunctionComponent<IconButtonProps> = ({
           },
         },
       ]}
+      ref={ref}
       type="button"
       {...props}
     />
   );
-};
+});
 
 export default IconButton;

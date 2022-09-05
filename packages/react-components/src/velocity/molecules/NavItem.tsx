@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { useTheme } from '@emotion/react';
 import { rgba, transitions } from 'polished';
-import type { FunctionComponent, HTMLAttributes } from 'react';
+import { forwardRef, FunctionComponent, HTMLAttributes } from 'react';
 
 import type { ReactIcon } from '@terenceodonoghue/react-icons';
 
@@ -14,13 +14,10 @@ export interface NavItemProps extends HTMLAttributes<HTMLLIElement> {
   selected?: boolean;
 }
 
-const NavItem: FunctionComponent<NavItemProps> = ({
-  compact,
-  icon: Icon,
-  label,
-  selected,
-  ...props
-}) => {
+const NavItem: FunctionComponent<NavItemProps> = forwardRef<
+  HTMLLIElement,
+  NavItemProps
+>(({ compact, icon: Icon, label, selected, ...props }, ref) => {
   const { color, transition } = useTheme();
 
   return (
@@ -40,6 +37,7 @@ const NavItem: FunctionComponent<NavItemProps> = ({
           backgroundColor: !selected ? rgba(color.primary, 0.1) : undefined,
         },
       }}
+      ref={ref}
       {...props}
     >
       {Icon ? (
@@ -59,6 +57,6 @@ const NavItem: FunctionComponent<NavItemProps> = ({
       </Text>
     </li>
   );
-};
+});
 
 export default NavItem;

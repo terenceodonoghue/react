@@ -1,16 +1,14 @@
 /** @jsxImportSource @emotion/react */
 import { useTheme } from '@emotion/react';
 import { rgba, transitions } from 'polished';
-import type { InputHTMLAttributes, FunctionComponent } from 'react';
+import { InputHTMLAttributes, FunctionComponent, forwardRef } from 'react';
 
 export type SwitchProps = InputHTMLAttributes<HTMLInputElement>;
 
-const Switch: FunctionComponent<SwitchProps> = ({
-  className,
-  id,
-  style,
-  ...props
-}) => {
+const Switch: FunctionComponent<SwitchProps> = forwardRef<
+  HTMLInputElement,
+  SwitchProps
+>(({ className, id, style, ...props }, ref) => {
   const { color, transition } = useTheme();
 
   return (
@@ -23,6 +21,7 @@ const Switch: FunctionComponent<SwitchProps> = ({
       <input
         css={{ margin: 0, height: 0, width: 0, opacity: 0 }}
         id={id}
+        ref={ref}
         type="checkbox"
         {...props}
       />
@@ -62,6 +61,6 @@ const Switch: FunctionComponent<SwitchProps> = ({
       />
     </label>
   );
-};
+});
 
 export default Switch;

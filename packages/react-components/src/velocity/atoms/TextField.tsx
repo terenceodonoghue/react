@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { useTheme } from '@emotion/react';
 import { rem, rgba, transitions } from 'polished';
-import type { InputHTMLAttributes, FunctionComponent } from 'react';
+import { InputHTMLAttributes, FunctionComponent, forwardRef } from 'react';
 
 import Text from '../primitives/Text.js';
 
@@ -9,13 +9,10 @@ export interface TextFieldProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string;
 }
 
-const TextField: FunctionComponent<TextFieldProps> = ({
-  className,
-  id,
-  label,
-  style,
-  ...props
-}) => {
+const TextField: FunctionComponent<TextFieldProps> = forwardRef<
+  HTMLInputElement,
+  TextFieldProps
+>(({ className, id, label, style, ...props }, ref) => {
   const { color, font, transition } = useTheme();
 
   return (
@@ -56,10 +53,11 @@ const TextField: FunctionComponent<TextFieldProps> = ({
           },
         }}
         id={id}
+        ref={ref}
         {...props}
       />
     </label>
   );
-};
+});
 
 export default TextField;

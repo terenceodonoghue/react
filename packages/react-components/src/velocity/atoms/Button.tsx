@@ -1,16 +1,16 @@
 /** @jsxImportSource @emotion/react */
 import { type CSSObject, useTheme } from '@emotion/react';
 import { darken, rgba, rem, transitions } from 'polished';
-import type { ButtonHTMLAttributes, FunctionComponent } from 'react';
+import { ButtonHTMLAttributes, forwardRef, FunctionComponent } from 'react';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'contained' | 'outlined' | 'text';
 }
 
-const Button: FunctionComponent<ButtonProps> = ({
-  variant = 'contained',
-  ...props
-}) => {
+const Button: FunctionComponent<ButtonProps> = forwardRef<
+  HTMLButtonElement,
+  ButtonProps
+>(({ variant = 'contained', ...props }, ref) => {
   const { color, font, transition } = useTheme();
 
   const css: Record<string, CSSObject> = {
@@ -59,10 +59,11 @@ const Button: FunctionComponent<ButtonProps> = ({
           },
         },
       ]}
+      ref={ref}
       type="button"
       {...props}
     />
   );
-};
+});
 
 export default Button;
