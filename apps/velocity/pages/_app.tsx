@@ -85,58 +85,52 @@ const App: FunctionComponent<AppProps> = ({ Component, pageProps }) => {
           />
         </Link>
         <Link href="/analytics">
-          <DrawerItem
+          <NavItem
             compact={!drawerOpen}
             icon={Analytics}
+            label="Analytics"
             selected={router.pathname === '/analytics'}
-          >
-            Analytics
-          </DrawerItem>
+          />
         </Link>
         <Link href="/vehicles">
-          <DrawerItem
+          <NavItem
             compact={!drawerOpen}
             icon={Vehicles}
+            label="Vehicles"
             selected={router.pathname === '/vehicles'}
-          >
-            Vehicles
-          </DrawerItem>
+          />
         </Link>
         <Link href="/reminders">
-          <DrawerItem
+          <NavItem
             compact={!drawerOpen}
             icon={Service}
+            label="Service"
             selected={router.pathname === '/reminders'}
-          >
-            Service
-          </DrawerItem>
+          />
         </Link>
         <Link href="/map">
-          <DrawerItem
+          <NavItem
             compact={!drawerOpen}
             icon={Map}
+            label="Map"
             selected={router.pathname === '/map'}
-          >
-            Map
-          </DrawerItem>
+          />
         </Link>
         <Link href="/chat">
-          <DrawerItem
+          <NavItem
             compact={!drawerOpen}
             icon={Mail}
+            label="Chat"
             selected={router.pathname === '/chat'}
-          >
-            Chat
-          </DrawerItem>
+          />
         </Link>
         <Link href="/settings">
-          <DrawerItem
+          <NavItem
             compact={!drawerOpen}
             icon={Settings}
+            label="Settings"
             selected={router.pathname === '/settings'}
-          >
-            Settings
-          </DrawerItem>
+          />
         </Link>
       </Drawer>
       <main>
