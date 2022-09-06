@@ -1,5 +1,25 @@
 # @terenceodonoghue/react-components
 
+## 6.0.0
+
+### Major Changes
+
+- a266277: Remove Flex component
+
+### Minor Changes
+
+- e08c784: Add Integrations component
+- faa2107: Add AppBar component
+- d4648d3: Add Notifications component
+- b4f4a15: Add Theme component
+- a77681e: Add NavItem component
+
+### Patch Changes
+
+- 13d16c1: Add ref forwarding to input components
+- 9689280: Add page properties to theme
+- dd82fd7: Set default IconButton variant to square
+
 ## 5.1.0
 
 ### Minor Changes
