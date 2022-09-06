@@ -61,6 +61,7 @@ const App: FunctionComponent<AppProps> = ({ Component, pageProps }) => {
         url="https://github.com/terenceodonoghue/react/tree/master/apps/velocity"
       />
       <AppBar
+        css={{ zIndex: 1300 }}
         avatar={faker.image.avatar()}
         drawerHandler={() => toggleDrawer(!drawerOpen)}
         messageHandler={() => null}
