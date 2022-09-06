@@ -6,7 +6,7 @@ import {
   Card,
   Integrations,
   mq,
-  Setting,
+  Notifications,
   Text,
   TextField,
   Theme,
@@ -130,45 +130,27 @@ const SettingsPage: NextPage = () => {
               },
             ]}
           />
-          <Card caption="Notifications">
-            <Text>Control your notification and auto-follow settings.</Text>
-            <div
-              css={mq({
-                display: 'grid',
-                gridAutoFlow: [undefined, 'column'],
-                gridTemplateColumns: [
-                  'repeat(1, 1fr)',
-                  'repeat(2, min-content)',
-                ],
-                gridTemplateRows: [undefined, 'repeat(2, 1fr)'],
-                columnGap: [undefined, 110],
-                rowGap: 20,
-                marginTop: [24, 32],
-              })}
-            >
-              {[
-                {
-                  name: 'Email Notification',
-                  description: 'Commits data and history',
-                },
-                {
-                  name: 'Push Notification',
-                  description: 'Commits data and history',
-                  defaultChecked: true,
-                },
-                {
-                  name: 'Monthly Reports',
-                  description: 'Commits data and history',
-                },
-                {
-                  name: 'Quarter Reports',
-                  description: 'Commits data and history',
-                },
-              ].map((setting) => (
-                <Setting key={setting.name} {...setting} />
-              ))}
-            </div>
-          </Card>
+          <Notifications
+            options={[
+              {
+                name: 'Email Notification',
+                description: 'Commits data and history',
+              },
+              {
+                name: 'Push Notification',
+                description: 'Commits data and history',
+                defaultChecked: true,
+              },
+              {
+                name: 'Monthly Reports',
+                description: 'Commits data and history',
+              },
+              {
+                name: 'Quarter Reports',
+                description: 'Commits data and history',
+              },
+            ]}
+          />
           <Theme
             options={[
               {

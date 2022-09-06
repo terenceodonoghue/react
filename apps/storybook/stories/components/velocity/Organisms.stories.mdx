@@ -8,6 +8,7 @@ import {
   ChatList,
   Integrations,
   Logo,
+  Notifications,
   PassengerInfo,
   Theme,
   ThemeProvider,
@@ -300,6 +301,38 @@ import { Integrations } from '@terenceodonoghue/react-components/velocity';
           name: 'Medium',
           description: 'Followers count',
           icon: Medium,
+        },
+      ]}
+    />
+  </Story>
+</Canvas>
+
+## Notifications
+
+```javascript
+import { Notifications } from '@terenceodonoghue/react-components/velocity';
+```
+
+<Canvas data-has-bg>
+  <Story name="Notifications">
+    <Notifications
+      options={[
+        {
+          name: 'Email Notification',
+          description: 'Commits data and history',
+        },
+        {
+          name: 'Push Notification',
+          description: 'Commits data and history',
+          defaultChecked: true,
+        },
+        {
+          name: 'Monthly Reports',
+          description: 'Commits data and history',
+        },
+        {
+          name: 'Quarter Reports',
+          description: 'Commits data and history',
         },
       ]}
     />

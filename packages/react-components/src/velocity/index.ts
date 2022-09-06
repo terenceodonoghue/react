@@ -75,6 +75,10 @@ export {
   type IntegrationsProps,
 } from './organisms/Integrations.js';
 export {
+  default as Notifications,
+  type NotificationsProps,
+} from './organisms/Notifications.js';
+export {
   default as PassengerInfo,
   type PassengerInfoProps,
 } from './organisms/PassengerInfo.js';
