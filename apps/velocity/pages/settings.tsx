@@ -9,8 +9,15 @@ import {
   Setting,
   Text,
   TextField,
-  ThemeCard,
+  Theme,
 } from '@terenceodonoghue/react-components/velocity';
+import {
+  GitHub,
+  InVision,
+  Medium,
+  Slack,
+  Twitter,
+} from '@terenceodonoghue/react-icons/brands';
 
 import Container from '../components/core/Container';
 
@@ -92,7 +99,37 @@ const SettingsPage: NextPage = () => {
             </div>
             <Button css={mq({ width: ['100%', 200] })}>Save Changes</Button>
           </Card>
-          <Integrations gitHub inVision />
+          <Integrations
+            providers={[
+              {
+                name: 'InVision',
+                description: 'Boards and prototypes',
+                icon: InVision,
+                enabled: true,
+              },
+              {
+                name: 'GitHub',
+                description: 'Commits data and history',
+                icon: GitHub,
+                enabled: true,
+              },
+              {
+                name: 'Slack',
+                description: 'Messages and channels',
+                icon: Slack,
+              },
+              {
+                name: 'Twitter',
+                description: 'Tweets data',
+                icon: Twitter,
+              },
+              {
+                name: 'Medium',
+                description: 'Followers count',
+                icon: Medium,
+              },
+            ]}
+          />
           <Card caption="Notifications">
             <Text>Control your notification and auto-follow settings.</Text>
             <div
@@ -132,39 +169,31 @@ const SettingsPage: NextPage = () => {
               ))}
             </div>
           </Card>
-          <Card caption="Theme">
-            <Text>Select a color scheme for your Velocity app.</Text>
-            <div
-              css={mq({
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, 120px)',
-                gap: [24, 32],
-                marginTop: [24, 32],
-              })}
-            >
-              <ThemeCard
-                label="Shelob"
-                colors={['#2e5bff', '#e0e7ff', '#8097b1']}
-                defaultChecked
-              />
-              <ThemeCard
-                label="Denethor"
-                colors={['#8c54ff', '#00c1d4', '#fad050']}
-              />
-              <ThemeCard
-                label="Quickbeam"
-                colors={['#00a4de', '#3b7ed5', '#00a550']}
-              />
-              <ThemeCard
-                label="Shadowfax"
-                colors={['#232a64', '#85c800', '#616266']}
-              />
-              <ThemeCard
-                label="Grima"
-                colors={['#a728a3', '#f7e0ff', '#7675ac']}
-              />
-            </div>
-          </Card>
+          <Theme
+            options={[
+              {
+                label: 'Shelob',
+                colors: ['#2e5bff', '#e0e7ff', '#8097b1'],
+                defaultChecked: true,
+              },
+              {
+                label: 'Denethor',
+                colors: ['#8c54ff', '#00c1d4', '#fad050'],
+              },
+              {
+                label: 'Quickbeam',
+                colors: ['#00a4de', '#3b7ed5', '#00a550'],
+              },
+              {
+                label: 'Shadowfax',
+                colors: ['#232a64', '#85c800', '#616266'],
+              },
+              {
+                label: 'Grima',
+                colors: ['#a728a3', '#f7e0ff', '#7675ac'],
+              },
+            ]}
+          />
         </div>
       </Container>
     </>

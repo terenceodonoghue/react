@@ -1,20 +1,15 @@
 /** @jsxImportSource @emotion/react */
 import type { FunctionComponent } from 'react';
 
-import {
-  GitHub,
-  InVision,
-  Medium,
-  Slack,
-  Twitter,
-} from '@terenceodonoghue/react-icons/brands';
-
 import Card, { type CardProps } from '../atoms/Card.js';
-import IntegrationCard from '../molecules/IntegrationCard.js';
+import IntegrationCard, {
+  type IntegrationCardProps,
+} from '../molecules/IntegrationCard.js';
 import Text from '../primitives/Text.js';
 import mq from '../utils/mq.js';
 
 export interface IntegrationsProps extends CardProps {
+  providers: IntegrationCardProps[];
   gitHub?: boolean;
   inVision?: boolean;
   medium?: boolean;
@@ -23,11 +18,7 @@ export interface IntegrationsProps extends CardProps {
 }
 
 const Integrations: FunctionComponent<IntegrationsProps> = ({
-  gitHub = false,
-  inVision = false,
-  medium = false,
-  twitter = false,
-  slack = false,
+  providers = [],
   ...props
 }) => (
   <Card caption="Integrations" {...props}>
@@ -46,39 +37,8 @@ const Integrations: FunctionComponent<IntegrationsProps> = ({
         marginTop: [24, 32],
       })}
     >
-      {[
-        {
-          name: 'InVision',
-          description: 'Boards and prototypes',
-          icon: InVision,
-          enabled: inVision,
-        },
-        {
-          name: 'GitHub',
-          description: 'Commits data and history',
-          icon: GitHub,
-          enabled: gitHub,
-        },
-        {
-          name: 'Slack',
-          description: 'Messages and channels',
-          icon: Slack,
-          enabled: slack,
-        },
-        {
-          name: 'Twitter',
-          description: 'Tweets data',
-          icon: Twitter,
-          enabled: twitter,
-        },
-        {
-          name: 'Medium',
-          description: 'Followers count',
-          icon: Medium,
-          enabled: medium,
-        },
-      ].map((integration) => (
-        <IntegrationCard key={integration.name} {...integration} />
+      {providers.map((provider) => (
+        <IntegrationCard key={provider.name} {...provider} />
       ))}
     </div>
   </Card>

@@ -9,13 +9,20 @@ import {
   Integrations,
   Logo,
   PassengerInfo,
+  Theme,
   ThemeProvider,
   TopDrivers,
   TripInfo,
   mq,
 } from '@terenceodonoghue/react-components/velocity';
 import velocity from '@terenceodonoghue/react-components/velocity.css';
-import * as Velocity from '@terenceodonoghue/react-icons/velocity';
+import {
+  GitHub,
+  InVision,
+  Medium,
+  Slack,
+  Twitter,
+} from '@terenceodonoghue/react-icons/brands';
 import {
   Check,
   Dynamic,
@@ -265,6 +272,72 @@ import { Integrations } from '@terenceodonoghue/react-components/velocity';
 
 <Canvas data-has-bg>
   <Story name="Integrations">
-    <Integrations gitHub inVision />
+    <Integrations
+      providers={[
+        {
+          name: 'InVision',
+          description: 'Boards and prototypes',
+          icon: InVision,
+          enabled: true,
+        },
+        {
+          name: 'GitHub',
+          description: 'Commits data and history',
+          icon: GitHub,
+          enabled: true,
+        },
+        {
+          name: 'Slack',
+          description: 'Messages and channels',
+          icon: Slack,
+        },
+        {
+          name: 'Twitter',
+          description: 'Tweets data',
+          icon: Twitter,
+        },
+        {
+          name: 'Medium',
+          description: 'Followers count',
+          icon: Medium,
+        },
+      ]}
+    />
+  </Story>
+</Canvas>
+
+## Theme
+
+```javascript
+import { Theme } from '@terenceodonoghue/react-components/velocity';
+```
+
+<Canvas data-has-bg>
+  <Story name="Theme">
+    <Theme
+      options={[
+        {
+          label: 'Shelob',
+          colors: ['#2e5bff', '#e0e7ff', '#8097b1'],
+          defaultChecked: true,
+        },
+        {
+          label: 'Denethor',
+          colors: ['#8c54ff', '#00c1d4', '#fad050'],
+        },
+        {
+          label: 'Quickbeam',
+          colors: ['#00a4de', '#3b7ed5', '#00a550'],
+        },
+        {
+          label: 'Shadowfax',
+          colors: ['#232a64', '#85c800', '#616266'],
+        },
+        {
+          label: 'Grima',
+          colors: ['#a728a3', '#f7e0ff', '#7675ac'],
+        },
+      ]}
+    />
   </Story>
 </Canvas>

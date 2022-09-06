@@ -78,6 +78,7 @@ export {
   default as PassengerInfo,
   type PassengerInfoProps,
 } from './organisms/PassengerInfo.js';
+export { default as Theme, type ThemeProps } from './organisms/Theme.js';
 export {
   default as TopDrivers,
   type TopDriversProps,
