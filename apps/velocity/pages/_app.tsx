@@ -23,8 +23,6 @@ import {
   Vehicles,
 } from '@terenceodonoghue/react-icons/velocity';
 
-import { DrawerItem } from '../components/core/Drawer';
-
 const Drawer = dynamic(() => import('../components/core/Drawer'), {
   ssr: false,
 });
