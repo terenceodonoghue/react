@@ -71,6 +71,10 @@ export {
   type ChatListProps,
 } from './organisms/ChatList.js';
 export {
+  default as Integrations,
+  type IntegrationsProps,
+} from './organisms/Integrations.js';
+export {
   default as PassengerInfo,
   type PassengerInfoProps,
 } from './organisms/PassengerInfo.js';

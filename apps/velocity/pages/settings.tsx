@@ -4,20 +4,13 @@ import Head from 'next/head';
 import {
   Button,
   Card,
-  IntegrationCard,
+  Integrations,
   mq,
   Setting,
   Text,
   TextField,
   ThemeCard,
 } from '@terenceodonoghue/react-components/velocity';
-import {
-  GitHub,
-  InVision,
-  Medium,
-  Slack,
-  Twitter,
-} from '@terenceodonoghue/react-icons/brands';
 
 import Container from '../components/core/Container';
 
@@ -99,55 +92,7 @@ const SettingsPage: NextPage = () => {
             </div>
             <Button css={mq({ width: ['100%', 200] })}>Save Changes</Button>
           </Card>
-          <Card caption="Integrations">
-            <Text>Manage third-party app integrations.</Text>
-            <div
-              css={mq({
-                display: 'grid',
-                gridTemplateColumns: [
-                  'repeat(1, minmax(0, 1fr))',
-                  'repeat(2, minmax(0, 1fr))',
-                  'repeat(3, minmax(0, 1fr))',
-                ],
-                gridAutoRows: '1fr',
-                rowGap: [16, 24],
-                columnGap: 48,
-                marginTop: [24, 32],
-              })}
-            >
-              {[
-                {
-                  name: 'InVision',
-                  description: 'Boards and prototypes',
-                  icon: InVision,
-                  enabled: true,
-                },
-                {
-                  name: 'GitHub',
-                  description: 'Commits data and history',
-                  icon: GitHub,
-                  enabled: true,
-                },
-                {
-                  name: 'Slack',
-                  description: 'Messages and channels',
-                  icon: Slack,
-                },
-                {
-                  name: 'Twitter',
-                  description: 'Tweets data',
-                  icon: Twitter,
-                },
-                {
-                  name: 'Medium',
-                  description: 'Followers count',
-                  icon: Medium,
-                },
-              ].map((integration) => (
-                <IntegrationCard key={integration.name} {...integration} />
-              ))}
-            </div>
-          </Card>
+          <Integrations gitHub inVision />
           <Card caption="Notifications">
             <Text>Control your notification and auto-follow settings.</Text>
             <div
