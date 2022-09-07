@@ -7,7 +7,6 @@ import { FunctionComponent, useEffect, useState } from 'react';
 import { GitHubCorner, Global } from '@terenceodonoghue/react-components/core';
 import {
   AppBar,
-  NavItem,
   ThemeProvider,
   mq,
 } from '@terenceodonoghue/react-components/velocity';
