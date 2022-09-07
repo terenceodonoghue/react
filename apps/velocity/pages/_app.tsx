@@ -1,7 +1,6 @@
 import { faker } from '@faker-js/faker';
 import { AppProps } from 'next/app';
 import dynamic from 'next/dynamic';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { FunctionComponent, useEffect, useState } from 'react';
 
@@ -22,6 +21,8 @@ import {
   Settings,
   Vehicles,
 } from '@terenceodonoghue/react-icons/velocity';
+
+import Link from '../components/Link';
 
 const Drawer = dynamic(() => import('../components/core/Drawer'), {
   ssr: false,
@@ -75,62 +76,33 @@ const App: FunctionComponent<AppProps> = ({ Component, pageProps }) => {
         name={faker.name.fullName()}
         open={drawerOpen}
       >
-        <Link href="/">
-          <NavItem
-            compact={!drawerOpen}
-            icon={Dashboard}
-            label="Overview"
-            selected={router.pathname === '/'}
-          />
-        </Link>
-        <Link href="/analytics">
-          <NavItem
-            compact={!drawerOpen}
-            icon={Analytics}
-            label="Analytics"
-            selected={router.pathname === '/analytics'}
-          />
-        </Link>
-        <Link href="/vehicles">
-          <NavItem
-            compact={!drawerOpen}
-            icon={Vehicles}
-            label="Vehicles"
-            selected={router.pathname === '/vehicles'}
-          />
-        </Link>
-        <Link href="/reminders">
-          <NavItem
-            compact={!drawerOpen}
-            icon={Service}
-            label="Service"
-            selected={router.pathname === '/reminders'}
-          />
-        </Link>
-        <Link href="/map">
-          <NavItem
-            compact={!drawerOpen}
-            icon={Map}
-            label="Map"
-            selected={router.pathname === '/map'}
-          />
-        </Link>
-        <Link href="/chat">
-          <NavItem
-            compact={!drawerOpen}
-            icon={Mail}
-            label="Chat"
-            selected={router.pathname === '/chat'}
-          />
-        </Link>
-        <Link href="/settings">
-          <NavItem
-            compact={!drawerOpen}
-            icon={Settings}
-            label="Settings"
-            selected={router.pathname === '/settings'}
-          />
-        </Link>
+        <Link to="/" compact={!drawerOpen} icon={Dashboard} label="Overview" />
+        <Link
+          to="/analytics"
+          compact={!drawerOpen}
+          icon={Analytics}
+          label="Analytics"
+        />
+        <Link
+          to="/vehicles"
+          compact={!drawerOpen}
+          icon={Vehicles}
+          label="Vehicles"
+        />
+        <Link
+          to="/reminders"
+          compact={!drawerOpen}
+          icon={Service}
+          label="Service"
+        />
+        <Link to="/map" compact={!drawerOpen} icon={Map} label="Map" />
+        <Link to="/chat" compact={!drawerOpen} icon={Mail} label="Chat" />
+        <Link
+          to="/settings"
+          compact={!drawerOpen}
+          icon={Settings}
+          label="Settings"
+        />
       </Drawer>
       <main>
         <Component {...pageProps} />
