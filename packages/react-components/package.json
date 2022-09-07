@@ -1,6 +1,13 @@
 {
   "name": "@terenceodonoghue/react-components",
   "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/terenceodonoghue/react.git",
+    "directory": "packages/react-components"
+  },
+  "license": "MIT",
+  "author": "Terence O'Donoghue <1697905+terenceodonoghue@users.noreply.github.com>",
   "type": "module",
   "exports": {
     "./core": "./dist/core/index.js",
