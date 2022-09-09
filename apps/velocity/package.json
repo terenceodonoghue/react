@@ -8,7 +8,7 @@
     "dev": "next dev",
     "eslint-check": "npx eslint-config-prettier pages/_app.tsx",
     "export": "next export",
-    "lint": "eslint --ext .ts,.tsx ./",
+    "lint": "eslint --ext .ts,.tsx ./components ./pages",
     "sonar": "sonar-scanner",
     "start": "next start",
     "svgr": "svgr --out-dir components/icons components/icons/svg",
