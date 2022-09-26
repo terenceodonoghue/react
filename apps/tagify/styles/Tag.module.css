@@ -27,7 +27,7 @@
 }
 
 .brand {
-  margin-top: 6pt;
+  margin-top: 4pt;
   font-size: 12pt;
 }
 
@@ -54,7 +54,7 @@
 .price {
   font-size: 36pt;
   line-height: 1.58em;
-  transform: translateY(-1pt);
+  transform: translateY(-3pt);
 }
 
 .save {

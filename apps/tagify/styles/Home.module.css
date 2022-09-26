@@ -1,7 +1,7 @@
 .page {
   display: grid;
-  grid-template-rows: repeat(3, 7.51cm);
-  grid-template-columns: repeat(3, 5.49cm);
+  grid-template-rows: repeat(3, 7.2cm);
+  grid-template-columns: repeat(3, 5.3cm);
   color: black;
 }
 
@@ -74,6 +74,10 @@
 }
 
 @media print {
+  @page {
+    margin: 40mm 25.4mm;
+  }
+
   .heading,
   .helpText,
   .options {
@@ -82,7 +86,6 @@
 
   .page {
     justify-content: center;
-    margin: 25.4mm;
     page-break-after: always;
   }
 }
