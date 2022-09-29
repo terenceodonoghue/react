@@ -22,12 +22,13 @@
 }
 
 .title {
+  margin-top: 6pt;
   font-size: 20pt;
   text-decoration: underline;
 }
 
 .brand {
-  margin-top: 4pt;
+  margin-top: 6pt;
   font-size: 12pt;
 }
 
