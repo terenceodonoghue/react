@@ -5564,9 +5564,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@terenceodonoghue/eslint-config-react@npm:^2.0.2":
-  version: 2.0.2
-  resolution: "@terenceodonoghue/eslint-config-react@npm:2.0.2::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40terenceodonoghue%2Feslint-config-react%2F2.0.2%2F0c3f2e642d0db75f3fec95a3029677ce9375cfc7"
+"@terenceodonoghue/eslint-config-react@npm:^2.0.3":
+  version: 2.0.3
+  resolution: "@terenceodonoghue/eslint-config-react@npm:2.0.3::__archiveUrl=https%3A%2F%2Fnpm.pkg.github.com%2Fdownload%2F%40terenceodonoghue%2Feslint-config-react%2F2.0.3%2Fa2b62d82e13c35fa93b2faae93e9bf1bddfe9bef"
   dependencies:
     eslint-config-airbnb: "npm:^19.0.4"
     eslint-config-prettier: "npm:^8.5.0"
@@ -5581,7 +5581,7 @@ __metadata:
     eslint-plugin-react: "*"
     eslint-plugin-react-hooks: "*"
     prettier: "*"
-  checksum: a5612d904b7bc3eb598e34c927d5a8be7865291b934c164df712f2771017008e5e07b512488ca25f9fb481ad7b48151e089a900d237a3f9a4ea5f55685cdef64
+  checksum: 0820279e5b1a31317631c4a9a11a45d3e682b6d6cc5b232db2915f222e381b626570fae12ec55c61f45a3d036812daa4fa528e1589eca60da82caa8d88befc33
   languageName: node
   linkType: hard
 
@@ -5651,7 +5651,7 @@ __metadata:
     "@changesets/cli": "npm:^2.25.2"
     "@nrwl/cli": "npm:^14.8.6"
     "@nrwl/workspace": "npm:^14.8.6"
-    "@terenceodonoghue/eslint-config-react": "npm:^2.0.2"
+    "@terenceodonoghue/eslint-config-react": "npm:^2.0.3"
     "@terenceodonoghue/prettier-plugin-packagejson": "npm:^1.0.3"
     "@trivago/prettier-plugin-sort-imports": "npm:^3.4.0"
     "@types/node": "npm:^18.11.9"
