@@ -1,5 +1,11 @@
 # @terenceodonoghue/react-components
 
+## 1.1.2
+
+### Patch Changes
+
+- 4fd64be: Rename `WaveformLoader` to `GradientWaveform`
+
 ## 1.1.1
 
 ### Patch Changes
