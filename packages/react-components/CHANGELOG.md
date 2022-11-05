@@ -1,5 +1,11 @@
 # @terenceodonoghue/react-components
 
+## 1.1.1
+
+### Patch Changes
+
+- 283ad32: Create `WaveformLoader` component
+
 ## 1.1.0
 
 ### Minor Changes
