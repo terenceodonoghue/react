@@ -11,6 +11,7 @@
   "type": "module",
   "exports": {
     "./core": "./dist/core/index.js",
+    "./labs": "./dist/labs/index.js",
     "./velocity": "./dist/velocity/index.js",
     "./velocity.css": "./dist/velocity/index.css"
   },
@@ -18,6 +19,9 @@
     "*": {
       "core": [
         "./dist/core/index.d.ts"
+      ],
+      "labs": [
+        "./dist/labs/index.d.ts"
       ],
       "velocity": [
         "./dist/velocity/index.d.ts"

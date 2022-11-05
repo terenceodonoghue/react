@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import { FunctionComponent, useEffect, useState } from 'react';
 
-import { GitHubCorner, Global } from '@terenceodonoghue/react-components/core';
+import { Global } from '@terenceodonoghue/react-components/core';
 import {
   AppBar,
   ThemeProvider,
@@ -55,11 +55,6 @@ const App: FunctionComponent<AppProps> = ({ Component, pageProps }) => {
             }),
         ]}
       />
-      <GitHubCorner
-        css={{ zIndex: 1400 }}
-        color="#151513"
-        url="https://github.com/terenceodonoghue/react/tree/master/apps/velocity"
-      />
       <AppBar
         css={{ zIndex: 1300 }}
         avatar={faker.image.avatar()}
@@ -71,6 +66,7 @@ const App: FunctionComponent<AppProps> = ({ Component, pageProps }) => {
         hasNotification
       />
       <Drawer
+        css={{ zIndex: 1400 }}
         avatar={faker.image.avatar()}
         name={faker.name.fullName()}
         open={drawerOpen}

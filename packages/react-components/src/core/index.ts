@@ -1,5 +1,2 @@
-export {
-  default as GitHubCorner,
-  type GitHubCornerProps,
-} from './GitHubCorner.js';
+/* eslint-disable import/prefer-default-export */
 export { default as Global } from './Global.js';
