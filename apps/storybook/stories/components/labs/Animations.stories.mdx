@@ -1,6 +1,9 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
 
-import { GradientSpinner } from '@terenceodonoghue/react-components/labs';
+import {
+  GradientSpinner,
+  WaveformLoader,
+} from '@terenceodonoghue/react-components/labs';
 
 <Meta
   title="Components/Labs/Animations"
@@ -11,7 +14,7 @@ import { GradientSpinner } from '@terenceodonoghue/react-components/labs';
           display: 'flex',
           justifyContent: 'center',
           gap: 92,
-          padding: 48,
+          margin: '72px 0',
         }}
       >
         <Story />
@@ -26,10 +29,9 @@ import { GradientSpinner } from '@terenceodonoghue/react-components/labs';
 
 Progress indicators express an unspecified wait time or display the length of a process. They can be used to inform users about the status of an ongoing process, such as loading an app or submitting a form.
 
-### Gradient Spinner
-
 <Canvas>
-  <Story name="GradientSpinner">
+  <Story name="ProgressIndicators">
     <GradientSpinner />
+    <WaveformLoader />
   </Story>
 </Canvas>
