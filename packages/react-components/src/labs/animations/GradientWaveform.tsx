@@ -3,7 +3,7 @@ import { keyframes } from '@emotion/react';
 import { linearGradient } from 'polished';
 import type { FunctionComponent } from 'react';
 
-export interface WaveformLoaderProps {
+export interface GradientWaveformProps {
   colorStops?: string[];
   height?: number;
 }
@@ -20,7 +20,7 @@ const animate = keyframes`
   }
 `;
 
-const WaveformLoader: FunctionComponent<WaveformLoaderProps> = ({
+const GradientWaveform: FunctionComponent<GradientWaveformProps> = ({
   colorStops = ['#5AD1CD', '#84CDFA', '#FFF'],
   height = 96,
 }) => (
@@ -81,4 +81,4 @@ const WaveformLoader: FunctionComponent<WaveformLoaderProps> = ({
   </div>
 );
 
-export default WaveformLoader;
+export default GradientWaveform;

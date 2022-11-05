@@ -3,6 +3,6 @@ export {
   type GradientSpinnerProps,
 } from './animations/GradientSpinner.js';
 export {
-  default as WaveformLoader,
-  type WaveformLoaderProps,
-} from './animations/WaveformLoader.js';
+  default as GradientWaveform,
+  type GradientWaveformProps,
+} from './animations/GradientWaveform.js';
