@@ -1,5 +1,12 @@
 # @terenceodonoghue/storybook
 
+## 1.1.22
+
+### Patch Changes
+
+- Updated dependencies [5e7064e]
+  - @terenceodonoghue/react-hooks@1.0.1
+
 ## 1.1.21
 
 ### Patch Changes
