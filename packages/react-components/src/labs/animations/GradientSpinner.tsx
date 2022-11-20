@@ -5,6 +5,7 @@ import type { FunctionComponent } from 'react';
 
 export interface GradientSpinnerProps {
   background?: string;
+  borderColor?: string;
   colorStops?: string[];
   size?: number;
 }
@@ -19,7 +20,8 @@ const animate = keyframes`
 `;
 
 const GradientSpinner: FunctionComponent<GradientSpinnerProps> = ({
-  background = '#F1F1F1',
+  background = '#FFF',
+  borderColor = '#FFF',
   colorStops = ['#9B59B6', '#84CDFA', '#5AD1CD'],
   size = 96,
 }) => (
@@ -62,7 +64,7 @@ const GradientSpinner: FunctionComponent<GradientSpinnerProps> = ({
         right: 10,
         bottom: 10,
         background,
-        border: 'solid 5px #FFF',
+        border: `solid 5px ${borderColor}`,
         borderRadius: '50%',
       },
     }}
