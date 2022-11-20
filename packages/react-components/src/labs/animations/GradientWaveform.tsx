@@ -29,7 +29,7 @@ const GradientWaveform: FunctionComponent<GradientWaveformProps> = ({
       display: 'flex',
       gap: 8,
       height,
-      '& span': {
+      '& div': {
         borderRadius: 5,
         height: '100%',
         width: 5,
@@ -69,15 +69,15 @@ const GradientWaveform: FunctionComponent<GradientWaveformProps> = ({
       },
     }}
   >
-    <span />
-    <span />
-    <span />
-    <span />
-    <span />
-    <span />
-    <span />
-    <span />
-    <span />
+    <div />
+    <div />
+    <div />
+    <div />
+    <div />
+    <div />
+    <div />
+    <div />
+    <div />
   </div>
 );
 

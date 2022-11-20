@@ -1,6 +1,7 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
 
 import {
+  GradientCrescent,
   GradientSpinner,
   GradientWaveform,
   RotatingText,
@@ -10,50 +11,28 @@ import {
 
 # Animations
 
-## Text
-
-...
-
-<Canvas>
-  <Story name="Text">
-    <p style={{ fontSize: '36px', fontWeight: 'bold' }}>
-      CSS animation is{' '}
-      <RotatingText
-        words={[
-          { content: 'awesome.', color: '#E74C3C' },
-          { content: 'beautiful.', color: '#8E44AD' },
-          { content: 'creative.', color: '#3498DB' },
-          { content: 'fabulous.', color: '#2ECC71' },
-          { content: 'interesting.', color: '#F1C40F' },
-        ]}
-      />
-    </p>
-  </Story>
-</Canvas>
-
 ## Progress Indicators
 
 Progress indicators express an unspecified wait time or display the length of a process. They can be used to inform users about the status of an ongoing process, such as loading an app or submitting a form.
 
-<Canvas>
-  <Story
-    name="ProgressIndicators"
-    decorators={[
-      (Story) => (
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            gap: 92,
-            margin: '72px 0',
-          }}
-        >
-          <Story />
-        </div>
-      ),
-    ]}
-  >
-    <GradientSpinner />
-    <GradientWaveform />
-  </Story>
-</Canvas>
+<Story
+  name="ProgressIndicators"
+  decorators={[
+    (Story) => (
+      <div
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          gap: 92,
+          margin: '72px 0',
+        }}
+      >
+        <Story />
+      </div>
+    ),
+  ]}
+>
+  <GradientSpinner />
+  <GradientCrescent />
+  <GradientWaveform />
+</Story>

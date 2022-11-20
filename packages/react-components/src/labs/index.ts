@@ -1,4 +1,8 @@
 export {
+  default as GradientCrescent,
+  type GradientCrescentProps,
+} from './animations/GradientCrescent.js';
+export {
   default as GradientSpinner,
   type GradientSpinnerProps,
 } from './animations/GradientSpinner.js';
