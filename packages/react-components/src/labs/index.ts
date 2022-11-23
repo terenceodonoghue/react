@@ -6,3 +6,7 @@ export {
   default as GradientWaveform,
   type GradientWaveformProps,
 } from './animations/GradientWaveform.js';
+export {
+  default as RippleDots,
+  type RippleDotsProps,
+} from './animations/RippleDots.js';
