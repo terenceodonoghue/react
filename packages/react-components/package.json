@@ -42,7 +42,7 @@
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
-    "@react-spring/web": "^9.5.5",
+    "@react-spring/web": "^9.6.1",
     "@terenceodonoghue/react-icons": "^2.1.3",
     "csstype": "^3.1.1",
     "facepaint": "^1.2.1",
@@ -52,12 +52,12 @@
   },
   "devDependencies": {
     "@types/lodash-es": "^4.17.6",
-    "concurrently": "^7.5.0",
-    "eslint": "^8.26.0",
-    "postcss": "^8.4.18",
-    "postcss-cli": "^10.0.0",
+    "concurrently": "^7.6.0",
+    "eslint": "^8.32.0",
+    "postcss": "^8.4.21",
+    "postcss-cli": "^10.1.0",
     "rimraf": "^3.0.2",
-    "typescript": "^4.8.4"
+    "typescript": "^4.9.4"
   },
   "peerDependencies": {
     "react": "*",
