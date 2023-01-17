@@ -21,7 +21,7 @@
   width: 100%;
 }
 
-.title {
+.showTitle, .title {
   margin-top: 6pt;
   font-size: 20pt;
   text-decoration: underline;

@@ -55,7 +55,9 @@ const Tag: FunctionComponent<TagProps> = ({
           : styles.tag
       }
     >
-      <span className={styles.title}>{title}</span>
+      <span className={title === 'Clearance' ? styles.showTitle : styles.title}>
+        {title}
+      </span>
       <span className={brandError ? styles.brandError : styles.brand}>
         <input
           className={styles.input}
