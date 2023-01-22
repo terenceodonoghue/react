@@ -1,5 +1,16 @@
 # @terenceodonoghue/storybook
 
+## 1.1.23
+
+### Patch Changes
+
+- Updated dependencies [0d0276b]
+- Updated dependencies [c0ff380]
+- Updated dependencies [30f4589]
+- Updated dependencies [7cfb37d]
+  - @terenceodonoghue/react-hooks@1.1.0
+  - @terenceodonoghue/react-components@1.2.0
+
 ## 1.1.22
 
 ### Patch Changes

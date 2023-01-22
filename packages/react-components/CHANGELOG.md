@@ -1,5 +1,15 @@
 # @terenceodonoghue/react-components
 
+## 1.2.0
+
+### Minor Changes
+
+- c0ff380: Remove labs components
+
+### Patch Changes
+
+- 30f4589: Create `RippleDots` component
+
 ## 1.1.2
 
 ### Patch Changes
