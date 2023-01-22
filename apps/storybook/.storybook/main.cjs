@@ -25,10 +25,6 @@ module.exports = {
       },
       resolve: {
         alias: {
-          '@terenceodonoghue/react-components/labs': path.resolve(
-            __dirname,
-            '../../../packages/react-components/src/labs',
-          ),
           '@terenceodonoghue/react-components/velocity': path.resolve(
             __dirname,
             '../../../packages/react-components/src/velocity',

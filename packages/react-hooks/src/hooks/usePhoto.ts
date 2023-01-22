@@ -1,15 +1,21 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
+interface DeviceConfig {
+  capabilities?: Awaited<ReturnType<ImageCapture['getPhotoCapabilities']>>;
+  settings?: Awaited<ReturnType<ImageCapture['getPhotoSettings']>>;
+}
+
 interface usePhotoConfiguration {
   onPreviewAvailable?: (preview: MediaStream) => void;
 }
 
 const usePhoto = function usePhoto({
   onPreviewAvailable,
-}: usePhotoConfiguration = {}) {
+}: usePhotoConfiguration) {
   const onPreviewAvailableRef = useRef(onPreviewAvailable);
-  const [photo, setPhoto] = useState<string>();
+  const [deviceConfig, setDeviceConfig] = useState<DeviceConfig>();
   const [imageCapture, setImageCapture] = useState<ImageCapture>();
+  const [photo, setPhoto] = useState<string>();
   const [preview, setPreview] = useState<MediaStream>();
 
   const cancelPreview = (mediaStream: MediaStream) =>
@@ -23,10 +29,6 @@ const usePhoto = function usePhoto({
       setPhoto(url);
     }
   }, [imageCapture]);
-
-  useEffect(() => {
-    onPreviewAvailableRef.current = onPreviewAvailable;
-  }, [onPreviewAvailable]);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -49,6 +51,31 @@ const usePhoto = function usePhoto({
   }, []);
 
   useEffect(() => {
+    const getConfig = async () => {
+      const [capabilities, settings] = await Promise.all([
+        imageCapture?.getPhotoCapabilities(),
+        imageCapture?.getPhotoSettings(),
+      ]);
+
+      setDeviceConfig({ capabilities, settings });
+    };
+
+    getConfig();
+  }, [imageCapture]);
+
+  useEffect(() => {
+    onPreviewAvailableRef.current = onPreviewAvailable;
+  }, [onPreviewAvailable]);
+
+  useEffect(() => {
+    return () => {
+      if (photo) {
+        URL.revokeObjectURL(photo);
+      }
+    };
+  }, [photo]);
+
+  useEffect(() => {
     if (preview) {
       if (onPreviewAvailableRef.current) {
         onPreviewAvailableRef.current(preview);
@@ -65,15 +92,7 @@ const usePhoto = function usePhoto({
     };
   }, [preview]);
 
-  useEffect(() => {
-    return () => {
-      if (photo) {
-        URL.revokeObjectURL(photo);
-      }
-    };
-  }, [photo]);
-
-  return [photo, getPhoto] as const;
+  return [photo, getPhoto, deviceConfig] as const;
 };
 
 export default usePhoto;

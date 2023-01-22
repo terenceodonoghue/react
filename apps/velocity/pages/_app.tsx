@@ -10,7 +10,7 @@ import {
   ThemeProvider,
   mq,
 } from '@terenceodonoghue/react-components/velocity';
-import velocity from '@terenceodonoghue/react-components/velocity.css';
+import '@terenceodonoghue/react-components/velocity.css';
 import {
   Analytics,
   Dashboard,
@@ -45,7 +45,6 @@ const App: FunctionComponent<AppProps> = ({ Component, pageProps }) => {
     <ThemeProvider>
       <Global
         styles={[
-          velocity,
           ({ color }) =>
             mq({
               body: {

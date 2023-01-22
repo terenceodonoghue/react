@@ -1,5 +1,6 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
 import { useRef } from 'react';
+
 import { usePhoto } from '@terenceodonoghue/react-hooks';
 
 <Meta title="Hooks/Web APIs/Image Capture API" />
@@ -26,7 +27,7 @@ import { usePhoto } from '@terenceodonoghue/react-hooks';
         },
       });
       return (
-        <div style={{ display: 'flex', gap: 16 }}>
+        <div style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
           <button onClick={getPhoto}>Take photo</button>
           <video autoPlay height={200} width={300} ref={previewRef} />
           {photo ? <img src={photo} height={100} width={150} /> : undefined}
