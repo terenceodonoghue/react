@@ -7,15 +7,21 @@
   ],
   "scripts": {
     "lint": "yarn nx run-many --target=lint --all",
-    "release": "yarn nx run-many --target=prepack --all && changeset publish"
+    "release": "yarn nx run-many --target=prepack --all && changeset publish",
+    "test": "vitest"
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.0",
+    "@faker-js/faker": "^7.6.0",
     "@nrwl/cli": "^14.8.6",
     "@nrwl/workspace": "^14.8.6",
     "@terenceodonoghue/eslint-config-react": "^2.0.4",
     "@terenceodonoghue/prettier-plugin-packagejson": "^1.0.3",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^14.4.3",
     "@trivago/prettier-plugin-sort-imports": "^3.4.0",
+    "@types/faker": "^6.6.9",
     "@types/node": "^18.11.18",
     "@types/react": "^18.0.26",
     "@typescript-eslint/eslint-plugin": "^5.48.1",
@@ -28,10 +34,12 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.0",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "jsdom": "^21.1.0",
     "nx": "^14.8.6",
     "prettier": "^2.8.3",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "vitest": "^0.27.3"
   },
   "packageManager": "yarn@4.0.0-rc.11"
 }
