@@ -6,7 +6,9 @@ import { expect } from 'vitest';
 
 expect.extend(matchers);
 
-export default (jsx: ReactElement) => ({
+const setup = (jsx: ReactElement) => ({
   user: userEvent.setup(),
   ...render(jsx),
 });
+
+export default setup;
