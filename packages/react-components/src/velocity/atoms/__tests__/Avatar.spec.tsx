@@ -1,15 +1,15 @@
 import { faker } from '@faker-js/faker';
 import { screen } from '@testing-library/react';
-import setup from '@tests/setup.js';
+import render from '@tests/render';
 
 import Avatar from '../Avatar.js';
 
-const TEST_ID = 'avatar';
+const testId = faker.datatype.uuid();
 
 describe('Avatar', () => {
   it('has default variant and size', () => {
-    setup(<Avatar data-testid={TEST_ID} />);
-    expect(screen.getByTestId(TEST_ID)).toHaveStyle({
+    render(<Avatar data-testid={testId} />);
+    expect(screen.getByTestId(testId)).toHaveStyle({
       borderRadius: '50%',
       height: '128px',
       width: '128px',
@@ -17,23 +17,23 @@ describe('Avatar', () => {
   });
 
   it('renders rounded variant', () => {
-    setup(<Avatar data-testid={TEST_ID} variant="rounded" />);
-    expect(screen.getByTestId(TEST_ID)).toHaveStyle({
+    render(<Avatar data-testid={testId} variant="rounded" />);
+    expect(screen.getByTestId(testId)).toHaveStyle({
       borderRadius: '50%',
     });
   });
 
   it('renders square variant', () => {
-    setup(<Avatar data-testid={TEST_ID} variant="square" />);
-    expect(screen.getByTestId(TEST_ID)).toHaveStyle({
+    render(<Avatar data-testid={testId} variant="square" />);
+    expect(screen.getByTestId(testId)).toHaveStyle({
       borderRadius: '6px',
     });
   });
 
   it('renders custom size', () => {
     const size = 64;
-    setup(<Avatar data-testid={TEST_ID} size={size} />);
-    expect(screen.getByTestId(TEST_ID)).toHaveStyle({
+    render(<Avatar data-testid={testId} size={size} />);
+    expect(screen.getByTestId(testId)).toHaveStyle({
       height: `${size}px`,
       width: `${size}px`,
     });
@@ -41,7 +41,7 @@ describe('Avatar', () => {
 
   it('renders alt text', () => {
     const alt = faker.hacker.phrase();
-    setup(<Avatar data-testid={TEST_ID} alt={alt} />);
-    expect(screen.getByTestId(TEST_ID)).toHaveAttribute('alt', alt);
+    render(<Avatar data-testid={testId} alt={alt} />);
+    expect(screen.getByTestId(testId)).toHaveAttribute('alt', alt);
   });
 });
