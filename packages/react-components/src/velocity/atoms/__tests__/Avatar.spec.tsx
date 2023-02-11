@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
 import { screen } from '@testing-library/react';
-import render from '@tests/render.js';
+import render from '@tests/render';
 
 import Avatar from '../Avatar.js';
 
