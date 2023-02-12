@@ -5285,7 +5285,6 @@ __metadata:
     rimraf: "npm:^3.0.2"
     sanitize.css: "npm:^13.0.0"
     typescript: "npm:^4.9.5"
-    vitest: "npm:^0.28.4"
   peerDependencies:
     react: "*"
     react-dom: "*"
@@ -5347,6 +5346,7 @@ __metadata:
     prettier: "npm:^2.8.4"
     react: "npm:^18.2.0"
     react-dom: "npm:^18.2.0"
+    typescript: "npm:^4.9.5"
     vitest: "npm:^0.28.4"
   languageName: unknown
   linkType: soft
