@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
+    "@faker-js/faker": "^7.6.0",
     "@terenceodonoghue/react-components": "workspace:^",
     "@terenceodonoghue/react-icons": "^2.1.3",
     "add": "^2.0.6",
