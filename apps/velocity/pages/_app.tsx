@@ -4,13 +4,11 @@ import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 import { FunctionComponent, useEffect, useState } from 'react';
 
-import { Global } from '@terenceodonoghue/react-components/core';
 import {
   AppBar,
   ThemeProvider,
   mq,
 } from '@terenceodonoghue/react-components/velocity';
-import '@terenceodonoghue/react-components/velocity.css';
 import {
   Analytics,
   Dashboard,
@@ -42,18 +40,16 @@ const App: FunctionComponent<AppProps> = ({ Component, pageProps }) => {
   }, [router]);
 
   return (
-    <ThemeProvider>
-      <Global
-        styles={[
-          ({ color }) =>
-            mq({
-              body: {
-                backgroundColor: color.neutral[100],
-              },
-              main: { marginLeft: [0, 0, 80] },
-            }),
-        ]}
-      />
+    <ThemeProvider
+      styles={({ color }) =>
+        mq({
+          body: {
+            backgroundColor: color.neutral[100],
+          },
+          main: { marginLeft: [0, 0, 80] },
+        })
+      }
+    >
       <AppBar
         css={{ zIndex: 1300 }}
         avatar={faker.image.avatar()}

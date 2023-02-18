@@ -10,19 +10,10 @@
   "author": "Terence O'Donoghue <1697905+terenceodonoghue@users.noreply.github.com>",
   "type": "module",
   "exports": {
-    "./core": "./dist/core/index.js",
-    "./labs": "./dist/labs/index.js",
-    "./velocity": "./dist/velocity/index.js",
-    "./velocity.css": "./dist/velocity/index.css"
+    "./velocity": "./dist/velocity/index.js"
   },
   "typesVersions": {
     "*": {
-      "core": [
-        "./dist/core/index.d.ts"
-      ],
-      "labs": [
-        "./dist/labs/index.d.ts"
-      ],
       "velocity": [
         "./dist/velocity/index.d.ts"
       ]
@@ -32,9 +23,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "yarn concurrently \"yarn:build:*\"",
-    "build:css": "postcss src/**/*.css --base src/ -d dist/ --no-map",
-    "build:js": "tsc",
+    "build": "tsc",
     "clean": "rimraf ./dist",
     "lint": "eslint --ext .ts,.tsx ./src",
     "prepack": "yarn build",
@@ -47,15 +36,12 @@
     "csstype": "^3.1.1",
     "facepaint": "^1.2.1",
     "lodash-es": "^4.17.21",
-    "polished": "^4.2.2",
-    "sanitize.css": "^13.0.0"
+    "polished": "^4.2.2"
   },
   "devDependencies": {
     "@types/lodash-es": "^4.17.6",
     "concurrently": "^7.6.0",
     "eslint": "^8.32.0",
-    "postcss": "^8.4.21",
-    "postcss-cli": "^10.1.0",
     "rimraf": "^3.0.2",
     "typescript": "^4.9.4"
   },

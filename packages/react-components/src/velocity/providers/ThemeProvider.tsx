@@ -1,4 +1,10 @@
-import { ThemeProvider as EmotionProvider, type Theme } from '@emotion/react';
+import {
+  css,
+  Global,
+  GlobalProps,
+  ThemeProvider as EmotionProvider,
+  type Theme,
+} from '@emotion/react';
 import { merge } from 'lodash-es';
 import type { FunctionComponent, ReactNode } from 'react';
 
@@ -45,16 +51,31 @@ export const defaultTheme: Theme = {
   },
 };
 
-export interface ThemeProviderProps {
+export interface ThemeProviderProps extends Partial<GlobalProps> {
   children: ReactNode;
   theme?: Theme;
 }
 
 const ThemeProvider: FunctionComponent<ThemeProviderProps> = ({
   children,
+  styles,
   theme,
 }) => (
   <EmotionProvider theme={theme ? merge(defaultTheme, theme) : defaultTheme}>
+    <Global
+      styles={[
+        css`
+          @import url('https://unpkg.com/sanitize.css');
+          @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+        `,
+        {
+          ':any-link': {
+            textDecoration: 'none',
+          },
+        },
+        styles,
+      ]}
+    />
     {children}
   </EmotionProvider>
 );

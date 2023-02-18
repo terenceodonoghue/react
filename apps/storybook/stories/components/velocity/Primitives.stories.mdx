@@ -1,6 +1,5 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
 
-import { Global } from '@terenceodonoghue/react-components/core';
 import {
   Logo,
   Text,
@@ -12,22 +11,22 @@ import {
   title="Components/Velocity/Primitives"
   decorators={[
     (Story) => (
-      <ThemeProvider>
-        <div
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            alignItems: 'center',
-            justifyContent: 'flex-start',
-            gap: 32,
-          }}
-        >
-          <Story />
-        </div>
-      </ThemeProvider>
+      <div
+        style={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          alignItems: 'center',
+          justifyContent: 'flex-start',
+          gap: 32,
+        }}
+      >
+        <Story />
+      </div>
     ),
   ]}
 />
+
+<ThemeProvider>
 
 <Logo style={{ marginBottom: '1.5rem' }} />
 
@@ -67,3 +66,5 @@ A `p` element is rendered by default, unless specified otherwise by `as`. This o
     </Text>
   </Story>
 </Canvas>
+
+</ThemeProvider>
