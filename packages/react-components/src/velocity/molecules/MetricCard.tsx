@@ -23,7 +23,7 @@ const MetricCard: FunctionComponent<MetricCardProps> = ({
   label,
   value,
 }) => {
-  const { color, font } = useTheme();
+  const { color } = useTheme();
 
   return (
     <Card
@@ -41,17 +41,17 @@ const MetricCard: FunctionComponent<MetricCardProps> = ({
         <Icon color={iconColor || color.primary} size={20} />
       </Backdrop>
       <div css={{ display: 'flex', flexDirection: 'column' }}>
-        <span
+        <Text
           css={mq({
             marginBottom: [6, 0],
             fontSize: [rem(34), rem(48)],
-            fontWeight: font.weight.light,
-            letterSpacing: -0.6,
             lineHeight: [rem(32), rem(57)],
           })}
+          as="span"
+          variant="h1"
         >
           {value}
-        </span>
+        </Text>
         <Text as="span" variant="p2">
           {label}
         </Text>

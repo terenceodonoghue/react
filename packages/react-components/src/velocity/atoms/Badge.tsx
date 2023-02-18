@@ -37,6 +37,7 @@ const Badge: FunctionComponent<BadgeProps> = ({
             boxShadow: `0 3px 10px ${rgba(color.primary, 0.3)}`,
             backgroundColor: color.neutral[50],
             color: color.neutral[700],
+            fontFamily: font.family,
             fontSize: rem(10),
             fontWeight: font.weight.medium,
             lineHeight: rem(12),

@@ -1,6 +1,6 @@
 import { FunctionComponent, HTMLAttributes } from 'react';
 
-import { mq } from '@terenceodonoghue/react-components/velocity';
+import { Text, mq } from '@terenceodonoghue/react-components/velocity';
 
 interface ContainerProps extends HTMLAttributes<HTMLDivElement> {
   heading?: string;
@@ -22,9 +22,14 @@ const Container: FunctionComponent<ContainerProps> = ({
   >
     <div css={mq({ margin: [-6, -12] })}>
       {heading && (
-        <h3 css={{ margin: '8px 12px' }} data-testid="container-heading">
+        <Text
+          css={{ margin: '8px 12px' }}
+          data-testid="container-heading"
+          as="h3"
+          variant="h3"
+        >
           {heading}
-        </h3>
+        </Text>
       )}
       {children}
     </div>
