@@ -1,4 +1,4 @@
-import { rgba, transitions } from 'polished';
+import { rem, rgba, transitions } from 'polished';
 import {
   forwardRef,
   InputHTMLAttributes,
@@ -24,7 +24,7 @@ const Slider = forwardRef<HTMLLabelElement, SliderProps>(
         >
           {primary && (
             <p
-              css={{ flex: 1, lineHeight: '1.467em', margin: 0 }}
+              css={{ flex: 1, fontSize: 15, lineHeight: rem(22), margin: 0 }}
               data-testid="slider-primary"
             >
               {primary}
@@ -34,7 +34,8 @@ const Slider = forwardRef<HTMLLabelElement, SliderProps>(
             <p
               css={({ color }) => ({
                 color: color.neutral[600],
-                lineHeight: '1.467em',
+                fontSize: 15,
+                lineHeight: rem(22),
                 margin: 0,
               })}
               data-testid="slider-secondary"

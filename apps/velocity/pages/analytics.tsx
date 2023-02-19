@@ -48,13 +48,17 @@ const AnalyticsPage: NextPage = () => {
         <Text
           css={mq({
             display: 'flex',
+            alignItems: 'center',
             margin: ['0 6px', '0 12px'],
             '&::before': {
-              content: '"\u25CF"',
-              color: entry.color,
+              content: '""',
+              borderRadius: '50%',
+              backgroundColor: entry.color,
               display: 'inline-block',
               fontSize: '1.5em',
               marginRight: 8,
+              height: 10,
+              width: 10,
             },
           })}
           align="center"
@@ -213,6 +217,7 @@ const AnalyticsPage: NextPage = () => {
                 />
                 <XAxis
                   dataKey="name"
+                  fontSize={15}
                   interval="preserveStartEnd"
                   stroke={color.secondary}
                   tick={{ fill: color.neutral[500] }}
@@ -220,6 +225,7 @@ const AnalyticsPage: NextPage = () => {
                   tickMargin={8.5}
                 />
                 <YAxis
+                  fontSize={15}
                   stroke={color.secondary}
                   tickFormatter={yTickFormatter}
                   tickLine={false}
@@ -367,6 +373,7 @@ const AnalyticsPage: NextPage = () => {
                 />
                 <XAxis
                   dataKey="name"
+                  fontSize={15}
                   interval="preserveStartEnd"
                   padding={{ left: 17, right: 16 }}
                   stroke={color.secondary}
@@ -375,6 +382,7 @@ const AnalyticsPage: NextPage = () => {
                   tickMargin={7.5}
                 />
                 <YAxis
+                  fontSize={15}
                   tickLine={false}
                   tickMargin={1}
                   stroke={color.secondary}
