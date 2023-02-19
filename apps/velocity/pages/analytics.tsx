@@ -18,6 +18,7 @@ import {
 import {
   Card,
   MetricCard,
+  Text,
   mq,
 } from '@terenceodonoghue/react-components/velocity';
 import {
@@ -44,10 +45,8 @@ const AnalyticsPage: NextPage = () => {
       }}
     >
       {payload.map((entry) => (
-        <li
+        <Text
           css={mq({
-            alignItems: 'center',
-            color: color.neutral[600],
             display: 'flex',
             margin: ['0 6px', '0 12px'],
             '&::before': {
@@ -58,10 +57,13 @@ const AnalyticsPage: NextPage = () => {
               marginRight: 8,
             },
           })}
+          align="center"
+          as="li"
           key={entry.dataKey}
+          variant="p2"
         >
           {entry.value}
-        </li>
+        </Text>
       ))}
     </ul>
   );
