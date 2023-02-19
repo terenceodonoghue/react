@@ -1,5 +1,12 @@
 # @terenceodonoghue/react-components
 
+## 1.3.1
+
+### Patch Changes
+
+- f5609d8: Fix font on Box, Card components
+- 1167a2b: Fix font on Badge, Pill components
+
 ## 1.3.0
 
 ### Minor Changes
