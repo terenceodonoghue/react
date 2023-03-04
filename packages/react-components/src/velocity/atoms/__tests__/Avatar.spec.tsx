@@ -1,6 +1,6 @@
 import { faker } from '@faker-js/faker';
 import { screen } from '@testing-library/react';
-import render from '@tests/render.js';
+import render from 'tests/render.js';
 
 import Avatar from '../Avatar.js';
 
@@ -39,7 +39,7 @@ describe('Avatar', () => {
     });
   });
 
-  it('renders alt text', () => {
+  it('has alt text', () => {
     const alt = faker.hacker.phrase();
     render(<Avatar data-testid={testId} alt={alt} />);
     expect(screen.getByTestId(testId)).toHaveAttribute('alt', alt);

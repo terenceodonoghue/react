@@ -23,7 +23,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsc",
+    "build": "tsc -p tsconfig.build.json",
     "clean": "rimraf ./dist",
     "lint": "eslint --ext .ts,.tsx ./src",
     "prepack": "yarn build",
