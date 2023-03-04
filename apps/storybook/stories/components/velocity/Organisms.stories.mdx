@@ -2,7 +2,6 @@ import { faker } from '@faker-js/faker';
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
 import { useState } from 'react';
 
-import { Global } from '@terenceodonoghue/react-components/core';
 import {
   AppBar,
   ChatList,
@@ -16,7 +15,6 @@ import {
   TripInfo,
   mq,
 } from '@terenceodonoghue/react-components/velocity';
-import velocity from '@terenceodonoghue/react-components/velocity.css';
 import {
   GitHub,
   InVision,
@@ -31,45 +29,33 @@ import {
   Marker,
 } from '@terenceodonoghue/react-icons/velocity';
 
-<Meta
-  title="Components/Velocity/Organisms"
-  decorators={[
-    (Story) => (
-      <ThemeProvider>
-        <Story />
-      </ThemeProvider>
-    ),
-  ]}
-/>
+<Meta title="Components/Velocity/Organisms" />
 
-<ThemeProvider>
-  <Global
-    styles={({ color }) => [
-      velocity,
-      mq({
-        '[data-has-bg] .docs-story': {
-          backgroundColor: color.neutral[100],
-        },
-        '.chat-list': {
-          margin: '0 auto',
-          maxWidth: [undefined, '378px'],
-        },
-        '.passenger-info': {
-          margin: '0 auto',
-          maxWidth: 'fit-content',
-        },
-        '.top-drivers': {
-          margin: '0 auto',
-          maxWidth: 'fit-content',
-        },
-        '.trip-info': {
-          margin: '0 auto',
-          maxWidth: 'fit-content',
-        },
-      }),
-    ]}
-  />
-</ThemeProvider>
+<ThemeProvider
+  styles={({ color }) => [
+    mq({
+      '[data-has-bg] .docs-story': {
+        backgroundColor: color.neutral[100],
+      },
+      '.chat-list': {
+        margin: '0 auto',
+        maxWidth: [undefined, '378px'],
+      },
+      '.passenger-info': {
+        margin: '0 auto',
+        maxWidth: 'fit-content',
+      },
+      '.top-drivers': {
+        margin: '0 auto',
+        maxWidth: 'fit-content',
+      },
+      '.trip-info': {
+        margin: '0 auto',
+        maxWidth: 'fit-content',
+      },
+    }),
+  ]}
+>
 
 <Logo style={{ marginBottom: '1.5rem' }} />
 
@@ -374,3 +360,5 @@ import { Theme } from '@terenceodonoghue/react-components/velocity';
     />
   </Story>
 </Canvas>
+
+</ThemeProvider>

@@ -6,6 +6,7 @@ import numeral from 'numeral';
 
 import {
   Card,
+  Text,
   TopDrivers,
   mq,
 } from '@terenceodonoghue/react-components/velocity';
@@ -58,26 +59,20 @@ const IndexPage: NextPage = () => (
                 <div
                   css={mq({ marginTop: [0, 12, 0], marginLeft: [20, 0, 60] })}
                 >
-                  <h3
+                  <Text
                     css={mq({
                       display: ['none', 'none', 'block'],
                       margin: '0 0 13px',
                     })}
+                    as="h3"
+                    variant="h3"
                   >
                     Welcome to Velocity
-                  </h3>
-                  <p
-                    css={({ color }) =>
-                      mq({
-                        color: color.neutral[600],
-                        margin: 0,
-                        textAlign: ['left', 'center', 'left'],
-                      })
-                    }
-                  >
+                  </Text>
+                  <Text align={['left', 'center', 'left']} variant="p2">
                     All cars are operating well. There were 1,233 trips since
                     your last login.
-                  </p>
+                  </Text>
                 </div>
               </div>
             </Card>

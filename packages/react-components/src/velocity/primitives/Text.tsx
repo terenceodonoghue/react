@@ -4,8 +4,10 @@ import type { Property } from 'csstype';
 import { rem } from 'polished';
 import type { ElementType, FunctionComponent, HTMLAttributes } from 'react';
 
+import mq from '../utils/mq.js';
+
 export interface TextProps extends HTMLAttributes<HTMLElement> {
-  align?: Property.TextAlign;
+  align?: Property.TextAlign | Property.TextAlign[];
   as?: ElementType;
   truncate?: boolean;
   variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'p1' | 'p2' | 'p3' | 'c1' | 'c2';
@@ -24,6 +26,7 @@ const Text: FunctionComponent<TextProps> = ({
     h1: {
       color: color.neutral[900],
       fontSize: rem(48),
+      fontStyle: 'normal',
       fontWeight: font.weight.light,
       lineHeight: rem(57),
       letterSpacing: -0.6,
@@ -31,18 +34,21 @@ const Text: FunctionComponent<TextProps> = ({
     h2: {
       color: color.neutral[900],
       fontSize: rem(34),
+      fontStyle: 'normal',
       fontWeight: font.weight.light,
       lineHeight: rem(32),
     },
     h3: {
       color: color.neutral[900],
       fontSize: rem(28),
+      fontStyle: 'normal',
       fontWeight: font.weight.light,
       lineHeight: rem(32),
     },
     h4: {
       color: color.neutral[900],
       fontSize: rem(15),
+      fontStyle: 'normal',
       fontWeight: font.weight.medium,
       lineHeight: rem(18),
     },
@@ -86,7 +92,7 @@ const Text: FunctionComponent<TextProps> = ({
     <Tag
       css={[
         css[variant],
-        { fontFamily: font.family, textAlign: align },
+        mq({ fontFamily: font.family, textAlign: align }),
         truncate
           ? {
               textOverflow: 'ellipsis',

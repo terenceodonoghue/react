@@ -26,6 +26,7 @@ const Pill: FunctionComponent<PillProps> = ({
         minWidth: 32,
         backgroundColor: rgba(pillColor || color.primary, opacity),
         color: pillColor,
+        fontFamily: font.family,
         fontSize: rem(12),
         fontWeight: font.weight.medium,
         lineHeight: rem(14),

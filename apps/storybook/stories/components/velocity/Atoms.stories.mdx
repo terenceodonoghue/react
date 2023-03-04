@@ -8,7 +8,6 @@ import {
 } from '@storybook/addon-docs';
 import { useState } from 'react';
 
-import { Global } from '@terenceodonoghue/react-components/core';
 import {
   Avatar,
   Backdrop,
@@ -27,7 +26,6 @@ import {
   TextField,
   ThemeProvider,
 } from '@terenceodonoghue/react-components/velocity';
-import velocity from '@terenceodonoghue/react-components/velocity.css';
 import {
   Analytics,
   Check,
@@ -48,35 +46,30 @@ import {
   title="Components/Velocity/Atoms"
   decorators={[
     (Story) => (
-      <ThemeProvider>
-        <div
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: 32,
-          }}
-        >
-          <Story />
-        </div>
-      </ThemeProvider>
+      <div
+        style={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: 32,
+        }}
+      >
+        <Story />
+      </div>
     ),
   ]}
 />
 
-<ThemeProvider>
-  <Global
-    styles={({ color }) => [
-      velocity,
-      {
-        '[data-has-bg] .docs-story': {
-          backgroundColor: color.neutral[100],
-        },
+<ThemeProvider
+  styles={({ color }) => [
+    {
+      '[data-has-bg] .docs-story': {
+        backgroundColor: color.neutral[100],
       },
-    ]}
-  />
-</ThemeProvider>
+    },
+  ]}
+>
 
 <Logo style={{ marginBottom: '1.5rem' }} />
 
@@ -449,3 +442,5 @@ A collection of `items`, each with a `label` and a `value`, makes up a list. Sta
     />
   </Story>
 </Canvas>
+
+</ThemeProvider>

@@ -15,7 +15,7 @@ const Card: FunctionComponent<CardProps> = ({
   children,
   ...props
 }) => {
-  const { color } = useTheme();
+  const { color, font } = useTheme();
 
   return (
     <div
@@ -27,6 +27,7 @@ const Card: FunctionComponent<CardProps> = ({
         padding: '32px 24px',
         backgroundColor: color.neutral[50],
         color: color.neutral[900],
+        fontFamily: font.family,
       })}
       {...props}
     >

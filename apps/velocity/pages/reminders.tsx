@@ -191,7 +191,7 @@ const RemindersPage: NextPage = () => {
         <title>Velocity | Service Reminders</title>
       </Head>
       <Container heading="Service Reminders">
-        <div css={{ display: 'flex', margin: '12px 0', overflow: 'scroll' }}>
+        <div css={{ display: 'flex', margin: '24px 0', overflow: 'scroll' }}>
           <DragDropContext
             onDragEnd={(dragResult): void =>
               onDragEnd(dragResult, tickets, setTickets)
@@ -210,7 +210,10 @@ const RemindersPage: NextPage = () => {
                   key={columnKey}
                 >
                   <Text
-                    css={{ display: 'inline-block', marginLeft: 12 }}
+                    css={{
+                      display: 'inline-block',
+                      margin: '0 0 0 12px',
+                    }}
                     as="h3"
                     variant="c1"
                   >

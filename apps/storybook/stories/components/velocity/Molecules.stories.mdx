@@ -2,7 +2,6 @@ import { faker } from '@faker-js/faker';
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
 import { useState } from 'react';
 
-import { Global } from '@terenceodonoghue/react-components/core';
 import {
   ChatCard,
   Customer,
@@ -20,7 +19,6 @@ import {
   TripSummary,
   mq,
 } from '@terenceodonoghue/react-components/velocity';
-import velocity from '@terenceodonoghue/react-components/velocity.css';
 import { InVision, GitHub } from '@terenceodonoghue/react-icons/brands';
 import { Dashboard } from '@terenceodonoghue/react-icons/velocity';
 import {
@@ -30,114 +28,98 @@ import {
   Marker,
 } from '@terenceodonoghue/react-icons/velocity';
 
-<Meta
-  title="Components/Velocity/Molecules"
-  decorators={[
-    (Story) => (
-      <ThemeProvider>
-        <Story />
-      </ThemeProvider>
-    ),
+<Meta title="Components/Velocity/Molecules" />
+
+<ThemeProvider
+  styles={({ color }) => [
+    mq({
+      '[data-has-bg] .docs-story': {
+        backgroundColor: color.neutral[100],
+      },
+      '.chat-card': {
+        display: 'grid',
+        gridTemplateColumns: ['1fr', 'repeat(3, 1fr)'],
+        gap: 12,
+      },
+      '.customer': {
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 16,
+        margin: '0 auto',
+        maxWidth: 'fit-content',
+      },
+      '.driver': {
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 16,
+        margin: '0 auto',
+        maxWidth: 'fit-content',
+      },
+      '.integration-card': {
+        display: 'grid',
+        gridTemplateColumns: ['1fr', 'repeat(2, 1fr)'],
+        gap: [16, 48],
+        margin: '0 auto',
+        maxWidth: 'fit-content',
+      },
+      '.kanban-card': {
+        display: 'grid',
+        gridTemplateColumns: [
+          'repeat(1, 1fr)',
+          'repeat(2, 1fr)',
+          'repeat(3, 1fr)',
+        ],
+      },
+      '.metric-card': {
+        display: 'grid',
+        gridTemplateColumns: [
+          'repeat(2, 1fr)',
+          'repeat(2, 1fr)',
+          'repeat(3, 1fr)',
+        ],
+      },
+      '.nav-item': {
+        display: 'grid',
+        gridTemplateColumns: 'repeat(2, min-content)',
+        gap: 16,
+        margin: '0 auto',
+        maxWidth: 'fit-content',
+      },
+      '.payment-method': {
+        display: 'grid',
+        gridTemplateColumns: ['repeat(2, 1fr)', 'repeat(4, 1fr)'],
+        gap: [16, 24],
+        margin: '0 auto',
+        maxWidth: 'fit-content',
+      },
+      '.setting': {
+        display: 'grid',
+        gridTemplateColumns: ['repeat(1, 1fr)', 'repeat(2, 1fr)'],
+        columnGap: 64,
+        rowGap: 20,
+        margin: '0 auto',
+        maxWidth: 'fit-content',
+      },
+      '.theme-card': {
+        display: 'grid',
+        gridTemplateColumns: [
+          'repeat(auto-fit, 140px)',
+          'repeat(auto-fit, 120px)',
+        ],
+        justifyContent: 'center',
+        gap: [24, 32],
+      },
+      '.trip-details': {
+        margin: '0 auto',
+        maxWidth: 'fit-content',
+      },
+      '.trip-summary': {
+        margin: '0 auto',
+        maxWidth: 'fit-content',
+      },
+    }),
   ]}
-/>
-
-<ThemeProvider>
-  <Global
-    styles={({ color }) => [
-      velocity,
-      mq({
-        '[data-has-bg] .docs-story': {
-          backgroundColor: color.neutral[100],
-        },
-        '.chat-card': {
-          display: 'grid',
-          gridTemplateColumns: ['1fr', 'repeat(3, 1fr)'],
-          gap: 12,
-        },
-        '.customer': {
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 16,
-          margin: '0 auto',
-          maxWidth: 'fit-content',
-        },
-        '.driver': {
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 16,
-          margin: '0 auto',
-          maxWidth: 'fit-content',
-        },
-        '.integration-card': {
-          display: 'grid',
-          gridTemplateColumns: ['1fr', 'repeat(2, 1fr)'],
-          gap: [16, 48],
-          margin: '0 auto',
-          maxWidth: 'fit-content',
-        },
-        '.kanban-card': {
-          display: 'grid',
-          gridTemplateColumns: [
-            'repeat(1, 1fr)',
-            'repeat(2, 1fr)',
-            'repeat(3, 1fr)',
-          ],
-        },
-        '.metric-card': {
-          display: 'grid',
-          gridTemplateColumns: [
-            'repeat(2, 1fr)',
-            'repeat(2, 1fr)',
-            'repeat(3, 1fr)',
-          ],
-        },
-        '.nav-item': {
-          display: 'grid',
-          gridTemplateColumns: 'repeat(2, min-content)',
-          gap: 16,
-          margin: '0 auto',
-          maxWidth: 'fit-content'
-        },
-        '.payment-method': {
-          display: 'grid',
-          gridTemplateColumns: [
-            'repeat(2, 1fr)',
-            'repeat(4, 1fr)',
-          ],
-          gap: [16, 24],
-          margin: '0 auto',
-          maxWidth: 'fit-content',
-        },
-        '.setting': {
-          display: 'grid',
-          gridTemplateColumns: ['repeat(1, 1fr)', 'repeat(2, 1fr)'],
-          columnGap: 64,
-          rowGap: 20,
-          margin: '0 auto',
-          maxWidth: 'fit-content',
-        },
-        '.theme-card': {
-          display: 'grid',
-          gridTemplateColumns: [
-            'repeat(auto-fit, 140px)',
-            'repeat(auto-fit, 120px)',
-          ],
-          justifyContent: 'center',
-          gap: [24, 32],
-        },
-        '.trip-details': {
-          margin: '0 auto',
-          maxWidth: 'fit-content',
-        },
-        '.trip-summary': {
-          margin: '0 auto',
-          maxWidth: 'fit-content',
-        },
-      }),
-    ]}
-/>
-
-</ThemeProvider>
+>
 
 <Logo style={{ marginBottom: '1.5rem' }} />
 
@@ -526,3 +508,5 @@ import { ThemeCard } from '@terenceodonoghue/react-components/velocity';
     <ThemeCard label="Denethor" colors={['#8c54ff', '#00c1d4', '#fad050']} />
   </Story>
 </Canvas>
+
+</ThemeProvider>

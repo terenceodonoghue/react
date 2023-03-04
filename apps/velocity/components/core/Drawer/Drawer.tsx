@@ -3,7 +3,7 @@ import { FunctionComponent, HTMLAttributes } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { animated, config, useSpring } from 'react-spring';
 
-import { Avatar } from '@terenceodonoghue/react-components/velocity';
+import { Avatar, Text } from '@terenceodonoghue/react-components/velocity';
 
 import { DESKTOP } from '../../utils/breakpoints';
 import Item, { ItemProps } from './Item';
@@ -78,16 +78,26 @@ const Drawer: FunctionComponent<DrawerProps> & DrawerComposition = ({
           variant="square"
         />
         <div>
-          <span>Welcome</span>
-          <span
-            css={({ color }) => ({
-              color: color.neutral[400],
+          <Text
+            css={({ font }) => ({
               display: 'block',
-              whiteSpace: 'nowrap',
+              fontWeight: font.weight.regular,
             })}
+            as="span"
+            variant="h4"
+          >
+            Welcome
+          </Text>
+          <Text
+            css={({ color }) => ({
+              display: 'block',
+              color: color.neutral[400],
+            })}
+            as="span"
+            truncate
           >
             {name}
-          </span>
+          </Text>
         </div>
       </div>
       <nav>
