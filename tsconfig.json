@@ -1,8 +1,7 @@
 {
   "compilerOptions": {
     "composite": true,
-    "baseUrl": "./",
-    "preserveSymlinks": true
+    "baseUrl": "./"
   },
   "files": [
     "./tests/render.ts",
