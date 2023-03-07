@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "baseUrl": "./"
+  },
+  "files": [
+    "./tests/render.ts",
+    "./tests/setup.ts"
+  ]
+}
