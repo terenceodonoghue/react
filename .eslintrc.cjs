@@ -7,6 +7,7 @@ module.exports = {
     ],
   },
   settings: {
+    'import/internal-regex': '^tests/',
     'mdx/code-blocks': true,
   },
 };

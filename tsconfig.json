@@ -2,11 +2,7 @@
   "compilerOptions": {
     "composite": true,
     "baseUrl": "./",
-    "paths": {
-      "@tests/*": [
-        "./tests/*"
-      ]
-    }
+    "preserveSymlinks": true
   },
   "files": [
     "./tests/render.ts",
