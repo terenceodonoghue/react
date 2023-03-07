@@ -9,8 +9,8 @@ export default defineConfig({
   },
   test: {
     globals: true,
+    clearMocks: true,
     environment: 'jsdom',
-    reporters: 'verbose',
     setupFiles: './tests/setup.ts',
   },
 });
