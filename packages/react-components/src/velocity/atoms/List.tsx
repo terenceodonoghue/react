@@ -19,14 +19,15 @@ const List: FunctionComponent<ListProps> = ({ items = [], ...props }) => (
       margin: 0,
       overflow: 'hidden',
     }}
+    role="list"
     {...props}
   >
     {items.map((item) => (
-      <div key={item.label}>
-        <Text css={{ marginBottom: 8 }} as="dt" variant="c1">
+      <div key={item.label} role="presentation">
+        <Text as="dt" css={{ marginBottom: 8 }} variant="c1">
           {item.label}
         </Text>
-        <Text css={{ margin: 0 }} as="dd" variant="p1" truncate>
+        <Text as="dd" css={{ margin: 0 }} variant="p1" truncate>
           {item.value}
         </Text>
       </div>

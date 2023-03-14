@@ -75,7 +75,7 @@ const Drawer: FunctionComponent<DrawerProps> & DrawerComposition = ({
           }}
           size={32}
           src={avatar}
-          variant="square"
+          variant="squared"
         />
         <div>
           <Text

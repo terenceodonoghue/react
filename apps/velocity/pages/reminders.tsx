@@ -15,12 +15,11 @@ import {
 import {
   Card,
   KanbanCard,
+  Main,
   Pill,
   Text,
   TopDrivers,
 } from '@terenceodonoghue/react-components/velocity';
-
-import Container from '../components/core/Container';
 
 const COLUMNS = ['Service needed', 'Waiting', 'In service', 'Fully serviced'];
 
@@ -190,7 +189,7 @@ const RemindersPage: NextPage = () => {
       <Head>
         <title>Velocity | Service Reminders</title>
       </Head>
-      <Container heading="Service Reminders">
+      <Main heading="Service Reminders">
         <div css={{ display: 'flex', margin: '24px 0', overflow: 'scroll' }}>
           <DragDropContext
             onDragEnd={(dragResult): void =>
@@ -275,10 +274,10 @@ const RemindersPage: NextPage = () => {
         <div css={{ display: 'flex' }}>
           <Card
             css={{ flexBasis: 655, flexShrink: 0 }}
-            caption="Service Centers"
+            heading="Service Centers"
           />
           <div css={{ display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
-            <Card caption="Vehicle Service Status" />
+            <Card heading="Vehicle Service Status" />
             <TopDrivers
               drivers={[
                 {
@@ -310,7 +309,7 @@ const RemindersPage: NextPage = () => {
             />
           </div>
         </div>
-      </Container>
+      </Main>
     </>
   );
 };

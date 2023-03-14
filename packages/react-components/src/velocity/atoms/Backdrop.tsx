@@ -31,6 +31,7 @@ const Backdrop: FunctionComponent<BackdropProps> = ({
         width: 'fit-content',
         backgroundColor: rgba(backgroundColor || color.primary, opacity),
       }}
+      role="presentation"
       {...props}
     >
       {children}

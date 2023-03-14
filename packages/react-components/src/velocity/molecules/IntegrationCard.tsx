@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { useTheme } from '@emotion/react';
 import { rem, rgba } from 'polished';
-import type { FunctionComponent } from 'react';
+import { FunctionComponent, useId } from 'react';
 
 import type { ReactIcon } from '@terenceodonoghue/react-icons';
 import { Check } from '@terenceodonoghue/react-icons/velocity';
@@ -14,20 +14,28 @@ export interface IntegrationCardProps extends BoxProps {
   description: string;
   enabled?: boolean;
   icon: ReactIcon;
-  name: string;
+  label: string;
 }
 
 const IntegrationCard: FunctionComponent<IntegrationCardProps> = ({
   description,
   enabled = false,
-  name,
+  label,
   icon: Icon,
   ...props
 }) => {
+  const labelId = useId();
+  const descriptionId = useId();
+
   const { color } = useTheme();
 
   return (
-    <Indicator icon={Check} visible={enabled}>
+    <Indicator
+      aria-labelledby={labelId}
+      aria-describedby={descriptionId}
+      icon={Check}
+      visible={enabled}
+    >
       <Box
         css={{
           borderColor: enabled ? color.primary : color.secondary,
@@ -48,14 +56,23 @@ const IntegrationCard: FunctionComponent<IntegrationCardProps> = ({
             width: 70,
             backgroundColor: rgba(color.neutral[700], 0.1),
           }}
+          role="presentation"
         >
-          <Icon size={30} />
+          {Icon ? <Icon aria-hidden size={30} /> : undefined}
         </div>
-        <div css={{ display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
-          <Text css={{ lineHeight: rem(22) }} as="span" variant="h4">
-            {name}
+        <div
+          css={{ display: 'flex', flexDirection: 'column', flexGrow: 1 }}
+          role="presentation"
+        >
+          <Text
+            as="span"
+            css={{ lineHeight: rem(22) }}
+            id={labelId}
+            variant="h4"
+          >
+            {label}
           </Text>
-          <Text as="span" variant="p2">
+          <Text as="span" id={descriptionId} variant="p2">
             {description}
           </Text>
         </div>

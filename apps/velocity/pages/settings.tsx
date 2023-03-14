@@ -5,6 +5,7 @@ import {
   Button,
   Card,
   Integrations,
+  Main,
   mq,
   Notifications,
   Text,
@@ -19,15 +20,13 @@ import {
   Twitter,
 } from '@terenceodonoghue/react-icons/brands';
 
-import Container from '../components/core/Container';
-
 const SettingsPage: NextPage = () => {
   return (
     <>
       <Head>
         <title>Velocity | Settings</title>
       </Head>
-      <Container heading="Settings">
+      <Main heading="Settings">
         <div
           css={mq({
             display: 'flex',
@@ -35,7 +34,7 @@ const SettingsPage: NextPage = () => {
             gap: [8, 16, 32],
           })}
         >
-          <Card caption="Personal data">
+          <Card heading="Personal data">
             <Text>
               Use this page to update your contact information and change your
               password.
@@ -102,29 +101,29 @@ const SettingsPage: NextPage = () => {
           <Integrations
             providers={[
               {
-                name: 'InVision',
+                label: 'InVision',
                 description: 'Boards and prototypes',
                 icon: InVision,
                 enabled: true,
               },
               {
-                name: 'GitHub',
+                label: 'GitHub',
                 description: 'Commits data and history',
                 icon: GitHub,
                 enabled: true,
               },
               {
-                name: 'Slack',
+                label: 'Slack',
                 description: 'Messages and channels',
                 icon: Slack,
               },
               {
-                name: 'Twitter',
+                label: 'Twitter',
                 description: 'Tweets data',
                 icon: Twitter,
               },
               {
-                name: 'Medium',
+                label: 'Medium',
                 description: 'Followers count',
                 icon: Medium,
               },
@@ -133,20 +132,20 @@ const SettingsPage: NextPage = () => {
           <Notifications
             options={[
               {
-                name: 'Email Notification',
+                label: 'Email Notification',
                 description: 'Commits data and history',
               },
               {
-                name: 'Push Notification',
+                label: 'Push Notification',
                 description: 'Commits data and history',
                 defaultChecked: true,
               },
               {
-                name: 'Monthly Reports',
+                label: 'Monthly Reports',
                 description: 'Commits data and history',
               },
               {
-                name: 'Quarter Reports',
+                label: 'Quarter Reports',
                 description: 'Commits data and history',
               },
             ]}
@@ -177,7 +176,7 @@ const SettingsPage: NextPage = () => {
             ]}
           />
         </div>
-      </Container>
+      </Main>
     </>
   );
 };

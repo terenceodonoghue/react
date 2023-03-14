@@ -34,6 +34,7 @@ const Box: FunctionComponent<BoxProps> = ({
           paddingX === paddingY ? `${p}px` : `${paddingY}px ${paddingX}px`,
         fontFamily: font.family,
       }}
+      role="presentation"
       {...props}
     >
       {children}

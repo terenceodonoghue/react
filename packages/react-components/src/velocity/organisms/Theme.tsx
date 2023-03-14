@@ -11,7 +11,7 @@ export interface ThemeProps extends CardProps {
 }
 
 const Theme: FunctionComponent<ThemeProps> = ({ options = [], ...props }) => (
-  <Card caption="Theme" {...props}>
+  <Card heading="Theme" {...props}>
     <Text>Select a color scheme for your Velocity app.</Text>
     <div
       css={mq({

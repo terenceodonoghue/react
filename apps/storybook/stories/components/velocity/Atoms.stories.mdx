@@ -85,21 +85,21 @@ Buttons allow users to trigger an action or event with a single click.
 import { Button } from '@terenceodonoghue/react-components/velocity';
 ```
 
-The `variant` prop defines one of three styles: contained (default), outlined, or text. Standard [button](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button) attributes are also supported, e.g. `disabled`.
+The `variant` prop defines one of three styles: primary (default), outline, or minimal. Standard [button](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button) attributes are also supported, e.g. `disabled`.
 
 <Canvas>
   <Story name="Button">
-    <Button variant="contained">Contained</Button>
-    <Button variant="outlined">Outlined</Button>
-    <Button variant="text">Text</Button>
-    <Button variant="contained" disabled>
-      Contained
+    <Button variant="primary">Primary</Button>
+    <Button variant="outline">Outline</Button>
+    <Button variant="minimal">Minimal</Button>
+    <Button variant="primary" disabled>
+      Primary
     </Button>
-    <Button variant="outlined" disabled>
-      Outlined
+    <Button variant="outline" disabled>
+      Outline
     </Button>
-    <Button variant="text" disabled>
-      Text
+    <Button variant="minimal" disabled>
+      Minimal
     </Button>
   </Story>
 </Canvas>
@@ -187,12 +187,12 @@ An avatar component represents an object or entity, typically a user's profile p
 import { Avatar } from '@terenceodonoghue/react-components/velocity';
 ```
 
-The `variant` prop defines one of two styles: rounded (default) or square. Standard [img](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img) attributes are also supported, e.g. `alt`.
+The `variant` prop defines one of two styles: rounded (default) or squared. Standard [img](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img) attributes are also supported, e.g. `alt`.
 
 <Canvas>
   <Story name="Avatar">
     <Avatar alt="hello" src={faker.image.avatar()} />
-    <Avatar src={faker.image.avatar()} variant="square" />
+    <Avatar src={faker.image.avatar()} variant="squared" />
   </Story>
 </Canvas>
 
@@ -255,7 +255,7 @@ By default the indicator uses the primary theme colour and is always visible, bu
     <Indicator>
       <Notifications color="#BFC5D2" size={32} />
     </Indicator>
-    <Indicator visible={false}>
+    <Indicator hidden>
       <Mail color="#BFC5D2" size={32} />
     </Indicator>
   </Story>
@@ -288,11 +288,11 @@ Cards contain content and actions about a single subject.
 import { Card } from '@terenceodonoghue/react-components/velocity';
 ```
 
-An optional `caption` prop renders text above the content block.
+An optional `heading` prop renders text above the content block.
 
 <Canvas data-has-bg>
   <Story name="Card">
-    <Card caption="Caption">Content</Card>
+    <Card heading="Heading">Content</Card>
     <Card>Content</Card>
   </Story>
 </Canvas>
@@ -405,7 +405,7 @@ Icon buttons are commonly found in app bars and toolbars.
 import { IconButton } from '@terenceodonoghue/react-components/velocity';
 ```
 
-The `variant` prop defines one of two styles: square (default) or rounded. Standard [button](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button) attributes are also supported.
+The `variant` prop defines one of two styles: squared (default) or rounded. Standard [button](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button) attributes are also supported.
 
 <Canvas>
   <Story name="IconButton">

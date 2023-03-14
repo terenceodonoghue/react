@@ -2,9 +2,12 @@ import { Interpolation, Theme } from '@emotion/react';
 import { NextPage } from 'next';
 import Head from 'next/head';
 
-import { Card, TextField } from '@terenceodonoghue/react-components/velocity';
+import {
+  Card,
+  Main,
+  TextField,
+} from '@terenceodonoghue/react-components/velocity';
 
-import Container from '../components/core/Container';
 import Slider from '../components/core/Slider';
 
 const VehiclesPage: NextPage = () => {
@@ -23,10 +26,10 @@ const VehiclesPage: NextPage = () => {
       <Head>
         <title>Velocity | Vehicles Dashboard</title>
       </Head>
-      <Container heading="Vehicles Dashboard">
+      <Main heading="Vehicles Dashboard">
         <div css={{ display: 'flex' }}>
           <div css={{ flex: 4 }} />
-          <Card css={{ flex: 1 }} caption="Filter">
+          <Card css={{ flex: 1 }} heading="Filter">
             <div css={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
               <Slider primary="Trips taken" secondary="753" />
               <Slider primary="Service due" secondary="14 days" />
@@ -50,7 +53,7 @@ const VehiclesPage: NextPage = () => {
             </div>
           </Card>
         </div>
-      </Container>
+      </Main>
     </>
   );
 };

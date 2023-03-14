@@ -7,14 +7,14 @@ export type SliderProps = InputHTMLAttributes<HTMLInputElement>;
 
 const Slider: FunctionComponent<InputHTMLAttributes<HTMLInputElement>> =
   forwardRef<HTMLInputElement, SliderProps>(
-    ({ className, id, style, ...props }, ref) => {
+    ({ className, style, ...props }, ref) => {
       const { color, transition } = useTheme();
 
       return (
-        <label
-          css={{ display: 'flex' }}
+        <div
           className={className}
-          htmlFor={id}
+          css={{ display: 'flex' }}
+          role="presentation"
           style={style}
         >
           <input
@@ -49,12 +49,11 @@ const Slider: FunctionComponent<InputHTMLAttributes<HTMLInputElement>> =
                 opacity: 0.3,
               },
             }}
-            id={id}
             ref={ref}
             type="range"
             {...props}
           />
-        </label>
+        </div>
       );
     },
   );

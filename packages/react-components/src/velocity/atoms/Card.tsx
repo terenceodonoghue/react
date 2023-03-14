@@ -1,24 +1,28 @@
 /** @jsxImportSource @emotion/react */
 import { useTheme } from '@emotion/react';
 import { rgba } from 'polished';
-import type { FunctionComponent, HTMLAttributes } from 'react';
+import { FunctionComponent, HTMLAttributes, useId } from 'react';
 
 import Text from '../primitives/Text.js';
 import mq from '../utils/mq.js';
 
 export interface CardProps extends HTMLAttributes<HTMLDivElement> {
-  caption?: string;
+  heading?: string;
 }
 
 const Card: FunctionComponent<CardProps> = ({
-  caption,
+  heading,
   children,
   ...props
 }) => {
+  const headingId = useId();
   const { color, font } = useTheme();
 
+  const Container = heading ? 'section' : 'div';
+
   return (
-    <div
+    <Container
+      aria-labelledby={heading ? headingId : undefined}
       css={mq({
         border: `solid 1px ${rgba(color.primary, 0.08)}`,
         borderRadius: 1,
@@ -31,20 +35,21 @@ const Card: FunctionComponent<CardProps> = ({
       })}
       {...props}
     >
-      {caption ? (
+      {heading ? (
         <Text
           css={{
             display: 'block',
             margin: '0 0 20px',
           }}
           as="h2"
+          id={headingId}
           variant="c2"
         >
-          {caption}
+          {heading}
         </Text>
       ) : undefined}
       {children}
-    </div>
+    </Container>
   );
 };
 

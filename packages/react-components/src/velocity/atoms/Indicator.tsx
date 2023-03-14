@@ -1,10 +1,10 @@
 /** @jsxImportSource @emotion/react */
 import { useTheme } from '@emotion/react';
-import type { FunctionComponent, ReactNode } from 'react';
+import type { FunctionComponent, HTMLAttributes, ReactNode } from 'react';
 
 import type { ReactIcon } from '@terenceodonoghue/react-icons';
 
-export interface IndicatorProps {
+export interface IndicatorProps extends HTMLAttributes<HTMLDivElement> {
   children?: ReactNode;
   color?: string;
   icon?: ReactIcon;
@@ -25,10 +25,12 @@ const Indicator: FunctionComponent<IndicatorProps> = ({
       css={{
         position: 'relative',
       }}
+      role="status"
       {...props}
     >
       {visible ? (
         <div
+          aria-hidden
           css={{
             position: 'absolute',
             top: 0,

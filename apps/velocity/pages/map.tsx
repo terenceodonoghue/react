@@ -4,19 +4,18 @@ import Head from 'next/head';
 
 import {
   Card,
+  Main,
   mq,
   PassengerInfo,
   TripInfo,
 } from '@terenceodonoghue/react-components/velocity';
-
-import Container from '../components/core/Container';
 
 const MapPage: NextPage = () => (
   <>
     <Head>
       <title>Velocity | Map</title>
     </Head>
-    <Container>
+    <Main>
       <div
         css={mq({
           display: 'flex',
@@ -48,7 +47,7 @@ const MapPage: NextPage = () => (
           <Card css={mq({ display: ['none', 'none', 'block'], flex: 1 })} />
         </div>
       </div>
-    </Container>
+    </Main>
   </>
 );
 

@@ -17,6 +17,7 @@ import {
 
 import {
   Card,
+  Main,
   MetricCard,
   Text,
   mq,
@@ -27,8 +28,6 @@ import {
   Energy,
   Marker,
 } from '@terenceodonoghue/react-icons/velocity';
-
-import Container from '../components/core/Container';
 
 const AnalyticsPage: NextPage = () => {
   const { color } = useTheme();
@@ -82,13 +81,13 @@ const AnalyticsPage: NextPage = () => {
       <Head>
         <title>Velocity | Analytics</title>
       </Head>
-      <Container heading="Analytics">
+      <Main heading="Analytics">
         <div
           css={{
             display: 'flex',
           }}
         >
-          <Card css={{ flex: 1 }} caption="Revenue">
+          <Card css={{ flex: 1 }} heading="Revenue">
             <ResponsiveContainer width="100%" height={340}>
               <AreaChart
                 data={[
@@ -283,8 +282,8 @@ const AnalyticsPage: NextPage = () => {
             flexDirection: ['column', 'column', 'row'],
           })}
         >
-          <Card css={{ flex: 1 }} caption="Latest trips" />
-          <Card css={mq({ flex: [1, 1, 2] })} caption="Trips by Weekday">
+          <Card css={{ flex: 1 }} heading="Latest trips" />
+          <Card css={mq({ flex: [1, 1, 2] })} heading="Trips by Weekday">
             <ResponsiveContainer width="100%" height={340}>
               <ComposedChart
                 data={[
@@ -393,7 +392,7 @@ const AnalyticsPage: NextPage = () => {
             </ResponsiveContainer>
           </Card>
         </div>
-      </Container>
+      </Main>
     </>
   );
 };

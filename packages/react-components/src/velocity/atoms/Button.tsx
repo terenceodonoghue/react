@@ -4,31 +4,31 @@ import { darken, rgba, rem, transitions } from 'polished';
 import { ButtonHTMLAttributes, forwardRef, FunctionComponent } from 'react';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'contained' | 'outlined' | 'text';
+  variant?: 'primary' | 'outline' | 'minimal';
 }
 
 const Button: FunctionComponent<ButtonProps> = forwardRef<
   HTMLButtonElement,
   ButtonProps
->(({ variant = 'contained', ...props }, ref) => {
+>(({ variant = 'primary', ...props }, ref) => {
   const { color, font, transition } = useTheme();
 
   const css: Record<string, CSSObject> = {
-    contained: {
+    primary: {
       backgroundColor: color.primary,
       color: 'white',
       '&:enabled:hover': {
         backgroundColor: darken(color.tonalOffset, color.primary),
       },
     },
-    outlined: {
+    outline: {
       backgroundColor: rgba(color.primary, color.tonalOffset),
       color: color.primary,
       '&:enabled:hover': {
         backgroundColor: rgba(color.primary, 0.4),
       },
     },
-    text: {
+    minimal: {
       background: 'none',
       color: color.primary,
       '&:enabled:hover': {

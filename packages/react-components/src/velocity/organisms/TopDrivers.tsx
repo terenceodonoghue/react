@@ -14,7 +14,7 @@ const TopDrivers: FunctionComponent<TopDriversProps> = ({
 }) => (
   <Card
     css={{ display: 'flex', flexDirection: 'column', gap: 12 }}
-    caption="Top Drivers"
+    heading="Top Drivers"
     {...props}
   >
     {drivers.map((driver, i) => (

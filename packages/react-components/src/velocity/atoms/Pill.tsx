@@ -33,6 +33,7 @@ const Pill: FunctionComponent<PillProps> = ({
         textAlign: 'center',
         textTransform: 'uppercase',
       }}
+      role="status"
       {...props}
     >
       {label}

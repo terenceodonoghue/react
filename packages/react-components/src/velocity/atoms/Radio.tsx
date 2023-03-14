@@ -1,7 +1,12 @@
 /** @jsxImportSource @emotion/react */
 import { useTheme } from '@emotion/react';
 import { rgba } from 'polished';
-import { InputHTMLAttributes, FunctionComponent, forwardRef } from 'react';
+import {
+  InputHTMLAttributes,
+  FunctionComponent,
+  forwardRef,
+  useId,
+} from 'react';
 
 import Text from '../primitives/Text.js';
 
@@ -12,35 +17,42 @@ export interface RadioProps extends InputHTMLAttributes<HTMLInputElement> {
 const Radio: FunctionComponent<RadioProps> = forwardRef<
   HTMLInputElement,
   RadioProps
->(({ className, disabled, id, label, style, ...props }, ref) => {
+>(({ className, id, label, style, ...props }, ref) => {
+  const defaultId = useId();
   const { color } = useTheme();
 
   return (
-    <label
+    <div
+      className={className}
       css={{
+        position: 'relative',
         display: 'flex',
         alignItems: 'center',
-        cursor: disabled ? 'not-allowed' : 'pointer',
-        opacity: disabled ? 0.4 : 1,
       }}
-      className={className}
-      htmlFor={id}
+      role="presentation"
       style={style}
     >
       <input
         css={{
+          position: 'absolute',
           margin: 0,
-          height: 0,
-          width: 0,
+          height: 16,
+          width: 16,
           opacity: 0,
+          '&:enabled': {
+            cursor: 'pointer',
+          },
+          '&:disabled': {
+            cursor: 'not-allowed',
+          },
         }}
-        disabled={disabled}
-        id={id}
+        id={id || defaultId}
         ref={ref}
         type="radio"
         {...props}
       />
       <span
+        aria-hidden
         css={{
           border: `solid 1px ${rgba(color.neutral[700], 0.5)}`,
           borderRadius: '50%',
@@ -48,21 +60,30 @@ const Radio: FunctionComponent<RadioProps> = forwardRef<
           height: 16,
           margin: '0 8px 0 0',
           width: 16,
-          'input:checked + &': {
+          pointerEvents: 'none',
+          'input:checked ~ &': {
             border: `solid 4px ${color.primary}`,
           },
-          'input:enabled + &': {
-            cursor: 'pointer',
-          },
-          'input:disabled + &': {
-            cursor: 'not-allowed',
+          'input:disabled ~ &': {
+            opacity: 0.4,
           },
         }}
       />
-      <Text as="span" variant="h4">
-        {label}
-      </Text>
-    </label>
+      {label ? (
+        <Text
+          as="label"
+          css={{
+            'input:disabled ~ &': {
+              opacity: 0.4,
+            },
+          }}
+          htmlFor={id || defaultId}
+          variant="h4"
+        >
+          {label}
+        </Text>
+      ) : undefined}
+    </div>
   );
 });
 

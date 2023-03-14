@@ -1,7 +1,12 @@
 /** @jsxImportSource @emotion/react */
 import { useTheme } from '@emotion/react';
 import { rem, rgba, transitions } from 'polished';
-import { InputHTMLAttributes, FunctionComponent, forwardRef } from 'react';
+import {
+  InputHTMLAttributes,
+  FunctionComponent,
+  forwardRef,
+  useId,
+} from 'react';
 
 import Text from '../primitives/Text.js';
 
@@ -13,17 +18,19 @@ const TextField: FunctionComponent<TextFieldProps> = forwardRef<
   HTMLInputElement,
   TextFieldProps
 >(({ className, id, label, style, ...props }, ref) => {
+  const defaultId = useId();
   const { color, font, transition } = useTheme();
 
   return (
-    <label className={className} htmlFor={id} style={style}>
+    <div className={className} role="presentation" style={style}>
       {label ? (
         <Text
+          as="label"
           css={{
             display: 'block',
             margin: '0 0 8px',
           }}
-          as="span"
+          htmlFor={id || defaultId}
           variant="c1"
         >
           {label}
@@ -52,11 +59,11 @@ const TextField: FunctionComponent<TextFieldProps> = forwardRef<
             color: color.neutral[600],
           },
         }}
-        id={id}
+        id={id || defaultId}
         ref={ref}
         {...props}
       />
-    </label>
+    </div>
   );
 });
 

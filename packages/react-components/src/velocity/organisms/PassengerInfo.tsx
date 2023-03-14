@@ -26,7 +26,7 @@ const PassengerInfo: FunctionComponent<PassengerInfoProps> = ({
   state,
   ...props
 }) => (
-  <Card caption="Passenger info" {...props}>
+  <Card heading="Passenger info" {...props}>
     <div css={{ display: 'flex', gap: 40 }}>
       <div
         css={{

@@ -229,9 +229,12 @@ import { Setting } from '@terenceodonoghue/react-components/velocity';
       ),
     ]}
   >
-    <Setting name="Email Notification" description="Commits data and history" />
     <Setting
-      name="Push Notification"
+      label="Email Notification"
+      description="Commits data and history"
+    />
+    <Setting
+      label="Push Notification"
       description="Commits data and history"
       defaultChecked
     />
@@ -349,13 +352,13 @@ import { IntegrationCard } from '@terenceodonoghue/react-components/velocity';
     ]}
   >
     <IntegrationCard
-      name="InVision"
+      label="InVision"
       description="Boards and prototypes"
       icon={InVision}
       enabled
     />
     <IntegrationCard
-      name="GitHub"
+      label="GitHub"
       description="Commits data and history"
       icon={GitHub}
     />

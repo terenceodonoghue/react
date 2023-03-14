@@ -10,7 +10,7 @@ const ChatPage: NextPage = () => (
     <Head>
       <title>Velocity | Chat</title>
     </Head>
-    <div css={{ display: 'flex', height: 'calc(100vh - 80px)' }}>
+    <main css={{ display: 'flex', height: 'calc(100vh - 80px)', padding: 0 }}>
       <ChatList
         css={mq({
           maxWidth: [undefined, 275, 376],
@@ -26,7 +26,7 @@ const ChatPage: NextPage = () => (
           selected: i === 2,
         }))}
       />
-    </div>
+    </main>
   </>
 );
 

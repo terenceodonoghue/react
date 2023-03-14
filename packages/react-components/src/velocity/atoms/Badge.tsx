@@ -20,6 +20,7 @@ const Badge: FunctionComponent<BadgeProps> = ({
       css={{
         position: 'relative',
       }}
+      role="presentation"
       {...props}
     >
       {label ? (

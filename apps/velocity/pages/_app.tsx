@@ -94,9 +94,7 @@ const App: FunctionComponent<AppProps> = ({ Component, pageProps }) => {
           label="Settings"
         />
       </Drawer>
-      <main>
-        <Component {...pageProps} />
-      </main>
+      <Component {...pageProps} />
     </ThemeProvider>
   );
 };

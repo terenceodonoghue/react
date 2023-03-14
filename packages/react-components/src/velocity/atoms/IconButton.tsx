@@ -5,20 +5,20 @@ import { ButtonHTMLAttributes, forwardRef, FunctionComponent } from 'react';
 
 export interface IconButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'rounded' | 'square';
+  variant?: 'rounded' | 'squared';
 }
 
 const IconButton: FunctionComponent<IconButtonProps> = forwardRef<
   HTMLButtonElement,
   IconButtonProps
->(({ variant = 'square', ...props }, ref) => {
+>(({ variant = 'squared', ...props }, ref) => {
   const { color, font, transition } = useTheme();
 
   const css: Record<string, CSSObject> = {
     rounded: {
       borderRadius: '50%',
     },
-    square: {
+    squared: {
       borderRadius: 4,
     },
   };

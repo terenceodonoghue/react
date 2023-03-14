@@ -8,24 +8,41 @@ export type SwitchProps = InputHTMLAttributes<HTMLInputElement>;
 const Switch: FunctionComponent<SwitchProps> = forwardRef<
   HTMLInputElement,
   SwitchProps
->(({ className, id, style, ...props }, ref) => {
+>(({ className, style, ...props }, ref) => {
   const { color, transition } = useTheme();
 
   return (
-    <label
-      css={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+    <div
       className={className}
-      htmlFor={id}
+      css={{
+        position: 'relative',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+      role="presentation"
       style={style}
     >
       <input
-        css={{ margin: 0, height: 0, width: 0, opacity: 0 }}
-        id={id}
+        css={{
+          position: 'absolute',
+          height: '100%',
+          width: '100%',
+          opacity: 0,
+          '&:enabled': {
+            cursor: 'pointer',
+          },
+          '&:disabled': {
+            cursor: 'not-allowed',
+          },
+        }}
         ref={ref}
+        role="switch"
         type="checkbox"
         {...props}
       />
       <span
+        aria-hidden
         css={{
           position: 'relative',
           borderRadius: 10,
@@ -33,6 +50,7 @@ const Switch: FunctionComponent<SwitchProps> = forwardRef<
           width: 36,
           backgroundColor: rgba(color.neutral[600], 0.4),
           ...transitions(['background-color'], transition.slowly),
+          pointerEvents: 'none',
           '&::before': {
             position: 'absolute',
             top: 2,
@@ -43,23 +61,19 @@ const Switch: FunctionComponent<SwitchProps> = forwardRef<
             width: 16,
             backgroundColor: color.neutral[50],
             ...transitions(['transform'], transition.slowly),
-            'input:checked + &': {
+            'input:checked ~ &': {
               transform: 'translateX(16px)',
             },
           },
-          'input:checked + &': {
+          'input:checked ~ &': {
             backgroundColor: color.ui.green,
           },
-          'input:enabled + &': {
-            cursor: 'pointer',
-          },
-          'input:disabled + &': {
-            cursor: 'not-allowed',
+          'input:disabled ~ &': {
             opacity: 0.4,
           },
         }}
       />
-    </label>
+    </div>
   );
 });
 

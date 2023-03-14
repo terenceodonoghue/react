@@ -18,7 +18,7 @@ export interface PaymentMethodProps extends BoxProps {
   type: 'applepay' | 'mastercard' | 'paypal' | 'visa';
 }
 
-const IntegrationCard: FunctionComponent<PaymentMethodProps> = ({
+const PaymentMethod: FunctionComponent<PaymentMethodProps> = ({
   selected = false,
   type,
   ...props
@@ -72,9 +72,9 @@ const IntegrationCard: FunctionComponent<PaymentMethodProps> = ({
       py={0}
       {...props}
     >
-      {Icon ? <Icon css={css[type]} size="100%" /> : undefined}
+      {Icon ? <Icon aria-hidden css={css[type]} size="100%" /> : undefined}
     </Box>
   );
 };
 
-export default IntegrationCard;
+export default PaymentMethod;

@@ -96,4 +96,6 @@ export { default as Text, type TextProps } from './primitives/Text.js';
 
 export { default as ThemeProvider } from './providers/ThemeProvider.js';
 
+export { default as Main } from './templates/Main.js';
+
 export { default as mq } from './utils/mq.js';

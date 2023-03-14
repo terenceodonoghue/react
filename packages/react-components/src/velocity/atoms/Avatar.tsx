@@ -4,7 +4,7 @@ import type { FunctionComponent, ImgHTMLAttributes } from 'react';
 
 export interface AvatarProps extends ImgHTMLAttributes<HTMLImageElement> {
   size?: number;
-  variant?: 'rounded' | 'square';
+  variant?: 'rounded' | 'squared';
 }
 
 const Avatar: FunctionComponent<AvatarProps> = ({
@@ -17,13 +17,14 @@ const Avatar: FunctionComponent<AvatarProps> = ({
     rounded: {
       borderRadius: '50%',
     },
-    square: {
+    squared: {
       borderRadius: 6,
     },
   };
 
   return (
     <img
+      alt={alt}
       css={[
         css[variant],
         {
@@ -31,7 +32,6 @@ const Avatar: FunctionComponent<AvatarProps> = ({
           width: size,
         },
       ]}
-      alt={alt}
       {...props}
     />
   );

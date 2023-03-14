@@ -6,12 +6,11 @@ import numeral from 'numeral';
 
 import {
   Card,
-  Text,
   TopDrivers,
   mq,
+  Text,
+  Main,
 } from '@terenceodonoghue/react-components/velocity';
-
-import Container from '../components/core/Container';
 
 const OperatingScore = dynamic(() => import('../components/OperatingScore'), {
   ssr: false,
@@ -22,7 +21,7 @@ const IndexPage: NextPage = () => (
     <Head>
       <title>Velocity | Dashboard</title>
     </Head>
-    <Container>
+    <Main>
       <div
         css={mq({
           display: 'flex',
@@ -84,15 +83,15 @@ const IndexPage: NextPage = () => (
               flexDirection: ['row', 'column', 'row'],
             })}
           >
-            <Card css={{ flex: 1 }} caption="Vehicles on track" />
-            <Card css={{ flex: 1 }} caption="Distance driven" />
+            <Card css={{ flex: 1 }} heading="Vehicles on track" />
+            <Card css={{ flex: 1 }} heading="Distance driven" />
           </div>
         </div>
         <div css={{ display: 'flex', flex: 1 }}>
-          <Card css={{ flex: 1 }} caption="Today's Trips" />
+          <Card css={{ flex: 1 }} heading="Today's Trips" />
         </div>
       </div>
-      <Card caption="Fleet activity map" />
+      <Card heading="Fleet activity map" />
       <div
         css={mq({
           display: 'flex',
@@ -151,16 +150,16 @@ const IndexPage: NextPage = () => (
             totalDistance: `${numeral(totalDistance).format('0,0')} miles`,
           }))}
         />
-        <Card css={{ flex: 1 }} caption="Trips by type" />
+        <Card css={{ flex: 1 }} heading="Trips by type" />
         <Card
           css={mq({
             display: ['none', 'block'],
             flex: ['initial', '0 1 100%', 1],
           })}
-          caption="Service Reminders"
+          heading="Service Reminders"
         />
       </div>
-    </Container>
+    </Main>
   </>
 );
 

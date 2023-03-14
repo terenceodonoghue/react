@@ -2,16 +2,25 @@
 import { type CSSObject, useTheme } from '@emotion/react';
 import type { Property } from 'csstype';
 import { rem } from 'polished';
-import type { ElementType, FunctionComponent, HTMLAttributes } from 'react';
+import type {
+  ElementType,
+  FunctionComponent,
+  HTMLAttributes,
+  LabelHTMLAttributes,
+} from 'react';
 
 import mq from '../utils/mq.js';
 
-export interface TextProps extends HTMLAttributes<HTMLElement> {
+type Props<T> = {
   align?: Property.TextAlign | Property.TextAlign[];
-  as?: ElementType;
+  as?: T;
   truncate?: boolean;
   variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'p1' | 'p2' | 'p3' | 'c1' | 'c2';
-}
+};
+
+export type TextProps<AsType = ElementType> = AsType extends 'label'
+  ? LabelHTMLAttributes<HTMLLabelElement> & Props<AsType>
+  : HTMLAttributes<HTMLElement> & Props<AsType>;
 
 const Text: FunctionComponent<TextProps> = ({
   align,
