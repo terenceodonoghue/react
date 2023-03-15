@@ -11,7 +11,7 @@ describe('Badge', () => {
     });
 
     // Assert
-    expect(screen.getByText('Label')).toBeInTheDocument();
-    expect(screen.getByText('Content')).toBeInTheDocument();
+    expect(screen.getByText('Label')).toBeVisible();
+    expect(screen.getByText('Content')).toBeVisible();
   });
 });

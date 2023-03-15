@@ -13,7 +13,7 @@ describe('Indicator', () => {
     });
 
     // Assert
-    expect(screen.getByRole('status')).toHaveTextContent('Content');
+    expect(screen.getByText('Content')).toBeVisible();
   });
 
   it('has default style', () => {
@@ -23,7 +23,8 @@ describe('Indicator', () => {
     });
 
     // Assert
-    expect(screen.getByRole('status').firstElementChild).toHaveStyle({
+    expect(screen.getByRole('status')).toBeEmptyDOMElement();
+    expect(screen.getByRole('status')).toHaveStyle({
       border: `solid 2px ${defaultTheme.color.neutral[50]}`,
       height: '12px',
       width: '12px',
@@ -39,7 +40,7 @@ describe('Indicator', () => {
     });
 
     // Assert
-    expect(screen.getByRole('status').firstElementChild).toHaveStyle({
+    expect(screen.getByRole('status')).toHaveStyle({
       backgroundColor: 'red',
     });
   });
@@ -51,10 +52,8 @@ describe('Indicator', () => {
     });
 
     // Assert
-    expect(
-      screen.getByRole('status').firstElementChild,
-    ).not.toBeEmptyDOMElement();
-    expect(screen.getByRole('status').firstElementChild).toHaveStyle({
+    expect(screen.getByRole('status')).not.toBeEmptyDOMElement();
+    expect(screen.getByRole('status')).toHaveStyle({
       border: '',
       height: '18px',
       width: '18px',
@@ -63,15 +62,13 @@ describe('Indicator', () => {
     });
   });
 
-  it('is not visible', () => {
+  it('is hidden', () => {
     // Arrange
     const { screen } = render(<Indicator visible={false} />, {
       wrapper: ThemeProvider,
     });
 
     // Assert
-    expect(
-      screen.queryByRole('status')?.firstElementChild,
-    ).not.toBeInTheDocument();
+    expect(screen.queryByRole('status')).not.toBeVisible();
   });
 });

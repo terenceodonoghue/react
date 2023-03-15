@@ -31,12 +31,10 @@ const Setting: FunctionComponent<SettingProps> = ({
         overflow: 'hidden',
       })}
       className={className}
-      role="presentation"
       style={style}
     >
       <div
         css={{ display: 'flex', flexDirection: 'column', overflow: 'hidden' }}
-        role="presentation"
       >
         <Text
           as="label"

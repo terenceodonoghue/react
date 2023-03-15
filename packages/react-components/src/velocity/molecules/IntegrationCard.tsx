@@ -56,14 +56,10 @@ const IntegrationCard: FunctionComponent<IntegrationCardProps> = ({
             width: 70,
             backgroundColor: rgba(color.neutral[700], 0.1),
           }}
-          role="presentation"
         >
           {Icon ? <Icon aria-hidden size={30} /> : undefined}
         </div>
-        <div
-          css={{ display: 'flex', flexDirection: 'column', flexGrow: 1 }}
-          role="presentation"
-        >
+        <div css={{ display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
           <Text
             as="span"
             css={{ lineHeight: rem(22) }}

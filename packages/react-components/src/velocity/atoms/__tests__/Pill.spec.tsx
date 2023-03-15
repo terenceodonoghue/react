@@ -12,7 +12,7 @@ describe('Pill', () => {
     });
 
     // Assert
-    expect(screen.getByText('Label')).toBeInTheDocument();
+    expect(screen.getByRole('status')).toHaveTextContent('Label');
   });
 
   it('has default style', () => {

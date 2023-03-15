@@ -21,7 +21,7 @@ describe('Main', () => {
     });
 
     // Assert
-    expect(screen.getByRole('heading')).toHaveTextContent('Heading');
-    expect(screen.getByText('Content')).toBeInTheDocument();
+    expect(screen.getByText('Heading')).toBeVisible();
+    expect(screen.getByText('Content')).toBeVisible();
   });
 });

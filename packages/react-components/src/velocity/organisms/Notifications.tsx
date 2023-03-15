@@ -31,7 +31,6 @@ const Notifications: FunctionComponent<NotificationsProps> = ({
           rowGap: 20,
           marginTop: [24, 32],
         })}
-        role="presentation"
       >
         {options.map((option) => (
           <Setting key={option.label} {...option} />

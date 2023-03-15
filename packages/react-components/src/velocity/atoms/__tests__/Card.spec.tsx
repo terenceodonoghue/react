@@ -6,12 +6,13 @@ import Card from '../Card.js';
 describe('Card', () => {
   it('is accessible', () => {
     // Arrange
-    const { screen } = render(<Card heading="Label" />, {
+    const { screen } = render(<Card heading="Heading" />, {
       wrapper: ThemeProvider,
     });
 
     // Assert
-    expect(screen.getByRole('region')).toHaveAccessibleName('Label');
+    expect(screen.getByRole('region')).toHaveAccessibleName('Heading');
+    expect(screen.getByRole('heading')).toHaveAccessibleName('Heading');
   });
 
   it('has visible content', () => {
@@ -21,7 +22,7 @@ describe('Card', () => {
     });
 
     // Assert
-    expect(screen.getByRole('heading')).toHaveTextContent('Heading');
-    expect(screen.getByText('Content')).toBeInTheDocument();
+    expect(screen.getByText('Heading')).toBeVisible();
+    expect(screen.getByText('Content')).toBeVisible();
   });
 });

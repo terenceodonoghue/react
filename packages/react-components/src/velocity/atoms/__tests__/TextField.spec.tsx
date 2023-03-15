@@ -21,6 +21,6 @@ describe('TextField', () => {
     });
 
     // Assert
-    expect(screen.getByText('Label')).toBeInTheDocument();
+    expect(screen.getByText('Label')).toBeVisible();
   });
 });

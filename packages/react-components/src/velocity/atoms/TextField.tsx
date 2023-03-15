@@ -22,7 +22,7 @@ const TextField: FunctionComponent<TextFieldProps> = forwardRef<
   const { color, font, transition } = useTheme();
 
   return (
-    <div className={className} role="presentation" style={style}>
+    <div className={className} style={style}>
       {label ? (
         <Text
           as="label"

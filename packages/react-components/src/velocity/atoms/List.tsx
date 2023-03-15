@@ -23,7 +23,7 @@ const List: FunctionComponent<ListProps> = ({ items = [], ...props }) => (
     {...props}
   >
     {items.map((item) => (
-      <div key={item.label} role="presentation">
+      <div key={item.label}>
         <Text as="dt" css={{ marginBottom: 8 }} variant="c1">
           {item.label}
         </Text>

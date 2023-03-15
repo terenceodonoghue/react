@@ -22,7 +22,7 @@ describe('Button', () => {
     });
 
     // Assert
-    expect(screen.getByRole('button')).toHaveTextContent('Button Text');
+    expect(screen.getByText('Button Text')).toBeVisible();
   });
 
   it('has default style', () => {

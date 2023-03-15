@@ -39,7 +39,6 @@ const Integrations: FunctionComponent<IntegrationsProps> = ({
           columnGap: 48,
           marginTop: [24, 32],
         })}
-        role="presentation"
       >
         {providers.map((provider) => (
           <IntegrationCard key={provider.label} {...provider} />

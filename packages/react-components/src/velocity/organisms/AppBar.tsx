@@ -40,7 +40,7 @@ const AppBar: FunctionComponent<AppBarProps> = ({
   const { color, page } = useTheme();
 
   return (
-    <div
+    <header
       css={{
         position: 'sticky',
         top: 0,
@@ -115,7 +115,7 @@ const AppBar: FunctionComponent<AppBarProps> = ({
           ) : undefined}
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 

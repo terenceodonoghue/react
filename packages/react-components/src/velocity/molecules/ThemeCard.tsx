@@ -16,12 +16,7 @@ const ThemeCard: FunctionComponent<ThemeCardProps> = ({
   style,
   ...props
 }) => (
-  <div
-    css={{ minWidth: 120 }}
-    className={className}
-    role="presentation"
-    style={style}
-  >
+  <div css={{ minWidth: 120 }} className={className} style={style}>
     <div
       aria-hidden
       css={{

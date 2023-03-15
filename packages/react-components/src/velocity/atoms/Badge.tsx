@@ -20,7 +20,6 @@ const Badge: FunctionComponent<BadgeProps> = ({
       css={{
         position: 'relative',
       }}
-      role="presentation"
       {...props}
     >
       {label ? (
@@ -43,6 +42,7 @@ const Badge: FunctionComponent<BadgeProps> = ({
             fontWeight: font.weight.medium,
             lineHeight: rem(12),
           }}
+          role="status"
         >
           {label}
         </div>

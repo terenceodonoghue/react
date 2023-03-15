@@ -29,7 +29,6 @@ const Radio: FunctionComponent<RadioProps> = forwardRef<
         display: 'flex',
         alignItems: 'center',
       }}
-      role="presentation"
       style={style}
     >
       <input

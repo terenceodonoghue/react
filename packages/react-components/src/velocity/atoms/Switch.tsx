@@ -20,7 +20,6 @@ const Switch: FunctionComponent<SwitchProps> = forwardRef<
         alignItems: 'center',
         justifyContent: 'center',
       }}
-      role="presentation"
       style={style}
     >
       <input

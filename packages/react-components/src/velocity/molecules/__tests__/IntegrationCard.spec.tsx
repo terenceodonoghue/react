@@ -32,7 +32,7 @@ describe('IntegrationCard', () => {
     );
 
     // Assert
-    expect(screen.getByText('Label')).toBeInTheDocument();
-    expect(screen.getByText('Description')).toBeInTheDocument();
+    expect(screen.getByText('Label')).toBeVisible();
+    expect(screen.getByText('Description')).toBeVisible();
   });
 });

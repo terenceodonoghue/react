@@ -24,7 +24,7 @@ const Main: FunctionComponent<MainProps> = ({
       })}
       {...props}
     >
-      <div css={mq({ margin: [-6, -12] })} role="presentation">
+      <div css={mq({ margin: [-6, -12] })}>
         {heading && (
           <Text
             as="h1"
