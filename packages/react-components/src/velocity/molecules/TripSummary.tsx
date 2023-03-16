@@ -5,7 +5,7 @@ import type { FunctionComponent, HTMLAttributes } from 'react';
 
 import { Check, Marker } from '@terenceodonoghue/react-icons/velocity';
 
-import Backdrop from '../atoms/Backdrop.js';
+import Icon from '../atoms/Icon.js';
 import Text from '../primitives/Text.js';
 
 export interface TripSummaryProps extends HTMLAttributes<HTMLDivElement> {
@@ -39,6 +39,7 @@ const TripSummary: FunctionComponent<TripSummaryProps> = ({
           display: 'flex',
           alignItems: 'center',
           '&::after': {
+            flex: 1,
             content: '""',
             marginLeft: 8,
             height: 2,
@@ -47,13 +48,9 @@ const TripSummary: FunctionComponent<TripSummaryProps> = ({
           },
         }}
       >
-        <Backdrop color={color.ui.blue} compact>
-          <Check color={color.ui.blue} size={16} />
-        </Backdrop>
+        <Icon backdrop color={color.ui.blue} size="compact" with={Check} />
       </div>
-      <Backdrop color={color.ui.green} compact>
-        <Marker color={color.ui.green} size={16} />
-      </Backdrop>
+      <Icon backdrop color={color.ui.green} size="compact" with={Marker} />
       <div
         css={{
           display: 'flex',

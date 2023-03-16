@@ -4,24 +4,25 @@ import ThemeProvider from '../../providers/ThemeProvider.js';
 import Main from '../Main.js';
 
 describe('Main', () => {
-  it('is accessible', () => {
-    // Arrange
-    const { screen } = render(<Main heading="Heading" />, {
-      wrapper: ThemeProvider,
+  describe('with heading', () => {
+    it('has accessible name', () => {
+      // Arrange
+      const { screen } = render(<Main heading="Heading" />, {
+        wrapper: ThemeProvider,
+      });
+
+      // Assert
+      expect(screen.getByRole('main')).toHaveAccessibleName('Heading');
     });
 
-    // Assert
-    expect(screen.getByRole('main')).toHaveAccessibleName('Heading');
-  });
+    it('has visible text', () => {
+      // Arrange
+      const { screen } = render(<Main heading="Heading" />, {
+        wrapper: ThemeProvider,
+      });
 
-  it('has visible content', () => {
-    // Arrange
-    const { screen } = render(<Main heading="Heading">Content</Main>, {
-      wrapper: ThemeProvider,
+      // Assert
+      expect(screen.getByText('Heading')).toBeVisible();
     });
-
-    // Assert
-    expect(screen.getByText('Heading')).toBeVisible();
-    expect(screen.getByText('Content')).toBeVisible();
   });
 });

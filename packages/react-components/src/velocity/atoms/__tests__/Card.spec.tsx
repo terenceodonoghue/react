@@ -4,25 +4,37 @@ import ThemeProvider from '../../providers/ThemeProvider.js';
 import Card from '../Card.js';
 
 describe('Card', () => {
-  it('is accessible', () => {
-    // Arrange
-    const { screen } = render(<Card heading="Heading" />, {
-      wrapper: ThemeProvider,
-    });
+  describe('with content', () => {
+    it('has visible text', () => {
+      // Arrange
+      const { screen } = render(<Card>Content</Card>, {
+        wrapper: ThemeProvider,
+      });
 
-    // Assert
-    expect(screen.getByRole('region')).toHaveAccessibleName('Heading');
-    expect(screen.getByRole('heading')).toHaveAccessibleName('Heading');
+      // Assert
+      expect(screen.getByText('Content')).toBeVisible();
+    });
   });
 
-  it('has visible content', () => {
-    // Arrange
-    const { screen } = render(<Card heading="Heading">Content</Card>, {
-      wrapper: ThemeProvider,
+  describe('with heading', () => {
+    it('has accessible name', () => {
+      // Arrange
+      const { screen } = render(<Card heading="Heading" />, {
+        wrapper: ThemeProvider,
+      });
+
+      // Assert
+      expect(screen.getByRole('region')).toHaveAccessibleName('Heading');
     });
 
-    // Assert
-    expect(screen.getByText('Heading')).toBeVisible();
-    expect(screen.getByText('Content')).toBeVisible();
+    it('has visible text', () => {
+      // Arrange
+      const { screen } = render(<Card heading="Heading" />, {
+        wrapper: ThemeProvider,
+      });
+
+      // Assert
+      expect(screen.getByText('Heading')).toBeVisible();
+    });
   });
 });

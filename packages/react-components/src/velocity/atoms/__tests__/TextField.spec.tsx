@@ -4,23 +4,25 @@ import ThemeProvider from '../../providers/ThemeProvider.js';
 import TextField from '../TextField.js';
 
 describe('TextField', () => {
-  it('is accessible', () => {
-    // Arrange
-    const { screen } = render(<TextField label="Label" />, {
-      wrapper: ThemeProvider,
+  describe('with label', () => {
+    it('has accessible name', () => {
+      // Arrange
+      const { screen } = render(<TextField label="Label" />, {
+        wrapper: ThemeProvider,
+      });
+
+      // Assert
+      expect(screen.getByRole('textbox')).toHaveAccessibleName('Label');
     });
 
-    // Assert
-    expect(screen.getByRole('textbox')).toHaveAccessibleName('Label');
-  });
+    it('has visible text', () => {
+      // Arrange
+      const { screen } = render(<TextField label="Label" />, {
+        wrapper: ThemeProvider,
+      });
 
-  it('has visible content', () => {
-    // Arrange
-    const { screen } = render(<TextField label="Label" />, {
-      wrapper: ThemeProvider,
+      // Assert
+      expect(screen.getByText('Label')).toBeVisible();
     });
-
-    // Assert
-    expect(screen.getByText('Label')).toBeVisible();
   });
 });

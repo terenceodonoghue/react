@@ -7,7 +7,7 @@ import Text from '../primitives/Text.js';
 import mq from '../utils/mq.js';
 
 export interface SettingProps extends SwitchProps {
-  description?: string;
+  description: string;
   label: string;
 }
 

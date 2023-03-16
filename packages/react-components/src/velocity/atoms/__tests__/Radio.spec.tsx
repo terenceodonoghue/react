@@ -4,23 +4,25 @@ import ThemeProvider from '../../providers/ThemeProvider.js';
 import Radio from '../Radio.js';
 
 describe('Radio', () => {
-  it('is accessible', () => {
-    // Arrange
-    const { screen } = render(<Radio label="Label" />, {
-      wrapper: ThemeProvider,
+  describe('with label', () => {
+    it('has accessible name', () => {
+      // Arrange
+      const { screen } = render(<Radio label="Label" />, {
+        wrapper: ThemeProvider,
+      });
+
+      // Assert
+      expect(screen.getByRole('radio')).toHaveAccessibleName('Label');
     });
 
-    // Assert
-    expect(screen.getByRole('radio')).toHaveAccessibleName('Label');
-  });
+    it('has visible text', () => {
+      // Arrange
+      const { screen } = render(<Radio label="Label" />, {
+        wrapper: ThemeProvider,
+      });
 
-  it('has visible content', () => {
-    // Arrange
-    const { screen } = render(<Radio label="Label" />, {
-      wrapper: ThemeProvider,
+      // Assert
+      expect(screen.getByText('Label')).toBeVisible();
     });
-
-    // Assert
-    expect(screen.getByText('Label')).toBeVisible();
   });
 });

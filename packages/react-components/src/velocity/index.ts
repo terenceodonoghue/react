@@ -1,11 +1,11 @@
 import './types/theming.js';
 
 export { default as Avatar, type AvatarProps } from './atoms/Avatar.js';
-export { default as Backdrop, type BackdropProps } from './atoms/Backdrop.js';
 export { default as Badge, type BadgeProps } from './atoms/Badge.js';
 export { default as Box, type BoxProps } from './atoms/Box.js';
 export { default as Button, type ButtonProps } from './atoms/Button.js';
 export { default as Card, type CardProps } from './atoms/Card.js';
+export { default as Icon, type IconProps } from './atoms/Icon.js';
 export {
   default as IconButton,
   type IconButtonProps,

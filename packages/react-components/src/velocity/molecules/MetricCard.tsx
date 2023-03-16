@@ -5,8 +5,8 @@ import type { FunctionComponent } from 'react';
 
 import type { ReactIcon } from '@terenceodonoghue/react-icons';
 
-import Backdrop from '../atoms/Backdrop.js';
 import Card, { type CardProps } from '../atoms/Card.js';
+import Icon from '../atoms/Icon.js';
 import Text from '../primitives/Text.js';
 import mq from '../utils/mq.js';
 
@@ -19,7 +19,7 @@ export interface MetricCardProps extends CardProps {
 
 const MetricCard: FunctionComponent<MetricCardProps> = ({
   color: iconColor,
-  icon: Icon,
+  icon: Svg,
   label,
   value,
 }) => {
@@ -34,12 +34,13 @@ const MetricCard: FunctionComponent<MetricCardProps> = ({
         padding: ['16px', '32px 24px', '16px 24px'],
       })}
     >
-      <Backdrop
-        css={mq({ marginBottom: [16, 0, 16], marginRight: [0, 16, 0] })}
+      <Icon
         color={iconColor || color.primary}
-      >
-        <Icon color={iconColor || color.primary} size={20} />
-      </Backdrop>
+        css={mq({ marginBottom: [16, 0, 16], marginRight: [0, 16, 0] })}
+        size={20}
+        with={Svg}
+      />
+
       <div css={{ display: 'flex', flexDirection: 'column' }}>
         <Text
           css={mq({

@@ -3,14 +3,6 @@ import render from 'tests/render.js';
 import Avatar from '../Avatar.js';
 
 describe('Avatar', () => {
-  it('is accessible', () => {
-    // Arrange
-    const { screen } = render(<Avatar alt="Alt text" />);
-
-    // Assert
-    expect(screen.getByRole('img')).toHaveAccessibleName('Alt text');
-  });
-
   it('has default style', () => {
     // Arrange
     const { screen } = render(<Avatar />);
@@ -23,34 +15,48 @@ describe('Avatar', () => {
     });
   });
 
-  it('has rounded variant', () => {
-    // Arrange
-    const { screen } = render(<Avatar variant="rounded" />);
+  describe('with alt text', () => {
+    it('has accessible name', () => {
+      // Arrange
+      const { screen } = render(<Avatar alt="Alt text" />);
 
-    // Assert
-    expect(screen.getByRole('img')).toHaveStyle({
-      borderRadius: '50%',
+      // Assert
+      expect(screen.getByRole('img')).toHaveAccessibleName('Alt text');
     });
   });
 
-  it('has squared variant', () => {
-    // Arrange
-    const { screen } = render(<Avatar variant="squared" />);
+  describe('with size', () => {
+    it('has height/width', () => {
+      // Arrange
+      const { screen } = render(<Avatar size={64} />);
 
-    // Assert
-    expect(screen.getByRole('img')).toHaveStyle({
-      borderRadius: '6px',
+      // Assert
+      expect(screen.getByRole('img')).toHaveStyle({
+        height: '64px',
+        width: '64px',
+      });
     });
   });
 
-  it('has size', () => {
-    // Arrange
-    const { screen } = render(<Avatar size={64} />);
+  describe('with variant', () => {
+    it('has rounded style', () => {
+      // Arrange
+      const { screen } = render(<Avatar variant="rounded" />);
 
-    // Assert
-    expect(screen.getByRole('img')).toHaveStyle({
-      height: '64px',
-      width: '64px',
+      // Assert
+      expect(screen.getByRole('img')).toHaveStyle({
+        borderRadius: '50%',
+      });
+    });
+
+    it('has squared style', () => {
+      // Arrange
+      const { screen } = render(<Avatar variant="squared" />);
+
+      // Assert
+      expect(screen.getByRole('img')).toHaveStyle({
+        borderRadius: '6px',
+      });
     });
   });
 });

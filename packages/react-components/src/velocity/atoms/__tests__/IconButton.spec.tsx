@@ -16,27 +16,29 @@ describe('IconButton', () => {
     });
   });
 
-  it('has rounded variant', () => {
-    // Arrange
-    const { screen } = render(<IconButton variant="rounded" />, {
-      wrapper: ThemeProvider,
+  describe('with variant', () => {
+    it('has rounded style', () => {
+      // Arrange
+      const { screen } = render(<IconButton variant="rounded" />, {
+        wrapper: ThemeProvider,
+      });
+
+      // Assert
+      expect(screen.getByRole('button')).toHaveStyle({
+        borderRadius: '50%',
+      });
     });
 
-    // Assert
-    expect(screen.getByRole('button')).toHaveStyle({
-      borderRadius: '50%',
-    });
-  });
+    it('has squared style', () => {
+      // Arrange
+      const { screen } = render(<IconButton variant="squared" />, {
+        wrapper: ThemeProvider,
+      });
 
-  it('has squared variant', () => {
-    // Arrange
-    const { screen } = render(<IconButton variant="squared" />, {
-      wrapper: ThemeProvider,
-    });
-
-    // Assert
-    expect(screen.getByRole('button')).toHaveStyle({
-      borderRadius: '4px',
+      // Assert
+      expect(screen.getByRole('button')).toHaveStyle({
+        borderRadius: '4px',
+      });
     });
   });
 });

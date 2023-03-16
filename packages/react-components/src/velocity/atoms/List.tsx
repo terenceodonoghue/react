@@ -19,7 +19,6 @@ const List: FunctionComponent<ListProps> = ({ items = [], ...props }) => (
       margin: 0,
       overflow: 'hidden',
     }}
-    role="list"
     {...props}
   >
     {items.map((item) => (

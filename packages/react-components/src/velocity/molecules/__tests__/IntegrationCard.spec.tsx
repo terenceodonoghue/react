@@ -6,33 +6,77 @@ import ThemeProvider from '../../providers/ThemeProvider.js';
 import IntegrationCard from '../IntegrationCard.js';
 
 describe('IntegrationCard', () => {
-  it('is accessible', () => {
-    // Arrange
-    const { screen } = render(
-      <IntegrationCard icon={GitHub} label="Label" description="Description" />,
-      {
-        wrapper: ThemeProvider,
-      },
-    );
+  describe('with label', () => {
+    it('has accessible name', () => {
+      // Arrange
+      const { screen } = render(
+        <IntegrationCard
+          icon={GitHub}
+          label="Label"
+          description="Description"
+        />,
+        {
+          wrapper: ThemeProvider,
+        },
+      );
 
-    // Assert
-    expect(screen.getByRole('status')).toHaveAccessibleName('Label');
-    expect(screen.getByRole('status')).toHaveAccessibleDescription(
-      'Description',
-    );
+      // Assert
+      expect(screen.getByRole('status')).toHaveAccessibleName('Label');
+    });
+
+    it('has visible text', () => {
+      // Arrange
+      const { screen } = render(
+        <IntegrationCard
+          icon={GitHub}
+          label="Label"
+          description="Description"
+        />,
+        {
+          wrapper: ThemeProvider,
+        },
+      );
+
+      // Assert
+      expect(screen.getByText('Label')).toBeVisible();
+    });
   });
 
-  it('has visible content', () => {
-    // Arrange
-    const { screen } = render(
-      <IntegrationCard icon={GitHub} label="Label" description="Description" />,
-      {
-        wrapper: ThemeProvider,
-      },
-    );
+  describe('with description', () => {
+    it('has accessible description', () => {
+      // Arrange
+      const { screen } = render(
+        <IntegrationCard
+          icon={GitHub}
+          label="Label"
+          description="Description"
+        />,
+        {
+          wrapper: ThemeProvider,
+        },
+      );
 
-    // Assert
-    expect(screen.getByText('Label')).toBeVisible();
-    expect(screen.getByText('Description')).toBeVisible();
+      // Assert
+      expect(screen.getByRole('status')).toHaveAccessibleDescription(
+        'Description',
+      );
+    });
+
+    it('has visible text', () => {
+      // Arrange
+      const { screen } = render(
+        <IntegrationCard
+          icon={GitHub}
+          label="Label"
+          description="Description"
+        />,
+        {
+          wrapper: ThemeProvider,
+        },
+      );
+
+      // Assert
+      expect(screen.getByText('Description')).toBeVisible();
+    });
   });
 });

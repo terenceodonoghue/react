@@ -10,11 +10,11 @@ import { useState } from 'react';
 
 import {
   Avatar,
-  Backdrop,
   Badge,
   Box,
   Button,
   Card,
+  Icon,
   IconButton,
   Indicator,
   List,
@@ -321,79 +321,54 @@ The default padding is `20`, but this can be adjusted with `p`, `py` or `px`.
 Icons can be used to improve visual interest and draw attention to an element.
 
 ```javascript
+import { Icon } from '@terenceodonoghue/react-components/velocity';
 import /* { IconName } */  from '@terenceodonoghue/react-icons/velocity';
 ```
 
-The `color` prop sets the icon colour, or defaults to `currentColor` if left blank.
+Set the icon using `with`, and provide an optional `color`. This defaults to `currentColor` if left blank.
 
 <Canvas>
   <Story name="Icons">
-    <Dashboard />
-    <Analytics color="#2E5BFF" />
-    <Vehicles color="#33AC2E" />
-    <Service color="#8C54FF" />
-    <Map color="#D63649" />
-    <Mail color="#00C1D4" />
-    <Settings color="#F7C137" />
+    <Icon with={Dashboard} />
+    <Icon color="#2E5BFF" with={Analytics} />
+    <Icon color="#33AC2E" with={Vehicles} />
+    <Icon color="#8C54FF" with={Service} />
+    <Icon color="#D63649" with={Map} />
+    <Icon color="#00C1D4" with={Mail} />
+    <Icon color="#F7C137" with={Settings} />
   </Story>
 </Canvas>
 
-Icon size is `24` by default, but can be adjusted with the `size` prop.
+A `backdrop` can be used for added emphasis. This defaults to `0.15` if left blank.
+
+<Canvas>
+  <Story name="IconsBackdrop">
+    <Icon backdrop color="#33AC2E" with={Check} />
+    <Icon backdrop color="#00C1D4" with={Marker} />
+    <Icon backdrop color="#8C54FF" with={Energy} />
+    <Icon backdrop color="#F7C137" with={Dynamic} />
+  </Story>
+</Canvas>
+
+Icon size is `24` by default (or `20` with a backdrop) but can be adjusted with the `size` prop.
 
 <Canvas>
   <Story name="IconsSize">
-    <Vehicles />
-    <Vehicles size={32} />
-    <Vehicles size={40} />
-    <Vehicles size={48} />
+    <Icon with={Vehicles} />
+    <Icon with={Vehicles} size={32} />
+    <Icon with={Vehicles} size={40} />
+    <Icon with={Vehicles} size={48} />
   </Story>
 </Canvas>
 
-Refer to [the icon gallery](?path=/docs/icons-velocity--page) to see the full set of icons.
-
-## Backdrop
-
-A backdrop can be used with icons for added emphasis.
-
-```javascript
-import { Backdrop } from '@terenceodonoghue/react-components/velocity';
-```
-
-The `color` prop sets the backdrop colour with a default opacity of `0.15`. This can be adjusted with the `opacity` prop.
+There's also a `compact` size preset that reduces the default icon size and (if present) its backdrop.
 
 <Canvas>
-  <Story name="Backdrop">
-    <Backdrop color="#33AC2E">
-      <Check color="#33AC2E" size={20} />
-    </Backdrop>
-    <Backdrop color="#00C1D4">
-      <Marker color="#00C1D4" size={20} />
-    </Backdrop>
-    <Backdrop color="#8C54FF">
-      <Energy color="#8C54FF" size={20} />
-    </Backdrop>
-    <Backdrop color="#F7C137">
-      <Dynamic color="#F7C137" size={20} />
-    </Backdrop>
-  </Story>
-</Canvas>
-
-There's also a `compact` version.
-
-<Canvas>
-  <Story name="BackdropCompact">
-    <Backdrop color="#33AC2E" compact>
-      <Check color="#33AC2E" size={16} />
-    </Backdrop>
-    <Backdrop color="#00C1D4" compact>
-      <Marker color="#00C1D4" size={16} />
-    </Backdrop>
-    <Backdrop color="#8C54FF" compact>
-      <Energy color="#8C54FF" size={16} />
-    </Backdrop>
-    <Backdrop color="#F7C137" compact>
-      <Dynamic color="#F7C137" size={16} />
-    </Backdrop>
+  <Story name="IconsCompact">
+    <Icon backdrop color="#33AC2E" size="compact" with={Check} />
+    <Icon backdrop color="#00C1D4" size="compact" with={Marker} />
+    <Icon backdrop color="#8C54FF" size="compact" with={Energy} />
+    <Icon backdrop color="#F7C137" size="compact" with={Dynamic} />
   </Story>
 </Canvas>
 
