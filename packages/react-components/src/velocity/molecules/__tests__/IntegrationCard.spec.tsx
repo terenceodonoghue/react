@@ -2,10 +2,94 @@ import render from 'tests/render.js';
 
 import { GitHub } from '@terenceodonoghue/react-icons/brands';
 
-import ThemeProvider from '../../providers/ThemeProvider.js';
+import ThemeProvider, { defaultTheme } from '../../providers/ThemeProvider.js';
 import IntegrationCard from '../IntegrationCard.js';
 
 describe('IntegrationCard', () => {
+  const testId = 'integrationCard';
+
+  describe('when enabled', () => {
+    it('has border', () => {
+      // Arrange
+      const { screen } = render(
+        <IntegrationCard
+          data-testid={testId}
+          enabled
+          icon={GitHub}
+          label="Label"
+          description="Description"
+        />,
+        {
+          wrapper: ThemeProvider,
+        },
+      );
+
+      // Assert
+      expect(screen.getByTestId(testId)).toHaveStyle({
+        borderColor: defaultTheme.color.primary,
+      });
+    });
+
+    it('has indicator', () => {
+      // Arrange
+      const { screen } = render(
+        <IntegrationCard
+          enabled
+          icon={GitHub}
+          label="Label"
+          description="Description"
+        />,
+        {
+          wrapper: ThemeProvider,
+        },
+      );
+
+      // Assert
+      expect(screen.getByRole('status')).toBeVisible();
+    });
+  });
+
+  describe('when disabled', () => {
+    it('has border', () => {
+      // Arrange
+      const { screen } = render(
+        <IntegrationCard
+          data-testid={testId}
+          enabled={false}
+          icon={GitHub}
+          label="Label"
+          description="Description"
+        />,
+        {
+          wrapper: ThemeProvider,
+        },
+      );
+
+      // Assert
+      expect(screen.getByTestId(testId)).toHaveStyle({
+        borderColor: defaultTheme.color.secondary,
+      });
+    });
+
+    it('hides indicator', () => {
+      // Arrange
+      const { screen } = render(
+        <IntegrationCard
+          enabled={false}
+          icon={GitHub}
+          label="Label"
+          description="Description"
+        />,
+        {
+          wrapper: ThemeProvider,
+        },
+      );
+
+      // Assert
+      expect(screen.getByRole('status')).not.toBeVisible();
+    });
+  });
+
   describe('with label', () => {
     it('has accessible name', () => {
       // Arrange

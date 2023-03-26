@@ -77,7 +77,7 @@ describe('Indicator', () => {
     });
   });
 
-  describe('with visible', () => {
+  describe('when visible', () => {
     it('is visible', () => {
       // Arrange
       const { screen } = render(<Indicator visible />, {
@@ -87,15 +87,17 @@ describe('Indicator', () => {
       // Assert
       expect(screen.getByRole('status')).toBeVisible();
     });
+  });
 
-    it('is hidden', () => {
+  describe('when hidden', () => {
+    it('is not visible', () => {
       // Arrange
       const { screen } = render(<Indicator visible={false} />, {
         wrapper: ThemeProvider,
       });
 
       // Assert
-      expect(screen.queryByRole('status')).not.toBeVisible();
+      expect(screen.getByRole('status')).not.toBeVisible();
     });
   });
 });
