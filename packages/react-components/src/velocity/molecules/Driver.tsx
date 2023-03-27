@@ -25,7 +25,7 @@ const Driver: FunctionComponent<DriverProps> = ({
 }) => (
   <div css={{ display: 'flex', alignItems: 'center', gap: 16 }} {...props}>
     <Badge label={rank}>
-      <Avatar size={48} src={avatar} />
+      <Avatar alt={`${name}'s avatar`} size={48} src={avatar} />
     </Badge>
     <div css={{ display: 'grid', gridTemplateColumns: '2fr 1fr', flex: 1 }}>
       <Text as="span" variant="h4">
