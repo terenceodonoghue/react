@@ -17,7 +17,7 @@ const Customer: FunctionComponent<CustomerProps> = ({
   ...props
 }) => (
   <div css={{ display: 'flex', alignItems: 'center', gap: 16 }} {...props}>
-    <Avatar size={48} src={avatar} />
+    <Avatar alt={`${name}'s avatar`} size={48} src={avatar} />
     <div css={{ display: 'flex', flexDirection: 'column' }}>
       <Text as="span" variant="h4">
         {name}
