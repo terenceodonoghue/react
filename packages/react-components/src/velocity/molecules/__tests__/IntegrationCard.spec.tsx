@@ -28,7 +28,7 @@ describe('IntegrationCard', () => {
     });
   });
 
-  describe('when enabled', () => {
+  describe('with enabled', () => {
     it('has border', () => {
       // Arrange
       const { screen } = render(
