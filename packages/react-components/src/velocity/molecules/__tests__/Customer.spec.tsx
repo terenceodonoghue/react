@@ -25,8 +25,8 @@ describe('Customer', () => {
     });
   });
 
-  describe('with name', () => {
-    it('has visible text', () => {
+  describe('has visible text', () => {
+    test('with name', () => {
       // Arrange
       const { screen } = render(
         <Customer avatar="" name="Terence O'Donoghue" interactions={1} />,
@@ -38,33 +38,33 @@ describe('Customer', () => {
       // Assert
       expect(screen.getByText("Terence O'Donoghue")).toBeVisible();
     });
-  });
 
-  describe('with interactions', () => {
-    it('has visible text', () => {
-      // Arrange
-      const { screen } = render(
-        <Customer avatar="" name="Terence O'Donoghue" interactions={1} />,
-        {
-          wrapper: ThemeProvider,
-        },
-      );
+    describe('with interactions', () => {
+      it('is singular', () => {
+        // Arrange
+        const { screen } = render(
+          <Customer avatar="" name="Terence O'Donoghue" interactions={1} />,
+          {
+            wrapper: ThemeProvider,
+          },
+        );
 
-      // Assert
-      expect(screen.getByText('1 interaction')).toBeVisible();
-    });
+        // Assert
+        expect(screen.getByText('1 interaction')).toBeVisible();
+      });
 
-    it('has pluralisation', () => {
-      // Arrange
-      const { screen } = render(
-        <Customer avatar="" name="Terence O'Donoghue" interactions={2} />,
-        {
-          wrapper: ThemeProvider,
-        },
-      );
+      it('is pluralised', () => {
+        // Arrange
+        const { screen } = render(
+          <Customer avatar="" name="Terence O'Donoghue" interactions={2} />,
+          {
+            wrapper: ThemeProvider,
+          },
+        );
 
-      // Assert
-      expect(screen.getByText('2 interactions')).toBeVisible();
+        // Assert
+        expect(screen.getByText('2 interactions')).toBeVisible();
+      });
     });
   });
 });

@@ -8,6 +8,26 @@ import IntegrationCard from '../IntegrationCard.js';
 describe('IntegrationCard', () => {
   const testId = 'integrationCard';
 
+  it('has default style', () => {
+    // Arrange
+    const { screen } = render(
+      <IntegrationCard
+        data-testid={testId}
+        icon={GitHub}
+        label="Label"
+        description="Description"
+      />,
+      {
+        wrapper: ThemeProvider,
+      },
+    );
+
+    // Assert
+    expect(screen.getByTestId(testId)).toHaveStyle({
+      borderColor: defaultTheme.color.secondary,
+    });
+  });
+
   describe('when enabled', () => {
     it('has border', () => {
       // Arrange
@@ -46,47 +66,6 @@ describe('IntegrationCard', () => {
 
       // Assert
       expect(screen.getByRole('status')).toBeVisible();
-    });
-  });
-
-  describe('when disabled', () => {
-    it('has border', () => {
-      // Arrange
-      const { screen } = render(
-        <IntegrationCard
-          data-testid={testId}
-          enabled={false}
-          icon={GitHub}
-          label="Label"
-          description="Description"
-        />,
-        {
-          wrapper: ThemeProvider,
-        },
-      );
-
-      // Assert
-      expect(screen.getByTestId(testId)).toHaveStyle({
-        borderColor: defaultTheme.color.secondary,
-      });
-    });
-
-    it('hides indicator', () => {
-      // Arrange
-      const { screen } = render(
-        <IntegrationCard
-          enabled={false}
-          icon={GitHub}
-          label="Label"
-          description="Description"
-        />,
-        {
-          wrapper: ThemeProvider,
-        },
-      );
-
-      // Assert
-      expect(screen.getByRole('status')).not.toBeVisible();
     });
   });
 

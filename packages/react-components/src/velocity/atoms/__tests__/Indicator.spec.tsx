@@ -77,7 +77,7 @@ describe('Indicator', () => {
     });
   });
 
-  describe('when visible', () => {
+  describe('with visible', () => {
     it('is visible', () => {
       // Arrange
       const { screen } = render(<Indicator visible />, {
@@ -87,10 +87,8 @@ describe('Indicator', () => {
       // Assert
       expect(screen.getByRole('status')).toBeVisible();
     });
-  });
 
-  describe('when hidden', () => {
-    it('is not visible', () => {
+    it('is hidden', () => {
       // Arrange
       const { screen } = render(<Indicator visible={false} />, {
         wrapper: ThemeProvider,

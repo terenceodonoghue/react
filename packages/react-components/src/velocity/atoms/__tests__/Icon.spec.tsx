@@ -70,7 +70,7 @@ describe('Icon', () => {
     });
 
     describe('with size', () => {
-      it('is compact', () => {
+      it('has compact padding', () => {
         // Arrange
         const { screen } = render(
           <Icon backdrop data-testid={testId} size="compact" with={Check} />,
@@ -88,21 +88,7 @@ describe('Icon', () => {
   });
 
   describe('with size', () => {
-    it('has height/width', () => {
-      // Arrange
-      const { screen } = render(
-        <Icon data-testid={testId} size={32} with={Check} />,
-        {
-          wrapper: ThemeProvider,
-        },
-      );
-
-      // Assert
-      expect(screen.getByTestId(testId)).toHaveAttribute('height', '32');
-      expect(screen.getByTestId(testId)).toHaveAttribute('width', '32');
-    });
-
-    it('is compact', () => {
+    it('has compact height/width', () => {
       // Arrange
       const { screen } = render(
         <Icon data-testid={testId} size="compact" with={Check} />,
@@ -114,6 +100,20 @@ describe('Icon', () => {
       // Assert
       expect(screen.getByTestId(testId)).toHaveAttribute('height', '16');
       expect(screen.getByTestId(testId)).toHaveAttribute('width', '16');
+    });
+
+    it('has numeric height/width', () => {
+      // Arrange
+      const { screen } = render(
+        <Icon data-testid={testId} size={32} with={Check} />,
+        {
+          wrapper: ThemeProvider,
+        },
+      );
+
+      // Assert
+      expect(screen.getByTestId(testId)).toHaveAttribute('height', '32');
+      expect(screen.getByTestId(testId)).toHaveAttribute('width', '32');
     });
   });
 });

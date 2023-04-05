@@ -17,7 +17,7 @@ export interface NavItemProps extends HTMLAttributes<HTMLLIElement> {
 const NavItem: FunctionComponent<NavItemProps> = forwardRef<
   HTMLLIElement,
   NavItemProps
->(({ compact, icon: Icon, label, selected, ...props }, ref) => {
+>(({ compact = false, icon: Icon, label, selected = false, ...props }, ref) => {
   const { color, transition } = useTheme();
 
   return (
@@ -41,7 +41,12 @@ const NavItem: FunctionComponent<NavItemProps> = forwardRef<
       {...props}
     >
       {Icon ? (
-        <Icon css={{ flexShrink: 0 }} color={color.neutral[400]} size={24} />
+        <Icon
+          aria-hidden
+          css={{ flexShrink: 0 }}
+          color={color.neutral[400]}
+          size={24}
+        />
       ) : undefined}
 
       <Text
