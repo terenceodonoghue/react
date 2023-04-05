@@ -29,7 +29,11 @@ describe('Customer', () => {
     test('with name', () => {
       // Arrange
       const { screen } = render(
-        <Customer avatar="" name="Terence O'Donoghue" interactions={1} />,
+        <Customer
+          avatar="http://image-url.com"
+          name="Terence O'Donoghue"
+          interactions={1}
+        />,
         {
           wrapper: ThemeProvider,
         },
@@ -43,7 +47,11 @@ describe('Customer', () => {
       it('is singular', () => {
         // Arrange
         const { screen } = render(
-          <Customer avatar="" name="Terence O'Donoghue" interactions={1} />,
+          <Customer
+            avatar="http://image-url.com"
+            name="Terence O'Donoghue"
+            interactions={1}
+          />,
           {
             wrapper: ThemeProvider,
           },
@@ -56,7 +64,11 @@ describe('Customer', () => {
       it('is pluralised', () => {
         // Arrange
         const { screen } = render(
-          <Customer avatar="" name="Terence O'Donoghue" interactions={2} />,
+          <Customer
+            avatar="http://image-url.com"
+            name="Terence O'Donoghue"
+            interactions={2}
+          />,
           {
             wrapper: ThemeProvider,
           },

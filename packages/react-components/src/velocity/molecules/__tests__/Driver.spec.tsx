@@ -9,7 +9,7 @@ describe('Driver', () => {
       // Arrange
       const { screen } = render(
         <Driver
-          avatar=""
+          avatar="http://image-url.com"
           name="Terence O'Donoghue"
           totalDistance="1km"
           totalEarnings="$1"
@@ -28,7 +28,7 @@ describe('Driver', () => {
       // Arrange
       const { screen } = render(
         <Driver
-          avatar=""
+          avatar="http://image-url.com"
           name="Terence O'Donoghue"
           totalDistance="1km"
           totalEarnings="$1"
@@ -47,7 +47,7 @@ describe('Driver', () => {
       // Arrange
       const { screen } = render(
         <Driver
-          avatar=""
+          avatar="http://image-url.com"
           name="Terence O'Donoghue"
           totalDistance="1km"
           totalEarnings="$1"

@@ -44,7 +44,7 @@ const ChatCard: FunctionComponent<ChatCardProps> = ({
       {...props}
     >
       <Indicator visible={online}>
-        <Avatar size={48} src={avatar} />
+        <Avatar alt={`${name}'s avatar`} size={48} src={avatar} />
       </Indicator>
       <div
         css={{
