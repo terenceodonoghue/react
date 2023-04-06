@@ -46,7 +46,6 @@ const Badge: FunctionComponent<BadgeProps> = ({
       >
         {label}
       </div>
-
       {children}
     </div>
   );
