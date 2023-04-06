@@ -143,7 +143,7 @@ describe('ChatCard', () => {
   });
 
   describe('with online', () => {
-    it('has status indicator', () => {
+    it('has visible status', () => {
       // Arrange
       const { screen } = render(
         <ChatCard

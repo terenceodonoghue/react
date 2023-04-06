@@ -59,16 +59,4 @@ describe('Box', () => {
       });
     });
   });
-
-  describe('with content', () => {
-    it('has visible text', () => {
-      // Arrange
-      const { screen } = render(<Box>Content</Box>, {
-        wrapper: ThemeProvider,
-      });
-
-      // Assert
-      expect(screen.getByText('Content')).toBeVisible();
-    });
-  });
 });

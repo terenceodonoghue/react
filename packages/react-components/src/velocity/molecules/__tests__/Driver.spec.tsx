@@ -87,7 +87,7 @@ describe('Driver', () => {
   });
 
   describe('with rank', () => {
-    it('has status badge', () => {
+    it('has visible status', () => {
       // Arrange
       const { screen } = render(
         <Driver

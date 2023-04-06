@@ -50,7 +50,7 @@ describe('IntegrationCard', () => {
       });
     });
 
-    it('has indicator', () => {
+    it('has visible status', () => {
       // Arrange
       const { screen } = render(
         <IntegrationCard

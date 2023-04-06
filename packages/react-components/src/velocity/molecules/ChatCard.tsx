@@ -44,6 +44,7 @@ const ChatCard: FunctionComponent<ChatCardProps> = ({
         ...transitions(['background-color'], transition.quickly),
         '&:focus-visible': {
           outline: `solid 2px ${color.primary}`,
+          outlineOffset: -2,
         },
         '&:hover': {
           backgroundColor: color.neutral[100],

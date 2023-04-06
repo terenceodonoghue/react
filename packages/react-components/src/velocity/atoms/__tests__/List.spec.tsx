@@ -5,7 +5,7 @@ import List from '../List.js';
 
 describe('List', () => {
   describe('with items', () => {
-    it('has accessible roles', () => {
+    it('has visible terms', () => {
       // Arrange
       const { screen } = render(
         <List items={[{ label: 'Label', value: 'Value' }]} />,
@@ -15,11 +15,11 @@ describe('List', () => {
       );
 
       // Assert
-      expect(screen.getByRole('term')).toBeInTheDocument();
-      expect(screen.getByRole('definition')).toBeInTheDocument();
+      expect(screen.getByRole('term')).toBeVisible();
+      expect(screen.getByRole('term')).toHaveTextContent('Label');
     });
 
-    it('has visible text', () => {
+    it('has visible definitions', () => {
       // Arrange
       const { screen } = render(
         <List items={[{ label: 'Label', value: 'Value' }]} />,
@@ -29,8 +29,8 @@ describe('List', () => {
       );
 
       // Assert
-      expect(screen.getByText('Label')).toBeVisible();
-      expect(screen.getByText('Value')).toBeVisible();
+      expect(screen.getByRole('definition')).toBeVisible();
+      expect(screen.getByRole('definition')).toHaveTextContent('Value');
     });
   });
 });

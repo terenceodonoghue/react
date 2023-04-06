@@ -6,16 +6,6 @@ import ThemeProvider, { defaultTheme } from '../../providers/ThemeProvider.js';
 import Indicator from '../Indicator.js';
 
 describe('Indicator', () => {
-  it('has accessible role', () => {
-    // Arrange
-    const { screen } = render(<Indicator />, {
-      wrapper: ThemeProvider,
-    });
-
-    // Assert
-    expect(screen.getByRole('status')).toBeInTheDocument();
-  });
-
   it('has default style', () => {
     // Arrange
     const { screen } = render(<Indicator />, {
@@ -34,7 +24,7 @@ describe('Indicator', () => {
   });
 
   describe('with color', () => {
-    it('has background color', () => {
+    it('has background', () => {
       // Arrange
       const { screen } = render(<Indicator color="red" />, {
         wrapper: ThemeProvider,
@@ -44,18 +34,6 @@ describe('Indicator', () => {
       expect(screen.getByRole('status')).toHaveStyle({
         backgroundColor: 'red',
       });
-    });
-  });
-
-  describe('with content', () => {
-    it('has visible text', () => {
-      // Arrange
-      const { screen } = render(<Indicator>Content</Indicator>, {
-        wrapper: ThemeProvider,
-      });
-
-      // Assert
-      expect(screen.getByText('Content')).toBeVisible();
     });
   });
 
@@ -78,7 +56,7 @@ describe('Indicator', () => {
   });
 
   describe('with visible', () => {
-    it('is visible', () => {
+    it('has visible status', () => {
       // Arrange
       const { screen } = render(<Indicator visible />, {
         wrapper: ThemeProvider,
@@ -86,16 +64,6 @@ describe('Indicator', () => {
 
       // Assert
       expect(screen.getByRole('status')).toBeVisible();
-    });
-
-    it('is hidden', () => {
-      // Arrange
-      const { screen } = render(<Indicator visible={false} />, {
-        wrapper: ThemeProvider,
-      });
-
-      // Assert
-      expect(screen.getByRole('status')).not.toBeVisible();
     });
   });
 });

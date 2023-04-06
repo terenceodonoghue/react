@@ -9,7 +9,7 @@ import Icon from '../Icon.js';
 describe('Icon', () => {
   const testId = 'icon';
 
-  it('has default size', () => {
+  it('has default attributes', () => {
     // Arrange
     const { screen } = render(<Icon data-testid={testId} with={Check} />, {
       wrapper: ThemeProvider,
@@ -69,8 +69,8 @@ describe('Icon', () => {
       });
     });
 
-    describe('with size', () => {
-      it('has compact padding', () => {
+    describe('has padding', () => {
+      test('with compact size', () => {
         // Arrange
         const { screen } = render(
           <Icon backdrop data-testid={testId} size="compact" with={Check} />,
@@ -82,6 +82,21 @@ describe('Icon', () => {
         // Assert
         expect(screen.getByTestId(testId)).toHaveStyle({
           padding: '8px',
+        });
+      });
+
+      test('with numeric size', () => {
+        // Arrange
+        const { screen } = render(
+          <Icon backdrop data-testid={testId} size={32} with={Check} />,
+          {
+            wrapper: ThemeProvider,
+          },
+        );
+
+        // Assert
+        expect(screen.getByTestId(testId)).toHaveStyle({
+          padding: '14px',
         });
       });
     });

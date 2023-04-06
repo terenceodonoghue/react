@@ -38,7 +38,7 @@ describe('NavItem', () => {
     });
 
     describe('with compact', () => {
-      it('is hidden', () => {
+      it('has hidden text', () => {
         // Arrange
         const { screen } = render(
           <NavItem compact icon={Dashboard} label="Label" />,

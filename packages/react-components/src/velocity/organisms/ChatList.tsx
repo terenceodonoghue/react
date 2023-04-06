@@ -15,6 +15,8 @@ const ChatList: FunctionComponent<ChatListProps> = ({ chats, ...props }) => {
   return (
     <div
       css={mq({
+        display: 'flex',
+        flexDirection: 'column',
         borderRight: [undefined, `solid 1px ${color.neutral[200]}`],
         height: '100%',
         backgroundColor: color.neutral[50],

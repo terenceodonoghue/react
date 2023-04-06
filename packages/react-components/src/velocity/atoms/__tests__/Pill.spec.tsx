@@ -7,7 +7,7 @@ import Pill from '../Pill.js';
 describe('Pill', () => {
   it('has default style', () => {
     // Arrange
-    const { screen } = render(<Pill label="Label" />, {
+    const { screen } = render(<Pill label={1} />, {
       wrapper: ThemeProvider,
     });
 
@@ -20,7 +20,7 @@ describe('Pill', () => {
   describe('has background', () => {
     test('with color', () => {
       // Arrange
-      const { screen } = render(<Pill label="Label" color="blue" />, {
+      const { screen } = render(<Pill label={1} color="blue" />, {
         wrapper: ThemeProvider,
       });
 
@@ -32,7 +32,7 @@ describe('Pill', () => {
 
     test('with opacity', () => {
       // Arrange
-      const { screen } = render(<Pill label="Label" opacity={0.5} />, {
+      const { screen } = render(<Pill label={1} opacity={0.5} />, {
         wrapper: ThemeProvider,
       });
 
@@ -44,14 +44,15 @@ describe('Pill', () => {
   });
 
   describe('with label', () => {
-    it('has visible text', () => {
+    it('has visible status', () => {
       // Arrange
-      const { screen } = render(<Pill label="Label" />, {
+      const { screen } = render(<Pill label={1} />, {
         wrapper: ThemeProvider,
       });
 
       // Assert
-      expect(screen.getByText('Label')).toBeVisible();
+      expect(screen.getByRole('status')).toBeVisible();
+      expect(screen.getByRole('status')).toHaveTextContent('1');
     });
   });
 });

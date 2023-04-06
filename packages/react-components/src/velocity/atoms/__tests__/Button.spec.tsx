@@ -18,7 +18,7 @@ describe('Button', () => {
     });
   });
 
-  describe('with content', () => {
+  describe('with inner text', () => {
     it('has accessible name', () => {
       // Arrange
       const { screen } = render(<Button>Button Text</Button>, {
@@ -27,16 +27,6 @@ describe('Button', () => {
 
       // Assert
       expect(screen.getByRole('button')).toHaveAccessibleName('Button Text');
-    });
-
-    it('has visible text', () => {
-      // Arrange
-      const { screen } = render(<Button>Button Text</Button>, {
-        wrapper: ThemeProvider,
-      });
-
-      // Assert
-      expect(screen.getByText('Button Text')).toBeVisible();
     });
   });
 

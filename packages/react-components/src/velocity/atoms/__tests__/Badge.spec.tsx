@@ -4,16 +4,6 @@ import ThemeProvider from '../../providers/ThemeProvider.js';
 import Badge from '../Badge.js';
 
 describe('Badge', () => {
-  it('has accessible role', () => {
-    // Arrange
-    const { screen } = render(<Badge />, {
-      wrapper: ThemeProvider,
-    });
-
-    // Assert
-    expect(screen.getByRole('status')).toBeInTheDocument();
-  });
-
   it('has default style', () => {
     // Arrange
     const { screen } = render(<Badge />, {
@@ -26,27 +16,16 @@ describe('Badge', () => {
     });
   });
 
-  describe('with content', () => {
-    it('has visible text', () => {
-      // Arrange
-      const { screen } = render(<Badge>Content</Badge>, {
-        wrapper: ThemeProvider,
-      });
-
-      // Assert
-      expect(screen.getByText('Content')).toBeVisible();
-    });
-  });
-
   describe('with label', () => {
-    it('has visible text', () => {
+    it('has visible status', () => {
       // Arrange
-      const { screen } = render(<Badge label="Label" />, {
+      const { screen } = render(<Badge label={1} />, {
         wrapper: ThemeProvider,
       });
 
       // Assert
-      expect(screen.getByText('Label')).toBeVisible();
+      expect(screen.getByRole('status')).toBeVisible();
+      expect(screen.getByRole('status')).toHaveTextContent('1');
     });
   });
 });
