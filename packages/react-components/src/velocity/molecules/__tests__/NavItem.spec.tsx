@@ -14,7 +14,7 @@ describe('NavItem', () => {
     });
 
     // Assert
-    expect(screen.getByRole('listitem')).toHaveStyle({
+    expect(screen.getByRole('button')).toHaveStyle({
       boxShadow: '',
       backgroundColor: '',
       width: '100%',
@@ -27,6 +27,15 @@ describe('NavItem', () => {
   });
 
   describe('with label', () => {
+    it('has accessible name', () => {
+      const { screen } = render(<NavItem icon={Dashboard} label="Label" />, {
+        wrapper: ThemeProvider,
+      });
+
+      // Assert
+      expect(screen.getByRole('button')).toHaveAccessibleName('Label');
+    });
+
     it('has visible text', () => {
       // Arrange
       const { screen } = render(<NavItem icon={Dashboard} label="Label" />, {
@@ -81,7 +90,7 @@ describe('NavItem', () => {
       );
 
       // Assert
-      expect(screen.getByRole('listitem')).toHaveStyle({
+      expect(screen.getByRole('button')).toHaveStyle({
         width: '80px',
       });
     });
@@ -98,7 +107,7 @@ describe('NavItem', () => {
       );
 
       // Assert
-      expect(screen.getByRole('listitem')).toHaveStyle({
+      expect(screen.getByRole('button')).toHaveStyle({
         boxShadow: `inset 4px 0 0 -1px ${defaultTheme.color.primary}`,
         backgroundColor: rgba(defaultTheme.color.primary, 0.1),
       });
