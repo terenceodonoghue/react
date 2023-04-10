@@ -29,9 +29,9 @@ const NavItem: FunctionComponent<NavItemProps> = forwardRef<
         boxShadow: selected ? `inset 4px 0 0 -1px ${color.primary}` : undefined,
         height: 56,
         padding: '0 28px',
-        backgroundColor: selected ? rgba(color.primary, 0.1) : undefined,
-        cursor: 'pointer',
         width: compact ? 80 : '100%',
+        backgroundColor: selected ? rgba(color.primary, 0.1) : 'transparent',
+        cursor: 'pointer',
         overflow: 'hidden',
         ...transitions(['background-color'], transition.quickly),
         '&:focus-visible': {

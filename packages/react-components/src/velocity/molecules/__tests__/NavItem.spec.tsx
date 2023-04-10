@@ -15,8 +15,8 @@ describe('NavItem', () => {
 
     // Assert
     expect(screen.getByRole('button')).toHaveStyle({
-      boxShadow: '',
-      backgroundColor: '',
+      'box-shadow': undefined,
+      'background-color': 'transparent',
       width: '100%',
     });
 
@@ -108,8 +108,8 @@ describe('NavItem', () => {
 
       // Assert
       expect(screen.getByRole('button')).toHaveStyle({
-        boxShadow: `inset 4px 0 0 -1px ${defaultTheme.color.primary}`,
-        backgroundColor: rgba(defaultTheme.color.primary, 0.1),
+        'box-shadow': `inset 4px 0 0 -1px ${defaultTheme.color.primary}`,
+        'background-color': rgba(defaultTheme.color.primary, 0.1),
       });
     });
   });
