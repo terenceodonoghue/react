@@ -35,6 +35,7 @@ const MetricCard: FunctionComponent<MetricCardProps> = ({
       })}
     >
       <Icon
+        backdrop
         color={iconColor || color.primary}
         css={mq({ marginBottom: [16, 0, 16], marginRight: [0, 16, 0] })}
         size={20}
