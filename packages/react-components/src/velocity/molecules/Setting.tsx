@@ -23,6 +23,7 @@ const Setting: FunctionComponent<SettingProps> = ({
 
   return (
     <div
+      className={className}
       css={mq({
         display: 'flex',
         alignItems: 'center',
@@ -30,7 +31,6 @@ const Setting: FunctionComponent<SettingProps> = ({
         gap: [16, 56],
         overflow: 'hidden',
       })}
-      className={className}
       style={style}
     >
       <div

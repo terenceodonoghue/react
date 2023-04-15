@@ -1,5 +1,5 @@
 import { transitions } from 'polished';
-import { FunctionComponent, HTMLAttributes } from 'react';
+import { Children, FunctionComponent, HTMLAttributes } from 'react';
 import { useMediaQuery } from 'react-responsive';
 import { animated, config, useSpring } from 'react-spring';
 
@@ -108,7 +108,9 @@ const Drawer: FunctionComponent<DrawerProps> & DrawerComposition = ({
             padding: 0,
           }}
         >
-          {children}
+          {Children.toArray(children).map((child) => (
+            <li>{child}</li>
+          ))}
         </ul>
       </nav>
     </animated.div>

@@ -16,7 +16,7 @@ import VelocityLogo from '../atoms/Logo.js';
 import mq from '../utils/mq.js';
 
 export interface AppBarProps extends HTMLAttributes<HTMLDivElement> {
-  avatar: string;
+  avatar?: string;
   hasMessage?: boolean;
   hasNotification?: boolean;
   logo?: ReactIcon;
@@ -54,7 +54,7 @@ const AppBar: FunctionComponent<AppBarProps> = ({
     >
       {drawerHandler ? (
         <div css={{ padding: '0 24px', width: 80 }}>
-          <IconButton aria-label="menu" onClick={drawerHandler}>
+          <IconButton aria-label="Open drawer" onClick={drawerHandler}>
             <Menu color={color.neutral[400]} size={18} />
           </IconButton>
         </div>
@@ -88,7 +88,10 @@ const AppBar: FunctionComponent<AppBarProps> = ({
         ) : undefined}
         <div css={{ display: 'flex', alignItems: 'center', gap: 8 }}>
           {notificationHandler ? (
-            <IconButton onClick={notificationHandler}>
+            <IconButton
+              aria-label="View notifications"
+              onClick={notificationHandler}
+            >
               <Indicator visible={hasNotification}>
                 <Notifications color={color.neutral[400]} size={32} />
               </Indicator>
@@ -96,6 +99,7 @@ const AppBar: FunctionComponent<AppBarProps> = ({
           ) : undefined}
           {messageHandler ? (
             <IconButton
+              aria-label="View messages"
               css={mq({ display: ['none', 'inline-block'] })}
               onClick={messageHandler}
             >
@@ -104,13 +108,14 @@ const AppBar: FunctionComponent<AppBarProps> = ({
               </Indicator>
             </IconButton>
           ) : undefined}
-          {avatar && profileHandler ? (
+          {profileHandler ? (
             <IconButton
+              aria-label="View profile"
               css={mq({ display: ['none', 'inline-block'] })}
               onClick={profileHandler}
               variant="rounded"
             >
-              <Avatar size={40} src={avatar} />
+              {avatar ? <Avatar size={40} src={avatar} /> : undefined}
             </IconButton>
           ) : undefined}
         </div>
