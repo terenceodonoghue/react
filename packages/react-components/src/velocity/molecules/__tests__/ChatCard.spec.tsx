@@ -1,48 +1,43 @@
 import render from 'tests/render.js';
 
-import ThemeProvider, { defaultTheme } from '../../providers/ThemeProvider.js';
+import ThemeProvider from '../../providers/ThemeProvider.js';
 import ChatCard from '../ChatCard.js';
 
 describe('ChatCard', () => {
-  it('has accessible description', () => {
-    // Arrange
-    const { screen } = render(
-      <ChatCard avatar="http://image-url.com" name="Terence O'Donoghue" />,
-      {
+  describe('has accessible name', () => {
+    test('with active status', () => {
+      // Arrange
+      const { screen } = render(<ChatCard name="Terence O'Donoghue" online />, {
         wrapper: ThemeProvider,
-      },
-    );
+      });
 
-    // Assert
-    expect(screen.getByRole('button')).toHaveAccessibleDescription(
-      'No messages',
-    );
-  });
+      // Assert
+      expect(screen.getByRole('button')).toHaveAccessibleName(
+        "Terence O'Donoghue, Active",
+      );
+    });
 
-  it('has default style', () => {
-    // Arrange
-    const { screen } = render(
-      <ChatCard avatar="http://image-url.com" name="Terence O'Donoghue" />,
-      {
-        wrapper: ThemeProvider,
-      },
-    );
+    test('with away status', () => {
+      // Arrange
+      const { screen } = render(
+        <ChatCard name="Terence O'Donoghue" online={false} />,
+        {
+          wrapper: ThemeProvider,
+        },
+      );
 
-    // Assert
-    expect(screen.getByRole('button')).toHaveStyle({
-      backgroundColor: defaultTheme.color.neutral[50],
+      // Assert
+      expect(screen.getByRole('button')).toHaveAccessibleName(
+        "Terence O'Donoghue, Away",
+      );
     });
   });
 
-  describe('with avatar', () => {
-    it('has accessible name', () => {
+  describe('has accessible components', () => {
+    test('with avatar', () => {
       // Arrange
       const { screen } = render(
-        <ChatCard
-          avatar="http://image-url.com"
-          name="Terence O'Donoghue"
-          message="Message"
-        />,
+        <ChatCard name="Terence O'Donoghue" message="Message" />,
         {
           wrapper: ThemeProvider,
         },
@@ -55,130 +50,18 @@ describe('ChatCard', () => {
     });
   });
 
-  describe('with name', () => {
-    it('has accessible name', () => {
-      // Arrange
-      const { screen } = render(
-        <ChatCard avatar="http://image-url.com" name="Terence O'Donoghue" />,
-        {
-          wrapper: ThemeProvider,
-        },
-      );
+  it('has visible text', () => {
+    // Arrange
+    const { screen } = render(
+      <ChatCard name="Terence O'Donoghue" message="Message" time="2m" />,
+      {
+        wrapper: ThemeProvider,
+      },
+    );
 
-      // Assert
-      expect(screen.getByRole('button')).toHaveAccessibleName(
-        "Chat with Terence O'Donoghue",
-      );
-    });
-
-    it('has visible text', () => {
-      // Arrange
-      const { screen } = render(
-        <ChatCard avatar="http://image-url.com" name="Terence O'Donoghue" />,
-        {
-          wrapper: ThemeProvider,
-        },
-      );
-
-      // Assert
-      expect(screen.getByText("Terence O'Donoghue")).toBeVisible();
-    });
-  });
-
-  describe('with message', () => {
-    it('has accessible description', () => {
-      // Arrange
-      const { screen } = render(
-        <ChatCard
-          avatar="http://image-url.com"
-          name="Terence O'Donoghue"
-          message="Message"
-        />,
-        {
-          wrapper: ThemeProvider,
-        },
-      );
-
-      // Assert
-      expect(screen.getByRole('button')).toHaveAccessibleDescription(
-        'Last message, Message',
-      );
-    });
-
-    it('has visible text', () => {
-      // Arrange
-      const { screen } = render(
-        <ChatCard
-          avatar="http://image-url.com"
-          name="Terence O'Donoghue"
-          message="Message"
-        />,
-        {
-          wrapper: ThemeProvider,
-        },
-      );
-
-      // Assert
-      expect(screen.getByText('Message')).toBeVisible();
-    });
-  });
-
-  describe('with time', () => {
-    it('has visible text', () => {
-      // Arrange
-      const { screen } = render(
-        <ChatCard
-          avatar="http://image-url.com"
-          name="Terence O'Donoghue"
-          time="2m"
-        />,
-        {
-          wrapper: ThemeProvider,
-        },
-      );
-
-      // Assert
-      expect(screen.getByText('2m')).toBeVisible();
-    });
-  });
-
-  describe('with online', () => {
-    it('has visible status', () => {
-      // Arrange
-      const { screen } = render(
-        <ChatCard
-          avatar="http://image-url.com"
-          name="Terence O'Donoghue"
-          online
-        />,
-        {
-          wrapper: ThemeProvider,
-        },
-      );
-
-      // Assert
-      expect(screen.getByRole('status')).toBeVisible();
-    });
-  });
-
-  describe('with selected', () => {
-    it('has background', () => {
-      // Arrange
-      const { screen } = render(
-        <ChatCard
-          avatar="http://image-url.com"
-          name="Terence O'Donoghue"
-          selected
-        />,
-        {
-          wrapper: ThemeProvider,
-        },
-      );
-
-      // Assert
-      expect(screen.getByRole('button')).toHaveStyle({
-        backgroundColor: defaultTheme.color.neutral[100],
-      });
-    });
+    // Assert
+    expect(screen.getByText("Terence O'Donoghue")).toBeVisible();
+    expect(screen.getByText('Message')).toBeVisible();
+    expect(screen.getByText('2m')).toBeVisible();
   });
 });

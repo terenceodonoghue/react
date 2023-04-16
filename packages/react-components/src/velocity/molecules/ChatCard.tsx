@@ -8,7 +8,7 @@ import Indicator from '../atoms/Indicator.js';
 import Text from '../primitives/Text.js';
 
 export interface ChatCardProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  avatar: string;
+  avatar?: string;
   name: string;
   message?: string;
   online?: boolean;
@@ -25,13 +25,12 @@ const ChatCard: FunctionComponent<ChatCardProps> = ({
   time,
   ...props
 }) => {
-  const descriptionId = useId();
+  const labelId = useId();
   const { color, transition } = useTheme();
 
   return (
     <button
-      aria-label={`Chat with ${name}`}
-      aria-describedby={descriptionId}
+      aria-labelledby={labelId}
       css={{
         display: 'flex',
         alignItems: 'center',
@@ -53,7 +52,11 @@ const ChatCard: FunctionComponent<ChatCardProps> = ({
       type="button"
       {...props}
     >
-      <Indicator visible={online}>
+      <Indicator
+        aria-label={`${name}, ${online ? 'Active' : 'Away'}`}
+        id={labelId}
+        visible={online}
+      >
         <Avatar alt={`${name}'s avatar`} size={48} src={avatar} />
       </Indicator>
       <div
@@ -67,15 +70,16 @@ const ChatCard: FunctionComponent<ChatCardProps> = ({
         <Text as="span" variant="h4" truncate>
           {name}
         </Text>
-        <Text as="span" variant="p2" align="right">
-          {time}
-        </Text>
-        <Text css={{ gridColumn: '1 / 3' }} as="span" variant="p2" truncate>
-          <span hidden id={descriptionId}>
-            {message ? `Last message, ${message}` : `No messages`}
-          </span>
-          {message}
-        </Text>
+        {time ? (
+          <Text as="span" variant="p2" align="right">
+            {time}
+          </Text>
+        ) : undefined}
+        {message ? (
+          <Text css={{ gridColumn: '1 / 3' }} as="span" variant="p2" truncate>
+            {message}
+          </Text>
+        ) : undefined}
       </div>
     </button>
   );
