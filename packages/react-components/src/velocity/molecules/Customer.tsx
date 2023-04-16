@@ -5,7 +5,7 @@ import Avatar from '../atoms/Avatar.js';
 import Text from '../primitives/Text.js';
 
 export interface CustomerProps extends HTMLAttributes<HTMLDivElement> {
-  avatar: string;
+  avatar?: string;
   name: string;
   interactions: number;
 }
