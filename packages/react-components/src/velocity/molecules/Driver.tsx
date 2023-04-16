@@ -6,7 +6,7 @@ import Badge from '../atoms/Badge.js';
 import Text from '../primitives/Text.js';
 
 export interface DriverProps extends HTMLAttributes<HTMLDivElement> {
-  avatar: string;
+  avatar?: string;
   name: string;
   rank?: number;
   totalDistance: string;
