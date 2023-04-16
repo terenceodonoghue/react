@@ -33,33 +33,32 @@ describe('ChatCard', () => {
     });
   });
 
-  describe('has accessible components', () => {
-    test('with avatar', () => {
-      // Arrange
-      const { screen } = render(
-        <ChatCard name="Terence O'Donoghue" message="Message" />,
-        {
-          wrapper: ThemeProvider,
-        },
-      );
-
-      // Assert
-      expect(screen.getByRole('img')).toHaveAccessibleName(
-        "Terence O'Donoghue's avatar",
-      );
-    });
-  });
-
-  it('has visible text', () => {
+  it('has accessible components', () => {
     // Arrange
     const { screen } = render(
-      <ChatCard name="Terence O'Donoghue" message="Message" time="2m" />,
+      <ChatCard name="Terence O'Donoghue" message="Message" />,
       {
         wrapper: ThemeProvider,
       },
     );
 
     // Assert
+    expect(screen.getByRole('img')).toHaveAccessibleName(
+      "Terence O'Donoghue's avatar",
+    );
+  });
+
+  it('has visible components', () => {
+    // Arrange
+    const { screen } = render(
+      <ChatCard name="Terence O'Donoghue" message="Message" time="2m" online />,
+      {
+        wrapper: ThemeProvider,
+      },
+    );
+
+    // Assert
+    expect(screen.getByRole('status')).toBeVisible();
     expect(screen.getByText("Terence O'Donoghue")).toBeVisible();
     expect(screen.getByText('Message')).toBeVisible();
     expect(screen.getByText('2m')).toBeVisible();
