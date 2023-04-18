@@ -311,11 +311,11 @@ import { ChatCard } from '@terenceodonoghue/react-components/velocity';
     ]}
   >
     <ChatCard
+      active
       avatar={faker.image.avatar()}
       name={faker.name.fullName()}
       time="2m"
       message={faker.lorem.sentence()}
-      online
     />
     <ChatCard
       avatar={faker.image.avatar()}
@@ -325,11 +325,11 @@ import { ChatCard } from '@terenceodonoghue/react-components/velocity';
       selected={true}
     />
     <ChatCard
+      active={false}
       avatar={faker.image.avatar()}
       name={faker.name.fullName()}
       time="40m"
       message={faker.lorem.sentence()}
-      online={false}
     />
   </Story>
 </Canvas>

@@ -7,7 +7,7 @@ describe('ChatCard', () => {
   describe('has accessible name', () => {
     test('with active status', () => {
       // Arrange
-      const { screen } = render(<ChatCard name="Terence O'Donoghue" online />, {
+      const { screen } = render(<ChatCard active name="Terence O'Donoghue" />, {
         wrapper: ThemeProvider,
       });
 
@@ -20,7 +20,7 @@ describe('ChatCard', () => {
     test('with away status', () => {
       // Arrange
       const { screen } = render(
-        <ChatCard name="Terence O'Donoghue" online={false} />,
+        <ChatCard active={false} name="Terence O'Donoghue" />,
         {
           wrapper: ThemeProvider,
         },
@@ -33,32 +33,46 @@ describe('ChatCard', () => {
     });
   });
 
-  it('has accessible components', () => {
-    // Arrange
-    const { screen } = render(
-      <ChatCard name="Terence O'Donoghue" message="Message" />,
-      {
+  describe('has accessible components', () => {
+    test('with avatar', () => {
+      // Arrange
+      const { screen } = render(<ChatCard name="Terence O'Donoghue" />, {
         wrapper: ThemeProvider,
-      },
-    );
+      });
 
-    // Assert
-    expect(screen.getByRole('img')).toHaveAccessibleName(
-      "Terence O'Donoghue's avatar",
-    );
+      // Assert
+      expect(screen.getByRole('img')).toHaveAccessibleName(
+        "Terence O'Donoghue's avatar",
+      );
+    });
   });
 
-  it('has visible components', () => {
+  it('has visible status', () => {
     // Arrange
-    const { screen } = render(
-      <ChatCard name="Terence O'Donoghue" message="Message" time="2m" online />,
-      {
-        wrapper: ThemeProvider,
-      },
-    );
+    const { screen } = render(<ChatCard name="Terence O'Donoghue" />, {
+      wrapper: ThemeProvider,
+    });
+
+    // Assert
+    expect(screen.getByRole('status')).not.toBeVisible();
+
+    // Arrange
+    screen.rerender(<ChatCard active name="Terence O'Donoghue" />);
 
     // Assert
     expect(screen.getByRole('status')).toBeVisible();
+  });
+
+  it('has visible text', () => {
+    // Arrange
+    const { screen } = render(
+      <ChatCard name="Terence O'Donoghue" message="Message" time="2m" />,
+      {
+        wrapper: ThemeProvider,
+      },
+    );
+
+    // Assert
     expect(screen.getByText("Terence O'Donoghue")).toBeVisible();
     expect(screen.getByText('Message')).toBeVisible();
     expect(screen.getByText('2m')).toBeVisible();

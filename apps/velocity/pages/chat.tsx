@@ -16,13 +16,13 @@ const ChatPage: NextPage = () => (
           maxWidth: [undefined, 275, 376],
         })}
         chats={Array.from(Array(7)).map((chat, i) => ({
+          active: faker.datatype.boolean(),
           avatar: faker.image.avatar(),
           name: faker.name.fullName(),
           time: moment()
             .minutes(faker.datatype.number({ min: 1, max: 19 }))
             .format('m[m]'),
           message: faker.lorem.sentence(),
-          online: faker.datatype.boolean(),
           selected: i === 2,
         }))}
       />

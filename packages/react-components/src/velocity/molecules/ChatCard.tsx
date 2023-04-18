@@ -8,19 +8,19 @@ import Indicator from '../atoms/Indicator.js';
 import Text from '../primitives/Text.js';
 
 export interface ChatCardProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  active?: boolean;
   avatar?: string;
   name: string;
   message?: string;
-  online?: boolean;
   selected?: boolean;
   time?: string;
 }
 
 const ChatCard: FunctionComponent<ChatCardProps> = ({
+  active = false,
   avatar,
   name,
   message,
-  online = false,
   selected = false,
   time,
   ...props
@@ -53,9 +53,9 @@ const ChatCard: FunctionComponent<ChatCardProps> = ({
       {...props}
     >
       <Indicator
-        aria-label={`${name}, ${online ? 'Active' : 'Away'}`}
+        aria-label={`${name}, ${active ? 'Active' : 'Away'}`}
         id={labelId}
-        visible={online}
+        visible={active}
       >
         <Avatar alt={`${name}'s avatar`} size={48} src={avatar} />
       </Indicator>
