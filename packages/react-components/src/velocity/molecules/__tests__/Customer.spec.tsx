@@ -4,21 +4,19 @@ import ThemeProvider from '../../providers/ThemeProvider.js';
 import Customer from '../Customer.js';
 
 describe('Customer', () => {
-  describe('has accessible components', () => {
-    test('with avatar', () => {
-      // Arrange
-      const { screen } = render(
-        <Customer name="Terence O'Donoghue" interactions={1} />,
-        {
-          wrapper: ThemeProvider,
-        },
-      );
+  it('has accessible components', () => {
+    // Arrange
+    const { screen } = render(
+      <Customer name="Terence O'Donoghue" interactions={1} />,
+      {
+        wrapper: ThemeProvider,
+      },
+    );
 
-      // Assert
-      expect(screen.getByRole('img')).toHaveAccessibleName(
-        "Terence O'Donoghue's avatar",
-      );
-    });
+    // Assert
+    expect(screen.getByRole('img')).toHaveAccessibleName(
+      "Terence O'Donoghue's avatar",
+    );
   });
 
   it('has visible text', () => {

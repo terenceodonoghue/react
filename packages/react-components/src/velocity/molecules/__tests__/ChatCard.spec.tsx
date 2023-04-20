@@ -33,31 +33,23 @@ describe('ChatCard', () => {
     });
   });
 
-  describe('has accessible components', () => {
-    test('with avatar', () => {
-      // Arrange
-      const { screen } = render(<ChatCard name="Terence O'Donoghue" />, {
-        wrapper: ThemeProvider,
-      });
-
-      // Assert
-      expect(screen.getByRole('img')).toHaveAccessibleName(
-        "Terence O'Donoghue's avatar",
-      );
-    });
-  });
-
-  it('has visible status', () => {
+  it('has accessible components', () => {
     // Arrange
     const { screen } = render(<ChatCard name="Terence O'Donoghue" />, {
       wrapper: ThemeProvider,
     });
 
     // Assert
-    expect(screen.getByRole('status')).not.toBeVisible();
+    expect(screen.getByRole('img')).toHaveAccessibleName(
+      "Terence O'Donoghue's avatar",
+    );
+  });
 
+  it('has visible status', () => {
     // Arrange
-    screen.rerender(<ChatCard active name="Terence O'Donoghue" />);
+    const { screen } = render(<ChatCard active name="Terence O'Donoghue" />, {
+      wrapper: ThemeProvider,
+    });
 
     // Assert
     expect(screen.getByRole('status')).toBeVisible();

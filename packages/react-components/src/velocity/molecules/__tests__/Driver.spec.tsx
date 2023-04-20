@@ -4,34 +4,32 @@ import ThemeProvider from '../../providers/ThemeProvider.js';
 import Driver from '../Driver.js';
 
 describe('Driver', () => {
-  describe('has accessible components', () => {
-    test('with avatar', () => {
-      // Arrange
-      const { screen } = render(
-        <Driver
-          name="Terence O'Donoghue"
-          totalDistance="1km"
-          totalEarnings="$1"
-          vehicle="Honda Civic"
-        />,
-        {
-          wrapper: ThemeProvider,
-        },
-      );
+  it('has accessible components', () => {
+    // Arrange
+    const { screen } = render(
+      <Driver
+        name="Terence O'Donoghue"
+        totalDistance="1km"
+        totalEarnings="$1"
+        vehicle="Honda Civic"
+      />,
+      {
+        wrapper: ThemeProvider,
+      },
+    );
 
-      // Assert
-      expect(screen.getByRole('img')).toHaveAccessibleName(
-        "Terence O'Donoghue's avatar",
-      );
-    });
+    // Assert
+    expect(screen.getByRole('img')).toHaveAccessibleName(
+      "Terence O'Donoghue's avatar",
+    );
   });
 
   it('has visible status', () => {
     // Arrange
     const { screen } = render(
       <Driver
-        name="Terence O'Donoghue"
         rank={1}
+        name="Terence O'Donoghue"
         totalDistance="1km"
         totalEarnings="$1"
         vehicle="Honda Civic"
@@ -43,6 +41,7 @@ describe('Driver', () => {
 
     // Assert
     expect(screen.getByRole('status')).toBeVisible();
+    expect(screen.getByRole('status')).toHaveTextContent('1');
   });
 
   it('has visible text', () => {

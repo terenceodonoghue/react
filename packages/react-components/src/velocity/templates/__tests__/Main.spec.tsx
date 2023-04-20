@@ -15,15 +15,24 @@ describe('Main', () => {
       expect(screen.getByRole('main')).toHaveAccessibleName('Heading');
     });
 
-    it('has visible heading', () => {
+    it('has accessible components', () => {
       // Arrange
       const { screen } = render(<Main heading="Heading" />, {
         wrapper: ThemeProvider,
       });
 
       // Assert
-      expect(screen.getByRole('heading')).toBeVisible();
-      expect(screen.getByRole('heading')).toHaveTextContent('Heading');
+      expect(screen.getByRole('heading')).toHaveAccessibleName('Heading');
+    });
+
+    it('has visible text', () => {
+      // Arrange
+      const { screen } = render(<Main heading="Heading" />, {
+        wrapper: ThemeProvider,
+      });
+
+      // Assert
+      expect(screen.getByText('Heading')).toBeVisible();
     });
   });
 });
