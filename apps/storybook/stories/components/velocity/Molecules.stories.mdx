@@ -3,7 +3,7 @@ import { Canvas, Meta, Story } from '@storybook/addon-docs';
 import { useState } from 'react';
 
 import {
-  ChatCard,
+  Conversation,
   Customer,
   Driver,
   IntegrationCard,
@@ -36,7 +36,7 @@ import {
       '[data-has-bg] .docs-story': {
         backgroundColor: color.neutral[100],
       },
-      '.chat-card': {
+      '.conversation': {
         display: 'grid',
         gridTemplateColumns: ['1fr', 'repeat(3, 1fr)'],
         gap: 12,
@@ -293,38 +293,38 @@ import { TripDetails } from '@terenceodonoghue/react-components/velocity';
   </Story>
 </Canvas>
 
-## Chat Card
+## Conversation
 
 ```javascript
-import { ChatCard } from '@terenceodonoghue/react-components/velocity';
+import { Conversation } from '@terenceodonoghue/react-components/velocity';
 ```
 
 <Canvas>
   <Story
-    name="ChatCard"
+    name="Conversation"
     decorators={[
       (Story) => (
-        <div className="chat-card">
+        <div className="conversation">
           <Story />
         </div>
       ),
     ]}
   >
-    <ChatCard
+    <Conversation
       active
       avatar={faker.image.avatar()}
       name={faker.name.fullName()}
       time="2m"
       message={faker.lorem.sentence()}
     />
-    <ChatCard
+    <Conversation
       avatar={faker.image.avatar()}
+      defaultChecked
       name={faker.name.fullName()}
       time="51m"
       message={faker.lorem.sentence()}
-      selected={true}
     />
-    <ChatCard
+    <Conversation
       active={false}
       avatar={faker.image.avatar()}
       name={faker.name.fullName()}

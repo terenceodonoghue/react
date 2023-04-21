@@ -51,7 +51,6 @@ const Radio: FunctionComponent<RadioProps> = forwardRef<
         {...props}
       />
       <span
-        aria-hidden
         css={{
           border: `solid 1px ${rgba(color.neutral[700], 0.5)}`,
           borderRadius: '50%',

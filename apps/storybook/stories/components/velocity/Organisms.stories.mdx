@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 import {
   AppBar,
-  ChatList,
+  Conversations,
   Integrations,
   Logo,
   Notifications,
@@ -37,7 +37,7 @@ import {
       '[data-has-bg] .docs-story': {
         backgroundColor: color.neutral[100],
       },
-      '.chat-list': {
+      '.conversations': {
         margin: '0 auto',
         maxWidth: [undefined, '378px'],
       },
@@ -83,25 +83,25 @@ import { AppBar } from '@terenceodonoghue/react-components/velocity';
   </Story>
 </Canvas>
 
-## Chat List
+## Conversations
 
 ```javascript
-import { ChatList } from '@terenceodonoghue/react-components/velocity';
+import { Conversations } from '@terenceodonoghue/react-components/velocity';
 ```
 
 <Canvas data-has-bg>
   <Story
-    name="ChatList"
+    name="Conversations"
     decorators={[
       (Story) => (
-        <div className="chat-list">
+        <div className="conversations">
           <Story />
         </div>
       ),
     ]}
   >
-    <ChatList
-      chats={[
+    <Conversations
+      list={[
         {
           active: true,
           avatar: faker.image.avatar(),

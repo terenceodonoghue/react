@@ -27,9 +27,9 @@ export {
 
 export { default as Driver, type DriverProps } from './molecules/Driver.js';
 export {
-  default as ChatCard,
-  type ChatCardProps,
-} from './molecules/ChatCard.js';
+  default as Conversation,
+  type ConversationProps,
+} from './molecules/Conversation.js';
 export {
   default as Customer,
   default as CustomerProps,
@@ -67,9 +67,9 @@ export {
 
 export { default as AppBar, type AppBarProps } from './organisms/AppBar.js';
 export {
-  default as ChatList,
-  type ChatListProps,
-} from './organisms/ChatList.js';
+  default as Conversations,
+  type ConversationsProps,
+} from './organisms/Conversations.js';
 export {
   default as Integrations,
   type IntegrationsProps,
