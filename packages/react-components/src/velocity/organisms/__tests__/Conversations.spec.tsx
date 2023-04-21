@@ -8,10 +8,7 @@ describe('Conversations', () => {
     // Arrange
     const { screen } = render(
       <Conversations
-        list={[
-          { avatar: 'http://image-url.com', name: "Terence O'Donoghue" },
-          { avatar: 'http://image-url.com', name: 'Jane Appleseed' },
-        ]}
+        list={[{ name: "Terence O'Donoghue" }, { name: 'Jane Appleseed' }]}
       />,
       {
         wrapper: ThemeProvider,
