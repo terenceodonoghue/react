@@ -6,13 +6,11 @@ import type { FunctionComponent, HTMLAttributes } from 'react';
 export interface PillProps extends HTMLAttributes<HTMLDivElement> {
   color?: string;
   label: string | number;
-  opacity?: number;
 }
 
 const Pill: FunctionComponent<PillProps> = ({
   color: pillColor,
   label,
-  opacity = 0.2,
   ...props
 }) => {
   const { color, font } = useTheme();
@@ -24,8 +22,8 @@ const Pill: FunctionComponent<PillProps> = ({
         borderRadius: 10,
         padding: '3px 5px',
         minWidth: 32,
-        backgroundColor: rgba(pillColor || color.primary, opacity),
-        color: pillColor,
+        backgroundColor: rgba(pillColor || color.primary, 0.2),
+        color: pillColor || color.primary,
         fontFamily: font.family,
         fontSize: rem(12),
         fontWeight: font.weight.medium,

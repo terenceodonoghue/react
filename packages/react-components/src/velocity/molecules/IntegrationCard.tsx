@@ -4,13 +4,11 @@ import { rem, rgba } from 'polished';
 import { FunctionComponent, useId } from 'react';
 
 import type { ReactIcon } from '@terenceodonoghue/react-icons';
-import { Check } from '@terenceodonoghue/react-icons/velocity';
 
-import Box, { type BoxProps } from '../atoms/Box.js';
-import Indicator from '../atoms/Indicator.js';
+import Checkbox, { type CheckboxProps } from '../atoms/Checkbox.js';
 import Text from '../primitives/Text.js';
 
-export interface IntegrationCardProps extends BoxProps {
+export interface IntegrationCardProps extends CheckboxProps {
   description: string;
   enabled?: boolean;
   icon: ReactIcon;
@@ -30,50 +28,39 @@ const IntegrationCard: FunctionComponent<IntegrationCardProps> = ({
   const { color } = useTheme();
 
   return (
-    <Indicator
+    <Checkbox
       aria-labelledby={labelId}
       aria-describedby={descriptionId}
-      icon={Check}
-      visible={enabled}
+      css={{
+        borderColor: enabled ? color.primary : color.secondary,
+        cursor: 'pointer',
+      }}
+      {...props}
     >
-      <Box
+      <div
         css={{
-          borderColor: enabled ? color.primary : color.secondary,
-          cursor: 'pointer',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          flexShrink: 0,
+          borderRadius: '50%',
+          marginRight: 16,
+          height: 70,
+          width: 70,
+          backgroundColor: rgba(color.neutral[700], 0.1),
         }}
-        p={20}
-        {...props}
       >
-        <div
-          css={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            flexShrink: 0,
-            borderRadius: '50%',
-            marginRight: 16,
-            height: 70,
-            width: 70,
-            backgroundColor: rgba(color.neutral[700], 0.1),
-          }}
-        >
-          {Icon ? <Icon aria-hidden size={30} /> : undefined}
-        </div>
-        <div css={{ display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
-          <Text
-            as="span"
-            css={{ lineHeight: rem(22) }}
-            id={labelId}
-            variant="h4"
-          >
-            {label}
-          </Text>
-          <Text as="span" id={descriptionId} variant="p2">
-            {description}
-          </Text>
-        </div>
-      </Box>
-    </Indicator>
+        {Icon ? <Icon aria-hidden size={30} /> : undefined}
+      </div>
+      <div css={{ display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
+        <Text as="span" css={{ lineHeight: rem(22) }} id={labelId} variant="h4">
+          {label}
+        </Text>
+        <Text as="span" id={descriptionId} variant="p2">
+          {description}
+        </Text>
+      </div>
+    </Checkbox>
   );
 };
 

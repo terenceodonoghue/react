@@ -12,6 +12,7 @@ import {
   Avatar,
   Badge,
   Box,
+  Checkbox,
   Button,
   Card,
   Icon,
@@ -101,6 +102,27 @@ The `variant` prop defines one of three styles: primary (default), outline, or m
     <Button variant="minimal" disabled>
       Minimal
     </Button>
+  </Story>
+</Canvas>
+
+## Checkbox
+
+Checkboxes allow the user to select one or more items from a set.
+
+```javascript
+import { Checkbox } from '@terenceodonoghue/react-components/velocity';
+```
+
+Text or other elements can be placed inside of the content block. Standard [input](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input) attributes are supported, e.g. `name`, `defaultChecked` or `disabled`.
+
+<Canvas>
+  <Story name="Checkbox">
+    <Checkbox defaultChecked>Option A</Checkbox>
+    <Checkbox>Option B</Checkbox>
+    <Checkbox defaultChecked disabled>
+      Option C
+    </Checkbox>
+    <Checkbox disabled>Option D</Checkbox>
   </Story>
 </Canvas>
 
@@ -255,7 +277,7 @@ By default the indicator uses the primary theme colour and is always visible, bu
     <Indicator>
       <Notifications color="#BFC5D2" size={32} />
     </Indicator>
-    <Indicator hidden>
+    <Indicator visible={false}>
       <Mail color="#BFC5D2" size={32} />
     </Indicator>
   </Story>
@@ -269,11 +291,11 @@ Pills are simple labels with a background color.
 import { Pill } from '@terenceodonoghue/react-components/velocity';
 ```
 
-Set the text value using the `label` prop, alongside `color` to set both the text and backdrop colours. The backdrop has a default opacity of `0.2`, but this can be adjusted with the `opacity` prop.
+Set the text content with `label`. An optional `color` prop defaults to the primary theme colour if left blank.
 
 <Canvas>
   <Story name="Pill">
-    <Pill color="#2E5BFF" label={76} />
+    <Pill label={76} />
     <Pill color="#8C54FF" label={69} />
     <Pill color="#00C1D4" label={28} />
     <Pill color="#F7C137" label={198} />
@@ -339,7 +361,7 @@ Set the icon using `with`, and provide an optional `color`. This defaults to `cu
   </Story>
 </Canvas>
 
-A `backdrop` can be used for added emphasis. Passing a number sets the opacity, or defaults to `0.15` if left blank.
+A `backdrop` can be used for added emphasis.
 
 <Canvas>
   <Story name="IconsBackdrop">

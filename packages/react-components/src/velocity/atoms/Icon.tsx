@@ -6,7 +6,7 @@ import type { FunctionComponent, SVGProps } from 'react';
 import type { ReactIcon } from '@terenceodonoghue/react-icons';
 
 export interface IconProps extends SVGProps<SVGSVGElement> {
-  backdrop?: boolean | number;
+  backdrop?: boolean;
   color?: string;
   size?: 'compact' | number;
   with: ReactIcon;
@@ -32,10 +32,7 @@ const Icon: FunctionComponent<IconProps> = ({
               padding: size === 'compact' ? 8 : 14,
               height: 'fit-content',
               width: 'fit-content',
-              backgroundColor: rgba(
-                iconColor || color.primary,
-                typeof backdrop === 'number' ? backdrop : 0.15,
-              ),
+              backgroundColor: rgba(iconColor || color.primary, 0.15),
             }
           : undefined
       }

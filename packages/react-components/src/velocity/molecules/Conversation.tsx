@@ -77,7 +77,7 @@ const Conversation: FunctionComponent<ConversationProps> = forwardRef<
               outline: `solid 2px ${color.primary}`,
               outlineOffset: -2,
             },
-            '&:hover': {
+            'input:enabled:hover ~ &': {
               backgroundColor: color.neutral[100],
             },
           }}
