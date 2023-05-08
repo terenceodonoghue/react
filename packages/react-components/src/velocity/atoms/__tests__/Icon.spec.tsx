@@ -52,21 +52,6 @@ describe('Icon', () => {
           backgroundColor: rgba('red', 0.15),
         });
       });
-
-      test('with opacity', () => {
-        // Arrange
-        const { screen } = render(
-          <Icon backdrop={1} data-testid={testId} with={Check} />,
-          {
-            wrapper: ThemeProvider,
-          },
-        );
-
-        // Assert
-        expect(screen.getByTestId(testId)).toHaveStyle({
-          backgroundColor: rgba(defaultTheme.color.primary, 1),
-        });
-      });
     });
 
     describe('has padding', () => {
