@@ -4,7 +4,7 @@ import ThemeProvider from '../../providers/ThemeProvider.js';
 import Badge from '../Badge.js';
 
 describe('Badge', () => {
-  it('has visible status', () => {
+  it('has visible text', () => {
     // Arrange
     const { screen } = render(<Badge label={1} />, {
       wrapper: ThemeProvider,

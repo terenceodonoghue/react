@@ -4,7 +4,7 @@ import ThemeProvider from '../../providers/ThemeProvider.js';
 import Conversations from '../Conversations.js';
 
 describe('Conversations', () => {
-  it('has accessible components', () => {
+  it('has accessible elements', () => {
     // Arrange
     const { screen } = render(
       <Conversations

@@ -15,7 +15,7 @@ describe('Main', () => {
       expect(screen.getByRole('main')).toHaveAccessibleName('Heading');
     });
 
-    it('has accessible elements', () => {
+    it('has visible text', () => {
       // Arrange
       const { screen } = render(<Main heading="Heading" />, {
         wrapper: ThemeProvider,

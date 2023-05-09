@@ -10,14 +10,12 @@ import Text from '../primitives/Text.js';
 
 export interface IntegrationProps extends CheckboxProps {
   description: string;
-  enabled?: boolean;
   icon: ReactIcon;
   label: string;
 }
 
 const Integration: FunctionComponent<IntegrationProps> = ({
   description,
-  enabled = false,
   label,
   icon: Icon,
   ...props
@@ -31,10 +29,6 @@ const Integration: FunctionComponent<IntegrationProps> = ({
     <Checkbox
       aria-labelledby={labelId}
       aria-describedby={descriptionId}
-      css={{
-        borderColor: enabled ? color.primary : color.secondary,
-        cursor: 'pointer',
-      }}
       {...props}
     >
       <div

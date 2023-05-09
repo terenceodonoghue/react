@@ -99,18 +99,18 @@ const SettingsPage: NextPage = () => {
             <Button css={mq({ width: ['100%', 200] })}>Save Changes</Button>
           </Card>
           <Integrations
-            providers={[
+            list={[
               {
                 label: 'InVision',
                 description: 'Boards and prototypes',
                 icon: InVision,
-                enabled: true,
+                defaultChecked: true,
               },
               {
                 label: 'GitHub',
                 description: 'Commits data and history',
                 icon: GitHub,
-                enabled: true,
+                defaultChecked: true,
               },
               {
                 label: 'Slack',

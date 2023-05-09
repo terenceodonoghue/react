@@ -4,7 +4,7 @@ import ThemeProvider from '../../providers/ThemeProvider.js';
 import Pill from '../Pill.js';
 
 describe('Pill', () => {
-  it('has visible status', () => {
+  it('has visible text', () => {
     // Arrange
     const { screen } = render(<Pill label={1} />, {
       wrapper: ThemeProvider,

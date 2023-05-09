@@ -9,16 +9,11 @@ import Text from '../primitives/Text.js';
 import mq from '../utils/mq.js';
 
 export interface IntegrationsProps extends CardProps {
-  providers: IntegrationProps[];
-  gitHub?: boolean;
-  inVision?: boolean;
-  medium?: boolean;
-  twitter?: boolean;
-  slack?: boolean;
+  list: IntegrationProps[];
 }
 
 const Integrations: FunctionComponent<IntegrationsProps> = ({
-  providers = [],
+  list = [],
   ...props
 }) => {
   const descriptionId = useId();
@@ -40,8 +35,8 @@ const Integrations: FunctionComponent<IntegrationsProps> = ({
           marginTop: [24, 32],
         })}
       >
-        {providers.map((provider) => (
-          <Integration key={provider.label} {...provider} />
+        {list.map((integration) => (
+          <Integration key={integration.label} {...integration} />
         ))}
       </div>
     </Card>

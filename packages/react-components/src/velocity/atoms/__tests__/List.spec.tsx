@@ -4,7 +4,7 @@ import ThemeProvider from '../../providers/ThemeProvider.js';
 import List from '../List.js';
 
 describe('List', () => {
-  it('has accessible elements', () => {
+  it('has visible text', () => {
     // Arrange
     const { screen } = render(
       <List items={[{ label: 'Label', value: 'Value' }]} />,

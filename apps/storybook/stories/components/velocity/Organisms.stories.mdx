@@ -115,7 +115,7 @@ import { Conversations } from '@terenceodonoghue/react-components/velocity';
           name: faker.name.fullName(),
           time: '51m',
           message: faker.lorem.sentence(),
-          selected: true,
+          defaultChecked: true,
         },
         {
           avatar: faker.image.avatar(),
@@ -254,18 +254,18 @@ import { Integrations } from '@terenceodonoghue/react-components/velocity';
 <Canvas data-has-bg>
   <Story name="Integrations">
     <Integrations
-      providers={[
+      list={[
         {
           label: 'InVision',
           description: 'Boards and prototypes',
           icon: InVision,
-          enabled: true,
+          defaultChecked: true,
         },
         {
           label: 'GitHub',
           description: 'Commits data and history',
           icon: GitHub,
-          enabled: true,
+          defaultChecked: true,
         },
         {
           label: 'Slack',

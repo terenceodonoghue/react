@@ -15,7 +15,7 @@ const ChatPage: NextPage = () => (
         css={mq({
           maxWidth: [undefined, 275, 376],
         })}
-        list={Array.from(Array(7)).map((chat, i) => ({
+        list={Array.from(Array(7)).map(() => ({
           active: faker.datatype.boolean(),
           avatar: faker.image.avatar(),
           name: faker.name.fullName(),
@@ -23,7 +23,6 @@ const ChatPage: NextPage = () => (
             .minutes(faker.datatype.number({ min: 1, max: 19 }))
             .format('m[m]'),
           message: faker.lorem.sentence(),
-          selected: i === 2,
         }))}
       />
     </main>

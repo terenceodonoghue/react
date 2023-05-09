@@ -12,7 +12,7 @@ export interface ConversationsProps
 }
 
 const Conversations: FunctionComponent<ConversationsProps> = ({
-  list,
+  list = [],
   ...props
 }) => {
   const { color } = useTheme();
