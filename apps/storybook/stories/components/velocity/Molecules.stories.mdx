@@ -6,7 +6,7 @@ import {
   Conversation,
   Customer,
   Driver,
-  IntegrationCard,
+  Integration,
   Logo,
   MetricCard,
   NavItem,
@@ -334,15 +334,15 @@ import { Conversation } from '@terenceodonoghue/react-components/velocity';
   </Story>
 </Canvas>
 
-## Integration Card
+## Integration
 
 ```javascript
-import { IntegrationCard } from '@terenceodonoghue/react-components/velocity';
+import { Integration } from '@terenceodonoghue/react-components/velocity';
 ```
 
 <Canvas>
   <Story
-    name="IntegrationCard"
+    name="Integration"
     decorators={[
       (Story) => (
         <div className="integration-card">
@@ -351,13 +351,13 @@ import { IntegrationCard } from '@terenceodonoghue/react-components/velocity';
       ),
     ]}
   >
-    <IntegrationCard
+    <Integration
       defaultChecked
       label="InVision"
       description="Boards and prototypes"
       icon={InVision}
     />
-    <IntegrationCard
+    <Integration
       label="GitHub"
       description="Commits data and history"
       icon={GitHub}

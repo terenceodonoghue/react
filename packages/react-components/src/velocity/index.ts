@@ -36,9 +36,9 @@ export {
   default as CustomerProps,
 } from './molecules/Customer.js';
 export {
-  default as IntegrationCard,
-  type IntegrationCardProps,
-} from './molecules/IntegrationCard.js';
+  default as Integration,
+  type IntegrationProps,
+} from './molecules/Integration.js';
 export {
   default as KanbanCard,
   type KanbanCardProps,

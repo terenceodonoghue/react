@@ -2,14 +2,14 @@
 import { FunctionComponent, useId } from 'react';
 
 import Card, { type CardProps } from '../atoms/Card.js';
-import IntegrationCard, {
-  type IntegrationCardProps,
-} from '../molecules/IntegrationCard.js';
+import Integration, {
+  type IntegrationProps,
+} from '../molecules/Integration.js';
 import Text from '../primitives/Text.js';
 import mq from '../utils/mq.js';
 
 export interface IntegrationsProps extends CardProps {
-  providers: IntegrationCardProps[];
+  providers: IntegrationProps[];
   gitHub?: boolean;
   inVision?: boolean;
   medium?: boolean;
@@ -41,7 +41,7 @@ const Integrations: FunctionComponent<IntegrationsProps> = ({
         })}
       >
         {providers.map((provider) => (
-          <IntegrationCard key={provider.label} {...provider} />
+          <Integration key={provider.label} {...provider} />
         ))}
       </div>
     </Card>

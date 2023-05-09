@@ -8,14 +8,14 @@ import type { ReactIcon } from '@terenceodonoghue/react-icons';
 import Checkbox, { type CheckboxProps } from '../atoms/Checkbox.js';
 import Text from '../primitives/Text.js';
 
-export interface IntegrationCardProps extends CheckboxProps {
+export interface IntegrationProps extends CheckboxProps {
   description: string;
   enabled?: boolean;
   icon: ReactIcon;
   label: string;
 }
 
-const IntegrationCard: FunctionComponent<IntegrationCardProps> = ({
+const Integration: FunctionComponent<IntegrationProps> = ({
   description,
   enabled = false,
   label,
@@ -64,4 +64,4 @@ const IntegrationCard: FunctionComponent<IntegrationCardProps> = ({
   );
 };
 
-export default IntegrationCard;
+export default Integration;

@@ -3,13 +3,13 @@ import render from 'tests/render.js';
 import { GitHub } from '@terenceodonoghue/react-icons/brands';
 
 import ThemeProvider from '../../providers/ThemeProvider.js';
-import IntegrationCard from '../IntegrationCard.js';
+import Integration from '../Integration.js';
 
-describe('IntegrationCard', () => {
+describe('Integration', () => {
   it('has accessible name', () => {
     // Arrange
     const { screen } = render(
-      <IntegrationCard icon={GitHub} label="Label" description="Description" />,
+      <Integration icon={GitHub} label="Label" description="Description" />,
       {
         wrapper: ThemeProvider,
       },
@@ -22,7 +22,7 @@ describe('IntegrationCard', () => {
   it('has accessible description', () => {
     // Arrange
     const { screen } = render(
-      <IntegrationCard icon={GitHub} label="Label" description="Description" />,
+      <Integration icon={GitHub} label="Label" description="Description" />,
       {
         wrapper: ThemeProvider,
       },
