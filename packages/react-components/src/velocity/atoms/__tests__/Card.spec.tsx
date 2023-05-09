@@ -15,7 +15,7 @@ describe('Card', () => {
       expect(screen.getByRole('region')).toHaveAccessibleName('Heading');
     });
 
-    it('has visible heading', () => {
+    it('has accessible elements', () => {
       // Arrange
       const { screen } = render(<Card heading="Heading" />, {
         wrapper: ThemeProvider,
