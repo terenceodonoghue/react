@@ -4,7 +4,7 @@ import ThemeProvider from '../../providers/ThemeProvider.js';
 import Customer from '../Customer.js';
 
 describe('Customer', () => {
-  it('has accessible components', () => {
+  it('has accessible elements', () => {
     // Arrange
     const { screen } = render(
       <Customer name="Terence O'Donoghue" interactions={1} />,

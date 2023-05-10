@@ -4,47 +4,27 @@ import ThemeProvider from '../../providers/ThemeProvider.js';
 import Conversation from '../Conversation.js';
 
 describe('Conversation', () => {
-  describe('has accessible name', () => {
-    test('with active status', () => {
-      // Arrange
-      const { screen } = render(
-        <Conversation active name="Terence O'Donoghue" />,
-        {
-          wrapper: ThemeProvider,
-        },
-      );
-
-      // Assert
-      expect(screen.getByRole('radio')).toHaveAccessibleName(
-        "Terence O'Donoghue, Active",
-      );
-    });
-
-    test('with away status', () => {
-      // Arrange
-      const { screen } = render(
-        <Conversation active={false} name="Terence O'Donoghue" />,
-        {
-          wrapper: ThemeProvider,
-        },
-      );
-
-      // Assert
-      expect(screen.getByRole('radio')).toHaveAccessibleName(
-        "Terence O'Donoghue, Away",
-      );
-    });
-  });
-
-  it('has accessible components', () => {
+  it('has accessible elements', () => {
     // Arrange
-    const { screen } = render(<Conversation name="Terence O'Donoghue" />, {
-      wrapper: ThemeProvider,
-    });
+    const { screen } = render(
+      <Conversation active name="Terence O'Donoghue" />,
+      {
+        wrapper: ThemeProvider,
+      },
+    );
 
     // Assert
+    expect(screen.getByRole('radio')).toHaveAccessibleName(
+      "Terence O'Donoghue, Active",
+    );
     expect(screen.getByRole('img')).toHaveAccessibleName(
       "Terence O'Donoghue's avatar",
+    );
+
+    screen.rerender(<Conversation active={false} name="Terence O'Donoghue" />);
+
+    expect(screen.getByRole('radio')).toHaveAccessibleName(
+      "Terence O'Donoghue, Away",
     );
   });
 

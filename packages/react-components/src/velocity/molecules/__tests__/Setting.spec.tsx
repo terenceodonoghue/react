@@ -4,7 +4,7 @@ import ThemeProvider from '../../providers/ThemeProvider.js';
 import Setting from '../Setting.js';
 
 describe('Setting', () => {
-  it('has accessible components', () => {
+  it('has accessible elements', () => {
     // Arrange
     const { screen } = render(
       <Setting label="Label" description="Description" />,

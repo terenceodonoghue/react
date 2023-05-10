@@ -6,7 +6,7 @@ import ThemeProvider from '../../providers/ThemeProvider.js';
 import Integration from '../Integration.js';
 
 describe('Integration', () => {
-  it('has accessible name', () => {
+  it('has accessible elements', () => {
     // Arrange
     const { screen } = render(
       <Integration icon={GitHub} label="Label" description="Description" />,
@@ -17,9 +17,12 @@ describe('Integration', () => {
 
     // Assert
     expect(screen.getByRole('checkbox')).toHaveAccessibleName('Label');
+    expect(screen.getByRole('checkbox')).toHaveAccessibleDescription(
+      'Description',
+    );
   });
 
-  it('has accessible description', () => {
+  it('has visible text', () => {
     // Arrange
     const { screen } = render(
       <Integration icon={GitHub} label="Label" description="Description" />,
@@ -29,8 +32,7 @@ describe('Integration', () => {
     );
 
     // Assert
-    expect(screen.getByRole('checkbox')).toHaveAccessibleDescription(
-      'Description',
-    );
+    expect(screen.getByText('Label')).toBeVisible();
+    expect(screen.getByText('Description')).toBeVisible();
   });
 });

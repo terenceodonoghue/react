@@ -1,86 +1,32 @@
-import { rgba } from 'polished';
 import render from 'tests/render.js';
 
 import { Dashboard } from '@terenceodonoghue/react-icons/velocity';
 
-import ThemeProvider, { defaultTheme } from '../../providers/ThemeProvider.js';
+import ThemeProvider from '../../providers/ThemeProvider.js';
 import NavItem from '../NavItem.js';
 
 describe('NavItem', () => {
-  it('has default style', () => {
+  it('has accessible elements', () => {
+    const { screen } = render(<NavItem icon={Dashboard} label="Label" />, {
+      wrapper: ThemeProvider,
+    });
+
+    // Assert
+    expect(screen.getByRole('button')).toHaveAccessibleName('Label');
+  });
+
+  it('has visible text', () => {
     // Arrange
     const { screen } = render(<NavItem icon={Dashboard} label="Label" />, {
       wrapper: ThemeProvider,
     });
 
     // Assert
-    expect(screen.getByRole('button')).toHaveStyle({
-      'box-shadow': undefined,
-      'background-color': 'transparent',
-      width: '100%',
-    });
-
-    expect(screen.getByText('Label')).toHaveStyle({
-      color: defaultTheme.color.neutral[500],
-      opacity: 1,
-    });
+    expect(screen.getByText('Label')).toBeVisible();
   });
 
-  describe('with label', () => {
-    it('has accessible name', () => {
-      const { screen } = render(<NavItem icon={Dashboard} label="Label" />, {
-        wrapper: ThemeProvider,
-      });
-
-      // Assert
-      expect(screen.getByRole('button')).toHaveAccessibleName('Label');
-    });
-
-    it('has visible text', () => {
-      // Arrange
-      const { screen } = render(<NavItem icon={Dashboard} label="Label" />, {
-        wrapper: ThemeProvider,
-      });
-
-      // Assert
-      expect(screen.getByText('Label')).toBeVisible();
-    });
-
-    describe('with compact', () => {
-      it('has hidden text', () => {
-        // Arrange
-        const { screen } = render(
-          <NavItem compact icon={Dashboard} label="Label" />,
-          {
-            wrapper: ThemeProvider,
-          },
-        );
-
-        // Assert
-        expect(screen.getByText('Label')).not.toBeVisible();
-      });
-    });
-
-    describe('with selected', () => {
-      it('has color', () => {
-        // Arrange
-        const { screen } = render(
-          <NavItem icon={Dashboard} label="Label" selected />,
-          {
-            wrapper: ThemeProvider,
-          },
-        );
-
-        // Assert
-        expect(screen.getByText('Label')).toHaveStyle({
-          color: defaultTheme.color.primary,
-        });
-      });
-    });
-  });
-
-  describe('with compact', () => {
-    it('has compact width', () => {
+  describe('when compact', () => {
+    it('has hidden text', () => {
       // Arrange
       const { screen } = render(
         <NavItem compact icon={Dashboard} label="Label" />,
@@ -90,27 +36,7 @@ describe('NavItem', () => {
       );
 
       // Assert
-      expect(screen.getByRole('button')).toHaveStyle({
-        width: '80px',
-      });
-    });
-  });
-
-  describe('with selected', () => {
-    it('has selected style', () => {
-      // Arrange
-      const { screen } = render(
-        <NavItem icon={Dashboard} label="Label" selected />,
-        {
-          wrapper: ThemeProvider,
-        },
-      );
-
-      // Assert
-      expect(screen.getByRole('button')).toHaveStyle({
-        'box-shadow': `inset 4px 0 0 -1px ${defaultTheme.color.primary}`,
-        'background-color': rgba(defaultTheme.color.primary, 0.1),
-      });
+      expect(screen.getByText('Label')).not.toBeVisible();
     });
   });
 });

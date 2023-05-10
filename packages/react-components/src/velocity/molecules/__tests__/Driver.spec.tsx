@@ -4,7 +4,7 @@ import ThemeProvider from '../../providers/ThemeProvider.js';
 import Driver from '../Driver.js';
 
 describe('Driver', () => {
-  it('has accessible components', () => {
+  it('has accessible elements', () => {
     // Arrange
     const { screen } = render(
       <Driver

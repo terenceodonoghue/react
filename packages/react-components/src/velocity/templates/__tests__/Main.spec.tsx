@@ -5,7 +5,7 @@ import Main from '../Main.js';
 
 describe('Main', () => {
   describe('with heading', () => {
-    it('has accessible name', () => {
+    it('has accessible elements', () => {
       // Arrange
       const { screen } = render(<Main heading="Heading" />, {
         wrapper: ThemeProvider,
@@ -13,6 +13,7 @@ describe('Main', () => {
 
       // Assert
       expect(screen.getByRole('main')).toHaveAccessibleName('Heading');
+      expect(screen.getByRole('heading')).toHaveAccessibleName('Heading');
     });
 
     it('has visible text', () => {
