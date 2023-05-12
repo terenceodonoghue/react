@@ -1,5 +1,21 @@
 # @terenceodonoghue/react-components
 
+## 1.4.0
+
+### Minor Changes
+
+- 667eec7: Remove Backdrop component
+  Add Icon component
+- ceae375: Add Checkbox component
+- 7dad496: Rename IntegrationCard to Integration
+- f5fc7d5: Rename ChatCard to Conversation
+  Rename ChatList to Conversations
+
+### Patch Changes
+
+- d984289: Add `Main` template
+  Update components for improved accessibility
+
 ## 1.3.1
 
 ### Patch Changes
