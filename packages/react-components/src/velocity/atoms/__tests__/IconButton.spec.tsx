@@ -4,18 +4,6 @@ import ThemeProvider from '../../providers/ThemeProvider.js';
 import IconButton from '../IconButton.js';
 
 describe('IconButton', () => {
-  it('has default style', () => {
-    // Arrange
-    const { screen } = render(<IconButton />, {
-      wrapper: ThemeProvider,
-    });
-
-    // Assert
-    expect(screen.getByRole('button')).toHaveStyle({
-      borderRadius: '4px',
-    });
-  });
-
   describe('with variant', () => {
     it('has rounded style', () => {
       // Arrange

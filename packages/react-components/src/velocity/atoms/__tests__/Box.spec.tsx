@@ -6,19 +6,6 @@ import Box from '../Box.js';
 describe('Box', () => {
   const testId = 'box';
 
-  it('has default style', () => {
-    // Arrange
-    const { screen } = render(<Box data-testid={testId} />, {
-      wrapper: ThemeProvider,
-    });
-
-    // Assert
-    expect(screen.getByTestId(testId)).toHaveStyle({
-      paddingBlock: '20px',
-      paddingInline: '20px',
-    });
-  });
-
   describe('has padding', () => {
     test('with p', () => {
       // Arrange

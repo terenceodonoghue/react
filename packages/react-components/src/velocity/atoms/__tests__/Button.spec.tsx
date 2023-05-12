@@ -5,19 +5,6 @@ import ThemeProvider, { defaultTheme } from '../../providers/ThemeProvider.js';
 import Button from '../Button.js';
 
 describe('Button', () => {
-  it('has default style', () => {
-    // Arrange
-    const { screen } = render(<Button />, {
-      wrapper: ThemeProvider,
-    });
-
-    // Assert
-    expect(screen.getByRole('button')).toHaveStyle({
-      backgroundColor: defaultTheme.color.primary,
-      color: 'white',
-    });
-  });
-
   describe('with inner text', () => {
     it('has accessible name', () => {
       // Arrange

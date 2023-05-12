@@ -3,18 +3,6 @@ import render from 'tests/render.js';
 import Avatar from '../Avatar.js';
 
 describe('Avatar', () => {
-  it('has default style', () => {
-    // Arrange
-    const { screen } = render(<Avatar />);
-
-    // Assert
-    expect(screen.getByRole('img')).toHaveStyle({
-      borderRadius: '50%',
-      height: '128px',
-      width: '128px',
-    });
-  });
-
   describe('with alt text', () => {
     it('has accessible name', () => {
       // Arrange

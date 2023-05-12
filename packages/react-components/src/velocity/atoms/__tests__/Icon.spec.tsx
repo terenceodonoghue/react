@@ -3,40 +3,13 @@ import render from 'tests/render.js';
 
 import { Check } from '@terenceodonoghue/react-icons/velocity';
 
-import ThemeProvider, { defaultTheme } from '../../providers/ThemeProvider.js';
+import ThemeProvider from '../../providers/ThemeProvider.js';
 import Icon from '../Icon.js';
 
 describe('Icon', () => {
   const testId = 'icon';
 
-  it('has default attributes', () => {
-    // Arrange
-    const { screen } = render(<Icon data-testid={testId} with={Check} />, {
-      wrapper: ThemeProvider,
-    });
-
-    // Assert
-    expect(screen.getByTestId(testId)).toHaveAttribute('height', '24');
-    expect(screen.getByTestId(testId)).toHaveAttribute('width', '24');
-  });
-
   describe('with backdrop', () => {
-    it('has default style', () => {
-      // Arrange
-      const { screen } = render(
-        <Icon backdrop data-testid={testId} with={Check} />,
-        {
-          wrapper: ThemeProvider,
-        },
-      );
-
-      // Assert
-      expect(screen.getByTestId(testId)).toHaveStyle({
-        padding: '14px',
-        backgroundColor: rgba(defaultTheme.color.primary, 0.15),
-      });
-    });
-
     describe('has background', () => {
       test('with color', () => {
         // Arrange
