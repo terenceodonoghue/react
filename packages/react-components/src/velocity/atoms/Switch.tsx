@@ -70,6 +70,10 @@ const Switch: FunctionComponent<SwitchProps> = forwardRef<
           'input:disabled ~ &': {
             opacity: 0.4,
           },
+          'input:focus-visible ~ &': {
+            outline: `solid 2px ${color.primary}`,
+            outlineOffset: -2,
+          },
         }}
       />
     </div>

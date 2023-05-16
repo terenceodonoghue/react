@@ -41,12 +41,12 @@ const TextField: FunctionComponent<TextFieldProps> = forwardRef<
           display: 'block',
           border: 'solid 1px #E0E7FF',
           borderRadius: 5,
+          width: '100%',
           padding: '10px 16px',
           backgroundColor: rgba(color.secondary, 0.2),
           color: color.neutral[900],
           fontFamily: font.family,
           fontSize: rem(15),
-          width: '100%',
           ...transitions(['border', 'opacity'], transition.slowly),
           '&:disabled': {
             opacity: 0.3,

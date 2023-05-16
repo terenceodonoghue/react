@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { useTheme } from '@emotion/react';
-import { rgba } from 'polished';
+import { rgba, transitions } from 'polished';
 import {
   InputHTMLAttributes,
   FunctionComponent,
@@ -52,13 +52,25 @@ const Radio: FunctionComponent<RadioProps> = forwardRef<
       />
       <span
         css={{
+          position: 'relative',
           border: `solid 1px ${rgba(color.neutral[700], 0.5)}`,
           borderRadius: '50%',
-          display: 'inline-block',
           height: 16,
-          margin: '0 8px 0 0',
           width: 16,
+          margin: '0 8px 0 0',
           pointerEvents: 'none',
+          '&::before': {
+            position: 'absolute',
+            content: '""',
+            height: '100%',
+            width: '100%',
+            borderRadius: '50%',
+            outline: `solid 2px ${rgba(color.primary, 0.3)}`,
+            transform: 'scale(0)',
+            'input:focus-visible ~ &': {
+              transform: 'scale(2)',
+            },
+          },
           'input:checked ~ &': {
             border: `solid 4px ${color.primary}`,
           },

@@ -18,9 +18,9 @@ const Main: FunctionComponent<MainProps> = ({
     <main
       aria-labelledby={heading ? headingId : undefined}
       css={mq({
+        position: 'relative',
         maxWidth: 1360,
         padding: ['24px', '60px 30px', '64px 110px'],
-        position: 'relative',
       })}
       {...props}
     >
