@@ -3,7 +3,7 @@ import { NextPage } from 'next';
 import Head from 'next/head';
 
 import {
-  Card,
+  Section,
   Main,
   TextField,
 } from '@terenceodonoghue/react-components/velocity';
@@ -29,7 +29,7 @@ const VehiclesPage: NextPage = () => {
       <Main heading="Vehicles Dashboard">
         <div css={{ display: 'flex' }}>
           <div css={{ flex: 4 }} />
-          <Card css={{ flex: 1 }} heading="Filter">
+          <Section css={{ flex: 1 }} heading="Filter">
             <div css={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
               <Slider primary="Trips taken" secondary="753" />
               <Slider primary="Service due" secondary="14 days" />
@@ -51,7 +51,7 @@ const VehiclesPage: NextPage = () => {
                 placeholder="Location"
               />
             </div>
-          </Card>
+          </Section>
         </div>
       </Main>
     </>

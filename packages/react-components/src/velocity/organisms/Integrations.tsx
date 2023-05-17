@@ -1,45 +1,71 @@
 /** @jsxImportSource @emotion/react */
-import { FunctionComponent, useId } from 'react';
+import { useForm, useFormConfiguration } from '@terenceodonoghue/react-hooks';
+import {
+  GitHub,
+  InVision,
+  Medium,
+  Slack,
+  Twitter,
+} from '@terenceodonoghue/react-icons/brands';
 
-import Card, { type CardProps } from '../atoms/Card.js';
-import Integration, {
-  type IntegrationProps,
-} from '../molecules/Integration.js';
-import Text from '../primitives/Text.js';
-import mq from '../utils/mq.js';
+import Section, { SectionProps } from '../atoms/Section.js';
+import Integration, { IntegrationProps } from '../molecules/Integration.js';
+import Grid from '../primitives/Grid.js';
 
-export interface IntegrationsProps extends CardProps {
-  list: IntegrationProps[];
+export interface IntegrationsProps extends SectionProps {
+  config?: useFormConfiguration<{
+    enabled: string[];
+  }>;
 }
 
-const Integrations: FunctionComponent<IntegrationsProps> = ({
-  list = [],
-  ...props
-}) => {
-  const descriptionId = useId();
+const Integrations = ({ config, ...props }: IntegrationsProps) => {
+  const { handleSubmit, register } = useForm(config);
 
   return (
-    <Card aria-describedby={descriptionId} heading="Integrations" {...props}>
-      <Text id={descriptionId}>Manage third-party app integrations.</Text>
-      <div
-        css={mq({
-          display: 'grid',
-          gridTemplateColumns: [
-            'repeat(1, minmax(0, 1fr))',
-            'repeat(2, minmax(0, 1fr))',
-            'repeat(3, minmax(0, 1fr))',
-          ],
-          gridAutoRows: '1fr',
-          rowGap: [16, 24],
-          columnGap: 48,
-          marginTop: [24, 32],
-        })}
-      >
-        {list.map((integration) => (
-          <Integration key={integration.label} {...integration} />
-        ))}
-      </div>
-    </Card>
+    <Section
+      heading="Integrations"
+      description="Manage third-party app integrations."
+      {...props}
+    >
+      <form onChange={handleSubmit}>
+        <Grid gutterX={48}>
+          {[
+            {
+              label: 'InVision',
+              description: 'Boards and prototypes',
+              icon: InVision,
+            },
+            {
+              label: 'GitHub',
+              description: 'Commits data and history',
+              icon: GitHub,
+            },
+            {
+              label: 'Slack',
+              description: 'Messages and channels',
+              icon: Slack,
+            },
+            {
+              label: 'Twitter',
+              description: 'Tweets data',
+              icon: Twitter,
+            },
+            {
+              label: 'Medium',
+              description: 'Followers count',
+              icon: Medium,
+            },
+          ].map((integration: IntegrationProps) => (
+            <Integration
+              css={{ gridColumn: 'span 4' }}
+              key={integration.label}
+              {...integration}
+              {...register('enabled')}
+            />
+          ))}
+        </Grid>
+      </form>
+    </Section>
   );
 };
 

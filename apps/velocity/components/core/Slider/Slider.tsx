@@ -24,7 +24,7 @@ const Slider = forwardRef<HTMLLabelElement, SliderProps>(
         >
           {primary && (
             <p
-              css={{ flex: 1, fontSize: 15, lineHeight: rem(22), margin: 0 }}
+              css={{ flex: 1, margin: 0, fontSize: 15, lineHeight: rem(22) }}
               data-testid="slider-primary"
             >
               {primary}

@@ -1,6 +1,5 @@
 {
-  "name": "@terenceodonoghue/velocity",
-  "version": "1.0.27",
+  "name": "velocity",
   "private": true,
   "scripts": {
     "build": "next build",
@@ -12,11 +11,10 @@
     "start": "next start"
   },
   "dependencies": {
-    "@emotion/react": "^11.10.5",
+    "@emotion/react": "^11.11.1",
     "@faker-js/faker": "^7.6.0",
     "@terenceodonoghue/react-components": "workspace:^",
-    "@terenceodonoghue/react-icons": "^2.1.3",
-    "add": "^2.0.6",
+    "@terenceodonoghue/react-icons": "^2.1.5",
     "facepaint": "^1.2.1",
     "hex-rgb": "^5.0.0",
     "lodash": "^4.17.21",
@@ -25,26 +23,18 @@
     "numeral": "^2.0.6",
     "polished": "^4.2.2",
     "prop-types": "^15.8.1",
+    "react": "^18.2.0",
     "react-beautiful-dnd": "^13.1.1",
+    "react-dom": "^18.2.0",
     "react-is": "^18.2.0",
     "react-responsive": "^9.0.2",
     "react-spring": "^9.6.1",
-    "recharts": "2.4.1",
-    "remove": "^0.1.5",
-    "yarn": "^1.22.19"
+    "recharts": "2.6.2"
   },
   "devDependencies": {
-    "@types/facepaint": "^1.2.2",
-    "@types/lodash": "^4.14.191",
-    "@types/numeral": "^2.0.2",
-    "@types/react-beautiful-dnd": "^13.1.3",
     "eslint": "^8.33.0",
     "rimraf": "^3.0.2",
     "typescript": "^4.9.5"
   },
-  "peerDependencies": {
-    "react": "*",
-    "react-dom": "*"
-  },
-  "packageManager": "yarn@4.0.0-rc.11"
+  "packageManager": "pnpm@8.8.0"
 }

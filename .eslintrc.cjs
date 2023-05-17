@@ -9,7 +9,7 @@ module.exports = {
   rules: {
     'import/no-extraneous-dependencies': [
       'error',
-      { devDependencies: ['tests/*', 'vitest.config.ts'] },
+      { devDependencies: ['tests/*', '**/*.spec.ts*', 'vitest.config.ts'] },
     ],
   },
   settings: {

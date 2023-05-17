@@ -1,4 +1,4 @@
-# @terenceodonoghue/velocity
+# Velocity
 
 🚙 InVision's [Velocity UI kit](https://www.invisionapp.com/inside-design/design-resources/design-system-dashboard-ui-kit/) built with React.
 
@@ -11,7 +11,7 @@
 ```bash
 git clone git@github.com:terenceodonoghue/react.git
 
-yarn install
+pnpm install
 
-yarn nx dev velocity
+pnpm --filter velocity dev
 ```

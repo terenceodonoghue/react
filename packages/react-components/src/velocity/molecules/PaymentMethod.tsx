@@ -1,8 +1,8 @@
 /** @jsxImportSource @emotion/react */
-import { type CSSObject, useTheme } from '@emotion/react';
-import { FunctionComponent, useMemo } from 'react';
+import { CSSObject, useTheme } from '@emotion/react';
+import { useMemo } from 'react';
 
-import type { ReactIcon } from '@terenceodonoghue/react-icons';
+import { ReactIcon } from '@terenceodonoghue/react-icons';
 import {
   ApplePay,
   Mastercard,
@@ -10,22 +10,22 @@ import {
   VisaLogo,
 } from '@terenceodonoghue/react-icons/brands';
 
-import Box, { type BoxProps } from '../atoms/Box.js';
+import Pane, { PaneProps } from '../primitives/Pane.js';
 import mq from '../utils/mq.js';
 
-export interface PaymentMethodProps extends BoxProps {
+export interface PaymentMethodProps extends PaneProps {
   selected?: boolean;
-  type: 'applepay' | 'mastercard' | 'paypal' | 'visa';
+  variant: 'applepay' | 'mastercard' | 'paypal' | 'visa';
 }
 
-const PaymentMethod: FunctionComponent<PaymentMethodProps> = ({
+const PaymentMethod = ({
   selected = false,
-  type,
+  variant,
   ...props
-}) => {
+}: PaymentMethodProps) => {
   const { color } = useTheme();
 
-  const css: Record<string, CSSObject> = {
+  const variants: Record<typeof variant, CSSObject> = {
     applepay: {
       filter: selected ? 'grayscale(1) invert(1)' : 'grayscale(1)',
     },
@@ -41,39 +41,41 @@ const PaymentMethod: FunctionComponent<PaymentMethodProps> = ({
   };
 
   const Icon: ReactIcon | null = useMemo(() => {
-    if (type === 'applepay') {
+    if (variant === 'applepay') {
       return ApplePay;
     }
 
-    if (type === 'mastercard') {
+    if (variant === 'mastercard') {
       return Mastercard;
     }
 
-    if (type === 'paypal') {
+    if (variant === 'paypal') {
       return PayPalLogo;
     }
 
-    if (type === 'visa') {
+    if (variant === 'visa') {
       return VisaLogo;
     }
 
     return null;
-  }, [type]);
+  }, [variant]);
 
   return (
-    <Box
+    <Pane
       css={mq({
-        borderColor: selected ? color.primary : color.secondary,
-        height: [64, 75],
         width: [119, 140],
+        height: [64, 75],
         backgroundColor: selected ? color.primary : undefined,
+        borderColor: selected ? color.primary : color.secondary,
       })}
       px={32}
       py={0}
       {...props}
     >
-      {Icon ? <Icon aria-hidden css={css[type]} size="100%" /> : undefined}
-    </Box>
+      {Icon ? (
+        <Icon aria-hidden css={variants[variant]} size="100%" />
+      ) : undefined}
+    </Pane>
   );
 };
 

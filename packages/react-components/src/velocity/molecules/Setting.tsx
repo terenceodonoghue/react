@@ -1,55 +1,35 @@
 /** @jsxImportSource @emotion/react */
-import { rem } from 'polished';
-import { FunctionComponent, useId } from 'react';
+import { useId } from 'react';
 
-import Switch, { type SwitchProps } from '../atoms/Switch.js';
-import Text from '../primitives/Text.js';
-import mq from '../utils/mq.js';
+import Article from '../atoms/Article.js';
+import Switch, { SwitchProps } from '../atoms/Switch.js';
 
 export interface SettingProps extends SwitchProps {
   description: string;
   label: string;
 }
 
-const Setting: FunctionComponent<SettingProps> = ({
+const Setting = ({
   className,
   description,
   label,
   style,
   ...props
-}) => {
+}: SettingProps) => {
+  const inputId = useId();
   const descriptionId = useId();
-  const switchId = useId();
 
   return (
-    <div
+    <Article
       className={className}
-      css={mq({
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: ['space-between', 'flex-start'],
-        gap: [16, 56],
-        overflow: 'hidden',
-      })}
+      descriptionId={descriptionId}
+      labelFor={inputId}
+      position="left"
       style={style}
+      text={[label, description]}
     >
-      <div
-        css={{ display: 'flex', flexDirection: 'column', overflow: 'hidden' }}
-      >
-        <Text
-          as="label"
-          css={{ lineHeight: rem(22) }}
-          htmlFor={switchId}
-          variant="h4"
-        >
-          {label}
-        </Text>
-        <Text as="span" id={descriptionId} variant="p2" truncate>
-          {description}
-        </Text>
-      </div>
-      <Switch aria-describedby={descriptionId} id={switchId} {...props} />
-    </div>
+      <Switch aria-describedby={descriptionId} id={inputId} {...props} />
+    </Article>
   );
 };
 

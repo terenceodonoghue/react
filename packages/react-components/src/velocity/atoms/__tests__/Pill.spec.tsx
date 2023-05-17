@@ -1,12 +1,13 @@
-import render from 'tests/render.js';
+import { render, screen } from '@testing-library/react';
+import { describe, expect, it } from 'vitest';
 
 import ThemeProvider from '../../providers/ThemeProvider.js';
 import Pill from '../Pill.js';
 
 describe('Pill', () => {
-  it('has visible text', () => {
+  it('has visible status', () => {
     // Arrange
-    const { screen } = render(<Pill label={1} />, {
+    render(<Pill label={1} />, {
       wrapper: ThemeProvider,
     });
 

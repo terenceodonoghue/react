@@ -13,12 +13,12 @@ import {
 } from 'react-beautiful-dnd';
 
 import {
-  Card,
+  Section,
   KanbanCard,
   Main,
   Pill,
   Text,
-  TopDrivers,
+  Drivers,
 } from '@terenceodonoghue/react-components/velocity';
 
 const COLUMNS = ['Service needed', 'Waiting', 'In service', 'Fully serviced'];
@@ -272,39 +272,38 @@ const RemindersPage: NextPage = () => {
           </DragDropContext>
         </div>
         <div css={{ display: 'flex' }}>
-          <Card
+          <Section
             css={{ flexBasis: 655, flexShrink: 0 }}
             heading="Service Centers"
           />
           <div css={{ display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
-            <Card heading="Vehicle Service Status" />
-            <TopDrivers
-              drivers={[
+            <Section heading="Vehicle Service Status" />
+            <Drivers
+              list={[
                 {
                   avatar: faker.image.avatar(),
                   name: 'Bebop',
-                  vehicle: 'Tesla Model X',
-                  totalEarnings: 6432,
-                  totalDistance: 1322,
+                  vehicle: faker.vehicle.vehicle(),
+                  distance: 1322,
+                  earnings: 6432,
                 },
                 {
                   avatar: faker.image.avatar(),
                   name: 'Gran Tesoro',
-                  vehicle: 'Chevrolet Bolt',
-                  totalEarnings: 6432,
-                  totalDistance: 1322,
+                  vehicle: faker.vehicle.vehicle(),
+                  distance: 1322,
+                  earnings: 6432,
                 },
                 {
                   avatar: faker.image.avatar(),
                   name: 'Belafonte',
-                  vehicle: 'Tesla Model X',
-                  totalEarnings: 6432,
-                  totalDistance: 1322,
+                  vehicle: faker.vehicle.vehicle(),
+                  distance: 1322,
+                  earnings: 6432,
                 },
-              ].map(({ totalDistance, totalEarnings, ...driver }) => ({
+              ].map(({ distance, ...driver }) => ({
                 ...driver,
-                totalEarnings: numeral(totalEarnings).format('$0'),
-                totalDistance: `${numeral(totalDistance).format('0,0')} miles`,
+                distance: `${numeral(distance).format('0,0')} miles`,
               }))}
             />
           </div>

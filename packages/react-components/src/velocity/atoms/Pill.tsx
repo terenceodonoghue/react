@@ -1,31 +1,27 @@
 /** @jsxImportSource @emotion/react */
 import { useTheme } from '@emotion/react';
 import { rem, rgba } from 'polished';
-import type { FunctionComponent, HTMLAttributes } from 'react';
+import { ComponentPropsWithoutRef } from 'react';
 
-export interface PillProps extends HTMLAttributes<HTMLDivElement> {
+export interface PillProps extends ComponentPropsWithoutRef<'div'> {
   color?: string;
-  label: string | number;
+  label: number;
 }
 
-const Pill: FunctionComponent<PillProps> = ({
-  color: pillColor,
-  label,
-  ...props
-}) => {
+const Pill = ({ color: pillColor, label, ...props }: PillProps) => {
   const { color, font } = useTheme();
 
   return (
     <div
       css={{
         display: 'inline-block',
-        borderRadius: 10,
-        padding: '3px 5px',
         minWidth: 32,
-        backgroundColor: rgba(pillColor || color.primary, 0.2),
+        padding: '3px 5px',
         color: pillColor || color.primary,
-        fontFamily: font.family,
+        backgroundColor: rgba(pillColor || color.primary, 0.2),
+        borderRadius: 10,
         fontSize: rem(12),
+        fontFamily: font.family,
         fontWeight: font.weight.medium,
         lineHeight: rem(14),
         textAlign: 'center',
@@ -34,7 +30,7 @@ const Pill: FunctionComponent<PillProps> = ({
       role="status"
       {...props}
     >
-      {label}
+      {label > 99 ? '99+' : label}
     </div>
   );
 };

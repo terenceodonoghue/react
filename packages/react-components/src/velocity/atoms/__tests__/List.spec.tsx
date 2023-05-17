@@ -1,4 +1,5 @@
-import render from 'tests/render.js';
+import { render, screen } from '@testing-library/react';
+import { describe, expect, it } from 'vitest';
 
 import ThemeProvider from '../../providers/ThemeProvider.js';
 import List from '../List.js';
@@ -6,12 +7,9 @@ import List from '../List.js';
 describe('List', () => {
   it('has visible text', () => {
     // Arrange
-    const { screen } = render(
-      <List items={[{ label: 'Label', value: 'Value' }]} />,
-      {
-        wrapper: ThemeProvider,
-      },
-    );
+    render(<List items={[{ label: 'Label', value: 'Value' }]} />, {
+      wrapper: ThemeProvider,
+    });
 
     // Assert
     expect(screen.getByRole('term')).toBeVisible();

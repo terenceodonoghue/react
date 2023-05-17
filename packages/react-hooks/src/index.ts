@@ -1,2 +1,8 @@
-/* eslint-disable import/prefer-default-export */
-export { default as usePhoto } from './hooks/usePhoto.js';
+export {
+  default as useForm,
+  type useFormConfiguration,
+} from './hooks/useForm.js';
+export {
+  default as usePhoto,
+  type usePhotoConfiguration,
+} from './hooks/usePhoto.js';

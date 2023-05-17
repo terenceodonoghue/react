@@ -48,7 +48,7 @@ const Drawer: FunctionComponent<DrawerProps> & DrawerComposition = ({
           padding: '20px 0',
           position: 'fixed',
           top: 79,
-          zIndex: 1200,
+          zIndex: 1400,
         }),
         anchor === 'left' ? { left: 0 } : { right: 0 },
       ]}
@@ -108,8 +108,9 @@ const Drawer: FunctionComponent<DrawerProps> & DrawerComposition = ({
             padding: 0,
           }}
         >
-          {Children.toArray(children).map((child) => (
-            <li>{child}</li>
+          {Children.toArray(children).map((child, i) => (
+            // eslint-disable-next-line react/no-array-index-key
+            <li key={i}>{child}</li>
           ))}
         </ul>
       </nav>

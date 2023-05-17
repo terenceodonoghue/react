@@ -1,6 +1,5 @@
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
-import type { FunctionComponent } from 'react';
 
 import {
   NavItem,
@@ -11,7 +10,7 @@ interface LinkProps extends NavItemProps {
   to: string;
 }
 
-const Link: FunctionComponent<LinkProps> = ({ to, ...props }) => {
+const Link = ({ to, ...props }: LinkProps) => {
   const router = useRouter();
 
   return (

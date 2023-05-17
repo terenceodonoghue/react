@@ -3,10 +3,10 @@ import {
   Global,
   GlobalProps,
   ThemeProvider as EmotionProvider,
-  type Theme,
+  Theme,
 } from '@emotion/react';
 import { merge } from 'lodash-es';
-import type { FunctionComponent, ReactNode } from 'react';
+import { PropsWithChildren } from 'react';
 
 export const defaultTheme: Theme = {
   color: {
@@ -52,15 +52,14 @@ export const defaultTheme: Theme = {
 };
 
 export interface ThemeProviderProps extends Partial<GlobalProps> {
-  children: ReactNode;
   theme?: Theme;
 }
 
-const ThemeProvider: FunctionComponent<ThemeProviderProps> = ({
+const ThemeProvider = ({
   children,
   styles,
   theme,
-}) => (
+}: PropsWithChildren<ThemeProviderProps>) => (
   <EmotionProvider theme={theme ? merge(defaultTheme, theme) : defaultTheme}>
     <Global
       styles={[
@@ -71,6 +70,9 @@ const ThemeProvider: FunctionComponent<ThemeProviderProps> = ({
         {
           ':any-link': {
             textDecoration: 'none',
+          },
+          '.recharts-surface': {
+            overflow: 'visible',
           },
         },
         styles,

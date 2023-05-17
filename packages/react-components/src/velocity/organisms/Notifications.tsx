@@ -1,43 +1,32 @@
 /** @jsxImportSource @emotion/react */
-import { FunctionComponent, useId } from 'react';
-
-import Card, { type CardProps } from '../atoms/Card.js';
-import Setting, { type SettingProps } from '../molecules/Setting.js';
-import Text from '../primitives/Text.js';
+import Section, { SectionProps } from '../atoms/Section.js';
+import Setting, { SettingProps } from '../molecules/Setting.js';
+import Grid from '../primitives/Grid.js';
 import mq from '../utils/mq.js';
 
-export interface NotificationsProps extends CardProps {
-  options: SettingProps[];
+export interface NotificationsProps extends SectionProps {
+  list?: SettingProps[];
 }
 
-const Notifications: FunctionComponent<NotificationsProps> = ({
-  options = [],
-  ...props
-}) => {
-  const descriptionId = useId();
-
-  return (
-    <Card aria-describedby={descriptionId} heading="Notifications" {...props}>
-      <Text id={descriptionId}>
-        Control your notification and auto-follow settings.
-      </Text>
-      <div
-        css={mq({
-          display: 'grid',
-          gridAutoFlow: [undefined, 'column'],
-          gridTemplateColumns: ['repeat(1, 1fr)', 'repeat(2, min-content)'],
-          gridTemplateRows: [undefined, 'repeat(2, 1fr)'],
-          columnGap: [undefined, 110],
-          rowGap: 20,
-          marginTop: [24, 32],
-        })}
-      >
-        {options.map((option) => (
-          <Setting key={option.label} {...option} />
-        ))}
-      </div>
-    </Card>
-  );
-};
+const Notifications = ({ list = [], ...props }: NotificationsProps) => (
+  <Section
+    heading="Notifications"
+    description="Control your notification and auto-follow settings."
+    {...props}
+  >
+    <Grid gutterX="5%" gutterY={20}>
+      {list.map((setting, i) => (
+        <Setting
+          css={mq({
+            gridColumn: 'span 4',
+            gridRow: [null, null, Math.floor(i / 2) + 1],
+          })}
+          key={setting.label}
+          {...setting}
+        />
+      ))}
+    </Grid>
+  </Section>
+);
 
 export default Notifications;

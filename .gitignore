@@ -1,5 +1,5 @@
-# Created by https://www.toptal.com/developers/gitignore/api/macos,node,react,vscode,yarn
-# Edit at https://www.toptal.com/developers/gitignore?templates=macos,node,react,vscode,yarn
+# Created by https://www.toptal.com/developers/gitignore/api/macos,node,react,visualstudiocode
+# Edit at https://www.toptal.com/developers/gitignore?templates=macos,node,react,visualstudiocode
 
 ### macOS ###
 # General
@@ -30,6 +30,10 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+### macOS Patch ###
+# iCloud generated files
+*.icloud
+
 ### Node ###
 # Logs
 logs
@@ -38,6 +42,7 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
+.pnpm-debug.log*
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
@@ -52,9 +57,7 @@ pids
 lib-cov
 
 # Coverage directory used by tools like istanbul
-.scannerwork
 coverage
-reports
 *.lcov
 
 # nyc test coverage
@@ -76,8 +79,8 @@ build/Release
 node_modules/
 jspm_packages/
 
-# TypeScript v1 declaration files
-typings/
+# Snowpack dependency directory (https://snowpack.dev/)
+web_modules/
 
 # TypeScript cache
 *.tsbuildinfo
@@ -106,10 +109,12 @@ typings/
 # Yarn Integrity file
 .yarn-integrity
 
-# dotenv environment variables file
+# dotenv environment variable files
 .env
-.env.test
-.env*.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.local
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
@@ -123,14 +128,6 @@ out
 .nuxt
 dist
 
-# Storybook build outputs
-.out
-.storybook-out
-storybook-static
-
-# rollup.js default build output
-dist/
-
 # Gatsby files
 .cache/
 # Comment in the public line in if your project uses Gatsby and not Next.js
@@ -139,6 +136,12 @@ dist/
 
 # vuepress build output
 .vuepress/dist
+
+# vuepress v2.x temp and cache directory
+.temp
+
+# Docusaurus cache and generated files
+.docusaurus
 
 # Serverless directories
 .serverless/
@@ -155,9 +158,21 @@ dist/
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
 
-# Temporary folders
-tmp/
-temp/
+# yarn v2
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+
+### Node Patch ###
+# Serverless Webpack directories
+.webpack/
+
+# Optional stylelint cache
+
+# SvelteKit build / generate output
+.svelte-kit
 
 ### react ###
 .DS_*
@@ -172,28 +187,23 @@ psd
 thumb
 sketch
 
-### vscode ###
+### VisualStudioCode ###
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
-*.code-workspace
+!.vscode/*.code-snippets
 
-### yarn ###
-# https://yarnpkg.com/advanced/qa#which-files-should-be-gitignored
+# Local History for Visual Studio Code
+.history/
 
-.yarn/*
-!.yarn/releases
-!.yarn/plugins
-!.yarn/sdks
-!.yarn/versions
+# Built Visual Studio Code Extensions
+*.vsix
 
-# if you are NOT using Zero-installs, then:
-# comment the following lines
-# !.yarn/cache
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+.ionide
 
-# and uncomment the following lines
-.pnp.*
-
-# End of https://www.toptal.com/developers/gitignore/api/macos,node,react,vscode,yarn
+# End of https://www.toptal.com/developers/gitignore/api/macos,node,react,visualstudiocode

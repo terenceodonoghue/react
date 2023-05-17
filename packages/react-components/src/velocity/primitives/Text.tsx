@@ -1,37 +1,29 @@
 /** @jsxImportSource @emotion/react */
-import { type CSSObject, useTheme } from '@emotion/react';
-import type { Property } from 'csstype';
+import { CSSObject, useTheme } from '@emotion/react';
 import { rem } from 'polished';
-import type {
-  ElementType,
-  FunctionComponent,
-  HTMLAttributes,
-  LabelHTMLAttributes,
-} from 'react';
+import { CSSProperties, ComponentPropsWithoutRef, ElementType } from 'react';
 
-import mq from '../utils/mq.js';
+import mq, { MediaQuery } from '../utils/mq.js';
 
-type Props<T> = {
-  align?: Property.TextAlign | Property.TextAlign[];
+export type TextProps<T extends ElementType> = {
+  align?: MediaQuery<CSSProperties['textAlign']>;
   as?: T;
   truncate?: boolean;
   variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'p1' | 'p2' | 'p3' | 'c1' | 'c2';
-};
+} & ComponentPropsWithoutRef<T>;
 
-export type TextProps<AsType = ElementType> = AsType extends 'label'
-  ? LabelHTMLAttributes<HTMLLabelElement> & Props<AsType>
-  : HTMLAttributes<HTMLElement> & Props<AsType>;
-
-const Text: FunctionComponent<TextProps> = ({
+const Text = <T extends ElementType = 'span'>({
   align,
-  as: Tag = 'p',
+  as,
   truncate,
   variant = 'p1',
   ...props
-}) => {
+}: TextProps<T>) => {
   const { color, font } = useTheme();
 
-  const css: Record<string, CSSObject> = {
+  const Component = as || 'span';
+
+  const variants: Record<typeof variant, CSSObject> = {
     h1: {
       color: color.neutral[900],
       fontSize: rem(48),
@@ -59,7 +51,7 @@ const Text: FunctionComponent<TextProps> = ({
       fontSize: rem(15),
       fontStyle: 'normal',
       fontWeight: font.weight.medium,
-      lineHeight: rem(18),
+      lineHeight: rem(22),
     },
     p1: {
       color: color.neutral[900],
@@ -98,14 +90,14 @@ const Text: FunctionComponent<TextProps> = ({
   };
 
   return (
-    <Tag
+    <Component
       css={[
-        css[variant],
+        variants[variant],
         mq({ fontFamily: font.family, textAlign: align }),
         truncate
           ? {
-              textOverflow: 'ellipsis',
               overflow: 'hidden',
+              textOverflow: 'ellipsis',
               whiteSpace: 'nowrap',
             }
           : undefined,

@@ -1,12 +1,11 @@
 /** @jsxImportSource @emotion/react */
 import { useTheme } from '@emotion/react';
 import { linearGradient, transitions } from 'polished';
-import type { FunctionComponent } from 'react';
 
-import Card, { CardProps } from '../atoms/Card.js';
+import Section, { SectionProps } from '../atoms/Section.js';
 import Text from '../primitives/Text.js';
 
-export interface KanbanCardProps extends CardProps {
+export interface KanbanCardProps extends SectionProps {
   color?: string;
   cost: string;
   date: string;
@@ -14,26 +13,26 @@ export interface KanbanCardProps extends CardProps {
   name: string;
 }
 
-const KanbanCard: FunctionComponent<KanbanCardProps> = ({
+const KanbanCard = ({
   color: cardColor,
   cost,
   date,
   description,
   name,
   ...props
-}) => {
+}: KanbanCardProps) => {
   const { color, transition } = useTheme();
 
   return (
-    <Card
+    <Section
       css={{
         display: 'grid',
         gridTemplateColumns: '2fr 1fr',
         gap: 4,
-        borderLeft: 0,
-        borderRadius: 5,
         padding: 24,
         backgroundRepeat: 'no-repeat',
+        borderLeft: 0,
+        borderRadius: 5,
         ...linearGradient({
           colorStops: [
             `${cardColor || color.primary} 2px`,
@@ -62,7 +61,7 @@ const KanbanCard: FunctionComponent<KanbanCardProps> = ({
       <Text as="span" variant="p2" align="right">
         {date}
       </Text>
-    </Card>
+    </Section>
   );
 };
 

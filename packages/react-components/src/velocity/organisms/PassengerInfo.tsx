@@ -1,21 +1,23 @@
 /** @jsxImportSource @emotion/react */
-import type { FunctionComponent } from 'react';
-
-import Card, { type CardProps } from '../atoms/Card.js';
+import Article from '../atoms/Article.js';
+import Avatar from '../atoms/Avatar.js';
 import List from '../atoms/List.js';
-import Customer, { type CustomerProps } from '../molecules/Customer.js';
+import Section, { SectionProps } from '../atoms/Section.js';
 import PaymentMethod from '../molecules/PaymentMethod.js';
 import mq from '../utils/mq.js';
 
-export interface PassengerInfoProps extends CardProps, CustomerProps {
+export interface PassengerInfoProps extends SectionProps {
+  avatar: string;
   city: string;
   email: string;
+  interactions: number;
+  name: string;
   paymentMethod: 'applepay' | 'mastercard' | 'paypal' | 'visa';
   phoneNumber: string;
   state: string;
 }
 
-const PassengerInfo: FunctionComponent<PassengerInfoProps> = ({
+const PassengerInfo = ({
   avatar,
   city,
   email,
@@ -25,8 +27,8 @@ const PassengerInfo: FunctionComponent<PassengerInfoProps> = ({
   phoneNumber,
   state,
   ...props
-}) => (
-  <Card heading="Passenger info" {...props}>
+}: PassengerInfoProps) => (
+  <Section heading="Passenger info" {...props}>
     <div css={{ display: 'flex', gap: 40 }}>
       <div
         css={{
@@ -36,7 +38,14 @@ const PassengerInfo: FunctionComponent<PassengerInfoProps> = ({
           overflow: 'hidden',
         }}
       >
-        <Customer avatar={avatar} name={name} interactions={interactions} />
+        <Article
+          text={[
+            name,
+            `${interactions} interaction${interactions === 1 ? '' : 's'}`,
+          ]}
+        >
+          <Avatar alt={`${name}'s avatar`} size={48} src={avatar} />
+        </Article>
         <List
           items={[
             { label: 'email', value: email },
@@ -60,19 +69,19 @@ const PassengerInfo: FunctionComponent<PassengerInfoProps> = ({
           margin: '0 auto',
         })}
       >
-        <PaymentMethod type="paypal" selected={paymentMethod === 'paypal'} />
-        <PaymentMethod type="visa" selected={paymentMethod === 'visa'} />
+        <PaymentMethod variant="paypal" selected={paymentMethod === 'paypal'} />
+        <PaymentMethod variant="visa" selected={paymentMethod === 'visa'} />
         <PaymentMethod
-          type="mastercard"
+          variant="mastercard"
           selected={paymentMethod === 'mastercard'}
         />
         <PaymentMethod
-          type="applepay"
+          variant="applepay"
           selected={paymentMethod === 'applepay'}
         />
       </div>
     </div>
-  </Card>
+  </Section>
 );
 
 export default PassengerInfo;

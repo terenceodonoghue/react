@@ -1,12 +1,13 @@
-import render from 'tests/render.js';
+import { render, screen } from '@testing-library/react';
+import { describe, expect } from 'vitest';
 
 import Avatar from '../Avatar.js';
 
 describe('Avatar', () => {
   describe('with alt text', () => {
-    it('has accessible name', () => {
+    it('is accessible', () => {
       // Arrange
-      const { screen } = render(<Avatar alt="Alt text" />);
+      render(<Avatar alt="Alt text" />);
 
       // Assert
       expect(screen.getByRole('img')).toHaveAccessibleName('Alt text');
@@ -16,7 +17,7 @@ describe('Avatar', () => {
   describe('with size', () => {
     it('has height/width', () => {
       // Arrange
-      const { screen } = render(<Avatar size={64} />);
+      render(<Avatar size={64} />);
 
       // Assert
       expect(screen.getByRole('img')).toHaveStyle({
@@ -29,7 +30,7 @@ describe('Avatar', () => {
   describe('with variant', () => {
     it('has rounded style', () => {
       // Arrange
-      const { screen } = render(<Avatar variant="rounded" />);
+      render(<Avatar variant="rounded" />);
 
       // Assert
       expect(screen.getByRole('img')).toHaveStyle({
@@ -39,7 +40,7 @@ describe('Avatar', () => {
 
     it('has squared style', () => {
       // Arrange
-      const { screen } = render(<Avatar variant="squared" />);
+      render(<Avatar variant="squared" />);
 
       // Assert
       expect(screen.getByRole('img')).toHaveStyle({

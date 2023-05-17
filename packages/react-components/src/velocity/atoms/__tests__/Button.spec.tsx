@@ -1,14 +1,15 @@
+import { render, screen } from '@testing-library/react';
 import { rgba } from 'polished';
-import render from 'tests/render.js';
+import { describe, expect, it } from 'vitest';
 
 import ThemeProvider, { defaultTheme } from '../../providers/ThemeProvider.js';
 import Button from '../Button.js';
 
 describe('Button', () => {
-  describe('with inner text', () => {
-    it('has accessible name', () => {
+  describe('with text', () => {
+    it('is accessible', () => {
       // Arrange
-      const { screen } = render(<Button>Button Text</Button>, {
+      render(<Button>Button Text</Button>, {
         wrapper: ThemeProvider,
       });
 
@@ -20,7 +21,7 @@ describe('Button', () => {
   describe('with variant', () => {
     it('has primary style', () => {
       // Arrange
-      const { screen } = render(<Button variant="primary" />, {
+      render(<Button variant="primary" />, {
         wrapper: ThemeProvider,
       });
 
@@ -33,7 +34,7 @@ describe('Button', () => {
 
     it('has outline style', () => {
       // Arrange
-      const { screen } = render(<Button variant="outline" />, {
+      render(<Button variant="outline" />, {
         wrapper: ThemeProvider,
       });
 
@@ -49,7 +50,7 @@ describe('Button', () => {
 
     it('has minimal style', () => {
       // Arrange
-      const { screen } = render(<Button variant="minimal" />, {
+      render(<Button variant="minimal" />, {
         wrapper: ThemeProvider,
       });
 

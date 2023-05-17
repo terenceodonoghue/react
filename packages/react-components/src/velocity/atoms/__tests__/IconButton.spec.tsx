@@ -1,4 +1,5 @@
-import render from 'tests/render.js';
+import { render, screen } from '@testing-library/react';
+import { describe, expect, it } from 'vitest';
 
 import ThemeProvider from '../../providers/ThemeProvider.js';
 import IconButton from '../IconButton.js';
@@ -7,7 +8,7 @@ describe('IconButton', () => {
   describe('with variant', () => {
     it('has rounded style', () => {
       // Arrange
-      const { screen } = render(<IconButton variant="rounded" />, {
+      render(<IconButton variant="rounded" />, {
         wrapper: ThemeProvider,
       });
 
@@ -19,7 +20,7 @@ describe('IconButton', () => {
 
     it('has squared style', () => {
       // Arrange
-      const { screen } = render(<IconButton variant="squared" />, {
+      render(<IconButton variant="squared" />, {
         wrapper: ThemeProvider,
       });
 

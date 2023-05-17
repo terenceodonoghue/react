@@ -1,15 +1,16 @@
 {
   "name": "@terenceodonoghue/react-hooks",
-  "version": "1.1.0",
+  "version": "1.0.0",
   "repository": {
     "type": "git",
-    "url": "ssh://git@github.com/terenceodonoghue/react.git",
+    "url": "https://github.com/terenceodonoghue/react.git",
     "directory": "packages/react-hooks"
   },
   "license": "MIT",
   "author": "Terence O'Donoghue <1697905+terenceodonoghue@users.noreply.github.com>",
   "type": "module",
   "exports": "./dist/index.js",
+  "types": "./dist/index.d.js",
   "files": [
     "dist"
   ],
@@ -17,20 +18,19 @@
     "build": "tsc",
     "clean": "rimraf ./dist",
     "lint": "eslint --ext .ts ./src",
-    "prepack": "yarn build",
-    "prepublish": "yarn lint"
+    "prepack": "pnpm build",
+    "prepublishOnly": "pnpm lint"
   },
   "devDependencies": {
     "eslint": "^8.33.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "rimraf": "^3.0.2",
     "typescript": "^4.9.5"
   },
   "peerDependencies": {
-    "react": "*",
-    "react-dom": "*"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
-  "packageManager": "yarn@4.0.0-rc.11",
-  "engines": {
-    "node": ">=14.16"
-  }
+  "packageManager": "pnpm@8.8.0"
 }

@@ -9,23 +9,23 @@ import {
 import { useState } from 'react';
 
 import {
+  Article,
   Avatar,
   Badge,
-  Box,
-  Checkbox,
   Button,
-  Card,
-  Icon,
+  Checkbox,
   IconButton,
   Indicator,
   List,
   Logo,
   Pill,
   Radio,
+  Section,
   Slider,
   Switch,
   TextField,
   ThemeProvider,
+  defaultTheme,
 } from '@terenceodonoghue/react-components/velocity';
 import {
   Analytics,
@@ -62,15 +62,7 @@ import {
   ]}
 />
 
-<ThemeProvider
-  styles={({ color }) => [
-    {
-      '[data-has-bg] .docs-story': {
-        backgroundColor: color.neutral[100],
-      },
-    },
-  ]}
->
+<ThemeProvider>
 
 <Logo style={{ marginBottom: '1.5rem' }} />
 
@@ -86,7 +78,7 @@ Buttons allow users to trigger an action or event with a single click.
 import { Button } from '@terenceodonoghue/react-components/velocity';
 ```
 
-The `variant` prop defines one of three styles: primary (default), outline, or minimal. Standard [button](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button) attributes are also supported, e.g. `disabled`.
+The `variant` prop defines one of three styles: `primary` (default), `outline`, or `minimal`. Standard [button](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button) attributes are also supported, e.g. `disabled`.
 
 <Canvas>
   <Story name="Button">
@@ -203,22 +195,22 @@ Text can be placed above the input using the `label` prop, alongside any standar
 
 ## Avatar
 
-An avatar component represents an object or entity, typically a user's profile picture.
+An avatar represents an object or entity, typically a user's profile picture.
 
 ```javascript
 import { Avatar } from '@terenceodonoghue/react-components/velocity';
 ```
 
-The `variant` prop defines one of two styles: rounded (default) or squared. Standard [img](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img) attributes are also supported, e.g. `alt`.
+The `variant` prop defines one of two styles: `rounded` (default) or `squared`. Standard [img](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img) attributes are also supported, e.g. `alt`.
 
 <Canvas>
   <Story name="Avatar">
-    <Avatar alt="hello" src={faker.image.avatar()} />
+    <Avatar src={faker.image.avatar()} variant="rounded" />
     <Avatar src={faker.image.avatar()} variant="squared" />
   </Story>
 </Canvas>
 
-Height and width can be customised by providing a number to the `size` prop.
+Height and width can be customised with the `size` prop.
 
 <Canvas>
   <Story name="AvatarSize">
@@ -302,95 +294,55 @@ Set the text content with `label`. An optional `color` prop defaults to the prim
   </Story>
 </Canvas>
 
-## Card
+## Section
 
-Cards contain content and actions about a single subject.
+Sections contain content and actions about a single subject.
 
 ```javascript
-import { Card } from '@terenceodonoghue/react-components/velocity';
+import { Section } from '@terenceodonoghue/react-components/velocity';
 ```
 
 An optional `heading` prop renders text above the content block.
 
-<Canvas data-has-bg>
-  <Story name="Card">
-    <Card heading="Heading">Content</Card>
-    <Card>Content</Card>
+<Canvas style={{ background: defaultTheme.color.neutral[100] }}>
+  <Story name="Section">
+    <Section heading="Heading">Content</Section>
+    <Section>Content</Section>
   </Story>
 </Canvas>
 
-## Box
+## Article
 
-A box is a simple wrapper for separating content.
+...
 
 ```javascript
-import { Box } from '@terenceodonoghue/react-components/velocity';
+import { Article } from '@terenceodonoghue/react-components/velocity';
 ```
 
-The default padding is `20`, but this can be adjusted with `p`, `py` or `px`.
+...
 
 <Canvas>
-  <Story name="Box">
-    <Box>Beep</Box>
-    <Box p={48}>Boop</Box>
-    <Box py={48}>Beep</Box>
-    <Box px={48}>Boop</Box>
+  <Story name="Article">
+    <Article text={['Top left', 'Bottom left', 'Top right', 'Bottom right']} />
   </Story>
 </Canvas>
 
-## Icons
-
-Icons can be used to improve visual interest and draw attention to an element.
-
-```javascript
-import { Icon } from '@terenceodonoghue/react-components/velocity';
-import /* { IconName } */  from '@terenceodonoghue/react-icons/velocity';
-```
-
-Set the icon using `with`, and provide an optional `color`. This defaults to `currentColor` if left blank.
+The article's `position` can be on the `right` (default) or `left`.
 
 <Canvas>
-  <Story name="Icons">
-    <Icon with={Dashboard} />
-    <Icon color="#2E5BFF" with={Analytics} />
-    <Icon color="#33AC2E" with={Vehicles} />
-    <Icon color="#8C54FF" with={Service} />
-    <Icon color="#D63649" with={Map} />
-    <Icon color="#00C1D4" with={Mail} />
-    <Icon color="#F7C137" with={Settings} />
-  </Story>
-</Canvas>
-
-A `backdrop` can be used for added emphasis.
-
-<Canvas>
-  <Story name="IconsBackdrop">
-    <Icon backdrop color="#33AC2E" with={Check} />
-    <Icon backdrop color="#00C1D4" with={Marker} />
-    <Icon backdrop color="#8C54FF" with={Energy} />
-    <Icon backdrop color="#F7C137" with={Dynamic} />
-  </Story>
-</Canvas>
-
-Icon size is `24` by default (or `20` with a backdrop) but can be adjusted with the `size` prop.
-
-<Canvas>
-  <Story name="IconsSize">
-    <Icon with={Vehicles} />
-    <Icon with={Vehicles} size={32} />
-    <Icon with={Vehicles} size={40} />
-    <Icon with={Vehicles} size={48} />
-  </Story>
-</Canvas>
-
-There's also a `compact` size preset that reduces the default icon size and (if present) its backdrop.
-
-<Canvas>
-  <Story name="IconsCompact">
-    <Icon backdrop color="#33AC2E" size="compact" with={Check} />
-    <Icon backdrop color="#00C1D4" size="compact" with={Marker} />
-    <Icon backdrop color="#8C54FF" size="compact" with={Energy} />
-    <Icon backdrop color="#F7C137" size="compact" with={Dynamic} />
+  <Story name="ArticlePosition">
+    <Article
+      position="right"
+      text={['Top left', 'Bottom left', 'Top right', 'Bottom right']}
+    >
+      <Avatar size={48} src={faker.image.avatar()} variant="rounded" />
+    </Article>
+    <Article
+      position="left"
+      text={['Top left', 'Bottom left', 'Top right', 'Bottom right']}
+    >
+      <Switch defaultChecked />
+    </Article>
   </Story>
 </Canvas>
 
@@ -402,11 +354,11 @@ Icon buttons are commonly found in app bars and toolbars.
 import { IconButton } from '@terenceodonoghue/react-components/velocity';
 ```
 
-The `variant` prop defines one of two styles: squared (default) or rounded. Standard [button](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button) attributes are also supported.
+The `variant` prop defines one of two styles: `squared` (default) or `rounded`. Standard [button](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button) attributes are also supported.
 
 <Canvas>
   <Story name="IconButton">
-    <IconButton>
+    <IconButton variant="squared">
       <Menu color="#BFC5D2" size={18} />
     </IconButton>
     <IconButton variant="rounded">

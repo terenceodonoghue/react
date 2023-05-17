@@ -9,11 +9,11 @@ import {
   Logo,
   Notifications,
   PassengerInfo,
-  Theme,
+  Themes,
   ThemeProvider,
-  TopDrivers,
+  Drivers,
   TripInfo,
-  mq,
+  defaultTheme,
 } from '@terenceodonoghue/react-components/velocity';
 import {
   GitHub,
@@ -29,33 +29,16 @@ import {
   Marker,
 } from '@terenceodonoghue/react-icons/velocity';
 
-<Meta title="Components/Velocity/Organisms" />
-
-<ThemeProvider
-  styles={({ color }) => [
-    mq({
-      '[data-has-bg] .docs-story': {
-        backgroundColor: color.neutral[100],
-      },
-      '.conversations': {
-        margin: '0 auto',
-        maxWidth: [undefined, '378px'],
-      },
-      '.passenger-info': {
-        margin: '0 auto',
-        maxWidth: 'fit-content',
-      },
-      '.top-drivers': {
-        margin: '0 auto',
-        maxWidth: 'fit-content',
-      },
-      '.trip-info': {
-        margin: '0 auto',
-        maxWidth: 'fit-content',
-      },
-    }),
+<Meta
+  title="Components/Velocity/Organisms"
+  decorators={[
+    (Story) => (
+      <ThemeProvider>
+        <Story />
+      </ThemeProvider>
+    ),
   ]}
->
+/>
 
 <Logo style={{ marginBottom: '1.5rem' }} />
 
@@ -69,7 +52,7 @@ Organisms are relatively complex UI components composed of groups of molecules a
 import { AppBar } from '@terenceodonoghue/react-components/velocity';
 ```
 
-<Canvas>
+<Canvas style={{ background: defaultTheme.color.neutral[100] }}>
   <Story name="AppBar">
     <AppBar
       avatar={faker.image.avatar()}
@@ -89,32 +72,23 @@ import { AppBar } from '@terenceodonoghue/react-components/velocity';
 import { Conversations } from '@terenceodonoghue/react-components/velocity';
 ```
 
-<Canvas data-has-bg>
-  <Story
-    name="Conversations"
-    decorators={[
-      (Story) => (
-        <div className="conversations">
-          <Story />
-        </div>
-      ),
-    ]}
-  >
+<Canvas style={{ background: defaultTheme.color.neutral[100] }}>
+  <Story name="Conversations">
     <Conversations
       list={[
         {
-          active: true,
           avatar: faker.image.avatar(),
           name: faker.name.fullName(),
           time: '2m',
           message: faker.lorem.sentence(),
+          unread: true,
         },
         {
-          active: true,
           avatar: faker.image.avatar(),
           name: faker.name.fullName(),
           time: '51m',
           message: faker.lorem.sentence(),
+          unread: true,
           defaultChecked: true,
         },
         {
@@ -128,85 +102,76 @@ import { Conversations } from '@terenceodonoghue/react-components/velocity';
   </Story>
 </Canvas>
 
-## Top Drivers
+## Drivers
 
 ```javascript
-import { TopDrivers } from '@terenceodonoghue/react-components/velocity';
+import { Drivers } from '@terenceodonoghue/react-components/velocity';
 ```
 
-<Canvas data-has-bg>
-  <Story
-    name="TopDrivers"
-    decorators={[
-      (Story) => (
-        <div className="top-drivers">
-          <Story />
-        </div>
-      ),
-    ]}
-  >
-    <TopDrivers
-      drivers={[
+<Canvas style={{ background: defaultTheme.color.neutral[100] }}>
+  <Story name="Drivers">
+    <Drivers
+      list={[
         {
+          avatar: faker.image.avatar(),
           name: 'Bebop',
-          totalEarnings: '$6432',
-          totalDistance: '1,232 miles',
+          vehicle: faker.vehicle.vehicle(),
+          distance: '1,232 miles',
+          earnings: 6432,
         },
         {
+          avatar: faker.image.avatar(),
           name: 'Gran Tesoro',
-          totalEarnings: '$5342',
-          totalDistance: '945 miles',
+          vehicle: faker.vehicle.vehicle(),
+          distance: '945 miles',
+          earnings: 5432,
         },
         {
+          avatar: faker.image.avatar(),
           name: 'Belafonte',
-          totalEarnings: '$5133',
-          totalDistance: '834 miles',
+          vehicle: faker.vehicle.vehicle(),
+          distance: '834 miles',
+          earnings: 5133,
         },
         {
+          avatar: faker.image.avatar(),
           name: 'Chester',
-          totalEarnings: '$4755',
-          totalDistance: '812 miles',
+          vehicle: faker.vehicle.vehicle(),
+          distance: '812 miles',
+          earnings: 4755,
         },
         {
+          avatar: faker.image.avatar(),
           name: 'Expedia',
-          totalEarnings: '$4140',
-          totalDistance: '724 miles',
+          vehicle: faker.vehicle.vehicle(),
+          distance: '724 miles',
+          earnings: 4140,
         },
         {
+          avatar: faker.image.avatar(),
           name: 'Aeolus',
-          totalEarnings: '$3323',
-          totalDistance: '466 miles',
+          vehicle: faker.vehicle.vehicle(),
+          distance: '466 miles',
+          earnings: 3323,
         },
-      ].map((driver) => ({
-        ...driver,
-        avatar: faker.image.avatar(),
-        vehicle: faker.vehicle.vehicle(),
-      }))}
+      ]}
     />
   </Story>
 </Canvas>
 
-## Passenger Info
+## PassengerInfo Info
 
 ```javascript
 import { PassengerInfo } from '@terenceodonoghue/react-components/velocity';
 ```
 
-<Canvas data-has-bg>
-  <Story
-    name="PassengerInfo"
-    decorators={[
-      (Story) => (
-        <div className="passenger-info">
-          <Story />
-        </div>
-      ),
-    ]}
-  >
+<Canvas style={{ background: defaultTheme.color.neutral[100] }}>
+  <Story name="PassengerInfo">
     <PassengerInfo
       avatar={faker.image.avatar()}
       city={faker.address.cityName()}
       email={faker.internet.exampleEmail()}
+      interactions={4}
       name={faker.name.fullName()}
       paymentMethod="visa"
       phoneNumber={faker.phone.number('+144–####–####')}
@@ -215,32 +180,23 @@ import { PassengerInfo } from '@terenceodonoghue/react-components/velocity';
   </Story>
 </Canvas>
 
-## Trip Info
+## TripInfo Info
 
 ```javascript
 import { TripInfo } from '@terenceodonoghue/react-components/velocity';
 ```
 
-<Canvas data-has-bg>
-  <Story
-    name="TripInfo"
-    decorators={[
-      (Story) => (
-        <div className="trip-info">
-          <Story />
-        </div>
-      ),
-    ]}
-  >
+<Canvas style={{ background: defaultTheme.color.neutral[100] }}>
+  <Story name="TripInfo">
     <TripInfo
-      origin={faker.address.city()}
-      originAddress={faker.address.streetAddress()}
-      destination={faker.address.city()}
-      destinationAddress={faker.address.streetAddress()}
-      distance="12.3km"
-      time="42 min"
-      price="$34.20"
-      energy="12.4 kWh"
+      fromStreet={faker.address.streetAddress()}
+      fromCity={faker.address.city()}
+      toStreet={faker.address.streetAddress()}
+      toCity={faker.address.city()}
+      distance={12.3}
+      time={42}
+      price={34.2}
+      energy={12.4}
     />
   </Story>
 </Canvas>
@@ -251,7 +207,7 @@ import { TripInfo } from '@terenceodonoghue/react-components/velocity';
 import { Integrations } from '@terenceodonoghue/react-components/velocity';
 ```
 
-<Canvas data-has-bg>
+<Canvas style={{ background: defaultTheme.color.neutral[100] }}>
   <Story name="Integrations">
     <Integrations
       list={[
@@ -293,10 +249,10 @@ import { Integrations } from '@terenceodonoghue/react-components/velocity';
 import { Notifications } from '@terenceodonoghue/react-components/velocity';
 ```
 
-<Canvas data-has-bg>
+<Canvas style={{ background: defaultTheme.color.neutral[100] }}>
   <Story name="Notifications">
     <Notifications
-      options={[
+      list={[
         {
           label: 'Email Notification',
           description: 'Commits data and history',
@@ -319,15 +275,15 @@ import { Notifications } from '@terenceodonoghue/react-components/velocity';
   </Story>
 </Canvas>
 
-## Theme
+## Themes
 
 ```javascript
-import { Theme } from '@terenceodonoghue/react-components/velocity';
+import { Themes } from '@terenceodonoghue/react-components/velocity';
 ```
 
-<Canvas data-has-bg>
-  <Story name="Theme">
-    <Theme
+<Canvas style={{ background: defaultTheme.color.neutral[100] }}>
+  <Story name="Themes">
+    <Themes
       options={[
         {
           label: 'Shelob',
@@ -354,5 +310,3 @@ import { Theme } from '@terenceodonoghue/react-components/velocity';
     />
   </Story>
 </Canvas>
-
-</ThemeProvider>

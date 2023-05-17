@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { useTheme } from '@emotion/react';
-import type { FunctionComponent, HTMLAttributes } from 'react';
+import { ComponentPropsWithoutRef } from 'react';
 
 import { ReactIcon } from '@terenceodonoghue/react-icons';
 import {
@@ -11,11 +11,11 @@ import {
 
 import Avatar from '../atoms/Avatar.js';
 import IconButton from '../atoms/IconButton.js';
-import Indicator from '../atoms/Indicator.js';
-import VelocityLogo from '../atoms/Logo.js';
+import Status from '../atoms/Status.js';
+import VelocityLogo from '../primitives/Logo.js';
 import mq from '../utils/mq.js';
 
-export interface AppBarProps extends HTMLAttributes<HTMLDivElement> {
+export interface AppBarProps extends ComponentPropsWithoutRef<'header'> {
   avatar?: string;
   hasMessage?: boolean;
   hasNotification?: boolean;
@@ -26,7 +26,7 @@ export interface AppBarProps extends HTMLAttributes<HTMLDivElement> {
   profileHandler?: () => void;
 }
 
-const AppBar: FunctionComponent<AppBarProps> = ({
+const AppBar = ({
   avatar,
   hasMessage = false,
   hasNotification = false,
@@ -36,7 +36,7 @@ const AppBar: FunctionComponent<AppBarProps> = ({
   notificationHandler,
   profileHandler,
   ...props
-}) => {
+}: AppBarProps) => {
   const { color, page } = useTheme();
 
   return (
@@ -46,14 +46,14 @@ const AppBar: FunctionComponent<AppBarProps> = ({
         top: 0,
         display: 'flex',
         alignItems: 'center',
-        borderBottom: `solid 1px ${color.neutral[300]}`,
         minHeight: 80,
         backgroundColor: color.neutral[50],
+        borderBottom: `solid 1px ${color.neutral[300]}`,
       }}
       {...props}
     >
       {drawerHandler ? (
-        <div css={{ padding: '0 24px', width: 80 }}>
+        <div css={{ width: 80, paddingInline: 24 }}>
           <IconButton aria-label="Open drawer" onClick={drawerHandler}>
             <Menu color={color.neutral[400]} size={18} />
           </IconButton>
@@ -72,8 +72,8 @@ const AppBar: FunctionComponent<AppBarProps> = ({
         {Logo ? (
           <div
             css={mq({
-              display: 'flex',
               flex: 1,
+              display: 'flex',
               justifyContent: ['center', 'center', 'flex-start'],
               visibility: ['hidden', 'visible'],
             })}
@@ -92,9 +92,9 @@ const AppBar: FunctionComponent<AppBarProps> = ({
               aria-label="View notifications"
               onClick={notificationHandler}
             >
-              <Indicator visible={hasNotification}>
+              <Status show={hasNotification}>
                 <Notifications color={color.neutral[400]} size={32} />
-              </Indicator>
+              </Status>
             </IconButton>
           ) : undefined}
           {messageHandler ? (
@@ -103,9 +103,9 @@ const AppBar: FunctionComponent<AppBarProps> = ({
               css={mq({ display: ['none', 'inline-block'] })}
               onClick={messageHandler}
             >
-              <Indicator visible={hasMessage}>
+              <Status show={hasMessage}>
                 <Mail color={color.neutral[400]} size={32} />
-              </Indicator>
+              </Status>
             </IconButton>
           ) : undefined}
           {profileHandler ? (

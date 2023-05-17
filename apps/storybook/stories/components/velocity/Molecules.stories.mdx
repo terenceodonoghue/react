@@ -8,25 +8,17 @@ import {
   Driver,
   Integration,
   Logo,
-  MetricCard,
+  Metric,
   NavItem,
   KanbanCard,
   PaymentMethod,
   Setting,
-  ThemeCard,
+  Theme,
   ThemeProvider,
-  TripDetails,
-  TripSummary,
   mq,
 } from '@terenceodonoghue/react-components/velocity';
 import { InVision, GitHub } from '@terenceodonoghue/react-icons/brands';
 import { Dashboard } from '@terenceodonoghue/react-icons/velocity';
-import {
-  Check,
-  Dynamic,
-  Energy,
-  Marker,
-} from '@terenceodonoghue/react-icons/velocity';
 
 <Meta title="Components/Velocity/Molecules" />
 
@@ -69,14 +61,17 @@ import {
           'repeat(2, 1fr)',
           'repeat(3, 1fr)',
         ],
+        gap: 24,
       },
-      '.metric-card': {
+      '.metric': {
         display: 'grid',
         gridTemplateColumns: [
-          'repeat(2, 1fr)',
-          'repeat(2, 1fr)',
-          'repeat(3, 1fr)',
+          'repeat(2, minmax(0, 158px))',
+          'repeat(2, minmax(0, 342px))',
+          'repeat(2, minmax(0, 264px))',
         ],
+        gap: 24,
+        justifyContent: 'center',
       },
       '.nav-item': {
         display: 'grid',
@@ -100,7 +95,7 @@ import {
         margin: '0 auto',
         maxWidth: 'fit-content',
       },
-      '.theme-card': {
+      '.theme': {
         display: 'grid',
         gridTemplateColumns: [
           'repeat(auto-fit, 140px)',
@@ -176,18 +171,18 @@ import { Driver } from '@terenceodonoghue/react-components/velocity';
   >
     <Driver
       avatar={faker.image.avatar()}
-      rank={1}
       name="Bebop"
       vehicle={faker.vehicle.vehicle()}
-      totalEarnings="$6432"
-      totalDistance="1,232 miles"
+      distance="1,232 miles"
+      earnings={6432}
+      rank={1}
     />
     <Driver
       avatar={faker.image.avatar()}
       name="Gran Tesoro"
       vehicle={faker.vehicle.vehicle()}
-      totalEarnings="$5,342"
-      totalDistance="945 miles"
+      distance="945 miles"
+      earnings={5432}
     />
   </Story>
 </Canvas>
@@ -205,10 +200,10 @@ import { Driver } from '@terenceodonoghue/react-components/velocity';
       ),
     ]}
   >
-    <NavItem icon={Dashboard} label="Overview" compact selected />
-    <NavItem icon={Dashboard} label="Overview" selected />
-    <NavItem icon={Dashboard} label="Overview" compact />
-    <NavItem icon={Dashboard} label="Overview" />
+    <NavItem icon="dashboard" label="Overview" compact selected />
+    <NavItem icon="dashboard" label="Overview" selected />
+    <NavItem icon="dashboard" label="Overview" compact />
+    <NavItem icon="dashboard" label="Overview" />
   </Story>
 </Canvas>
 
@@ -241,58 +236,6 @@ import { Setting } from '@terenceodonoghue/react-components/velocity';
   </Story>
 </Canvas>
 
-## Trip Summary
-
-```javascript
-import { TripSummary } from '@terenceodonoghue/react-components/velocity';
-```
-
-<Canvas>
-  <Story
-    name="TripSummary"
-    decorators={[
-      (Story) => (
-        <div className="trip-summary">
-          <Story />
-        </div>
-      ),
-    ]}
-  >
-    <TripSummary
-      origin={faker.address.city()}
-      originAddress={faker.address.streetAddress()}
-      destination={faker.address.city()}
-      destinationAddress={faker.address.streetAddress()}
-    />
-  </Story>
-</Canvas>
-
-## Trip Details
-
-```javascript
-import { TripDetails } from '@terenceodonoghue/react-components/velocity';
-```
-
-<Canvas>
-  <Story
-    name="TripDetails"
-    decorators={[
-      (Story) => (
-        <div className="trip-details">
-          <Story />
-        </div>
-      ),
-    ]}
-  >
-    <TripDetails
-      distance="12.3km"
-      time="42 min"
-      price="$34.20"
-      energy="12.4 kWh"
-    />
-  </Story>
-</Canvas>
-
 ## Conversation
 
 ```javascript
@@ -311,11 +254,11 @@ import { Conversation } from '@terenceodonoghue/react-components/velocity';
     ]}
   >
     <Conversation
-      active
       avatar={faker.image.avatar()}
       name={faker.name.fullName()}
       time="2m"
       message={faker.lorem.sentence()}
+      unread
     />
     <Conversation
       avatar={faker.image.avatar()}
@@ -325,7 +268,6 @@ import { Conversation } from '@terenceodonoghue/react-components/velocity';
       message={faker.lorem.sentence()}
     />
     <Conversation
-      active={false}
       avatar={faker.image.avatar()}
       name={faker.name.fullName()}
       time="40m"
@@ -352,15 +294,15 @@ import { Integration } from '@terenceodonoghue/react-components/velocity';
     ]}
   >
     <Integration
-      defaultChecked
+      icon={InVision}
       label="InVision"
       description="Boards and prototypes"
-      icon={InVision}
+      defaultChecked
     />
     <Integration
+      icon={GitHub}
       label="GitHub"
       description="Commits data and history"
-      icon={GitHub}
     />
   </Story>
 </Canvas>
@@ -413,45 +355,44 @@ import { KanbanCard } from '@terenceodonoghue/react-components/velocity';
   </Story>
 </Canvas>
 
-## Metric Card
+## Metric
 
 ```javascript
-import { MetricCard } from '@terenceodonoghue/react-components/velocity';
+import { Metric } from '@terenceodonoghue/react-components/velocity';
 ```
 
 <Canvas data-has-bg>
   <Story
-    name="MetricCard"
+    name="Metric"
     decorators={[
       (Story) => (
-        <div className="metric-card">
+        <div className="metric">
           <Story />
         </div>
       ),
     ]}
   >
-    <MetricCard
-      icon={Check}
+    <Metric
       color="#33AC2E"
+      icon="check"
       label="Vehicles on track"
       value="1,428"
     />
-    <MetricCard
-      icon={Marker}
+    <Metric
       color="#00C1D4"
+      icon="marker"
       label="Distance driven"
       value="158.3 mi"
     />
-    <MetricCard
-      icon={Energy}
+    <Metric
       color="#8C54FF"
-      iconColor="#8C54FF"
+      icon="energy"
       label="Energy consumed"
       value="87.4 kWh"
     />
-    <MetricCard
-      icon={Dynamic}
+    <Metric
       color="#F7C137"
+      icon="dynamic"
       label="Total drive time"
       value="24.2 h"
     />
@@ -475,40 +416,40 @@ import { PaymentMethod } from '@terenceodonoghue/react-components/velocity';
       ),
     ]}
   >
-    <PaymentMethod type="applepay" />
-    <PaymentMethod type="applepay" selected />
-    <PaymentMethod type="mastercard" />
-    <PaymentMethod type="mastercard" selected />
-    <PaymentMethod type="paypal" />
-    <PaymentMethod type="paypal" selected />
-    <PaymentMethod type="visa" />
-    <PaymentMethod type="visa" selected />
+    <PaymentMethod variant="applepay" />
+    <PaymentMethod variant="applepay" selected />
+    <PaymentMethod variant="mastercard" />
+    <PaymentMethod variant="mastercard" selected />
+    <PaymentMethod variant="paypal" />
+    <PaymentMethod variant="paypal" selected />
+    <PaymentMethod variant="visa" />
+    <PaymentMethod variant="visa" selected />
   </Story>
 </Canvas>
 
-## Theme Card
+## Theme
 
 ```javascript
-import { ThemeCard } from '@terenceodonoghue/react-components/velocity';
+import { Theme } from '@terenceodonoghue/react-components/velocity';
 ```
 
 <Canvas>
   <Story
-    name="ThemeCard"
+    name="Theme"
     decorators={[
       (Story) => (
-        <div className="theme-card">
+        <div className="theme">
           <Story />
         </div>
       ),
     ]}
   >
-    <ThemeCard
+    <Theme
       label="Shelob"
       colors={['#2e5bff', '#e0e7ff', '#8097b1']}
       defaultChecked
     />
-    <ThemeCard label="Denethor" colors={['#8c54ff', '#00c1d4', '#fad050']} />
+    <Theme label="Denethor" colors={['#8c54ff', '#00c1d4', '#fad050']} />
   </Story>
 </Canvas>
 

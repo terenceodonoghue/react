@@ -1,19 +1,19 @@
 /** @jsxImportSource @emotion/react */
-import type { CSSObject } from '@emotion/react';
-import type { FunctionComponent, ImgHTMLAttributes } from 'react';
+import { CSSObject } from '@emotion/react';
+import { ComponentPropsWithoutRef } from 'react';
 
-export interface AvatarProps extends ImgHTMLAttributes<HTMLImageElement> {
+export interface AvatarProps extends ComponentPropsWithoutRef<'img'> {
   size?: number;
   variant?: 'rounded' | 'squared';
 }
 
-const Avatar: FunctionComponent<AvatarProps> = ({
+const Avatar = ({
   alt,
   size = 128,
   variant = 'rounded',
   ...props
-}) => {
-  const css: Record<string, CSSObject> = {
+}: AvatarProps) => {
+  const variants: Record<typeof variant, CSSObject> = {
     rounded: {
       borderRadius: '50%',
     },
@@ -26,10 +26,10 @@ const Avatar: FunctionComponent<AvatarProps> = ({
     <img
       alt={alt}
       css={[
-        css[variant],
+        variants[variant],
         {
-          height: size,
           width: size,
+          height: size,
         },
       ]}
       {...props}

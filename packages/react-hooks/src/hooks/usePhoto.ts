@@ -5,7 +5,7 @@ interface DeviceConfig {
   settings?: Awaited<ReturnType<ImageCapture['getPhotoSettings']>>;
 }
 
-interface usePhotoConfiguration {
+export interface usePhotoConfiguration {
   onPreviewAvailable?: (preview: MediaStream) => void;
 }
 

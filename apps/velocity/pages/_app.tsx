@@ -9,15 +9,6 @@ import {
   ThemeProvider,
   mq,
 } from '@terenceodonoghue/react-components/velocity';
-import {
-  Analytics,
-  Dashboard,
-  Mail,
-  Map,
-  Service,
-  Settings,
-  Vehicles,
-} from '@terenceodonoghue/react-icons/velocity';
 
 import Link from '../components/Link';
 
@@ -61,36 +52,35 @@ const App: FunctionComponent<AppProps> = ({ Component, pageProps }) => {
         hasNotification
       />
       <Drawer
-        css={{ zIndex: 1400 }}
         avatar={faker.image.avatar()}
         name={faker.name.fullName()}
         open={drawerOpen}
       >
-        <Link to="/" compact={!drawerOpen} icon={Dashboard} label="Overview" />
+        <Link to="/" compact={!drawerOpen} icon="dashboard" label="Overview" />
         <Link
           to="/analytics"
           compact={!drawerOpen}
-          icon={Analytics}
+          icon="analytics"
           label="Analytics"
         />
         <Link
           to="/vehicles"
           compact={!drawerOpen}
-          icon={Vehicles}
+          icon="vehicles"
           label="Vehicles"
         />
         <Link
           to="/reminders"
           compact={!drawerOpen}
-          icon={Service}
+          icon="service"
           label="Service"
         />
-        <Link to="/map" compact={!drawerOpen} icon={Map} label="Map" />
-        <Link to="/chat" compact={!drawerOpen} icon={Mail} label="Chat" />
+        <Link to="/map" compact={!drawerOpen} icon="map" label="Map" />
+        <Link to="/chat" compact={!drawerOpen} icon="mail" label="Chat" />
         <Link
           to="/settings"
           compact={!drawerOpen}
-          icon={Settings}
+          icon="settings"
           label="Settings"
         />
       </Drawer>

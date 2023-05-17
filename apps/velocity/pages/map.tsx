@@ -3,7 +3,7 @@ import { NextPage } from 'next';
 import Head from 'next/head';
 
 import {
-  Card,
+  Section,
   Main,
   mq,
   PassengerInfo,
@@ -35,16 +35,16 @@ const MapPage: NextPage = () => (
         />
         <div css={{ display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
           <TripInfo
-            origin={faker.address.city()}
-            originAddress={faker.address.streetAddress()}
-            destination={faker.address.city()}
-            destinationAddress={faker.address.streetAddress()}
-            distance="12.3km"
-            time="42 min"
-            price="$34.20"
-            energy="12.4 kWh"
+            fromStreet={faker.address.streetAddress()}
+            fromCity={faker.address.city()}
+            toStreet={faker.address.streetAddress()}
+            toCity={faker.address.city()}
+            distance={12.3}
+            time={42}
+            price={34.2}
+            energy={12.4}
           />
-          <Card css={mq({ display: ['none', 'none', 'block'], flex: 1 })} />
+          <Section css={mq({ display: ['none', 'none', 'block'], flex: 1 })} />
         </div>
       </div>
     </Main>

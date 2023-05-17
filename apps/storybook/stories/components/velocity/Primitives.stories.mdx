@@ -1,11 +1,20 @@
-import { Canvas, Meta, Story } from '@storybook/addon-docs';
+import {
+  Canvas,
+  IconGallery,
+  IconItem,
+  Meta,
+  Story,
+} from '@storybook/addon-docs';
 
 import {
+  Icon,
   Logo,
+  Pane,
   Text,
   ThemeProvider,
   mq,
 } from '@terenceodonoghue/react-components/velocity';
+import * as VelocityIcons from '@terenceodonoghue/react-icons/velocity';
 
 <Meta
   title="Components/Velocity/Primitives"
@@ -16,7 +25,7 @@ import {
           display: 'flex',
           flexWrap: 'wrap',
           alignItems: 'center',
-          justifyContent: 'flex-start',
+          justifyContent: 'center',
           gap: 32,
         }}
       >
@@ -31,6 +40,29 @@ import {
 <Logo style={{ marginBottom: '1.5rem' }} />
 
 # Primitives
+
+Primitives are the foundational visual elements of a design system that, when changed, can alter the perception of the brand. Components are comprised of design primitives and other, smaller components.
+
+## Layout
+
+### Pane
+
+A pane is a simple wrapper for separating content.
+
+```javascript
+import { Pane } from '@terenceodonoghue/react-components/velocity';
+```
+
+The default padding is `20`, but this can be adjusted with `p`, `py` or `px`.
+
+<Canvas>
+  <Story name="Pane">
+    <Pane>Beep</Pane>
+    <Pane p={48}>Boop</Pane>
+    <Pane py={48}>Beep</Pane>
+    <Pane px={48}>Boop</Pane>
+  </Story>
+</Canvas>
 
 ## Text
 
@@ -64,6 +96,69 @@ A `p` element is rendered by default, unless specified otherwise by `as`. This o
     <Text as="h3" variant="h3">
       Heading h3 (as="h3" variant="h3")
     </Text>
+  </Story>
+</Canvas>
+
+## Icons
+
+Icons can be used to improve visual interest and draw attention to an element.
+
+```javascript
+import { Icon } from '@terenceodonoghue/react-components/velocity';
+```
+
+<IconGallery>
+  {Object.entries(VelocityIcons).map(([name, Icon]) => (
+    <IconItem name={name.toLowerCase()}>
+      <Icon />
+    </IconItem>
+  ))}
+</IconGallery>
+
+Set the icon name using `with`, and provide an optional `color`. This defaults to `currentColor` if left blank.
+
+<Canvas>
+  <Story name="Icons">
+    <Icon with="dashboard" />
+    <Icon color="#2E5BFF" with="analytics" />
+    <Icon color="#33AC2E" with="vehicles" />
+    <Icon color="#8C54FF" with="service" />
+    <Icon color="#D63649" with="map" />
+    <Icon color="#00C1D4" with="mail" />
+    <Icon color="#F7C137" with="settings" />
+  </Story>
+</Canvas>
+
+A `backdrop` can be used for added emphasis.
+
+<Canvas>
+  <Story name="IconsBackdrop">
+    <Icon backdrop color="#33AC2E" with="check" />
+    <Icon backdrop color="#00C1D4" with="marker" />
+    <Icon backdrop color="#8C54FF" with="energy" />
+    <Icon backdrop color="#F7C137" with="dynamic" />
+  </Story>
+</Canvas>
+
+Icon size is `24` by default (or `20` with a backdrop) but can be adjusted with the `size` prop.
+
+<Canvas>
+  <Story name="IconsSize">
+    <Icon with="vehicles" />
+    <Icon with="vehicles" size={32} />
+    <Icon with="vehicles" size={40} />
+    <Icon with="vehicles" size={48} />
+  </Story>
+</Canvas>
+
+There's also a `compact` size preset that reduces the default icon size and (if present) its backdrop.
+
+<Canvas>
+  <Story name="IconsCompact">
+    <Icon backdrop color="#33AC2E" size="compact" with="check" />
+    <Icon backdrop color="#00C1D4" size="compact" with="marker" />
+    <Icon backdrop color="#8C54FF" size="compact" with="energy" />
+    <Icon backdrop color="#F7C137" size="compact" with="dynamic" />
   </Story>
 </Canvas>
 
